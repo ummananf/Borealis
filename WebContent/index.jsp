@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen">
 </head>
 <body>
+<h1>Test Borealis</h1>
     <div id="content" class="container">
         <div class="section grid grid5 s3">
             <h2>Amazon S3 Buckets:</h2>
