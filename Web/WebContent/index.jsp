@@ -30,51 +30,34 @@
 %>
 
 <%
-    if (ec2 == null) {
-        AWSCredentialsProvider credentialsProvider = new ClasspathPropertiesFileCredentialsProvider();
-        ec2    = new AmazonEC2Client(credentialsProvider);
-        s3     = new AmazonS3Client(credentialsProvider);
-        dynamo = new AmazonDynamoDBClient(credentialsProvider);
-    }
+//     if (ec2 == null) {
+//         AWSCredentialsProvider credentialsProvider = new ClasspathPropertiesFileCredentialsProvider();
+//         ec2    = new AmazonEC2Client(credentialsProvider);
+//         s3     = new AmazonS3Client(credentialsProvider);
+//         dynamo = new AmazonDynamoDBClient(credentialsProvider);
+//     }
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>Hello AWS Web World!</title>
+    <title>Borealis</title>
     <link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script> 
+	$(document).ready(function(){
+	    $("button").click(function(){
+	        $("h1").fadeOut();
+	    });
+	});
+	</script> 
 </head>
 <body>
     <div id="content" class="container">
-        <div class="section grid grid5 s3">
-            <h2>Amazon S3 Buckets:</h2>
-            <ul>
-            <% for (Bucket bucket : s3.listBuckets()) { %>
-               <li> <%= bucket.getName() %> </li>
-            <% } %>
-            </ul>
-        </div>
-
-        <div class="section grid grid5 sdb">
-            <h2>Amazon DynamoDB Tables:</h2>
-            <ul>
-            <% for (String tableName : dynamo.listTables().getTableNames()) { %>
-               <li> <%= tableName %></li>
-            <% } %>
-            </ul>
-        </div>
-
-        <div class="section grid grid5 gridlast ec2">
-            <h2>Amazon EC2 Instances:</h2>
-            <ul>
-            <% for (Reservation reservation : ec2.describeInstances().getReservations()) { %>
-                <% for (Instance instance : reservation.getInstances()) { %>
-                   <li> <%= instance.getInstanceId() %></li>
-                <% } %>
-            <% } %>
-            </ul>
-        </div>
+    	<button>click for magic</button>
+    	<h1>hello</h1>
     </div>
 </body>
 </html>
