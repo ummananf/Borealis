@@ -9,9 +9,14 @@
 <title>Main Menu</title>
 </head>
 <body>
-	<a href="index.jsp">Degree Tracker</a>
-	<a href="index.jsp">Schedule</a>
-	<a href="index.jsp">Courses</a>
-	<p style="color:red">add more options...</p>
+	<div>
+		<a href="index.jsp">Degree Tracker</a>
+		<br>
+		<a href="index.jsp">Schedule</a>
+		<br>
+		<a href="index.jsp">Courses</a>
+		<br>
+		<p style="color:red">add more options...</p>
+	</div>
 </body>
 </html>
