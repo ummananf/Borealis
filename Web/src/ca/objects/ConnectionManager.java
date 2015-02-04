@@ -59,5 +59,18 @@ public class ConnectionManager {
 	   }
    }
    
+   public static PreparedStatement getPrepStatement(Connection con, String sql)
+   {
+	   PreparedStatement prepStatement = null;
+	   try
+	   {
+		   prepStatement = con.prepareStatement(sql);
+	   }
+	   catch(SQLException e)
+	   {
+		   e.printStackTrace();
+	   }
+	   return prepStatement;   
+   }
    
 }
