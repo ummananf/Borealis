@@ -103,4 +103,18 @@ public class ConnectionManager {
 	   }
    }
    
+   public static ResultSet executeQuery(Statement statement, String sql)
+   {
+	   ResultSet resultSet = null;
+	   try
+	   {
+		   resultSet = statement.executeQuery(sql);
+	   }
+	   catch (SQLException e)
+	   {
+		   e.printStackTrace();
+	   }
+	   return resultSet;
+   }
+   
 }
