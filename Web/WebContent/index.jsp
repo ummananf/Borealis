@@ -77,7 +77,7 @@
 				<form action="index.jsp" id="login_form" method="post">
 					<div class="form-group">
 						<label for="j_username" class="t">UserName:</label> 
-						<input id="username" value="" name="" type="text" class="form-control x319 in" 
+						<input id="username" value="" name="username" type="text" class="form-control x319 in" 
 						autocomplete="off">
 					</div>
 					<div class="form-group">
