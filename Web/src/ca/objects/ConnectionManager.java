@@ -87,4 +87,20 @@ public class ConnectionManager {
 	   return statement;
    }
    
+   public static void closeStatement(Statement statement)
+   {
+	   try
+	   {
+		   if(null != statement)
+		   {
+			   statement.close();
+			   statement = null;
+		   }
+	   }
+	   catch (SQLException e)
+	   {
+		   e.printStackTrace();
+	   }
+   }
+   
 }
