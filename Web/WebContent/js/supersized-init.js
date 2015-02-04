@@ -20,13 +20,17 @@ jQuery(function($){
         // Components
         slide_links        : 'blank',    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
         slides             : [    // Slideshow Images
-                                 {image : 'images/backgrounds/0.jpg'},
                                  {image : 'images/backgrounds/1.jpg'},
                                  {image : 'images/backgrounds/2.jpg'},
 								 {image : 'images/backgrounds/3.jpg'},
 								 {image : 'images/backgrounds/4.jpg'},
 								 {image : 'images/backgrounds/5.jpg'},
-								 {image : 'images/backgrounds/6.jpg'}
+								 {image : 'images/backgrounds/6.jpg'},
+								 {image : 'images/backgrounds/7.jpg'},
+								 {image : 'images/backgrounds/8.jpg'},
+								 {image : 'images/backgrounds/9.jpg'},
+								 {image : 'images/backgrounds/10.jpg'},
+								 {image : 'images/backgrounds/11.jpg'}	 
                        ]
 
     });

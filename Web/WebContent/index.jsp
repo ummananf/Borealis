@@ -10,9 +10,9 @@
 
 <%! // Share the client objects across threads to
     // avoid creating new clients for each web request
-    private AmazonEC2         ec2;
-    private AmazonS3           s3;
-    private AmazonDynamoDB dynamo;
+    //private AmazonEC2         ec2;
+    //private AmazonS3           s3;
+    //private AmazonDynamoDB dynamo;
  %>
 
 <%
