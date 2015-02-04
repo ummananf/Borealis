@@ -10,15 +10,24 @@
 <title>Main Menu</title>
 </head>
 <body>
-	<div>
-		<progress class="center" value="70" max="100"></progress> 
+	<div id="degree_tracker">
+		<p class="center">Bachelors degree in Course Science</p>
+		<!-- this value is going to be calculated based on courses completed / total courses left
+		(or rather credit hours achieved / total credit hours?) also taking into account required minimum grade
+		in each course.  -->
+		<progress class="center" value="30" max="100"></progress> 
 		
-		<p>COURSE 1010: Intro To Courses</p>
-		<p>COURSE 1020: Second Intro To Courses</p>
-		<p>COURSE 1210: Topics In Courses</p>
-		<p>COURSE 2080: Advanced Courses</p>
-		<p>COURSE 2345: Can I make It?</p>
-		<p>ELECTIVE 1340: Intro to Electives</p>
+		<!-- here we will load ALL courses required for the degree, and then pull all courses that the student
+		have taken or is currently taking and match the css class so the course names are highlighted accordingly.
+		for example, courses already taken (and achieved the minimum grade requirement) are highlighted green, 
+		courses currently taken are bold, and future courses gray. -->
+		<p class="completed">COURSE 1010: Intro To Courses</p>
+		<p class="completed">COURSE 1020: Second Intro To Courses</p>
+		<p class="completed">COURSE 1210: Topics In Courses</p>
+		<p class="current">COURSE 2080: Advanced Courses</p>
+		<p class="current">COURSE 2345: Can I make It?</p>
+		<p class="current">ELECTIVE 1340: Intro to Electives</p>
+		<p class="future">COURSE 3690: Super Advanced Course</p>
 	</div>
 </body>
 </html>

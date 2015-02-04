@@ -23,3 +23,15 @@ p {
     display: table;
     margin: 0 auto;
 }
+
+p.completed {
+	color: #33CC33;
+}
+
+p.current {
+	font-weight: bold;
+}
+
+p.future {
+	color: #B8B8B8;
+}
