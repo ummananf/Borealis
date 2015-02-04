@@ -10,7 +10,6 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  
 	<servlet>
 		<servlet-name>Home</servlet-name>
 		<servlet-class>ca.servlets.ProfileServlet</servlet-class>
@@ -19,6 +18,5 @@
 		<servlet-name>Home</servlet-name>
 		<url-pattern>/redirect.jsp</url-pattern>
 	</servlet-mapping>
-  
-  
+	
 </web-app>
