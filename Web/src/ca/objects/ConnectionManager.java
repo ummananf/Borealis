@@ -40,24 +40,6 @@ public class ConnectionManager {
          System.out.println(e);
       }
 
-      return con;
-   }
-   
-   public static void closeConnection(Connection conn)
-   {
-	   try
-	   {
-		   if(conn != null)
-		   {
-			   conn.close();
-			   conn = null;
-		   }
-	   }
-	   catch(SQLException e)
-	   {
-		   e.printStackTrace();
-	   }   
-   }
-   
-   
+   return con;
+}
 }
