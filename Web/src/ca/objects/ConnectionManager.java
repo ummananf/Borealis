@@ -117,4 +117,20 @@ public class ConnectionManager {
 	   return resultSet;
    }
    
+   public static void closeResultSet(ResultSet resultSet)
+   {
+	   try
+	   {
+		   if(resultSet != null)
+		   {
+			   resultSet.close();
+			   resultSet = null;
+		   }
+	   }
+	   catch (SQLException e)
+	   {
+		   e.printStackTrace();
+	   }
+   }
+   
 }
