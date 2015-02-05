@@ -21,17 +21,23 @@ public class ProfileServlet extends HttpServlet {
 			
 			System.out.println("***********MADE IT HERE************");
 		    User user = new User( req.getParameter( "username" ), req.getParameter( "password" ));
-		    Profile_BO aBO = new Profile_BO( user );
+		    Profile_BO aBO = new Profile_BO(user);
 			System.out.println("u1=" + user.getUsername() + "___ " + user.getPassword());
+			
 		    if (aBO.isValid()) {
+		    	
 		          HttpSession session = req.getSession(true);	    
 		          session.setAttribute(CURRENT_SESSION_USER, aBO.getUser() ); 
-		          RequestDispatcher view = req.getRequestDispatcher("/main.jsp");
+		          
+		          // this doesn't seem to work properly
+		          RequestDispatcher view = req.getRequestDispatcher("main.jsp");
 		          view.forward(req, res);
+		          
 		          //res.sendRedirect("userLogged_throwaway.jsp"); //logged-in page      		
 		     } else { 
 		          //res.sendRedirect("invalidLogin_throwaway.jsp"); //error page 
 		     }
+		    
 		} catch (Throwable theException) {
 		     System.out.println(theException); 
 		}
