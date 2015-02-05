@@ -10,9 +10,9 @@
 
 <%! // Share the client objects across threads to
     // avoid creating new clients for each web request
-    private AmazonEC2         ec2;
-    private AmazonS3           s3;
-    private AmazonDynamoDB dynamo;
+    //private AmazonEC2         ec2;
+    //private AmazonS3           s3;
+    //private AmazonDynamoDB dynamo;
  %>
 
 <%
@@ -26,7 +26,7 @@
      * generating the whole page since this is a HEAD request only. You
      * can employ more sophisticated health checks in your application.
      */
-    if (request.getMethod().equals("HEAD")) return;
+    //if (request.getMethod().equals("HEAD")) return;
 %>
 
 <%
@@ -77,7 +77,7 @@
 				<form action="index.jsp" id="login_form" method="post">
 					<div class="form-group">
 						<label for="j_username" class="t">UserName:</label> 
-						<input id="username" value="" name="" type="text" class="form-control x319 in" 
+						<input id="username" value="" name="username" type="text" class="form-control x319 in" 
 						autocomplete="off">
 					</div>
 					<div class="form-group">
