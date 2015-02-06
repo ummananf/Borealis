@@ -27,9 +27,7 @@ public class ProfileServlet extends HttpServlet {
 		    if (aBO.isValid()) {
 		    	
 		          HttpSession session = req.getSession(true);	    
-		          session.setAttribute(CURRENT_SESSION_USER, aBO.getUser() ); 
-		          
-		          // this doesn't seem to work properly
+		          session.setAttribute(CURRENT_SESSION_USER, aBO.getUser()); 
 		          RequestDispatcher view = req.getRequestDispatcher("main.jsp");
 		          view.forward(req, res);
 		          
