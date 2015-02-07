@@ -70,7 +70,7 @@
 	<div class="main_box">
 		<div class="login_box">
 			<div class="login_logo">
-				<img src="images/LOGO2.png" width="150" height="100" >
+				<img src="images/new_logo.png" width="204" height="70" >
     </div>
 		
 			<div class="login_form">
