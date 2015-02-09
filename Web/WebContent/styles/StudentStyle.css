@@ -93,7 +93,7 @@ body{font-size:12px; line-height:22px;color:#333;}
 .LeftBotton{background:url(../images/Student/default/h_pro_jt.jpg) no-repeat left center; float:left;  width:18px; height:88px; cursor:pointer; display:inline; margin:25px 20px 0 25px; }
 .RightBotton{background:url(../images/Student/default/h_pro_jt1.jpg) no-repeat right center; float:right; width:18px; height:88px; cursor:pointer; display:inline;  margin:25px 0 0 0px;}
 .Cont1{width:704px; height:150px; overflow:hidden; float:left; position:relative;}
-.main_frame{padding-top:20px; overflow:hidden; _zoom:1;}
+.dhbg{padding-top:20px; overflow:hidden; _zoom:1;}
 .dh1{background:url(../images/Student/default/b1.jpg) no-repeat; width:399px; height:214px; float:left;}
 .dh1:hover{background:url(../images/Student/default/b1_1.jpg) no-repeat;}
 .frame_2:hover{background:url(../images/Student/default/b2_1.jpg) no-repeat;}
