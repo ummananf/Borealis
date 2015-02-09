@@ -16,7 +16,7 @@ public class ProfileServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 	         throws ServletException, IOException {
-		
+
 		try {
 			
 		    User user = new User( req.getParameter( "username" ), req.getParameter( "password" ));
@@ -37,7 +37,8 @@ public class ProfileServlet extends HttpServlet {
 		    
 		} catch (Throwable theException) {
 		     System.out.println(theException); 
-		}
+		} 
+		
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse res) 
