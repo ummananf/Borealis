@@ -117,7 +117,7 @@
     <h2 class="myZone">
         My Zone</h2>
 
-    <div class="dhbg">
+    <div class="main_frame">
         <div class="dh1" style="margin: 0 27px 15px 0;">
             <div class="textInFrame">
                 <p>
