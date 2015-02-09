@@ -74,7 +74,7 @@
     </div>
 		
 			<div class="login_form">
-				<form action="index.jsp" id="login_form" method="post">
+				<form action="login" id="login_form" method="post" name="login">
 					<div class="form-group">
 						<label for="j_username" class="t">UserName:</label> 
 						<input id="username" value="" name="username" type="text" class="form-control x319 in" 
@@ -93,8 +93,9 @@
 					</div>
 					<div class="form-group space">
                     	<label class="t"></label>
-						<button type="button"  id="submit_btn" 
-						class="btn btn-primary btn-lg">Submit </button>
+						<!-- <button type="button"  id="submit_btn" 
+						class="btn btn-primary btn-lg">Submit </button> -->
+						<input type="submit" name="login" class="btn btn-primary btn-lg" value="Submit" />
 				      <input type="reset" value="reset" class="btn btn-default btn-lg">
 					</div>
 				</form>
