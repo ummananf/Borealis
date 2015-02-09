@@ -12,7 +12,6 @@
   
  	
 <!-- *********************** -->	
-  
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>ca.servlets.Login</servlet-class>
@@ -57,6 +56,5 @@
 		
 	
 			
-  
-  
+	
 </web-app>

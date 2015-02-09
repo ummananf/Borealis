@@ -40,6 +40,97 @@ public class ConnectionManager {
          System.out.println(e);
       }
 
-   return con;
-}
+      return con;
+   }
+   
+   public static void closeConnection(Connection con)
+   {
+	   try
+	   {
+		   if(null != con)
+		   {
+			   con.close();
+			   con = null;
+		   }
+	   }
+	   catch (SQLException e)
+	   {
+		   e.printStackTrace();
+	   }
+   }
+   
+   public static PreparedStatement getPrepStatement(Connection con, String sql)
+   {
+	   PreparedStatement prepStatement = null;
+	   try
+	   {
+		   prepStatement = con.prepareStatement(sql);
+	   }
+	   catch(SQLException e)
+	   {
+		   e.printStackTrace();
+	   }
+	   return prepStatement;   
+   }
+   
+   public static Statement getStatement(Connection con)
+   {
+	   Statement statement = null;
+	   try
+	   {
+		   statement = con.createStatement();
+	   }
+	   catch (SQLException e)
+	   {
+		   e.printStackTrace();
+	   }
+	   return statement;
+   }
+   
+   public static void closeStatement(Statement statement)
+   {
+	   try
+	   {
+		   if(null != statement)
+		   {
+			   statement.close();
+			   statement = null;
+		   }
+	   }
+	   catch (SQLException e)
+	   {
+		   e.printStackTrace();
+	   }
+   }
+   
+   public static ResultSet executeQuery(Statement statement, String sql)
+   {
+	   ResultSet resultSet = null;
+	   try
+	   {
+		   resultSet = statement.executeQuery(sql);
+	   }
+	   catch (SQLException e)
+	   {
+		   e.printStackTrace();
+	   }
+	   return resultSet;
+   }
+   
+   public static void closeResultSet(ResultSet resultSet)
+   {
+	   try
+	   {
+		   if(resultSet != null)
+		   {
+			   resultSet.close();
+			   resultSet = null;
+		   }
+	   }
+	   catch (SQLException e)
+	   {
+		   e.printStackTrace();
+	   }
+   }
+   
 }
