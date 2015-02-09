@@ -11,12 +11,32 @@
   </welcome-file-list>
   
 	<servlet>
-		<servlet-name>Home</servlet-name>
-		<servlet-class>ca.servlets.ProfileServlet</servlet-class>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>ca.servlets.Login</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Home</servlet-name>
-		<url-pattern>/redirect.jsp</url-pattern>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>IndexJSP</servlet-name>
+   		<jsp-file>/index.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>IndexJSP</servlet-name>
+    	<url-pattern>/index.html</url-pattern>   
+	</servlet-mapping>	
+	
+	<servlet>
+    	<servlet-name>MainJSP</servlet-name>
+   		<jsp-file>/main.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>MainJSP</servlet-name>
+    	<url-pattern>/main.html</url-pattern>   
 	</servlet-mapping>
 	
 </web-app>
