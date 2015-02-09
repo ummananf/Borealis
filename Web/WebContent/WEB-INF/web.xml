@@ -9,7 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
+   
 	<servlet>
 		<servlet-name>Home</servlet-name>
 		<servlet-class>ca.servlets.ProfileServlet</servlet-class>
@@ -17,6 +17,6 @@
 	<servlet-mapping>
 		<servlet-name>Home</servlet-name>
 		<url-pattern>/redirect.jsp</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> 
 	
 </web-app>
