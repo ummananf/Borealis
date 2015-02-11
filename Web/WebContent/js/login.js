@@ -28,7 +28,8 @@
 				}else{
 					//ajax submit form，#login_form is form's ID. example：$('#login_form').ajaxSubmit(function(data) { ... });
 					show_msg('login successfully！  redirecting...','/');
-					window.location.href = "redirect.jsp";
+					window.location.href = "/Borealis-Web/Main";
+					//$("#login_form").submit();
 				}
 			});
 		});
