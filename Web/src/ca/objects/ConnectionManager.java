@@ -6,12 +6,55 @@ import java.util.*;
 
 public class ConnectionManager {
 
-   static Connection con;
-   static String url;
+   private static Connection connection = null;
+   private static String jdbcUrl;
          
-   public static Connection getConnection()
-   {
+   public static Connection getConnection() {
+	   
+	   // Read RDS Connection Information from the Environment
+	   String dbName = System.getProperty("RDS_DB_NAME");
+	   String userName = System.getProperty("RDS_USERNAME");
+	   String password = System.getProperty("RDS_PASSWORD");
+	   String hostname = System.getProperty("RDS_HOSTNAME");
+	   String port = System.getProperty("RDS_PORT");
+	   
+	   jdbcUrl = "jdbc:mysql://" + hostname + ":" +
+			    port + "/" + dbName + "?user=" + userName + "&password=" + password;
+	   
+	   try {
+		    System.out.println("Loading driver...");
+		    Class.forName("com.mysql.jdbc.Driver");
+		    System.out.println("Driver loaded!");
+		  } catch (ClassNotFoundException e) {
+		    throw new RuntimeException("Cannot find the driver in the classpath!", e);
+		  }
+	   
+	   try {
+		    // Create connection to RDS instance
+		   connection = DriverManager.getConnection(jdbcUrl);
+	   } catch (SQLException ex) {
+		    // handle any errors
+		    System.out.println("SQLException: " + ex.getMessage());
+		    System.out.println("SQLState: " + ex.getSQLState());
+		    System.out.println("VendorError: " + ex.getErrorCode());
+	   }
+	   
+	   if (connection == null) {
+		   System.out.println("trying local connection...");
+		   // connect to local db if previous connection failed
+		   try {
+			   connection = DriverManager.getConnection(
+					   "jdbc:mysql://localhost:3306/MySQL", "root", "mysql");
+		   } catch (SQLException ex) {
+			   
+			    // handle any errors
+			    System.out.println("SQLException: " + ex.getMessage());
+			    System.out.println("SQLState: " + ex.getSQLState());
+			    System.out.println("VendorError: " + ex.getErrorCode());
+		   }
+	   }
      
+	   /*
       try
       {
          String url = "jdbc:odbc:" + "DataSource"; 
@@ -39,12 +82,16 @@ public class ConnectionManager {
       {
          System.out.println(e);
       }
+      
+      */
 
-      return con;
+      return connection;
    }
    
    public static void closeConnection(Connection con)
    {
+	   connection = null;
+	   
 	   try
 	   {
 		   if(null != con)
@@ -53,9 +100,11 @@ public class ConnectionManager {
 			   con = null;
 		   }
 	   }
-	   catch (SQLException e)
-	   {
-		   e.printStackTrace();
+	   catch (SQLException ex) {
+		    // handle any errors
+		    System.out.println("SQLException: " + ex.getMessage());
+		    System.out.println("SQLState: " + ex.getSQLState());
+		    System.out.println("VendorError: " + ex.getErrorCode());
 	   }
    }
    

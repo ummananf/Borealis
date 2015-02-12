@@ -53,12 +53,22 @@
 
 <!-- *********************** -->	
 
+<servlet>
+	<servlet-name>InitServlet</servlet-name>
+	<servlet-class>ca.servlets.DBInitServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>InitServlet</servlet-name>
+	<url-pattern>/init</url-pattern>
+</servlet-mapping>
+
   <!-- Welcome file should be the starting page - in this case the login.
   We always want to connect to a servlet first, and then get redirected to the appropriate page
   from the servlet. 
   Note that the welcome-file is the url-pattern of LoginServlet without the forward slash. -->
   <welcome-file-list>
-    <welcome-file>login</welcome-file>
+    <welcome-file>init</welcome-file>
   </welcome-file-list>
 	
 </web-app>
