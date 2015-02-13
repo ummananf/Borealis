@@ -1,4 +1,4 @@
-package ca.objects;
+package ca.persistence;
 
 import java.sql.*;
 import java.util.*;

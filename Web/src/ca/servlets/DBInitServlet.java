@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ca.objects.ConnectionManager;
+import ca.persistence.ConnectionManager;
 
 @SuppressWarnings("serial")
 public class DBInitServlet extends HttpServlet {
