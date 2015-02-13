@@ -21,14 +21,14 @@ public class ConnectionManager {
 	   jdbcUrl = "jdbc:mysql://" + hostname + ":" +
 			    port + "/" + dbName + "?user=" + userName + "&password=" + password;
 	   
+	   // Load driver
 	   try {
-		    System.out.println("Loading driver...");
 		    Class.forName("com.mysql.jdbc.Driver");
-		    System.out.println("Driver loaded!");
 		  } catch (ClassNotFoundException e) {
 		    throw new RuntimeException("Cannot find the driver in the classpath!", e);
 		  }
 	   
+	   // Try to connect to remote RDS
 	   try {
 		    // Create connection to RDS instance
 		   connection = DriverManager.getConnection(jdbcUrl);
@@ -39,9 +39,8 @@ public class ConnectionManager {
 		    System.out.println("VendorError: " + ex.getErrorCode());
 	   }
 	   
+	   // Try to connect to local db (if previous code failed)
 	   if (connection == null) {
-		   System.out.println("trying local connection...");
-		   // connect to local db if previous connection failed
 		   try {
 			   connection = DriverManager.getConnection(
 					   "jdbc:mysql://localhost:3306/MySQL", "root", "mysql");
@@ -53,38 +52,7 @@ public class ConnectionManager {
 			    System.out.println("VendorError: " + ex.getErrorCode());
 		   }
 	   }
-     
-	   /*
-      try
-      {
-         String url = "jdbc:odbc:" + "DataSource"; 
-         // assuming "DataSource" is your DataSource name
-
-         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-         
-         try
-         {            	
-        	//TODO: USERNAME, PASSWORD 
-            con = DriverManager.getConnection(url,"username","password"); 
-             								
-         // assuming your SQL Server's	username is "username"               
-         // and password is "password"
-              
-         }
-         
-         catch (SQLException ex)
-         {
-            ex.printStackTrace();
-         }
-      }
-
-      catch(ClassNotFoundException e)
-      {
-         System.out.println(e);
-      }
-      
-      */
-
+    
       return connection;
    }
    

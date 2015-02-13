@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ca.persistence.ConnectionManager;
+import ca.persistence.DB;
 
 @SuppressWarnings("serial")
 public class DBInitServlet extends HttpServlet {
@@ -56,8 +57,24 @@ public class DBInitServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {
+		String message = "???";
 		
-		res.sendRedirect("/login");
+		DB.execute("CREATE TABLE TestTable (string CHAR(10));");
+		DB.execute("INSERT INTO TestTable (string) VALUES ('hello');");
+		Object[][] data = DB.executeQuery("SELECT * FROM TestTable;");
+		if (data != null) {
+			message = data[0][0].toString();
+		}
+		DB.execute("DROP TABLE TestTable;");
+  
+	      // Set response content type
+	      res.setContentType("text/html");
+
+	      // Actual logic goes here.
+	      PrintWriter out = res.getWriter();
+	      out.println("<h1>" + message + "</h1>");
+		
+//		 res.sendRedirect("/login");
 
 	}
 
