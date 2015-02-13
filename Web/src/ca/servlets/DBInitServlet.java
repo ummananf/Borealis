@@ -27,15 +27,18 @@ public class DBInitServlet extends HttpServlet {
 	@Override
 	public void init() {
 		
-		String createTable = "CREATE TABLE IF NOT EXISTS UserTable (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, username char(50), password char(50), type char(7));";
-		String insertRow = "INSERT INTO UserTable (username, password, type) VALUES ('user', 'password', 'student');";
+		String createUserTable = "CREATE TABLE IF NOT EXISTS "
+				+ "UserTable (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, "
+				+ "username char(50), password char(50), type char(7));";
+		
+		// String insertRow = "INSERT INTO UserTable (username, password, type) VALUES ('user', 'password', 'student');";
 		Connection connection = ConnectionManager.getConnection();
 		
 		if (connection != null) {
 			try {
 				Statement setupStatement = connection.createStatement();
-				setupStatement.addBatch(createTable);
-				setupStatement.addBatch(insertRow);
+				setupStatement.addBatch(createUserTable);
+		//		setupStatement.addBatch(insertRow);
 				setupStatement.executeBatch();
 				setupStatement.close();
 			} catch (SQLException ex) {
