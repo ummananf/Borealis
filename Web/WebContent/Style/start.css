@@ -1,0 +1,17 @@
+@charset "utf-8"; 
+/* CSS Document */
+
+.leftAreaNavigate{border:#bdd7f2 1px solid; border-top:#0080c4 4px solid;border-bottom:#0080c4 4px solid; background:#ebf7ff url(../images/Student/default/leftdhbg.jpg) repeat-y right; margin-left:10px;}
+.leftAreaNavigate .ta1{border-bottom:1px #98c9ee solid; display:block; text-align:center; position:relative; height:38px;line-height:38px;}
+.leftDecoration{position:absolute; background:url(../images/Student/default/leftDecoration.jpg) no-repeat; width:11px; height:52px; left:-11px; top:-4px;}
+.leftDecoration2{position:absolute; background:url(../images/Student/default/leftDecoration2.jpg) no-repeat; width:11px; height:48px; left:-11px; top:-1px;}
+.changeViewLeftArea div{height:28px; line-height:24px;border-bottom:1px #98c9ee dotted;}
+.changeViewLeftArea div a{ display:block; background:#fff;line-height:28px;height:28px; text-align:center;}
+.changeViewLeftArea div a:hover{color:#f30;background:#0080c4; color:#fff;}
+
+
+.workingSpace tr:hover{background-color:#f5fcff}
+
+
+
+
