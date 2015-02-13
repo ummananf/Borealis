@@ -26,9 +26,10 @@
 					show_err_msg('Wait, where is your password?');
 					$('#password').focus();
 				}else{
-					//ajax submit formï¼Œ#login_form is form's ID. exampleï¼š$('#login_form').ajaxSubmit(function(data) { ... });
-					show_msg('login successfullyï¼�  redirecting...','/');
-					window.location.href = "redirect.jsp";
+					//ajax submit form，#login_form is form's ID. example：$('#login_form').ajaxSubmit(function(data) { ... });
+					show_msg('login successfully！  redirecting...','/');
+					window.location.href = "/Borealis-Web/Main";
+					//$("#login_form").submit();
 				}
 			});
 		});

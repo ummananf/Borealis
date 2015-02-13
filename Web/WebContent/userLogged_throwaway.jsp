@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ page import="ca.servlets.ProfileServlet" %>
+<%@ page import="ca.servlets.Login" %>
 <%@ page import="ca.objects.User" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -10,7 +10,9 @@
 </head>
 <body>
 	<center>
-   		<% User user = (User) session.getAttribute(ProfileServlet.CURRENT_SESSION_USER); %>
+   		<%
+   			User user = (User) session.getAttribute(Login.CURRENT_SESSION_USER);
+   		%>
 			
           <p>Welcome <%= user.getUsername() %> </p>
     </center>

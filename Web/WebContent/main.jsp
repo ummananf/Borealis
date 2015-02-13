@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="ca.servlets.Login" %>
+<%@ page import="ca.objects.User" %>
+
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,6 +19,10 @@
 		<!-- degree title -->
 		
 		<p class="center">Bachelors degree in Course Science</p>
+		
+		<% User user = (User) session.getAttribute(Login.CURRENT_SESSION_USER); %>
+			
+          <p>Welcome! You have logged in: <br/> username:<%= user.getUsername() %> <br/> password:<%= user.getPassword() %> <br/> Congratulations! </p>
 		
 		<!-- this value is going to be calculated based on courses completed / total courses left
 		(or rather credit hours achieved / total credit hours?) also taking into account required minimum grade
@@ -51,6 +59,8 @@
 	<div id="schedule">
 	
 		<p class="center">Schedule</p>
+		
+
 		
 		<!-- this is a full blown feature so it's not ready yet... -->
 		
