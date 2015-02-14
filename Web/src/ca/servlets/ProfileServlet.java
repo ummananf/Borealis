@@ -18,10 +18,6 @@ public class ProfileServlet extends HttpServlet {
 	         throws ServletException, IOException {
 
 		try {
-<<<<<<< HEAD
-			
-=======
->>>>>>> origin/master
 		    User user = new User( req.getParameter( "username" ), req.getParameter( "password" ));
 		    Profile_BO aBO = new Profile_BO(user);
 			System.out.println("u1=" + user.getUsername() + "___ " + user.getPassword());
