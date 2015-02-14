@@ -1,4 +1,5 @@
 [Feb 14]
-	-Let's all have a schema in our local mysql DB called "borealisDB" for easier connection, otherwise we gotta change this 
-	info in ConnectionManager class each time we pull code from repo. 
+	-Let's all have a schema in our local mysql DB called "borealisDB" and use a username of "user" & pass of "comp4350" for easier connection,
+	otherwise we gotta change this each time. NOTE: you may have to use your root account the first time for some reason. 
 	-DB is initialized with the borealisInit.sql script. This requires mybatis jar file (should be in WEB-INF/lib)
+	
