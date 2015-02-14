@@ -1,3 +1,4 @@
 [Feb 14]
-	-Let's all have a schema in our local mysql DB called "borealisDB", so easier to connect from ConnectionManager class
+	-Let's all have a schema in our local mysql DB called "borealisDB" for easier connection, otherwise we gotta change this 
+	info in ConnectionManager class each time we pull code from repo. 
 	-DB is initialized with the borealisInit.sql script. This requires mybatis jar file (should be in WEB-INF/lib)
