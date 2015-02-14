@@ -18,7 +18,8 @@ import com.fdsapi.ResultSetConverter;
 
 public class DB {
 	
-	/// Initialize structure and items of database if not already done so.
+	/// Initialize structure and items of database if not already done so. This should only be done the first time
+	/// running on a new system, can comment the call to this method after done so.
 	public static void init()
 	{	
 		Connection connection = ConnectionManager.getConnection();
@@ -45,6 +46,22 @@ public class DB {
 	}
 	
 	
+	/// This should be refactored somewhere..
+	public static String getUserData(String username)
+	{
+		String query = "SELECT password FROM Users WHERE username = '" + username + "';";
+		Object[][] data = null;
+		String password = "";
+		
+		data = executeQuery(query);
+		if(data != null)
+		{
+			password = data[0][0].toString();
+			System.out.println("password retrieved: " + password);
+		}
+
+		return password;
+	}
 	
 	// execute regular queries: create, insert, etc.
 	public static boolean execute(String query) {

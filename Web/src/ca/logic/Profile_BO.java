@@ -1,6 +1,7 @@
 package ca.logic;
 
 import ca.objects.User;
+import ca.persistence.DB;
 
 /**
  * This class is used as the business logic class - will talk to the persistence and send data back to the servlet layer through returns
@@ -17,8 +18,12 @@ public class Profile_BO {
 	}
 	
 	public boolean isValid() {
-		//removed logic for now...
-		return true;
+		boolean result = false;
+		
+		if( user.getPassword().equals(DB.getUserData(user.getUsername())) )
+			result = true;
+		
+		return result;
 	}
 	
 	public User getUser() {
