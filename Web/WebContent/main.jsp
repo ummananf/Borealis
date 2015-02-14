@@ -45,7 +45,7 @@
                             full time</option>
                         
                     </select>
-                    77xxxxx studentÔºöxxÔºåWelcome backÔºÅ <a href="MyInfo/main.jsp">MyInfo</a> <a href="User/StudentInfor/annoucements.jsp">
+                    77xxxxx student:xxx åWelcome backÅ <a href="MyInfo/main.jsp">MyInfo</a> <a href="User/StudentInfor/annoucements.jsp">
                         anouncement</a> <a href="User/Account/changePassword.jsp">change psw</a> <a onclick="loginOut()"
                             href="javascript:">logout</a>
                 </div>
