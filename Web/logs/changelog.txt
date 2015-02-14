@@ -1,0 +1,3 @@
+[Feb 14]
+	-Let's all have a schema in our local mysql DB called "borealisDB", so easier to connect from ConnectionManager class
+	-DB is initialized with the borealisInit.sql script. This requires mybatis jar file (should be in WEB-INF/lib)

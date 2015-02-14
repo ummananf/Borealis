@@ -43,7 +43,7 @@ public class ConnectionManager {
 	   if (connection == null) {
 		   try {
 			   connection = DriverManager.getConnection(
-					   "jdbc:mysql://localhost:3306/MySQL", "root", "mysql");
+					   "jdbc:mysql://localhost:3306/borealisDB", "mike", "Onibaku889");
 		   } catch (SQLException ex) {
 			   
 			    // handle any errors

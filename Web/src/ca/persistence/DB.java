@@ -1,9 +1,14 @@
 package ca.persistence;
 
+
+
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import org.apache.ibatis.jdbc.ScriptRunner;
 
 import com.fdsapi.ResultSetConverter;
 
@@ -13,13 +18,42 @@ import com.fdsapi.ResultSetConverter;
 
 public class DB {
 	
+	/// Initialize structure and items of database if not already done so.
+	public static void init()
+	{	
+		Connection connection = ConnectionManager.getConnection();
+		
+		if (connection != null) {
+			// Execute sql script to initialze DB
+			ScriptRunner runner = new ScriptRunner(connection);
+			InputStreamReader reader = null;
+			
+			try {
+				reader = new InputStreamReader(DB.class.getResourceAsStream("../sqlScripts/borealisInit.sql"));
+				
+				runner.runScript(reader);
+				
+				reader.close();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+			    System.out.println("Closing the connection.");
+			    if (connection != null) ConnectionManager.closeConnection(connection);
+			}
+		}
+	}
+	
+	
+	
 	// execute regular queries: create, insert, etc.
 	public static boolean execute(String query) {
 		
 		boolean success = false;
 		Statement statement = null;
 		
-		Connection connection = ConnectionManager.getConnection();	
+		Connection connection = ConnectionManager.getConnection();
+		
 		
 		try {
 			statement = connection.createStatement();
