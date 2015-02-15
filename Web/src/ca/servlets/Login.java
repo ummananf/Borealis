@@ -34,10 +34,8 @@ public class Login extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException 
 	{
-
 		System.out.println("POSTED");
 		
-
 	    User user = new User( req.getParameter( "username" ), req.getParameter( "password" ));
 	    Profile_BO aBO = new Profile_BO( user );
 	
@@ -46,15 +44,13 @@ public class Login extends HttpServlet {
 	          HttpSession session = req.getSession(true);	    
 	          session.setAttribute(CURRENT_SESSION_USER, aBO.getUser() ); 
 
-	          res.sendRedirect("/Borealis-Web/main");
+	          res.sendRedirect("main");
 	     }
 		        
 	     else{ 
-	          res.sendRedirect("/Borealis-Web/invalidLogin_throwaway.jsp");
+	          res.sendRedirect("invalidLogin_throwaway.jsp");
 	     }
 	
-		
-		
 	}
 	
 	public void destroy()

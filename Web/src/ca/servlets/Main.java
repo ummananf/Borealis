@@ -25,9 +25,17 @@ public class Main extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
 	{
-		
-		RequestDispatcher view = req.getRequestDispatcher("main.jsp");
-		view.forward(req, res);	 
+		// Check if user has a session, if not, don't allow access
+		if(req.getSession().getAttribute(CURRENT_SESSION_USER) != null)
+		{
+			RequestDispatcher view = req.getRequestDispatcher("main.jsp");
+			view.forward(req, res);
+		}
+		else
+		{
+			RequestDispatcher view = req.getRequestDispatcher("authRequired.jsp");
+			view.forward(req, res);
+		}
 		
 	}
 	
