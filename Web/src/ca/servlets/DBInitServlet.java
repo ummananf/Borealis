@@ -40,24 +40,24 @@ public class DBInitServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {
-		String message = "???";
+//		String message = "???";
+//		
+//		DB.execute("CREATE TABLE TestTable (string CHAR(10));");
+//		DB.execute("INSERT INTO TestTable (string) VALUES ('hello');");
+//		Object[][] data = DB.executeQuery("SELECT * FROM TestTable;");
+//		if (data != null) {
+//			message = data[0][0].toString();
+//		}
+//		DB.execute("DROP TABLE TestTable;");
+//  
+//	      // Set response content type
+//	      res.setContentType("text/html");
+//
+//	      // Actual logic goes here.
+//	      PrintWriter out = res.getWriter();
+//	      out.println("<h1>" + message + "</h1>");
 		
-		DB.execute("CREATE TABLE TestTable (string CHAR(10));");
-		DB.execute("INSERT INTO TestTable (string) VALUES ('hello');");
-		Object[][] data = DB.executeQuery("SELECT * FROM TestTable;");
-		if (data != null) {
-			message = data[0][0].toString();
-		}
-		DB.execute("DROP TABLE TestTable;");
-  
-	      // Set response content type
-	      res.setContentType("text/html");
-
-	      // Actual logic goes here.
-	      PrintWriter out = res.getWriter();
-	      out.println("<h1>" + message + "</h1>");
-		
-//		 res.sendRedirect("/login");
+		 res.sendRedirect("/Borealis-Web/login");
 
 	}
 
