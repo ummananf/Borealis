@@ -1,7 +1,15 @@
 -- We must create restrictions in our logic code to not allow some users to be in tables (like students can't be in Teaches table)
 -- Note the syntax must be specific otherwise there are errors
---DROP TABLE DegreeChoice; DROP TABLE DegreeCourses; DROP TABLE Degrees; DROP TABLE Teaches; DROP TABLE Enrolled; DROP TABLE Sections; 
---DROP TABLE Prereqs; DROP TABLE Courses; DROP TABLE UserPrivs; DROP TABLE Users;
+--DROP TABLE DegreeChoice;
+--DROP TABLE DegreeCourses; 
+--DROP TABLE Degrees;
+--DROP TABLE Teaches; 
+--DROP TABLE Enrolled; 
+--DROP TABLE Sections;
+--DROP TABLE Prereqs; 
+--DROP TABLE Courses; 
+--DROP TABLE UserPrivs; 
+--DROP TABLE Users;
 
 
 CREATE TABLE Users
@@ -115,7 +123,7 @@ INSERT INTO Prereqs VALUES ('COMP1010', 'COMP1020', 2.0);
 INSERT INTO Sections VALUES ('A01', 'COMP1010', '2014-09-01', 100, 'MWF', '13:30:00', '14:20:00', 'E2-105');
 INSERT INTO Sections VALUES ('A01', 'COMP1020', '2015-01-01', 100, 'MWF', '13:30:00', '14:20:00', 'E2-110');
 
-INSERT INTO Enrolled VALUES (2, 'A01', 'COMP1010', '2014-09-01', 3.0);
+INSERT INTO Enrolled VALUES (2, 'A01', 'COMP1010', '2014-09-01', 3.5);
 INSERT INTO Enrolled VALUES (2, 'A01', 'COMP1020', '2015-01-01', NULL);
 
 INSERT INTO Degrees VALUES ('Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);

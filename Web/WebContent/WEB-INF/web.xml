@@ -5,6 +5,7 @@
 	id="WebApp_ID" version="2.5">
 	<display-name>Borealis-Web</display-name>
 	
+	
 	<!-- Welcome file should be the starting page - in this case the login.
 	We always want to connect to a servlet first, and then get redirected to the appropriate page
 	from the servlet. 
