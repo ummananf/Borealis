@@ -1,7 +1,16 @@
 package ca.tests;
 
-public class Profile_Test {
+import static org.junit.Assert.*;
+import org.junit.*;
 
-	// WEEEEEEEEEEEEEEEE
+
+public class Profile_Test 
+{
+	@Test
+	public void testStuff()
+	{
+		int i = 0;
+		assertTrue(i == 0);
+	}
 	
 }
