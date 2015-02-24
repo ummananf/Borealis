@@ -14,9 +14,9 @@
 
 CREATE TABLE Users
 (
-	userID int PRIMARY KEY NOT NULL, 
+	userID int PRIMARY KEY, 
 	username varchar(20) UNIQUE NOT NULL, 
-	password varchar(50) NOT NULL, 
+	password varchar(50), 
 	email varchar(50) UNIQUE NOT NULL, 
 	fName varchar(20), 
 	lName varchar(20) 
@@ -30,7 +30,7 @@ CREATE TABLE UserPrivs
 );
 CREATE TABLE Courses
 (
-	cID varchar(10) PRIMARY KEY NOT NULL, 
+	cID varchar(10) PRIMARY KEY, 
 	cName varchar(50), 
 	creditHrs smallint,
 	faculty varchar(50),
