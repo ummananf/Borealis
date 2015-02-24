@@ -47,6 +47,7 @@ public class DB {
 	
 	
 	/// This should be refactored somewhere..
+	/*
 	public static String getUserData(String username)
 	{
 		String query = "SELECT password FROM Users WHERE username = '" + username + "';";
@@ -61,7 +62,7 @@ public class DB {
 		}
 
 		return password;
-	}
+	}*/
 	
 	// execute regular queries: create, insert, etc.
 	public static boolean execute(String query) {
