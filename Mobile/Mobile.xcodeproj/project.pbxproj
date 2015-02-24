@@ -44,7 +44,6 @@
 		817F45A31A92839D00348919 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		817F45A51A92839D00348919 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		817F45A71A92839D00348919 /* Mobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mobile-Prefix.pch"; sourceTree = "<group>"; };
-		817F45A81A92839D00348919 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		817F45A91A92839D00348919 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		817F45AC1A92839D00348919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		817F45AF1A92839D00348919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
@@ -117,7 +116,6 @@
 		817F459F1A92839D00348919 /* Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				817F45A81A92839D00348919 /* AppDelegate.h */,
 				817F45A91A92839D00348919 /* AppDelegate.m */,
 				817F45AB1A92839D00348919 /* Main_iPhone.storyboard */,
 				817F45AE1A92839D00348919 /* Main_iPad.storyboard */,
@@ -480,6 +478,7 @@
 				817F45D01A92839E00348919 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		817F45D11A92839E00348919 /* Build configuration list for PBXNativeTarget "MobileTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +487,7 @@
 				817F45D31A92839E00348919 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

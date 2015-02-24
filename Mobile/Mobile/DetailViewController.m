@@ -9,6 +9,11 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *goButton;
+@property (weak, nonatomic) IBOutlet UITextField *urlTextBox;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
 @end
@@ -16,6 +21,11 @@
 @implementation DetailViewController
 
 #pragma mark - Managing the detail item
+
+- (IBAction)goButtonClick:(id)sender
+{
+    self.label.text = self.urlTextBox.text;
+}
 
 - (void)setDetailItem:(id)newDetailItem
 {
