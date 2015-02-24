@@ -105,8 +105,8 @@ body{font-size:12px; line-height:22px;color:#333;}
 .textInFrame{padding:60px 0 0 120px; line-height:24px;}
 .textInFrame p{background:url(../images/Student/default/ico1.jpg) no-repeat 0 10px; padding-left:10px;}
 .btright{text-align:right; border-top:1px #ddd dotted; padding:10px 10px 0 0; margin:10px 20px 0 0;}
-.xxlc{background:url(../images/Student/default/bg_lc.jpg) repeat-x bottom; overflow:hidden; _zoom:1}
-.lcbt{background:url(../images/Student/default/ico2.jpg) no-repeat 0 0; padding:2px 5px 6px 25px; font-size:16px; color:#077fcd; border-bottom:2px #459ee0 solid; display:block; float:left;}
-.lcbiao{height:48px; background:url(../images/Student/default/lc.jpg) repeat-x bottom; margin:20px 0 0 0; padding-left:50px;}
-.lctime{width:100px; height:48px; background:url(../images/Student/default/lc2.jpg) no-repeat center bottom; float:left; text-align:center;cursor:pointer;}
+.securityDiv{background:url(../images/Student/default/bg_lc.jpg) repeat-x bottom; overflow:hidden; _zoom:1}
+.securityBanner{background:url(../images/Student/default/ico2.jpg) no-repeat 0 0; padding:2px 5px 6px 25px; font-size:16px; color:#077fcd; border-bottom:2px #459ee0 solid; display:block; float:left;}
+.trackTable{height:48px; background:url(../images/Student/default/lc.jpg) repeat-x bottom; margin:20px 0 0 0; padding-left:50px;}
+.timeCell{width:100px; height:48px; background:url(../images/Student/default/lc2.jpg) no-repeat center bottom; float:left; text-align:center;cursor:pointer;}
 .lctime2{width:100px; height:48px; background:url(../images/Student/default/lc1.jpg) no-repeat center bottom; float:left; text-align:center; color:#0066CC; font-weight:700; cursor:pointer;}
