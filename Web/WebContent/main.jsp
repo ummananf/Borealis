@@ -2,7 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
 	Borealis
-</title><link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" /><link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" /><link href="Style/start.css" rel="stylesheet" type="text/css" />
+</title>
+<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
+<link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" />
+<link href="Style/start.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 .banner .bannerFrame .page .topOptions {
 	font-family: Comic Sans MS, cursive;
@@ -20,7 +23,6 @@
 <script src="Script/rl.js" type="text/javascript"></script>
 </head>
 <body>
-
 
     <div class="banner">
         <div class="bannerFrame">
