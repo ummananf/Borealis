@@ -13,7 +13,6 @@
 </style>
 <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
     <script src="Script/Common.js" type="text/javascript"></script>
     <script src="Script/Data.js" type="text/javascript"></script>
     
@@ -21,7 +20,6 @@
 <script src="Script/rl.js" type="text/javascript"></script>
 </head>
 <body>
-
 
 
     <div class="banner">
@@ -45,7 +43,7 @@
                             full time</option>
                         
                     </select>
-                    77xxxxx student:xxx åWelcome backÅ <a href="MyInfo/main.jsp">MyInfo</a> <a href="User/StudentInfor/annoucements.jsp">
+                    77xxxxx student:xxx Welcome back <a href="MyInfo/main.jsp">MyInfo</a> <a href="User/StudentInfor/annoucements.jsp">
                         anouncement</a> <a href="User/Account/changePassword.jsp">change psw</a> <a onclick="loginOut()"
                             href="javascript:">logout</a>
                 </div>
