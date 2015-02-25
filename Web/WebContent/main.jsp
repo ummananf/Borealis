@@ -71,60 +71,91 @@
                     </div>
                     <div class="changeViewLeftArea">
                         <div>
-                            <a href="MyInfo/main.jsp">my info</a></div>
+                            <a href="MyInfo/main.jsp">my info</a>
+						</div>
+						
                         <div>
                             <a href="MyInfo/classInfo.jsp">class info </a>
                         </div>
+						
                         <div>
-                            <a href="User/StudentInfor/messages.jsp">messages</a></div>
+                            <a href="User/StudentInfor/messages.jsp">messages</a>
+						</div>
+						
                         <div>
-                            <a href="User/StudentInfor/annoucements.jsp">dean's info</a></div>
+                            <a href="User/StudentInfor/annoucements.jsp">dean's info</a>
+						</div>
+						
                         <div>
-                            <a href="MyInfo/appeals.jsp">appeals</a></div>
+                            <a href="MyInfo/appeals.jsp">appeals</a>
+						</div>
                     </div>
+					
                     <div class="ta1">
                         <strong>academic center</strong>
                         <div class="leftDecoration2">
                         </div>
                     </div>
+					
                     <div class="changeViewLeftArea">
                         <div>
-                            <a href="EducationCenter/myExam.jsp">my exam</a></div>
+                            <a href="EducationCenter/myExam.jsp">my exam</a>
+						</div>
+						
                         <div>
-                            <a href="EducationCenter/grade.jsp">my grade</a></div>
+                            <a href="EducationCenter/grade.jsp">my grade</a>
+						</div>
+						
                         <div>
-                            <a href="EducationCenter/books.jsp">books &amp; materials</a></div>
+                            <a href="EducationCenter/books.jsp">books &amp; materials</a>
+						</div>
                     </div>
+					
                     <div class="ta1">
-                        <strong>learning center</strong><div class="leftDecoration2">
-                        </div>
+                        <strong>learning center</strong>
+					
+						<div class="leftDecoration2">
+                        
+						</div>
                     </div>
-                    <div class="changeViewLeftArea">
+                    
+					<div class="changeViewLeftArea">
                         <div>
-                            <a href="OnlineTeaching/materialsDownload.jsp"> material download</a></div>
+                            <a href="OnlineTeaching/materialsDownload.jsp"> material download</a>
+						</div>
                         <div>
-                            <a href="OnlineTeaching/progressBar.jsp">progress bar</a></div>
+                            <a href="OnlineTeaching/progressBar.jsp">progress bar</a>
+						</div>
                     </div>
                    
                     <div class="ta1">
-                        <strong>finance center</strong><div class="leftDecoration2">
-                        </div>
+                        <strong>finance center</strong>
+						
+						<div class="leftDecoration2">
+                        
+						</div>
                     </div>
-                    <div class="changeViewLeftArea">
+                    
+					<div class="changeViewLeftArea">
                         <div>
-                            <a href="MyAccount/tuition.jsp">check tuition</a></div>
+                            <a href="MyAccount/tuition.jsp">check tuition</a>
+						</div>
                     </div>
-<div class="ta1">
+				
+					<div class="ta1">
                         <a href="http://www.google.ca" target="_blank"><strong>teaching system</strong></a>
                         <div class="leftDecoration2">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="rightbox">
+            
+			</div>
+            
+			<div class="rightbox">
                 
-    <h2 class="pathNavigator">
-        My Zone</h2>
+			<h2 class="pathNavigator">
+				My Zone
+			</h2>
 
     <div class="innerMainFrame">
         <div class="innerMainFrameTopLeft" style="margin: 0 27px 15px 0;">
@@ -205,7 +236,7 @@
         <div class="timeCell">
              2014-02-07</div>
     </div>
-    <div class="xxjl">
+    <div class="detailedTime">
     
         <div align="center">
         <span>
@@ -215,7 +246,6 @@
              
               </span>
             </div>
-           
            
         <div align="center">
         <span>
