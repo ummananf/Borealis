@@ -20,9 +20,15 @@ public class Profile_BO {
 	
 	public boolean isValid() {
 		boolean result = false;
+		Object[][] data = StudentDataRetrieval.getUserData(user.getUsername());
+		String password = data[0][2].toString();
 		
-		if( user.getPassword().equals(StudentDataRetrieval.getUserData(user.getUsername())) )
+		if( user.getPassword().equals(password) ){
+			user.loadData(data);
+			
 			result = true;
+			
+		}
 		
 		return result;
 	}

@@ -2,21 +2,19 @@ package ca.persistence;
 
 public class StudentDataRetrieval {
 	
-	public static String getUserData(String username)
+	public static Object[][] getUserData(String username)
 	{
-		String query = "SELECT password FROM Users WHERE username = '" + username + "';";
+		String query = "SELECT * FROM Users WHERE username = '" + username + "';";
 		Object[][] data = null;
 		String password = "";
 		
 		data = DB.executeQuery(query);
 		if(data != null)
 		{
-			password = data[0][0].toString();
-			System.out.println("password retrievedadsfaadadf: " + password);
+			password = data[0][2].toString();
+			System.out.println("password retrieved: " + password);
 		}
-		
-		System.out.println("This has been called");
 
-		return password;
+		return data;
 	}
 }
