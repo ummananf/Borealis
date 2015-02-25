@@ -2,7 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
 	Borealis
-</title><link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" /><link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" /><link href="Style/start.css" rel="stylesheet" type="text/css" />
+</title>
+<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
+<link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" />
+<link href="Style/start.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 .banner .bannerFrame .page .topOptions {
 	font-family: Comic Sans MS, cursive;
@@ -13,7 +16,6 @@
 </style>
 <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/i18n/jquery.jBox-zh-CN.js" type="text/javascript"></script>
     <script src="Script/Common.js" type="text/javascript"></script>
     <script src="Script/Data.js" type="text/javascript"></script>
     
@@ -21,8 +23,6 @@
 <script src="Script/rl.js" type="text/javascript"></script>
 </head>
 <body>
-
-
 
     <div class="banner">
         <div class="bannerFrame">
@@ -45,7 +45,7 @@
                             full time</option>
                         
                     </select>
-                    77xxxxx student:xxx åWelcome backÅ <a href="MyInfo/main.jsp">MyInfo</a> <a href="User/StudentInfor/annoucements.jsp">
+                    77xxxxx student:xxx Welcome back <a href="MyInfo/main.jsp">MyInfo</a> <a href="User/StudentInfor/annoucements.jsp">
                         anouncement</a> <a href="User/Account/changePassword.jsp">change psw</a> <a onclick="loginOut()"
                             href="javascript:">logout</a>
                 </div>
@@ -186,23 +186,23 @@
         </div>
     </div>
 
-    <div class="xxlc">
-        <strong class="lcbt">Security track:</strong>
+    <div class="securityDiv">
+        <strong class="securityBanner">Security track:</strong>
     </div>
-    <div class="lcbiao">
-        <div class="lctime">
+    <div class="trackTable">
+        <div class="timeCell">
             2015-02-01</div>
-        <div class="lctime">
+        <div class="timeCell">
             2015-02-02</div>
-        <div class="lctime">
+        <div class="timeCell">
              2015-02-03</div>
         <div class="lctime2">
             2015-02-04</div>
-        <div class="lctime">
+        <div class="timeCell">
              2014-02-05</div>
-        <div class="lctime">
+        <div class="timeCell">
              2014-02-06</div>
-        <div class="lctime">
+        <div class="timeCell">
              2014-02-07</div>
     </div>
     <div class="xxjl">
