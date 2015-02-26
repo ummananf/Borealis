@@ -28,7 +28,7 @@
 	
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
-		<servlet-class>ca.servlets.Login</servlet-class>
+		<servlet-class>ca.servlets.LoginServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -38,7 +38,7 @@
 
 	<servlet>
 		<servlet-name>MainServlet</servlet-name>
-		<servlet-class>ca.servlets.Main</servlet-class>
+		<servlet-class>ca.servlets.MainServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
