@@ -1,9 +1,8 @@
 package ca.logic;
 
+import ca.model.StudentModel;
 import ca.objects.User;
 import ca.persistence.DB;
-import ca.persistence.StudentDataRetrieval;
-
 /**
  * This class is used as the business logic class - will talk to the persistence and send data back to the servlet layer through returns
  * @author IceMasterCho
@@ -20,7 +19,7 @@ public class Profile_BO {
 	
 	public boolean isValid() {
 		boolean result = false;
-		Object[][] data = StudentDataRetrieval.getUserData(user.getUsername());
+		Object[][] data = StudentModel.getUserData(user.getUsername());
 		String password = data[0][2].toString();
 		
 		if( user.getPassword().equals(password) ){
