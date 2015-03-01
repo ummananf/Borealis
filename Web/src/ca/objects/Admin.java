@@ -1,5 +1,7 @@
 package ca.objects;
 
+import java.sql.ResultSet;
+
 public class Admin extends User {
 
 	public Admin(int userID, String username, String password, String email,
@@ -8,7 +10,7 @@ public class Admin extends User {
 		
 		
 	}
-	public Admin(Object[][] data)
+	public Admin(ResultSet data)
 	{
 		super(data);
 	}

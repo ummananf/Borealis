@@ -1,5 +1,7 @@
 package ca.objects;
 
+import java.sql.ResultSet;
+
 public class Student extends User {
 
 	public Student(int userID, String username, String password, String email,
@@ -7,7 +9,7 @@ public class Student extends User {
 		super(userID, username, password, email, fName, lName, type);
 	}
 	
-	public Student(Object[][] data)
+	public Student(ResultSet data)
 	{
 		super(data);
 	}

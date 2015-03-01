@@ -1,5 +1,8 @@
 package ca.objects;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class User {
 
 	private int userID;
@@ -16,15 +19,21 @@ public class User {
 	}
 	
 	// For creating from DB data:
-	public User(Object[][] data)
+	public User(ResultSet data)
 	{
-		userID = Integer.parseInt(data[0][0].toString());
-		username = data[0][1].toString();
-		password = data[0][2].toString();
-		email = data[0][3].toString();
-		firstName = data[0][4].toString();
-		lastName = data[0][5].toString();
-		type = data[0][6].toString();
+		try {
+			// Get attributes from table at current row by querying column labels
+			userID = data.getInt("userID");
+			username = data.getString("username");
+			password = data.getString("password");
+			email = data.getString("email");
+			firstName = data.getString("fName");
+			lastName = data.getString("lName");
+			type = data.getString("userType");
+		} catch (SQLException e) {
+			System.out.println("error creating new User from DB data");
+			e.printStackTrace();
+		}
 	}
 
 	public String getUsername() {
@@ -40,13 +49,5 @@ public class User {
 				+ "\nFirst Name: " + this.firstName + "\nLast Name: "
 				+ this.lastName + "\nEmail: " + this.email +"\nUser Type: "+type;
 	}
-
-//	public void loadData(Object[][] data) {
-//		this.email = data[0][3].toString();
-//		this.firstName = data[0][4].toString();
-//		this.lastName = data[0][5].toString();
-//
-//		System.out.println(this.toString());
-//	}
 
 }

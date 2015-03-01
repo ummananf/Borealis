@@ -2,13 +2,12 @@ package ca.servlets;
 
 //Import required java libraries
 import java.io.*;
-import java.util.Map;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 
 import ca.objects.*;
-import ca.logic.UserLogic;
+import ca.logic.LoginLogic;
 
 //Extend HttpServlet class
 @SuppressWarnings("serial")
@@ -33,8 +32,8 @@ public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		
-		UserLogic userService = new UserLogic();
-		User user = userService.getUserIfValid(req.getParameter("username"), req.getParameter("password"));
+		LoginLogic loginService = new LoginLogic();
+		User user = loginService.getUserIfValid(req.getParameter("username"), req.getParameter("password"));
 
 		if (user != null) {
 			HttpSession session = req.getSession(true);

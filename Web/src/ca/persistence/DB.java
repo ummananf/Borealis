@@ -6,14 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.jdbc.ScriptRunner;
-
-import com.fdsapi.ResultSetConverter;
 
 // this class makes it easier to execute db statement and retrieve data
 // without having to deal with opening and closing connections, statements, results etc.
-// uses a ResultSetConverter from an external lib to convert a ResultSet to a Object[][] array.
+// uses a ResultSetConverter from an external lib to convert a ResultSet to a ResultSet array.
 
+// TODO: get rid of this class??
 public class DB {
 
 	// / Initialize structure and items of database if not already done so. This
@@ -70,9 +70,7 @@ public class DB {
 	}
 
 	// execute queries that should return a result (select).
-	public static Object[][] executeQuery(String query) {
-
-		Object[][] data = null;
+	public static ResultSet executeQuery(String query) {
 		Statement statement = null;
 		ResultSet resultSet = null;
 		Connection connection = ConnectionManager.getConnection();
@@ -80,7 +78,6 @@ public class DB {
 		try {
 			statement = connection.createStatement();
 			resultSet = statement.executeQuery(query);
-			data = new ResultSetConverter(resultSet).getResultSet();
 			statement.close();
 			ConnectionManager.closeConnection(connection);
 		} catch (SQLException e) {
@@ -90,7 +87,7 @@ public class DB {
 			System.out.println("VendorError: " + e.getErrorCode());
 		}
 
-		return data;
+		return resultSet;
 	}
 
 }
