@@ -80,6 +80,8 @@
                     </div>
                     <div class="changeViewLeftArea">
                         <div>
+                            <a href="registerCourses.jsp">register courses</a></div>
+						<div>
                             <a href="myExam.jsp">my exam</a></div>
                         <div>
                             <a href="grade.jsp">my grade</a></div>
@@ -118,6 +120,7 @@
         academic center &gt; my exam</h2>
     <div class="changeViewMainArea">
         <ul>
+            <li><a class="tab1" href="registerCourses.jsp">Register Courses</a></li>
             <li><a class="tab1" href="myExam.jsp">my exams</a></li>
             <li><a class="tab2" href="grade.jsp">my grade</a></li>
             <li><a class="tab2" href="books.jsp">books & materials</a></li>

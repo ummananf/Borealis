@@ -71,6 +71,8 @@
                     </div>
                     <div class="changeViewLeftArea">
                         <div>
+                            <a href="../../EducationCenter/registerCourses.jsp">register courses</a></div>
+						<div>
                             <a href="../../EducationCenter/myExam.jsp">my exam</a></div>
                         <div>
                             <a href="../../EducationCenter/grade.jsp">my grade</a></div>
