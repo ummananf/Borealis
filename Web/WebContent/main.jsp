@@ -88,13 +88,16 @@
                         </div>
                     </div>
                     <div class="changeViewLeftArea">
+                         <div>
+                            <a href="EducationCenter/registerCourses.jsp">register courses</a></div>
                         <div>
                             <a href="EducationCenter/myExam.jsp">my exam</a></div>
                         <div>
                             <a href="EducationCenter/grade.jsp">my grade</a></div>
                         <div>
                             <a href="EducationCenter/books.jsp">books &amp; materials</a></div>
-                    </div>
+                    </div> 
+                    
                     <div class="ta1">
                         <strong>learning center</strong><div class="leftDecoration2">
                         </div>
@@ -118,7 +121,7 @@
                         <a href="http://www.google.ca" target="_blank"><strong>teaching system</strong></a>
                         <div class="leftDecoration2">
                         </div>
-                    </div>
+                  </div>
                 </div>
             </div>
             <div class="rightbox">
