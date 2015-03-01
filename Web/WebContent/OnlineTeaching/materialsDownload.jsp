@@ -71,6 +71,8 @@
                         </div>
                     </div>
                     <div class="changeViewLeftArea">
+						<div>
+                            <a href="../EducationCenter/registerCourses.jsp">register courses</a></div>
                         <div>
                             <a href="../EducationCenter/myExam.jsp">my exam</a></div>
                         <div>
@@ -115,38 +117,38 @@
 			  $('.selectpicker').selectpicker();
 		</script>
         <ul>
-            <li><strong>Course：</strong><a href="#" id="cAll" onclick='searchData("","c")'>all</a>
+            <li><strong>Course：</strong>
                 
-                <a href="#" id="8c7743e8-0818-41fa-bc86-44407ca2f773" onclick="searchData('8c7743e8-0818-41fa-bc86-44407ca2f773','c')">
+                <a href="#">
                     Comp 2160</a>
                 
-                <a href="#" id="e3d9b090-9465-44a1-887c-90d74f7f7899" onclick="searchData('e3d9b090-9465-44a1-887c-90d74f7f7899','c')">
+                <a href="#">
                     Comp 2140</a>
                 
-                <a href="#" id="f3b98347-fe96-49fc-b076-93bd5855341f" onclick="searchData('f3b98347-fe96-49fc-b076-93bd5855341f','c')">
+                <a href="#">
                     Comp 3430</a>
                 
-                <a href="#" id="30cfc816-fbc4-4b62-b688-9be0d7b29401" onclick="searchData('30cfc816-fbc4-4b62-b688-9be0d7b29401','c')">
+                <a href="#">
                     Comp 4350 </a>
                 
-                <a href="#" id="8757ba5a-64eb-4a4d-83f6-aa3740cf1a6f" onclick="searchData('8757ba5a-64eb-4a4d-83f6-aa3740cf1a6f','c')">
+                <a href="#">
                     Comp 4190</a>
                 
-                <a href="#" id="989d8840-4db1-4081-8c2c-6374d26e5940" onclick="searchData('989d8840-4db1-4081-8c2c-6374d26e5940','c')">
+                <a href="#">
                     Comp 4430</a>
             </li>
-            <li><strong>type:</strong><a href="#" id="tAll" onclick="searchData('','t')">all</a>
+            <li><strong>type:</strong>
                 
-                <a href="#" id="1" onclick="searchData('1','t')">
+                <a href="#">
                     notes</a>
                 
-                <a href="#" id="2" onclick="searchData('2','t')">
+                <a href="#">
                     homework</a>
                 
-                <a href="#" id="3" onclick="searchData('3','t')">
+                <a href="#">
                     readings</a>
                 
-                <a href="#" id="4" onclick="searchData('4','t')">
+                <a href="#">
                     practice exams</a>
                 
             </li>
@@ -280,19 +282,19 @@
                 </div>
 
                 <div class=''>
-                    <a href='http://sm.zk0731.com/OnlineTeaching/StudentMaterial.aspx?page=2' target='_self'>2</a>
+                    <a href='OnlineTeaching/StudentMaterial.jsp?page=2' target='_self'>2</a>
                 </div>
 
                 <div class=''>
-                    <a href='http://sm.zk0731.com/OnlineTeaching/StudentMaterial.aspx?page=3' target='_self'>3</a>
+                    <a href='OnlineTeaching/StudentMaterial.jsp?page=3' target='_self'>3</a>
                 </div>
 
                 <div class=''>
-                    <a href='http://sm.zk0731.com/OnlineTeaching/StudentMaterial.aspx?page=2' target='_self'>next</a>
+                    <a href='OnlineTeaching/StudentMaterial.jsp?page=2' target='_self'>next</a>
                 </div>
 
                 <div class=''>
-                    <a href='http://sm.zk0731.com/OnlineTeaching/StudentMaterial.aspx?page=3' target='_self'>last</a>
+                    <a href='OnlineTeaching/StudentMaterial.jsp?page=3' target='_self'>last</a>
                 </div>
 
                 <div class=''>
