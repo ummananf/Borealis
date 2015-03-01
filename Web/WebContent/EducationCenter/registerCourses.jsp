@@ -10,8 +10,6 @@
     <script src="../Script/Data.js" type="text/javascript"></script>
     <link href="../Style/StudentStyle.css" rel="stylesheet" type="text/css" />
     <script src="../Script/Base.js" type="text/javascript"></script>
-    <link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     
 </head>
 <body>
@@ -133,7 +131,7 @@
         
         
 
-<form action="/banprod/bwckgens.p_proc_term_date" METHOD="POST" onSubmit="">        
+<form action="" METHOD="POST" onSubmit="">        
 <table width="100%">
 <tr>
 	<td>
@@ -148,7 +146,6 @@
  </table>     
             
             
-        
         
             </div>
         </div>
