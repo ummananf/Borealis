@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import ca.logic.Profile_BO;
+import ca.logic.UserLogic;
 import ca.objects.User;
 
 @SuppressWarnings("serial")

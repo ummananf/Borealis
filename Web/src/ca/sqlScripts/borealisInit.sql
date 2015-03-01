@@ -1,15 +1,17 @@
 -- We must create restrictions in our logic code to not allow some users to be in tables (like students can't be in Teaches table)
 -- Note the syntax must be specific otherwise there are errors
---DROP TABLE DegreeChoice;
---DROP TABLE DegreeCourses; 
---DROP TABLE Degrees;
---DROP TABLE Teaches; 
---DROP TABLE Enrolled; 
---DROP TABLE Sections;
---DROP TABLE Prereqs; 
---DROP TABLE Courses; 
---DROP TABLE UserPrivs; 
---DROP TABLE Users;
+/*
+DROP TABLE DegreeChoice;
+DROP TABLE DegreeCourses; 
+DROP TABLE Degrees;
+DROP TABLE Teaches; 
+DROP TABLE Enrolled; 
+DROP TABLE Sections;
+DROP TABLE Prereqs; 
+DROP TABLE Courses; 
+DROP TABLE UserPrivs; 
+DROP TABLE Users;
+*/
 
 
 CREATE TABLE Users
@@ -19,15 +21,11 @@ CREATE TABLE Users
 	password varchar(50), 
 	email varchar(50) UNIQUE NOT NULL, 
 	fName varchar(20), 
-	lName varchar(20) 
+	lName varchar(20),
+    userType varchar(20)
 );
-CREATE TABLE UserPrivs
-(
-	userID int NOT NULL,
-	userType varchar(20) NOT NULL,
-	PRIMARY KEY(userID, userType), 
-	FOREIGN KEY(userID) REFERENCES Users(userID)
-);
+-- CREATE TABLE UserPrivs( userID int NOT NULL, userType varchar(20) NOT NULL, PRIMARY KEY(userID, userType), FOREIGN KEY(userID) REFERENCES Users(userID) );
+
 CREATE TABLE Courses
 (
 	cID varchar(10) PRIMARY KEY, 
@@ -109,11 +107,11 @@ CREATE TABLE DegreeChoice
 
 
 
-INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'john', 'johnson');
-INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl', 'carlson');
+INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'john', 'johnson', 'admin');
+INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl', 'carlson', 'student');
 
-INSERT INTO UserPrivs VALUES (1, 'admin');
-INSERT INTO UserPrivs VALUES (2, 'student');
+-- INSERT INTO UserPrivs VALUES (1, 'admin');
+-- INSERT INTO UserPrivs VALUES (2, 'student');
 
 INSERT INTO Courses VALUES ('COMP1010', 'Intro to Computer Science', 3, 'Science', 'Computer Science', 'Introduces you to computer science.');
 INSERT INTO Courses VALUES ('COMP1020', 'Intro to Computer Science 2', 3, 'Science', 'Computer Science', 'Introduces you to more computer science!');

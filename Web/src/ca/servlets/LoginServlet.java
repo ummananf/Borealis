@@ -8,7 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import ca.objects.*;
-import ca.logic.Profile_BO;
+import ca.logic.UserLogic;
 
 //Extend HttpServlet class
 @SuppressWarnings("serial")
@@ -33,17 +33,15 @@ public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		
-		User user = new User(req.getParameter("username"),
-				req.getParameter("password"));
-		Profile_BO aBO = new Profile_BO(user);
+		UserLogic userService = new UserLogic();
+		User user = userService.getUserIfValid(req.getParameter("username"), req.getParameter("password"));
 
-		if (aBO.isValid()) {
+		if (user != null) {
 			HttpSession session = req.getSession(true);
-			session.setAttribute(CURRENT_SESSION_USER, aBO.getUser());
+			session.setAttribute(CURRENT_SESSION_USER, user);
 
 			res.sendRedirect("main");
 		}
-
 		else {
 			res.sendRedirect("invalidLogin_throwaway.jsp");
 		}
