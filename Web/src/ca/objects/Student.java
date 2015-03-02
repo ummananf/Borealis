@@ -8,9 +8,8 @@ public class Student extends User {
 			String fName, String lName, String type) {
 		super(userID, username, password, email, fName, lName, type);
 	}
-	
-	public Student(ResultSet data)
-	{
+
+	public Student(ResultSet data) {
 		super(data);
 	}
 

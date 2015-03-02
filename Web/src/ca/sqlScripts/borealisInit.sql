@@ -1,6 +1,6 @@
 -- We must create restrictions in our logic code to not allow some users to be in tables (like students can't be in Teaches table)
 -- Note the syntax must be specific otherwise there are errors
-/*
+
 DROP TABLE DegreeChoice;
 DROP TABLE DegreeCourses; 
 DROP TABLE Degrees;
@@ -11,7 +11,7 @@ DROP TABLE Prereqs;
 DROP TABLE Courses; 
 DROP TABLE UserPrivs; 
 DROP TABLE Users;
-*/
+
 
 
 CREATE TABLE Users

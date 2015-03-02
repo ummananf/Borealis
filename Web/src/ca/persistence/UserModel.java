@@ -11,6 +11,10 @@ import ca.objects.Student;
 import ca.objects.User;
 
 public class UserModel {
+	
+	public static final String TYPE_STUDENT = "student";
+	public static final String TYPE_PROFESSOR = "prof";
+	public static final String TYPE_ADMIN = "admin";
 
 	// Creates new user from data loaded by DB
 	private static User initUserObject(ResultSet data) throws SQLException
@@ -22,11 +26,11 @@ public class UserModel {
 		{
 			String userType = data.getString("userType");
 			
-			if(userType.equals("student"))
+			if(userType.equals(TYPE_STUDENT))
 				user = new Student(data);
-			else if(userType.equals("prof"))
+			else if(userType.equals(TYPE_PROFESSOR))
 				user = new Professor(data);
-			else if(userType.equals("admin"))
+			else if(userType.equals(TYPE_ADMIN))
 				user = new Admin(data);
 			else
 			{

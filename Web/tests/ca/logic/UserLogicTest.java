@@ -7,14 +7,16 @@ import org.junit.Test;
 
 public class UserLogicTest {
 	
-
+	LoginLogic loginLogic;
+	
 	@Before
 	public void setUp() throws Exception {
+		
+		loginLogic = new LoginLogic();
 	}
 
 	@Test
 	public final void testGetUserIfValid() {
-		LoginLogic loginLogic = new LoginLogic();
 		
 		// test with existing user
 		assertNotNull(loginLogic.getUserIfValid("student1", "password"));
