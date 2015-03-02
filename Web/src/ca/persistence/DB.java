@@ -2,6 +2,7 @@ package ca.persistence;
 
 import java.io.InputStreamReader;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -77,6 +78,7 @@ public class DB {
 
 		try {
 			statement = connection.createStatement();
+			
 			resultSet = statement.executeQuery(query);
 			statement.close();
 			ConnectionManager.closeConnection(connection);
