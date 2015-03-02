@@ -1,10 +1,10 @@
 package ca.logic;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import ca.objects.Enrollment;
 import ca.objects.Prereq;
+import ca.persistence.CourseModel;
 import ca.persistence.StudentModel;
 
 
@@ -17,7 +17,7 @@ public class RegistrationLogic {
 	public boolean meetsPrereqs(int studentID, String courseID)
 	{
 		ArrayList<Enrollment> completedCourses = StudentModel.getCompletedCourses(studentID);
-		ArrayList<Prereq> prereqs = StudentModel.getPrereqs(courseID);
+		ArrayList<Prereq> prereqs = CourseModel.getPrereqs(courseID);
 		boolean allPrereqsMet = true; //start as true, so if no prereq, still true
 		
 		// TODO: make efficient SQL query instead of this?

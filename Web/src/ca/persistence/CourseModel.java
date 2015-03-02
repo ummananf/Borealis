@@ -1,26 +1,23 @@
 package ca.persistence;
 
-import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
-import ca.objects.Enrollment;
+import ca.objects.Prereq;
 
+public class CourseModel {
 
-
-public class StudentModel {
-	
-	
-	// TODO: may have to add a "gradeReceived" boolean to DB table, since grade will be read as 0 if it is NULL
-	public static ArrayList<Enrollment> getCompletedCourses(int studentID)
+	// Gets list of prereqs for given courseID
+	public static ArrayList<Prereq> getPrereqs(String courseID)
 	{
-		String query = "SELECT * FROM Enrolled WHERE userID = "+studentID+" AND grade IS NOT NULL;";
+		String query = "SELECT * FROM Prereqs WHERE cID = '"+courseID+"';";
 		Connection connection = ConnectionManager.getConnection();
 		
 		ResultSet data = null;
-		ArrayList<Enrollment> courses = new ArrayList<Enrollment>();
+		ArrayList<Prereq> prereqs = new ArrayList<Prereq>();
 	
 		
 		try {		
@@ -31,19 +28,21 @@ public class StudentModel {
 			// Get all courses ids returned from query and put into array list
 			while(data.next())
 			{
-				Enrollment temp = new Enrollment(data);
-				courses.add(temp);
+				Prereq temp = new Prereq(data.getString("cID"), 
+										 data.getString("prereqCID"),
+										 data.getFloat("minGrade"));
+				prereqs.add(temp);
 			}
 			
 			statement.close();
 		} catch (SQLException e) {
-			System.out.println("error reading enrolled data from DB");
+			System.out.println("error reading prereq data from DB");
 			e.printStackTrace();
 		}
 		
 		ConnectionManager.closeConnection(connection);
 
-		return courses;
+		return prereqs;
 	}
 
 }
