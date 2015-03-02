@@ -48,6 +48,12 @@
 						<input id="password" value="" name="password" type="password" 
 						class="password form-control x319 in">
 					</div>
+                    
+                    <div class="form-group">
+						<font color="#CC0000">
+         <strong>For testing purposes: userName: student1 password: password</strong></font>
+					</div>
+                    
 					<div class="form-group">
 				    <label class="t"></label>
 						<label for="j_remember" class="m">
