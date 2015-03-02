@@ -82,27 +82,24 @@ CREATE TABLE Degrees
 (
 	degProgram varchar(50) NOT NULL,
 	degOption varchar(50) NOT NULL,
-	degName varchar(50) UNIQUE,
+	degName varchar(50) PRIMARY KEY,
 	totalCreditHrs int,
-	PRIMARY KEY(degProgram, degOption)
 );
 CREATE TABLE DegreeCourses
 (
-	degProgram varchar(50) NOT NULL,
-	degOption varchar(50) NOT NULL,
+	degName varchar(50) NOT NULL,
 	cID varchar(10) NOT NULL,
-	PRIMARY KEY(degProgram, degOption, cID),
-	FOREIGN KEY(degProgram, degOption) REFERENCES Degrees(degProgram, degOption) ON DELETE CASCADE,
+	PRIMARY KEY(degName, cID),
+	FOREIGN KEY(degName) REFERENCES Degrees(degName) ON DELETE CASCADE,
 	FOREIGN KEY(cID) REFERENCES Courses(cID)
 );
 CREATE TABLE DegreeChoice
 (
 	userID int NOT NULL,
-	degProgram varchar(50) NOT NULL,
-	degOption varchar(50) NOT NULL,
-	PRIMARY KEY(userID, degProgram, degOption),
+	degName varchar(50) NOT NULL,
+	PRIMARY KEY(userID, degName),
 	FOREIGN KEY(userID) REFERENCES Users(userID),
-	FOREIGN KEY(degProgram, degOption) REFERENCES Degrees(degProgram, degOption)
+	FOREIGN KEY(degName) REFERENCES Degrees(degName)
 );
 
 
