@@ -12,6 +12,8 @@ public class RegistrationLogic {
 
 	public RegistrationLogic() {}
 	
+	
+	// Should check that studentID is in fact valid studentID prior to this
 	public boolean meetsPrereqs(int studentID, String courseID)
 	{
 		ArrayList<Enrollment> completedCourses = StudentModel.getCompletedCourses(studentID);

@@ -47,6 +47,7 @@ public class StudentModel {
 	
 	
 	// Gets list of prereqs for given courseID
+	// TODO: refactor to coursemodel
 	public static ArrayList<Prereq> getPrereqs(String courseID)
 	{
 		String query = "SELECT * FROM Prereqs WHERE cID = '"+courseID+"';";
