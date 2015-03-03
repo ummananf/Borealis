@@ -1,5 +1,7 @@
 package ca.objects;
 
+import java.sql.ResultSet;
+
 public class Section extends Course
 {
 	private String sectID, startTime, endTime, location;
@@ -12,6 +14,7 @@ public class Section extends Course
 		int crHrs, String sID, String sTime, String eTime, String loc, int maxSize,
 		float tuition, boolean[] days)
 	{
+		super(cID, name, fac, dept, desc, crHrs);
 		sectID = sID;
 		startTime = sTime;
 		endTime = eTime;
@@ -19,14 +22,14 @@ public class Section extends Course
 		this.maxSize = maxSize;
 		this.tuition = tuition;
 		daysOffered = days;
-		super(cID, name, fac, dept, desc, crHrs);
+		
 	}
-
+/*
 	// TODO - create a section from DB data
 	public Section(ResultSet data)
 	{
 	}
-
+*/
 	public String getID()
 	{
 		return sectID;
