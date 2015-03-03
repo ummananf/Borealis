@@ -1,5 +1,7 @@
 package ca.objects;
 
+import java.sql.ResultSet;
+
 public class Degree
 {
 	private String degName, degProgram, degOption;
@@ -15,7 +17,7 @@ public class Degree
 	}
 
 	// TODO - create a section from DB data
-	public Section(ResultSet data)
+	public Degree(ResultSet data)
 	{
 	}
 }

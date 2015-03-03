@@ -1,5 +1,7 @@
 package ca.objects;
 
+import java.sql.ResultSet;
+
 public class Course
 {
 	private String courseID, courseName, faculty, dept, description;
@@ -21,7 +23,7 @@ public class Course
 	{
 	}
 
-	public string getID()
+	public String getID()
 	{
 		return courseID;
 	}
