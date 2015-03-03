@@ -83,7 +83,7 @@ CREATE TABLE Degrees
 	degProgram varchar(50) NOT NULL,
 	degOption varchar(50) NOT NULL,
 	degName varchar(50) PRIMARY KEY,
-	totalCreditHrs int,
+	totalCreditHrs int
 );
 CREATE TABLE DegreeCourses
 (
