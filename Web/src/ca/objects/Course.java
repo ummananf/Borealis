@@ -1,6 +1,5 @@
 package ca.objects;
 
-import java.sql.ResultSet;
 
 public class Course
 {
@@ -16,11 +15,6 @@ public class Course
 		this.dept = dept;
 		description = desc;
 		creditHrs = crHrs;
-	}
-
-	// TODO - create a course from DB data
-	public Course(ResultSet data)
-	{
 	}
 
 	public String getID()

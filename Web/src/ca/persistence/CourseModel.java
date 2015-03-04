@@ -25,7 +25,6 @@ public class CourseModel {
 			data = statement.executeQuery(query);
 			
 			// This needs to be done before statement and connection is closed!
-			// Get all courses ids returned from query and put into array list
 			while(data.next())
 			{
 				Prereq temp = new Prereq(data.getString("cID"), 

@@ -28,10 +28,12 @@ public class StudentModel {
 			data = statement.executeQuery(query);
 			
 			// This needs to be done before statement and connection is closed!
-			// Get all courses ids returned from query and put into array list
+			// Get all enrollments returned from query and put into array list
 			while(data.next())
 			{
-				Enrollment temp = new Enrollment(data);
+				Enrollment temp = new Enrollment(data.getInt("userID"), data.getString("sectID"),
+												 data.getString("cID"), data.getDate("termStart"),
+												 data.getFloat("grade"));
 				courses.add(temp);
 			}
 			

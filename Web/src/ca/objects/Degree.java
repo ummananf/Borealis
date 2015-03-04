@@ -1,6 +1,5 @@
 package ca.objects;
 
-import java.sql.ResultSet;
 
 public class Degree
 {
@@ -14,10 +13,5 @@ public class Degree
 		degProgram = program;
 		degOption = option;
 		creditHrs = crHrs;
-	}
-
-	// TODO - create a section from DB data
-	public Degree(ResultSet data)
-	{
 	}
 }

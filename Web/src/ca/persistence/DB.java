@@ -14,7 +14,7 @@ import org.apache.ibatis.jdbc.ScriptRunner;
 // without having to deal with opening and closing connections, statements, results etc.
 // uses a ResultSetConverter from an external lib to convert a ResultSet to a ResultSet array.
 
-// TODO: get rid of this class??
+
 public class DB {
 
 	// / Initialize structure and items of database if not already done so. This

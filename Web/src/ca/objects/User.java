@@ -1,7 +1,5 @@
 package ca.objects;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class User {
 
@@ -17,24 +15,6 @@ public class User {
 		firstName = fName;
 		lastName = lName;
 		this.type = type;
-	}
-
-	// For creating from DB data:
-	public User(ResultSet data) {
-		try {
-			// Get attributes from table at current row by querying column
-			// labels
-			userID = data.getInt("userID");
-			username = data.getString("username");
-			password = data.getString("password");
-			email = data.getString("email");
-			firstName = data.getString("fName");
-			lastName = data.getString("lName");
-			type = data.getString("userType");
-		} catch (SQLException e) {
-			System.out.println("error creating new User from DB data");
-			e.printStackTrace();
-		}
 	}
 
 	public int getUserID() {

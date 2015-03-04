@@ -24,12 +24,7 @@ public class Section extends Course
 		daysOffered = days;
 		
 	}
-/*
-	// TODO - create a section from DB data
-	public Section(ResultSet data)
-	{
-	}
-*/
+	
 	public String getID()
 	{
 		return sectID;

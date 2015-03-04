@@ -24,18 +24,24 @@ public class UserModel {
 		// Note: result set data is never null, just check if it has rows
 		if(data.next())
 		{
+			int userID = data.getInt("userID");
+			String username = data.getString("username");
+			String password = data.getString("password");
+			String email = data.getString("email");
+			String firstName = data.getString("fName");
+			String lastName = data.getString("lName");
 			String userType = data.getString("userType");
-			
+
 			if(userType.equals(TYPE_STUDENT))
-				user = new Student(data);
+				user = new Student(userID, username, password, email, firstName, lastName);
 			else if(userType.equals(TYPE_PROFESSOR))
-				user = new Professor(data);
+				user = new Professor(userID, username, password, email, firstName, lastName);
 			else if(userType.equals(TYPE_ADMIN))
-				user = new Admin(data);
+				user = new Admin(userID, username, password, email, firstName, lastName);
 			else
 			{
 				System.out.println("Warning: unknown user type retrieved");
-				user = new User(data);
+				user = new User(userID, username, password, email, firstName, lastName, userType);
 			}
 		}
 		
