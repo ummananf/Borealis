@@ -1,0 +1,16 @@
+//
+//  DetailViewController.h
+//  Mobile
+//
+//  Created by Mark Grushevski on 2015-02-16.
+//  Copyright (c) 2015 Team 8. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+
+@property (strong, nonatomic) id detailItem;
+
+@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@end
