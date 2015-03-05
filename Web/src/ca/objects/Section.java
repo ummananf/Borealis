@@ -1,7 +1,5 @@
 package ca.objects;
 
-import java.sql.ResultSet;
-
 public class Section extends Course
 {
 	private String sectID, startTime, endTime, location;
@@ -14,7 +12,6 @@ public class Section extends Course
 		int crHrs, String sID, String sTime, String eTime, String loc, int maxSize,
 		float tuition, boolean[] days)
 	{
-		super(cID, name, fac, dept, desc, crHrs);
 		sectID = sID;
 		startTime = sTime;
 		endTime = eTime;
@@ -22,9 +19,9 @@ public class Section extends Course
 		this.maxSize = maxSize;
 		this.tuition = tuition;
 		daysOffered = days;
-		
+		super(cID, name, fac, dept, desc, crHrs);
 	}
-	
+
 	public String getID()
 	{
 		return sectID;
@@ -33,5 +30,49 @@ public class Section extends Course
 	public String getCourse()
 	{
 		return super.getID();
+	}
+
+	public String toString
+	{
+		String result = "";
+
+		result += super.toString()
+		result += "Section " + sectID + "\n";
+		result += sTime + " - " + eTime + " on " + getDaysStr() + "\n";
+		result += "Location: " + location + "\n";
+
+		return result;
+	}
+
+	private String getDaysStr()
+	{
+		String result = "";
+		final String[] DAYS = {"Mon", "Tues", "Wed", "Thur", "Fri", "Sat", "Sun"};
+
+		for (int i = 0; i < 7; i++)
+		{
+			if (daysOffered[i] == true)
+				result += DAYS[i] + ",";
+		}
+
+		// get rid of the comma at the end
+		result = result.substring(0, result.length() - 1);
+		return result;
+	}
+
+	// TODO - write method to call something in the model to insert this Section record into the DB
+	public boolean dbInsert
+	{
+		boolean success = false;
+
+		return success;
+	}
+
+	// TODO - write method to call something in the model to update this Section record in the DB
+	public boolean dbUpdate
+	{
+		boolean success = false;
+
+		return success;
 	}
 }
