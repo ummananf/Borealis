@@ -4,11 +4,18 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.jdbc.ScriptRunner;
+
+import ca.objects.Prereq;
 
 // this class makes it easier to execute db statement and retrieve data
 // without having to deal with opening and closing connections, statements, results etc.
@@ -90,6 +97,38 @@ public class DB {
 		}
 
 		return resultSet;
+	}
+
+	public static List<Map<String, Object>> getData(String query) {
+		// TODO Auto-generated method stub
+		List<Map<String, Object>> resultList = new ArrayList<Map<String, Object>>();
+		Map<String, Object> row = null;
+		
+ 		ResultSet data = null; 
+		Connection connection = ConnectionManager.getConnection();
+		
+		try {
+			Statement statement = connection.createStatement();
+			data = statement.executeQuery(query);
+			
+			ResultSetMetaData metaData = data.getMetaData();
+			Integer col = metaData.getColumnCount();
+			
+			while (data.next()){
+				row = new HashMap<String, Object>();
+				for (int i = 1; i <= col; i++) {
+					row.put(metaData.getColumnName(i), data.getObject(i));
+				}
+				resultList.add(row);
+			}
+
+			statement.close();
+		} catch (SQLException e) {
+			System.out.println("error reading user data from DB");
+			e.printStackTrace();
+		}
+		ConnectionManager.closeConnection(connection);
+		return resultList;
 	}
 
 }
