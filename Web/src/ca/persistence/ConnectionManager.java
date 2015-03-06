@@ -32,8 +32,7 @@ public class ConnectionManager {
 			connection = DriverManager.getConnection(jdbcUrl);
 		} catch (SQLException ex) {
 			// handle any errors
-			System.out
-					.println("ConnectionManager:getConnection Connection error!");
+			System.out.println("ConnectionManager:getConnection Connection error!");
 			System.out.println("SQLException: " + ex.getMessage());
 			System.out.println("SQLState: " + ex.getSQLState());
 			System.out.println("VendorError: " + ex.getErrorCode());
@@ -52,8 +51,7 @@ public class ConnectionManager {
 			} catch (SQLException ex) {
 
 				// handle any errors
-				System.out
-						.println("ConnectionManager:getConnection Connection error!");
+				System.out.println("ConnectionManager:getConnection Connection error!");
 				System.out.println("SQLException: " + ex.getMessage());
 				System.out.println("SQLState: " + ex.getSQLState());
 				System.out.println("VendorError: " + ex.getErrorCode());
