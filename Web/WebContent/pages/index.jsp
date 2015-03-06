@@ -1,7 +1,5 @@
 <%@ page import="java.sql.*" %>
 
-
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -37,7 +35,7 @@
     </div>
 		
 			<div class="login_form">
-				<form action="login" id="login_form" method="post" name="login">
+				<form action="login" id="login_form" method="post" name="login" onSubmit="return">
 					<div class="form-group">
 						<label for="j_username" class="t">UserName:</label> 
 						<input id="username" value="" name="username" type="text" class="form-control x319 in" 

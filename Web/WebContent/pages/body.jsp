@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,7 +24,7 @@
                       <option selected='selected'
                             value="1"> full time</option>
                     </select>
-77xxxxx student: xx，Welcome back！ <a href="myInfo">MyInfo</a> <a href="announcements">
+77xxxxx student: �Welcome back <a href="myInfo">MyInfo</a> <a href="announcements">
                         announcements</a> <a href="changePassword">change psw</a> <a onclick="loginOut()"
                             href="javascript:">logout</a>
                 </div>
