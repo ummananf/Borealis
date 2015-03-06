@@ -7,25 +7,27 @@ public class ConnectionManager {
 	public static Connection getConnection() {
 		
 		Connection connection = null;
-
-		// Read RDS Connection Information from the Environment
+		
+		// Read RDS dbName; test if we're connected to the RDS
 		String dbName = System.getProperty("RDS_DB_NAME");
-		String userName = System.getProperty("RDS_USERNAME");
-		String password = System.getProperty("RDS_PASSWORD");
-		String hostname = System.getProperty("RDS_HOSTNAME");
-		String port = System.getProperty("RDS_PORT");
-
-		String jdbcUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName
-				+ "?user=" + userName + "&password=" + password;
-
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException(
+					"Cannot find the driver in the classpath!", e);
+		}
+		 
 		// Load driver
 		if(dbName != null) {
-			try {
-				Class.forName("com.mysql.jdbc.Driver");
-			} catch (ClassNotFoundException e) {
-				throw new RuntimeException(
-						"Cannot find the driver in the classpath!", e);
-			}
+			// Read the rest of the RDS Connection Information from the Environment
+			String userName = System.getProperty("RDS_USERNAME");
+			String password = System.getProperty("RDS_PASSWORD");
+			String hostname = System.getProperty("RDS_HOSTNAME");
+			String port = System.getProperty("RDS_PORT");
+
+			String jdbcUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName
+					+ "?user=" + userName + "&password=" + password;
 	
 			// Try to connect to remote RDS
 			try {
