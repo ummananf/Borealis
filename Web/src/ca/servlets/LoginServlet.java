@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
 			res.sendRedirect("main");
 		}
 		else {
-			res.sendRedirect("invalidLogin.jsp");
+			res.sendRedirect("invalidLogin_throwaway.jsp");
 		}
 
 	}
