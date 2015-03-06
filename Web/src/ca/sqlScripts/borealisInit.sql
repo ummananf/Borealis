@@ -111,8 +111,8 @@ INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl
 -- INSERT INTO UserPrivs VALUES (1, 'admin');
 -- INSERT INTO UserPrivs VALUES (2, 'student');
 
-INSERT INTO Courses VALUES ('COMP1010', 'Intro to Computer Science', 3, 'Science', 'Computer Science', 'Introduces you to computer science.');
-INSERT INTO Courses VALUES ('COMP1020', 'Intro to Computer Science 2', 3, 'Science', 'Computer Science', 'Introduces you to more computer science!');
+INSERT INTO Courses VALUES ('COMP1010', 'Intro to Computer Science', 3, 0, 'Science', 'Computer Science', 'Introduces you to computer science.');
+INSERT INTO Courses VALUES ('COMP1020', 'Intro to Computer Science 2', 3, 0, 'Science', 'Computer Science', 'Introduces you to more computer science!');
 
 INSERT INTO Prereqs VALUES ('COMP1010', 'COMP1020', 2.0);
 
