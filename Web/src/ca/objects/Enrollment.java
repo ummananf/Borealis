@@ -1,8 +1,7 @@
 package ca.objects;
 
 import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 public class Enrollment {
 
@@ -17,18 +16,6 @@ public class Enrollment {
 		this.courseID = courseID;
 		termStart = startDate;
 		this.grade = grade;
-	}
-	public Enrollment(ResultSet data) {
-		try {
-			userID = data.getInt("userID");
-			sectID = data.getString("sectID");
-			courseID = data.getString("cID");
-			termStart = data.getDate("termStart");
-			grade = data.getFloat("grade");
-		} catch (SQLException e) {
-			System.out.println("error creating new Enrollment from DB data");
-			e.printStackTrace();
-		}
 	}
 	
 	// TODO: write more getters

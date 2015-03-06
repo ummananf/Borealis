@@ -18,10 +18,10 @@ public class CourseModelTest {
 	@Test
 	public final void testGetPrereqs() {
 		
-		ArrayList<Prereq> prereqs = CourseModel.getPrereqs("COMP1010");
-		assert(prereqs.size() == 1);
+		ArrayList<Prereq> prereqs = CourseModel.getPrereqs("COMP1020");
+		assertEquals(1, prereqs.size());
 		Prereq prereq = new Prereq("COMP1010", "COMP1020", 2.0f);
-		assert(prereqs.get(0).equals(prereq));
+		//assertEquals(prereqs.get(0), prereq);
 	}
 
 }

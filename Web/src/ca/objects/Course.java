@@ -1,7 +1,5 @@
 package ca.objects;
 
-import java.sql.ResultSet;
-
 public class Course
 {
 	private String courseID, courseName, faculty, dept, description;
@@ -18,13 +16,36 @@ public class Course
 		creditHrs = crHrs;
 	}
 
-	// TODO - create a course from DB data
-	public Course(ResultSet data)
-	{
-	}
-
-	public String getID()
+	public string getID()
 	{
 		return courseID;
+	}
+
+	public String toString
+	{
+		String result = "";
+
+		result += courseID + " - " + courseName + "\n";
+		result += "Faculty: " + faculty + " - Department: " + dept + "\n";
+		result += "Credit Hours: " + creditHrs + "\n";
+		result += "Description: " + desc + "\n";
+
+		return result;
+	}
+
+	// TODO - write method to call something in the model to insert this Course record into the DB
+	public boolean dbInsert
+	{
+		boolean success = false;
+
+		return success;
+	}
+
+	// TODO - write method to call something in the model to update this Course record in the DB
+	public boolean dbUpdate
+	{
+		boolean success = false;
+
+		return success;
 	}
 }
