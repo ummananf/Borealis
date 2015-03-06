@@ -19,42 +19,45 @@ public class ConnectionManager {
 				+ "?user=" + userName + "&password=" + password;
 
 		// Load driver
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			throw new RuntimeException(
-					"Cannot find the driver in the classpath!", e);
-		}
-
-		// Try to connect to remote RDS
-		try {
-			// Create connection to RDS instance
-			connection = DriverManager.getConnection(jdbcUrl);
-		} catch (SQLException ex) {
-			// handle any errors
-			System.out.println("ConnectionManager:getConnection Connection error!");
-			System.out.println("SQLException: " + ex.getMessage());
-			System.out.println("SQLState: " + ex.getSQLState());
-			System.out.println("VendorError: " + ex.getErrorCode());
-		}
-
-		// Try to connect to local db (if previous code failed)
-		if (connection == null) {
+		if(dbName != null) {
 			try {
-				 connection = DriverManager.getConnection(
-				 "jdbc:mysql://localhost:3306/borealisDB", "user",
-				 "comp4350");
-
-				connection = DriverManager
-						.getConnection("jdbc:mysql://localhost:3306/MySQL",
-								"root", "mysql");
+				Class.forName("com.mysql.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				throw new RuntimeException(
+						"Cannot find the driver in the classpath!", e);
+			}
+	
+			// Try to connect to remote RDS
+			try {
+				// Create connection to RDS instance
+				connection = DriverManager.getConnection(jdbcUrl);
 			} catch (SQLException ex) {
-
 				// handle any errors
-				System.out.println("ConnectionManager:getConnection Connection error!");
-				System.out.println("SQLException: " + ex.getMessage());
-				System.out.println("SQLState: " + ex.getSQLState());
-				System.out.println("VendorError: " + ex.getErrorCode());
+				System.out.println("RDS ConnectionManager:getConnection Connection error!");
+				System.out.println("RDS SQLException: " + ex.getMessage());
+				System.out.println("RDS SQLState: " + ex.getSQLState());
+				System.out.println("RDS VendorError: " + ex.getErrorCode());
+			}
+		}
+		else {
+			// Try to connect to local db (if previous code failed)
+			if (connection == null) {
+				try {
+					 connection = DriverManager.getConnection(
+					 "jdbc:mysql://localhost:3306/borealisDB", "user",
+					 "comp4350");
+	
+					//connection = DriverManager
+						//	.getConnection("jdbc:mysql://localhost:3306/MySQL",
+								//	"root", "mysql");
+				} catch (SQLException ex) {
+	
+					// handle any errors
+					System.out.println("Local ConnectionManager:getConnection Connection error!");
+					System.out.println("Local SQLException: " + ex.getMessage());
+					System.out.println("Local SQLState: " + ex.getSQLState());
+					System.out.println("Local VendorError: " + ex.getErrorCode());
+				}
 			}
 		}
 
