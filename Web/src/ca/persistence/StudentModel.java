@@ -1,10 +1,11 @@
 package ca.persistence;
 
 import java.util.ArrayList;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.sql.Date;
+
 
 import ca.objects.Enrollment;
 
@@ -17,33 +18,20 @@ public class StudentModel {
 	public static ArrayList<Enrollment> getCompletedCourses(int studentID)
 	{
 		String query = "SELECT * FROM Enrolled WHERE userID = "+studentID+" AND grade IS NOT NULL;";
-		Connection connection = ConnectionManager.getConnection();
-		
-		ResultSet data = null;
 		ArrayList<Enrollment> courses = new ArrayList<Enrollment>();
-	
+		List<Map<String, Object>> resultList = DB.getData(query);
+		int i = 0;
 		
-		try {		
-			Statement statement = connection.createStatement();
-			data = statement.executeQuery(query);
+		for (Iterator<Map<String, Object>> iter = resultList.iterator(); iter.hasNext(); i++){
+			Map<String, Object> row = resultList.get(i);
 			
-			// This needs to be done before statement and connection is closed!
-			// Get all enrollments returned from query and put into array list
-			while(data.next())
-			{
-				Enrollment temp = new Enrollment(data.getInt("userID"), data.getString("sectID"),
-												 data.getString("cID"), data.getDate("termStart"),
-												 data.getFloat("grade"));
-				courses.add(temp);
-			}
-			
-			statement.close();
-		} catch (SQLException e) {
-			System.out.println("error reading enrolled data from DB");
-			e.printStackTrace();
+			Enrollment temp = new Enrollment((Integer) row.get("userID"), 
+											(String) row.get("sectID"),
+											(String) row.get("cID"), 
+											(Date) row.get("termStart"),
+											((Double) row.get("grade")).floatValue());
+			courses.add(temp);
 		}
-		
-		ConnectionManager.closeConnection(connection);
 
 		return courses;
 	}

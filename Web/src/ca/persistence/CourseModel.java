@@ -1,10 +1,9 @@
 package ca.persistence;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import ca.objects.Prereq;
 
@@ -14,32 +13,20 @@ public class CourseModel {
 	public static ArrayList<Prereq> getPrereqs(String courseID)
 	{
 		String query = "SELECT * FROM Prereqs WHERE cID = '"+courseID+"';";
-		Connection connection = ConnectionManager.getConnection();
-		
-		ResultSet data = null;
+
 		ArrayList<Prereq> prereqs = new ArrayList<Prereq>();
-	
 		
-		try {		
-			Statement statement = connection.createStatement();
-			data = statement.executeQuery(query);
+		List<Map<String, Object>> resultList = DB.getData(query);
+		int i = 0;
+		for (Iterator<Map<String, Object>> iter = resultList.iterator(); iter.hasNext(); i++){
+			Map<String, Object> row = resultList.get(i);
 			
-			// This needs to be done before statement and connection is closed!
-			while(data.next())
-			{
-				Prereq temp = new Prereq(data.getString("cID"), 
-										 data.getString("prereqCID"),
-										 data.getFloat("minGrade"));
-				prereqs.add(temp);
-			}
+			Prereq temp = new Prereq((String) row.get("cID"), 
+									(String) row.get("prereqCID"),
+					 				((Double) row.get("minGrade")).floatValue());
 			
-			statement.close();
-		} catch (SQLException e) {
-			System.out.println("error reading prereq data from DB");
-			e.printStackTrace();
+			prereqs.add(temp);
 		}
-		
-		ConnectionManager.closeConnection(connection);
 
 		return prereqs;
 	}

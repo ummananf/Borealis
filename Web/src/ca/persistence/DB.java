@@ -2,7 +2,6 @@ package ca.persistence;
 
 import java.io.InputStreamReader;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -12,10 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.jdbc.ScriptRunner;
 
-import ca.objects.Prereq;
 
 // this class makes it easier to execute db statement and retrieve data
 // without having to deal with opening and closing connections, statements, results etc.
@@ -127,7 +124,9 @@ public class DB {
 			System.out.println("error reading user data from DB");
 			e.printStackTrace();
 		}
+		
 		ConnectionManager.closeConnection(connection);
+		
 		return resultList;
 	}
 
