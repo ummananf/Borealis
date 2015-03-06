@@ -4,9 +4,10 @@ public class Course
 {
 	private String courseID, courseName, faculty, dept, description;
 	private int creditHrs;
+	private boolean isFullYr;
 
 	// probably want to be able to create a Course without all of these variables though
-	public Course(String cID, String name, String fac, String dept, String desc, int crHrs)
+	public Course(String cID, String name, String fac, String dept, String desc, int crHrs, boolean fullYr)
 	{
 		courseID = cID;
 		courseName = name;
@@ -14,6 +15,7 @@ public class Course
 		this.dept = dept;
 		description = desc;
 		creditHrs = crHrs;
+		isFullYr = fullYr;
 	}
 
 	public String getID()

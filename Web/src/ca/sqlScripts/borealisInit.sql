@@ -31,6 +31,7 @@ CREATE TABLE Courses
 	cID varchar(10) PRIMARY KEY, 
 	cName varchar(50), 
 	creditHrs smallint,
+	isFullYr boolean,
 	faculty varchar(50),
 	department varchar(50),
 	description varchar(200)
