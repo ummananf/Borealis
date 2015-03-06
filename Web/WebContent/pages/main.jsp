@@ -24,108 +24,10 @@
 </head>
 <body>
 
-    <div class="banner">
-        <div class="bannerFrame">
-            <div class="page">
-                <div id="logo">
-                    <a href="main.jsp">
-                        <img src="images/Student/new_logo.png" alt="" width="165" height="48" />
-                    </a>
-                </div>
-                <div class="topOptions">
-                    <select onchange="changeCateory($(this))" style="font-size: 11px; background: #4991cf;
-                        color: #fff;">
-                        
-                        <option 
-                            value="4">
-                            part time</option>
-                        
-                        <option selected='selected'
-                            value="1">
-                            full time</option>
-                        
-                    </select>
-                    77xxxxx student:xxx Welcome back <a href="MyInfo/main.jsp">MyInfo</a> <a href="User/StudentInfor/annoucements.jsp">
-                        anouncement</a> <a href="User/Account/changePassword.jsp">change psw</a> <a onclick="loginOut()"
-                            href="javascript:">logout</a>
-                </div>
-                <div class="blog_nav">
-                    <ul>
-                        <li><a href="main.jsp">myInfo</a></li>
-                        <li><a href="EducationCenter/grade.jsp">services</a></li>
-                        <li><a href="MyAccount/tuition.jsp">tuition</a></li>
-                        <li><a href="OnlineTeaching/materialsDownload.jsp">materials</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="page">
-        <div class="mainArea">
-            <div class="leftArea">
-                <div class="leftAreaNavigate">
-                    <div class="ta1">
-                        <strong>personal center</strong>
-                        <div class="leftDecoration">
-                        </div>
-                    </div>
-                    <div class="changeViewLeftArea">
-                        <div>
-                            <a href="MyInfo/main.jsp">my info</a></div>
-                        <div>
-                            <a href="MyInfo/classInfo.jsp">class info </a>
-                        </div>
-                        <div>
-                            <a href="User/StudentInfor/messages.jsp">messages</a></div>
-                        <div>
-                            <a href="User/StudentInfor/annoucements.jsp">dean's info</a></div>
-                        <div>
-                            <a href="MyInfo/appeals.jsp">appeals</a></div>
-                    </div>
-                    <div class="ta1">
-                        <strong>academic center</strong>
-                        <div class="leftDecoration2">
-                        </div>
-                    </div>
-                    <div class="changeViewLeftArea">
-                         <div>
-                            <a href="EducationCenter/registerCourses.jsp">register courses</a></div>
-                        <div>
-                            <a href="EducationCenter/myExam.jsp">my exam</a></div>
-                        <div>
-                            <a href="EducationCenter/grade.jsp">my grade</a></div>
-                        <div>
-                            <a href="EducationCenter/books.jsp">books &amp; materials</a></div>
-                    </div> 
-                    
-                    <div class="ta1">
-                        <strong>learning center</strong><div class="leftDecoration2">
-                        </div>
-                    </div>
-                    <div class="changeViewLeftArea">
-                        <div>
-                            <a href="OnlineTeaching/materialsDownload.jsp"> material download</a></div>
-                        <div>
-                            <a href="OnlineTeaching/progressBar.jsp">progress bar</a></div>
-                    </div>
-                   
-                    <div class="ta1">
-                        <strong>finance center</strong><div class="leftDecoration2">
-                        </div>
-                    </div>
-                    <div class="changeViewLeftArea">
-                        <div>
-                            <a href="MyAccount/tuition.jsp">check tuition</a></div>
-                    </div>
-<div class="ta1">
-                        <a href="http://www.google.ca" target="_blank"><strong>teaching system</strong></a>
-                        <div class="leftDecoration2">
-                        </div>
-                  </div>
-                </div>
-            </div>
-            <div class="rightbox">
-                
+<jsp:include page="body.jsp" />
+
+
+
     <h2 class="pathNavigator">
         My Zone</h2>
 
@@ -133,7 +35,7 @@
         <div class="innerMainFrameTopLeft" style="margin: 0 27px 15px 0;">
             <div class="topLeftFrame">
                 <p>
-                    You have <span class="red">0</span> annoucements <span class="red">0 </span>unread
+                    You have <span class="red">0</span> announcements <span class="red">0 </span>unread
                 </p>
                 <p>
                     You have <span class="red">0 </span>messages <span class="red">0</span> appeals <span class="red">
@@ -141,7 +43,7 @@
 </p>
                 <p>&nbsp; </p>
                 <div class="btright">
-                    <a href="User/StudentInfor/messages.jsp">
+                    <a href="messages.jsp">
                         <img src="images/Student/default/bt_bzr.jpg" alt="send messages to prof" width="121" height="25" /></a></div>
             </div>
         </div>
@@ -155,7 +57,7 @@
                 <p>
               <font color="#FFFF00">You need to buy </font> <span class="red">0 </span>books. <a href="EducationCenter/books.jsp" class="red">check booklist</a></p>
                 <div class="btright">
-                    <a href="EducationCenter/myExam.jsp">
+                    <a href="myExam.jsp">
                         <img src="images/Student/default/bt_jw.jpg" alt="academic center" width="121" height="25" /></a></div>
             </div>
         </div>
@@ -183,7 +85,7 @@
                     You have <span class="red">3</span> financial rewards to be checkout</p>
                 
                 <div class="btright">
-                    <a href="MyAccount/tuition.jsp">
+                    <a href="tuition.jsp">
                         <img src="images/Student/default/bt_cw.jpg" alt="finance cne" width="121" height="25" /></a></div>
             </div>
         </div>

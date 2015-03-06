@@ -16,25 +16,25 @@ public class Course
 		creditHrs = crHrs;
 	}
 
-	public string getID()
+	public String getID()
 	{
 		return courseID;
 	}
 
-	public String toString
+	public String toString()
 	{
 		String result = "";
 
 		result += courseID + " - " + courseName + "\n";
 		result += "Faculty: " + faculty + " - Department: " + dept + "\n";
 		result += "Credit Hours: " + creditHrs + "\n";
-		result += "Description: " + desc + "\n";
+		result += "Description: " + description + "\n";
 
 		return result;
 	}
 
 	// TODO - write method to call something in the model to insert this Course record into the DB
-	public boolean dbInsert
+	public boolean dbInsert()
 	{
 		boolean success = false;
 
@@ -42,7 +42,7 @@ public class Course
 	}
 
 	// TODO - write method to call something in the model to update this Course record in the DB
-	public boolean dbUpdate
+	public boolean dbUpdate()
 	{
 		boolean success = false;
 

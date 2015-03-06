@@ -14,7 +14,7 @@ public class Degree
 		creditHrs = crHrs;
 	}
 
-	public String toString
+	public String toString()
 	{
 		String result = "";
 
@@ -25,7 +25,7 @@ public class Degree
 	}
 
 	// TODO - write method to call something in the model to insert this Degree record into the DB
-	public boolean dbInsert
+	public boolean dbInsert()
 	{
 		boolean success = false;
 
@@ -33,7 +33,7 @@ public class Degree
 	}
 
 	// TODO - write method to call something in the model to update this Degree record in the DB
-	public boolean dbUpdate
+	public boolean dbUpdate()
 	{
 		boolean success = false;
 

@@ -12,6 +12,7 @@ public class Section extends Course
 		int crHrs, String sID, String sTime, String eTime, String loc, int maxSize,
 		float tuition, boolean[] days)
 	{
+		super(cID, name, fac, dept, desc, crHrs);
 		sectID = sID;
 		startTime = sTime;
 		endTime = eTime;
@@ -19,7 +20,7 @@ public class Section extends Course
 		this.maxSize = maxSize;
 		this.tuition = tuition;
 		daysOffered = days;
-		super(cID, name, fac, dept, desc, crHrs);
+		
 	}
 
 	public String getID()
@@ -32,13 +33,13 @@ public class Section extends Course
 		return super.getID();
 	}
 
-	public String toString
+	public String toString()
 	{
 		String result = "";
 
-		result += super.toString()
+		result += super.toString();
 		result += "Section " + sectID + "\n";
-		result += sTime + " - " + eTime + " on " + getDaysStr() + "\n";
+		result += startTime + " - " + endTime + " on " + getDaysStr() + "\n";
 		result += "Location: " + location + "\n";
 
 		return result;
@@ -61,7 +62,7 @@ public class Section extends Course
 	}
 
 	// TODO - write method to call something in the model to insert this Section record into the DB
-	public boolean dbInsert
+	public boolean dbInsert()
 	{
 		boolean success = false;
 
@@ -69,7 +70,7 @@ public class Section extends Course
 	}
 
 	// TODO - write method to call something in the model to update this Section record in the DB
-	public boolean dbUpdate
+	public boolean dbUpdate()
 	{
 		boolean success = false;
 

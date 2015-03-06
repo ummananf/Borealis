@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>Borealis-Web</display-name>
+  <!-- **** Welcome List **** -->
   <welcome-file-list>
     <welcome-file>init</welcome-file>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
+	<!-- **** Servlet Files **** -->
   <servlet>
     <servlet-name>InitServlet</servlet-name>
     <servlet-class>ca.servlets.DBInitServlet</servlet-class>
@@ -14,6 +15,16 @@
     <servlet-name>InitServlet</servlet-name>
     <url-pattern>/init</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CourseSelectionServlet</display-name>
+    <servlet-name>CourseSelectionServlet</servlet-name>
+    <servlet-class>ca.servlets.CourseSelectionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CourseSelectionServlet</servlet-name>
+    <url-pattern>/CourseSelectionServlet</url-pattern>
+  </servlet-mapping>  
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>ca.servlets.LoginServlet</servlet-class>
@@ -31,29 +42,269 @@
     <url-pattern>/main</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>BooksServlet</servlet-name>
+    <servlet-class>ca.servlets.BooksServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BooksServlet</servlet-name>
+    <url-pattern>/books</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>InvalidLoginServlet</servlet-name>
+    <servlet-class>ca.servlets.InvalidLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InvalidLoginServlet</servlet-name>
+    <url-pattern>/invalidLogin</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+    <servlet-name>AnnouncementsServlet</servlet-name>
+    <servlet-class>ca.servlets.AnnouncementsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AnnouncementsServlet</servlet-name>
+    <url-pattern>/announcements</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+    <servlet-name>AppealsServlet</servlet-name>
+    <servlet-class>ca.servlets.AppealsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AppealsServlet</servlet-name>
+    <url-pattern>/appeals</url-pattern>
+  </servlet-mapping>  
+  <servlet>
+    <servlet-name>ChangePasswordServlet</servlet-name>
+    <servlet-class>ca.servlets.ChangePasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePasswordServlet</servlet-name>
+    <url-pattern>/changePassword</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ClassInfoServlet</servlet-name>
+    <servlet-class>ca.servlets.ClassInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClassInfoServlet</servlet-name>
+    <url-pattern>/classInfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CoursesSelectionServlet</servlet-name>
+    <servlet-class>ca.servlets.CoursesSelectionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CoursesSelectionServlet</servlet-name>
+    <url-pattern>/coursesSelection</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GradeServlet</servlet-name>
+    <servlet-class>ca.servlets.GradeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GradeServlet</servlet-name>
+    <url-pattern>/grade</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MaterialsDownloadServlet</servlet-name>
+    <servlet-class>ca.servlets.MaterialsDownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MaterialsDownloadServlet</servlet-name>
+    <url-pattern>/materialsDownload</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MessagesServlet</servlet-name>
+    <servlet-class>ca.servlets.MessagesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessagesServlet</servlet-name>
+    <url-pattern>/messages</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MyExamServlet</servlet-name>
+    <servlet-class>ca.servlets.MyExamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyExamServlet</servlet-name>
+    <url-pattern>/myExam</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MyInfoServlet</servlet-name>
+    <servlet-class>ca.servlets.MyInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyInfoServlet</servlet-name>
+    <url-pattern>/myInfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RegisterCoursesServlet</servlet-name>
+    <servlet-class>ca.servlets.RegisterCoursesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterCoursesServlet</servlet-name>
+    <url-pattern>/registerCourses</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TuitionServlet</servlet-name>
+    <servlet-class>ca.servlets.TuitionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TuitionServlet</servlet-name>
+    <url-pattern>/tuition</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProgressBarServlet</servlet-name>
+    <servlet-class>ca.servlets.ProgressBarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProgressBarServlet</servlet-name>
+    <url-pattern>/progressBar</url-pattern>
+  </servlet-mapping>
+  
+  <!-- **** JSP files **** -->
+  <servlet>
+    <servlet-name>BooksJSP</servlet-name>
+    <jsp-file>/pages/books.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BooksJSP</servlet-name>
+    <url-pattern>/books.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>IndexJSP</servlet-name>
-    <jsp-file>/index.jsp</jsp-file>
+    <jsp-file>/pages/index.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>IndexJSP</servlet-name>
-    <url-pattern>/index.html</url-pattern>
+    <url-pattern>/index.jsp</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>MainJSP</servlet-name>
-    <jsp-file>/main.jsp</jsp-file>
+    <jsp-file>/pages/main.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>MainJSP</servlet-name>
-    <url-pattern>/main.html</url-pattern>
+    <url-pattern>/main.jsp</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>CourseSelectionServlet</display-name>
-    <servlet-name>CourseSelectionServlet</servlet-name>
-    <servlet-class>ca.servlets.CourseSelectionServlet</servlet-class>
+    <servlet-name>BodyJSP</servlet-name>
+    <jsp-file>/pages/body.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>CourseSelectionServlet</servlet-name>
-    <url-pattern>/CourseSelectionServlet</url-pattern>
+    <servlet-name>BodyJSP</servlet-name>
+    <url-pattern>/body.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>InvalidLoginJSP</servlet-name>
+    <jsp-file>/pages/invalidLogin.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InvalidLoginJSP</servlet-name>
+    <url-pattern>/invalidLogin.jsp</url-pattern>
+  </servlet-mapping>     
+  <servlet>
+    <servlet-name>AuthRequiredJSP</servlet-name>
+    <jsp-file>/pages/authRequired.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthRequiredJSP</servlet-name>
+    <url-pattern>/authRequired.jsp</url-pattern>
+  </servlet-mapping>      
+  <servlet>
+    <servlet-name>ProgressBarJSP</servlet-name>
+    <jsp-file>/pages/progressBar.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProgressBarJSP</servlet-name>
+    <url-pattern>/progressBar.jsp</url-pattern>
+  </servlet-mapping>    
+  <servlet>
+    <servlet-name>AnnouncementsJSP</servlet-name>
+    <jsp-file>/pages/announcements.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AnnouncementsJSP</servlet-name>
+    <url-pattern>/announcements.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AppealsJSP</servlet-name>
+    <jsp-file>/pages/appeals.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AppealsJSP</servlet-name>
+    <url-pattern>/appeals.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ChangePasswordJSP</servlet-name>
+    <jsp-file>/pages/changePassword.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePasswordJSP</servlet-name>
+    <url-pattern>/changePassword.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ClassInfoJSP</servlet-name>
+    <jsp-file>/pages/classInfo.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClassInfoJSP</servlet-name>
+    <url-pattern>/classInfo.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GradeJSP</servlet-name>
+    <jsp-file>/pages/grade.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GradeJSP</servlet-name>
+    <url-pattern>/grade.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MaterialsDownloadJSP</servlet-name>
+    <jsp-file>/pages/materialsDownload.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MaterialsDownloadJSP</servlet-name>
+    <url-pattern>/materialsDownload.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MessagesJSP</servlet-name>
+    <jsp-file>/pages/messages.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessagesJSP</servlet-name>
+    <url-pattern>/messages.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MyExamJSP</servlet-name>
+    <jsp-file>/pages/myExam.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyExamJSP</servlet-name>
+    <url-pattern>/myExam.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MyInfoJSP</servlet-name>
+    <jsp-file>/pages/myInfo.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyInfoJSP</servlet-name>
+    <url-pattern>/myInfo.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RegisterCoursesJSP</servlet-name>
+    <jsp-file>/pages/registerCourses.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterCoursesJSP</servlet-name>
+    <url-pattern>/registerCourses.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TuitionJSP</servlet-name>
+    <jsp-file>/pages/tuition.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TuitionJSP</servlet-name>
+    <url-pattern>/tuition.jsp</url-pattern>
   </servlet-mapping>
 </web-app>

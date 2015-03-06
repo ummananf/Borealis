@@ -1,17 +1,16 @@
 package ca.servlets;
 
-//Import required java libraries
-import java.io.*;
+import java.io.IOException;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-
-import ca.objects.*;
-import ca.logic.LoginLogic;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 //Extend HttpServlet class
 @SuppressWarnings("serial")
-public class LoginServlet extends HttpServlet {
+public class TuitionServlet extends HttpServlet {
 
 	public static final String CURRENT_SESSION_USER = "CURRENT_SESSION_USER";
 
@@ -20,11 +19,10 @@ public class LoginServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-
-		System.out.println("**** MADE IT TO   __" + this.getServletName() + "__ ****");
-
 		
-		RequestDispatcher view = req.getRequestDispatcher("index.jsp");
+		System.out.println("**** MADE IT TO   __" + this.getServletName() + "__ ****");
+		RequestDispatcher view = req.getRequestDispatcher("tuition.jsp");
+		
 		view.forward(req, res);
 
 	}
@@ -35,18 +33,7 @@ public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		
-		LoginLogic loginService = new LoginLogic();
-		User user = loginService.getUserIfValid(req.getParameter("username"), req.getParameter("password"));
-
-		if (user != null) {
-			HttpSession session = req.getSession(true);
-			session.setAttribute(CURRENT_SESSION_USER, user);
-
-			res.sendRedirect("main");
-		}
-		else {
-			res.sendRedirect("invalidLogin_throwaway.jsp");
-		}
+		//manipulate data on submit here
 
 	}
 }
