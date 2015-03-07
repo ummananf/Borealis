@@ -51,9 +51,9 @@
 					</div>
 					<div class="form-group space">
                     	<label class="t"></label>
-						<!-- <button type="button"  id="submit_btn" 
-						class="btn btn-primary btn-lg">Submit </button> -->
-						<input type="submit" name="login" class="btn btn-primary btn-lg" value="Submit" />
+						
+						<button type="button"  id="submit_btn"  class="btn btn-primary btn-lg">Submit </button>
+						
 				      <input type="reset" value="reset" class="btn btn-default btn-lg">
 					</div>
 				</form>
