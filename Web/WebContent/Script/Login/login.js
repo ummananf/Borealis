@@ -19,7 +19,7 @@ $(function()
 	$('#submit_btn').click(function()
 	{
 		show_loading();
-		var myReg = /^[a-zA-Z]+$/; //We only allow the name to be English letters
+		var myReg = /^[a-zA-Z0-9]+$/; //We only allow the name to be English letters or numbers
 		if($('#username').val() == '')
 		{
 			show_err_msg('You cannot leave your name empty');	
@@ -27,7 +27,7 @@ $(function()
 		}
 		else if(!myReg.test($('#username').val()))
 		{
-			show_err_msg('Your user name contains non English characters!!!');
+			show_err_msg('Your user name contains non English characters or numbers!!!');
 			$('#username').focus();
 		}
 		else if($('#password').val() == '')
