@@ -43,8 +43,9 @@
 </p>
                 <p>&nbsp; </p>
                 <div class="btright">
-                    <a href="messages.jsp">
-                        <img src="images/Student/default/bt_bzr.jpg" alt="send messages to prof" width="121" height="25" /></a></div>
+<!--                     <a href="messages.jsp">
+                        <img src="images/Student/default/bt_bzr.jpg" alt="send messages to prof" width="121" height="25" /></a> -->
+                </div>
             </div>
         </div>
         <div class="dh2">
@@ -57,13 +58,14 @@
                 <p>
               <font color="#FFFF00">You need to buy </font> <span class="red">0 </span>books. <a href="EducationCenter/books.jsp" class="red">check booklist</a></p>
                 <div class="btright">
-                    <a href="myExam.jsp">
-                        <img src="images/Student/default/bt_jw.jpg" alt="academic center" width="121" height="25" /></a></div>
+<!--                     <a href="myExam.jsp">
+                        <img src="images/Student/default/bt_jw.jpg" alt="academic center" width="121" height="25" /></a> -->
+                </div>
             </div>
         </div>
         <div class="dh3" style="margin: 0 27px 15px 0;">
             <div class="topLeftFrame">
-                <p align="center">
+<!--                 <p align="center">
                     <a href="">sample exams</a></p>
                 <p align="center">
                     <a href="">exercises</a>
@@ -72,7 +74,8 @@
                     <a href="">online homeworks</a></p>
                 <div class="btright">
                     <a href="">
-                        <img src="images/Student/default/bt_ks.jpg" alt="exam" width="121" height="25" /></a></div>
+                        <img src="images/Student/default/bt_ks.jpg" alt="exam" width="121" height="25" /></a>
+                </div> -->
             </div>
         </div>
         <div class="dh4">
@@ -84,14 +87,15 @@
                 <p>
                     You have <span class="red">3</span> financial rewards to be checkout</p>
                 
-                <div class="btright">
+<!--                 <div class="btright">
                     <a href="tuition.jsp">
-                        <img src="images/Student/default/bt_cw.jpg" alt="finance cne" width="121" height="25" /></a></div>
+                        <img src="images/Student/default/bt_cw.jpg" alt="finance cne" width="121" height="25" /></a> -->
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="securityDiv">
+    <!-- <div class="securityDiv">
         <strong class="securityBanner">Security track:</strong>
     </div>
     <div class="trackTable">
@@ -152,10 +156,11 @@
             </div>
            
            
-    </div>
+    </div> -->
 
             </div>
         </div>
+    </div>
         <div class="footer">
             <p align="center">
                 &copy;copyright 2015 borealis </p>
