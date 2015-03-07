@@ -1,6 +1,6 @@
 package ca.objects;
 
-public class Section extends Course
+public class Section
 {
 	private String sectID, startTime, endTime, location;
 	private int maxSize;
@@ -8,11 +8,9 @@ public class Section extends Course
 	private boolean[] daysOffered;
 
 	// probably want to be able to create a Section without all of these variables though
-	public Section(String cID, String name, String fac, String dept, String desc,
-		int crHrs, String sID, String sTime, String eTime, String loc, int maxSize,
-		float tuition, boolean[] days)
+	public Section(String sID, String sTime, String eTime, String loc, int maxSize,
+				   float tuition, boolean[] days)
 	{
-		super(cID, name, fac, dept, desc, crHrs);
 		sectID = sID;
 		startTime = sTime;
 		endTime = eTime;
@@ -28,16 +26,10 @@ public class Section extends Course
 		return sectID;
 	}
 
-	public String getCourse()
-	{
-		return super.getID();
-	}
-
 	public String toString()
 	{
 		String result = "";
 
-		result += super.toString();
 		result += "Section " + sectID + "\n";
 		result += startTime + " - " + endTime + " on " + getDaysStr() + "\n";
 		result += "Location: " + location + "\n";

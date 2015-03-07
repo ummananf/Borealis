@@ -1,10 +1,13 @@
 package ca.objects;
 
+import java.util.ArrayList;
+
 public class Course
 {
 	private String courseID, courseName, faculty, dept, description;
 	private int creditHrs;
 	private boolean isFullYr;
+	private ArrayList<Section> sections;
 
 	// probably want to be able to create a Course without all of these variables though
 	public Course(String cID, String name, String fac, String dept, String desc, int crHrs, boolean fullYr)
@@ -16,6 +19,8 @@ public class Course
 		description = desc;
 		creditHrs = crHrs;
 		isFullYr = fullYr;
+		
+		sections = new ArrayList<Section>();
 	}
 
 	public String getID()
@@ -23,6 +28,11 @@ public class Course
 		return courseID;
 	}
 
+	public void addSection(Section section)
+	{
+		sections.add(section);
+	}
+	
 	public String toString()
 	{
 		String result = "";
@@ -31,6 +41,10 @@ public class Course
 		result += "Faculty: " + faculty + " - Department: " + dept + "\n";
 		result += "Credit Hours: " + creditHrs + "\n";
 		result += "Description: " + description + "\n";
+		if(isFullYr)
+			result += "Length: Full Year\n";
+		else
+			result += "Length: 1 Term\n";
 
 		return result;
 	}
