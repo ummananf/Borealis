@@ -20,6 +20,7 @@ public class LoginLogicTest {
 		
 		// test with existing user
 		assertNotNull(loginLogic.getUserIfValid("student1", "password"));
+		assertNotNull(loginLogic.getUserIfValid("admin1", "password"));
 		
 		// test with non existing users
 		assertNull(loginLogic.getUserIfValid("student1", "passworld"));

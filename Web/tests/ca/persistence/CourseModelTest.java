@@ -20,8 +20,7 @@ public class CourseModelTest {
 		
 		ArrayList<Prereq> prereqs = CourseModel.getPrereqs("COMP1020");
 		assertEquals(1, prereqs.size());
-		Prereq prereq = new Prereq("COMP1010", "COMP1020", 2.0f);
-		//assertEquals(prereqs.get(0), prereq);
+		assertEquals("COMP1010", prereqs.get(0).getRequiredCourseID());
 	}
 
 }

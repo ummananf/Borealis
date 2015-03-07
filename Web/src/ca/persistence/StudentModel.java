@@ -7,6 +7,7 @@ import java.util.Map;
 import java.sql.Date;
 
 
+
 import ca.objects.Enrollment;
 
 
@@ -18,18 +19,19 @@ public class StudentModel {
 	public static ArrayList<Enrollment> getCompletedCourses(int studentID)
 	{
 		String query = "SELECT * FROM Enrolled WHERE userID = "+studentID+" AND grade IS NOT NULL;";
+		
 		ArrayList<Enrollment> courses = new ArrayList<Enrollment>();
 		List<Map<String, Object>> resultList = DB.getData(query);
-		int i = 0;
+		Iterator<Map<String, Object>> iter = resultList.iterator();
 		
-		for (Iterator<Map<String, Object>> iter = resultList.iterator(); iter.hasNext(); i++){
-			Map<String, Object> row = resultList.get(i);
+		while(iter.hasNext()) {
+			Map<String, Object> row = iter.next();
 			
 			Enrollment temp = new Enrollment((Integer) row.get("userID"), 
 											(String) row.get("sectID"),
 											(String) row.get("cID"), 
 											(Date) row.get("termStart"),
-											((Double) row.get("grade")).floatValue());
+											(Float) row.get("grade") );
 			courses.add(temp);
 		}
 

@@ -6,15 +6,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class RegistrationLogicTest {
-	
+	RegistrationLogic regLogic;
 
 	@Before
 	public void setUp() throws Exception {
+		regLogic = new RegistrationLogic();
 	}
 
 	@Test
 	public final void testMeetsPrereqs() {
-		RegistrationLogic regLogic = new RegistrationLogic();
 		
 		// has one prereq
 		assertTrue(regLogic.meetsPrereqs(2, "COMP1020"));

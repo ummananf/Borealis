@@ -1,6 +1,5 @@
 package ca.persistence;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -21,9 +20,8 @@ public class UserModel {
 		String query = "SELECT * FROM Users WHERE username = '"+input+"';";
 		User user = null;
 		List<Map<String, Object>> resultList = DB.getData(query);
-		Iterator<Map<String, Object>> iter = resultList.iterator();
 		
-		if (iter.hasNext()){
+		if (!resultList.isEmpty()){
 			Map<String, Object> row = resultList.get(0);
 	        
 	        int userID = (Integer) row.get("userID");
