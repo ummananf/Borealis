@@ -21,7 +21,7 @@
 
 
 
-<jsp:include page="body.jsp" />
+<jsp:include page="template/header_nav.jsp" />
 
 
 
@@ -94,11 +94,6 @@
     </script>
 
             </div>
-        </div>
-        <div class="footer">
-            <p>
-                &copy;copyright 2015 borealis</p>
-        </div>
-    </div>
+<jsp:include page="template/footer.jsp" />
 </body>
 </html>

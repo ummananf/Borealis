@@ -16,8 +16,7 @@ public class StudentModel {
 	
 	
 	// TODO: may have to add a "gradeReceived" boolean to DB table, since grade will be read as 0 if it is NULL
-	public static ArrayList<Enrollment> getCompletedCourses(int studentID)
-	{
+	public static ArrayList<Enrollment> getCompletedCourses(int studentID){
 		String query = "SELECT * FROM Enrolled WHERE userID = "+studentID+" AND grade IS NOT NULL;";
 		
 		ArrayList<Enrollment> courses = new ArrayList<Enrollment>();

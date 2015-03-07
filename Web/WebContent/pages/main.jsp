@@ -1,31 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
-	Borealis
-</title>
-<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
-<link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" />
-<link href="Style/start.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-.banner .bannerFrame .page .topOptions {
-	font-family: Comic Sans MS, cursive;
-}
-.banner .bannerFrame .page .topOptions a {
-	font-family: Comic Sans MS, cursive;
-}
-</style>
-<script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="Script/Common.js" type="text/javascript"></script>
-    <script src="Script/Data.js" type="text/javascript"></script>
-    
-<script src="Script/changeOption.js" type="text/javascript"></script>
-<script src="Script/rl.js" type="text/javascript"></script>
-</head>
-<body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Borealis</title>
+		<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
+		<link href="Style/start.css" rel="stylesheet" type="text/css" />
+		<script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+	</head>
+	<body>
 
-<jsp:include page="body.jsp" />
+<jsp:include page="template/header_nav.jsp" />
 
+
+		<div class="rightbox">
 
 
     <h2 class="pathNavigator">
@@ -43,8 +31,9 @@
 </p>
                 <p>&nbsp; </p>
                 <div class="btright">
-                    <a href="messages.jsp">
-                        <img src="images/Student/default/bt_bzr.jpg" alt="send messages to prof" width="121" height="25" /></a></div>
+<!--                     <a href="messages.jsp">
+                        <img src="images/Student/default/bt_bzr.jpg" alt="send messages to prof" width="121" height="25" /></a> -->
+                </div>
             </div>
         </div>
         <div class="dh2">
@@ -57,13 +46,14 @@
                 <p>
               <font color="#FFFF00">You need to buy </font> <span class="red">0 </span>books. <a href="EducationCenter/books.jsp" class="red">check booklist</a></p>
                 <div class="btright">
-                    <a href="myExam.jsp">
-                        <img src="images/Student/default/bt_jw.jpg" alt="academic center" width="121" height="25" /></a></div>
+<!--                     <a href="myExam.jsp">
+                        <img src="images/Student/default/bt_jw.jpg" alt="academic center" width="121" height="25" /></a> -->
+                </div>
             </div>
         </div>
         <div class="dh3" style="margin: 0 27px 15px 0;">
             <div class="topLeftFrame">
-                <p align="center">
+<!--                 <p align="center">
                     <a href="">sample exams</a></p>
                 <p align="center">
                     <a href="">exercises</a>
@@ -72,7 +62,8 @@
                     <a href="">online homeworks</a></p>
                 <div class="btright">
                     <a href="">
-                        <img src="images/Student/default/bt_ks.jpg" alt="exam" width="121" height="25" /></a></div>
+                        <img src="images/Student/default/bt_ks.jpg" alt="exam" width="121" height="25" /></a>
+                </div> -->
             </div>
         </div>
         <div class="dh4">
@@ -84,14 +75,12 @@
                 <p>
                     You have <span class="red">3</span> financial rewards to be checkout</p>
                 
-                <div class="btright">
+<!--                 <div class="btright">
                     <a href="tuition.jsp">
-                        <img src="images/Student/default/bt_cw.jpg" alt="finance cne" width="121" height="25" /></a></div>
-            </div>
-        </div>
-    </div>
+                        <img src="images/Student/default/bt_cw.jpg" alt="finance cne" width="121" height="25" /></a> -->
+                </div>
 
-    <div class="securityDiv">
+    <!-- <div class="securityDiv">
         <strong class="securityBanner">Security track:</strong>
     </div>
     <div class="trackTable">
@@ -152,16 +141,11 @@
             </div>
            
            
-    </div>
+    </div> -->
 
             </div>
         </div>
-        <div class="footer">
-            <p align="center">
-                &copy;copyright 2015 borealis </p>
-        </div>
     </div>
-	<div style="text-align:center;">
-</div>
+<jsp:include page="template/footer.jsp" />
 </body>
 </html>

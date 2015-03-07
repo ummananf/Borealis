@@ -1,19 +1,17 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>personal info</title><link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" /><link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" /><link href="Style/start.css" rel="stylesheet" type="text/css" />
-    <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    
-    <script src="Script/Common.js" type="text/javascript"></script>
-    <script src="Script/Data.js" type="text/javascript"></script>
-   
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>personal info</title>
+		<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
+		<link href="Style/start.css" rel="stylesheet" type="text/css" />
+	    <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+	</head>
 <body>
 
 
-<jsp:include page="body.jsp" />
+<jsp:include page="template/header_nav.jsp" />
 
 
 
@@ -25,10 +23,10 @@
 
 <ul id="ulStudMsgHeadTab">
     <li><a class="tab2" onclick="" href="main">personal info</a> </li>
-    <li><a class="tab2" onclick="" href="classInfo">class info</a></li>
+<!--     <li><a class="tab2" onclick="" href="classInfo">class info</a></li>
     <li><a class="tab2" onclick="" href="messages">messages</a></li>
     <li><a class="tab2" onclick="" href="announcements">announcements<span style="color:#ff0000; padding-left:5px;" id="unreadSysMsgCount"></span></a></li>
-    <li><a class="tab2" onclick="" href="appeals">appeals</a></li>
+    <li><a class="tab2" onclick="" href="appeals">appeals</a></li> -->
 </ul>
 
 </div>
@@ -40,7 +38,7 @@
             <td align="right" width="101">student Id</td>
             <td width="168">77xxxxx</td>
             
-            <td width="326" rowspan="9"><div align="center"><img id="pic_face"  height="160" width="120" src="images/Student/photo.jpg"/ style="padding:2px 2px 5px; border:1px #ddd solid;"></div>&nbsp;</td>
+            <td width="326" rowspan="9"><div align="center"><img id="pic_face"  height="160" width="120" src="images/Student/photo.jpg" style="padding:2px 2px 5px; border:1px #ddd solid;" /></div>&nbsp;</td>
         </tr>
         <tr>
             <td align="right">sex</td>
@@ -108,11 +106,6 @@
 </div>
 
             </div>
-        </div>
-        <div class="footer">
-            <p>
-                &copy;copyright 2015 borealis</p>
-        </div>
-    </div>
+<jsp:include page="template/footer.jsp" />
 </body>
 </html>

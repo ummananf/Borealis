@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 <title>material download</title><link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 <link href="Style/start.css" rel="stylesheet" type="text/css" />
 <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
@@ -13,7 +13,7 @@
 
 
 
-<jsp:include page="body.jsp" />
+<jsp:include page="template/header_nav.jsp" />
 
 
 
@@ -243,11 +243,6 @@
     </div>
 
             </div>
-        </div>
-        <div class="footer">
-            <p>
-                &copy;copyright 2015 borealis</p>
-        </div>
-    </div>
+<jsp:include page="template/footer.jsp" />
 </body>
 </html>

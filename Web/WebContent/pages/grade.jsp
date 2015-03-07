@@ -15,7 +15,7 @@
 <body>
 
 
-<jsp:include page="body.jsp" />
+<jsp:include page="template/header_nav.jsp" />
 
 
 
@@ -28,7 +28,7 @@
               <li><a class="tab1" href="registerCourses">Register Courses</a></li>
             <li><a class="tab2" href="myExam">my exams</a></li>
             <li><a class="tab1" href="grade">my grade</a></li>
-            <li><a class="tab2" href="books">books & materials</a></li>
+            <li><a class="tab2" href="books">books &amp; materials</a></li>
             
         </ul>
     </div>
@@ -166,7 +166,6 @@
                         	</button>
                         </td>
                     </tr>
-                </tr>
                 
                 <tr align="center">
                     <td colspan="15">
@@ -180,11 +179,6 @@
     </div>
 
             </div>
-        </div>
-        <div class="footer">
-            <p>
-                &copy;copyright 2015 borealis</p>
-        </div>
-    </div>
+<jsp:include page="template/footer.jsp" />
 </body>
 </html>
