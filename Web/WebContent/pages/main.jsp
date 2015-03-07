@@ -27,6 +27,8 @@
 <jsp:include page="body.jsp" />
 
 
+		<div class="rightbox">
+
 
     <h2 class="pathNavigator">
         My Zone</h2>
@@ -91,9 +93,6 @@
                     <a href="tuition.jsp">
                         <img src="images/Student/default/bt_cw.jpg" alt="finance cne" width="121" height="25" /></a> -->
                 </div>
-            </div>
-        </div>
-    </div>
 
     <!-- <div class="securityDiv">
         <strong class="securityBanner">Security track:</strong>
@@ -166,7 +165,5 @@
                 &copy;copyright 2015 borealis </p>
         </div>
     </div>
-	<div style="text-align:center;">
-</div>
 </body>
 </html>
