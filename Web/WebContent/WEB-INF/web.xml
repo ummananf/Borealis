@@ -188,12 +188,20 @@
     <url-pattern>/main.jsp</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>BodyJSP</servlet-name>
-    <jsp-file>/pages/body.jsp</jsp-file>
+    <servlet-name>Header_NavJSP</servlet-name>
+    <jsp-file>/pages/template/header_nav.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>BodyJSP</servlet-name>
-    <url-pattern>/body.jsp</url-pattern>
+    <servlet-name>Header_NavJSP</servlet-name>
+    <url-pattern>/template/header_nav.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FooterJSP</servlet-name>
+    <jsp-file>/pages/template/footer.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FooterJSP</servlet-name>
+    <url-pattern>/template/footer.jsp</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>InvalidLoginJSP</servlet-name>

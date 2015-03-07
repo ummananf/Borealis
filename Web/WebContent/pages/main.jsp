@@ -1,30 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
-	Borealis
-</title>
-<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
-<link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" />
-<link href="Style/start.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-.banner .bannerFrame .page .topOptions {
-	font-family: Comic Sans MS, cursive;
-}
-.banner .bannerFrame .page .topOptions a {
-	font-family: Comic Sans MS, cursive;
-}
-</style>
-<script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="Script/Common.js" type="text/javascript"></script>
-    <script src="Script/Data.js" type="text/javascript"></script>
-    
-<script src="Script/changeOption.js" type="text/javascript"></script>
-<script src="Script/rl.js" type="text/javascript"></script>
-</head>
-<body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Borealis</title>
+		<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
+		<link href="Style/start.css" rel="stylesheet" type="text/css" />
+		<script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+	</head>
+	<body>
 
-<jsp:include page="body.jsp" />
+<jsp:include page="template/header_nav.jsp" />
 
 
 		<div class="rightbox">
@@ -160,10 +146,6 @@
             </div>
         </div>
     </div>
-        <div class="footer">
-            <p align="center">
-                &copy;copyright 2015 borealis </p>
-        </div>
-    </div>
+<jsp:include page="template/footer.jsp" />
 </body>
 </html>
