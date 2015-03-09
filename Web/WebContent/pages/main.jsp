@@ -33,10 +33,14 @@ else
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
 		<script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
 	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+	    
 	</head>
 	<body>
 
 <jsp:include page="template/header_nav.jsp" />
+
+Your session ID is
+<span id="sessionId"><em><%= request.getSession(true).getId() %></em></span>.
 
 
 		<div class="rightbox">
