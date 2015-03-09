@@ -1,3 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
+<%@ page session="true" %>
+<%@ page import="ca.objects.User" %>
+
+<% 
+if (session == null)  
+{
+ System.out.println("session is null");
+ String address = "index.jsp";
+ RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(address);
+ dispatcher.forward(request,response);
+}
+else
+{
+  // the user *does* have a valid session.
+  // do whatever you need to for logged in users.
+ User user = (User)session.getAttribute("CURRENT_SESSION_USER");
+ String userName = user.getUsername();
+ String e_mail = user.getEmail();
+ 
+ System.out.println(userName);  // This is for testing purpose only
+ System.out.println("e-mail");  // This is for testing purpose only
+}
+%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>

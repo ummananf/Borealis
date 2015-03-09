@@ -14,7 +14,7 @@
                       <option selected='selected'
                             value="1"> full time</option>
                     </select> -->
-77xxxxx student: xx, Welcome back !Å <!-- <a href="myInfo">MyInfo</a> <a href="announcements">
+77xxxxx student: xx, Welcome back ! <!-- <a href="myInfo">MyInfo</a> <a href="announcements">
                         announcements</a> <a href="changePassword">change psw</a> <a onclick="loginOut()"
                             href="javascript:">logout</a> -->
                 </div>
