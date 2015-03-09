@@ -3,7 +3,7 @@
   <display-name>Borealis-Web</display-name>
   <!-- **** Welcome List **** -->
   <welcome-file-list>
-    <welcome-file>init</welcome-file>
+    <welcome-file>/pages/index.jsp</welcome-file>
   </welcome-file-list>
   
 	<!-- **** Servlet Files **** -->

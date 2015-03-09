@@ -18,7 +18,7 @@ $(function()
 	//submit form
 	$('#submit_btn').click(function()
 	{
-		show_loading();
+//		show_loading();
 		var myReg = /^[a-zA-Z0-9]+$/; //We only allow the name to be English letters or numbers
 		if($('#username').val() == '')
 		{
@@ -38,8 +38,7 @@ $(function()
 		else
 		{
 			//ajax submit form，#login_form is form's ID. example：$('#login_form').ajaxSubmit(function(data) { ... });
-			show_msg('login successfully！  redirecting...','/');
-			$("#login_form").submit();
+	//		show_msg('Redirecting...' , '/');
 		}
 	});
 });

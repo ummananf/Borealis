@@ -13,7 +13,7 @@
 		<script src="Script/Login/jquery-1.8.2.min.js"></script>
 		<script src="Script/Login/jquery.form.js" type="text/javascript"></script>
 		<script src="Script/Login/tooltips.js" type="text/javascript"></script>
-		<script src="Script/Login/login2.js" type="text/javascript"></script>
+ 		<script src="Script/Login/login2.js" type="text/javascript"></script> 
 	</head>
 
 <body>
@@ -69,7 +69,39 @@
 <script src="Script/Login/supersized-init.js"></script>
 <script src="Script/Login/scripts.js"></script>
 <div style="text-align:center;">
-
 </div>
+
+<script>
+
+//here we catch the response after clicking submit
+//handle response from here, redirect if OK otherwise show login error
+$("#login_form").submit(function(event) {
+	
+	//prevent original submit event from firing
+	//since we are overriding it
+	event.preventDefault();
+	
+	//get the url to which we send the POST request
+	var url = $(this).attr("action");
+	
+	//thie is the post request
+	//first parameter the url, second is the data
+	//$(this) here is #login_form
+	var post = $.post(url, $(this).serialize())
+	
+	//something to do if the response we get is OK
+	post.done(function(data, textStatus, jqXHR) {
+		//redirect to main
+		window.location.href = "main";
+	});
+	
+	//something to do if the response we get indicates some kind of failure
+	post.fail(function(jqXHR, textStatus, errorThrown) {
+		alert("u fail man");
+	});
+});
+
+</script>
+
 </body>
 </html>
