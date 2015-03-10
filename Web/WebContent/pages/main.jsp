@@ -19,7 +19,7 @@ else
  String e_mail = user.getEmail();
  
  System.out.println(userName);  // This is for testing purpose only
- System.out.println("e-mail");  // This is for testing purpose only
+ System.out.println(e_mail);  // This is for testing purpose only
 }
 %>
 
@@ -33,7 +33,22 @@ else
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
 		<script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
 	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>   <!-- this lib is for parsing the json data -->
 	    
+	    <script>
+            var persons = [
+                { "name": "John Doe", "studentID": "7777454" }
+            ];
+            $(document).ready(function() {
+                var table = $('<table/>').appendTo($('#welcomeTag'));
+                $(persons).each(function(i, person) {
+                    $('<tr/>').appendTo(table)
+                        .append($('<td/>').text(person.name))
+                        .append($('<td/>').text(person.studentID))
+                    	.append($('<td/>').text(",Welcome back!"));
+                });
+            });
+        </script>
 	</head>
 	<body>
 

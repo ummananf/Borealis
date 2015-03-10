@@ -38,7 +38,7 @@ $(function()
 		else
 		{
 			//ajax submit form，#login_form is form's ID. example：$('#login_form').ajaxSubmit(function(data) { ... });
-			show_msg('format successfully redirecting...','/');
+			show_msg('format ok, redirecting to backend...','/');
 			$("#login_form").submit();
 		}
 	});
