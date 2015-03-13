@@ -39,14 +39,12 @@
         <div class="dh2">
             <div class="topLeftFrame">
                 <p>
-              You have <span class="red">0</span> exams.
-              </p>
+              You have <span class="red">0</span> exams <a href="EducationCenter/myExam.jsp" class="red">check exam schedule</a></p>
                 <p>
-                   <font color="#FFFF33"> You passed</font> <span class="red">0 </span>courses.&nbsp; There are <span class="red">13</span> in total. 
+                   <font color="#FFFF33"> You passed</font> <span class="red">0 </span>courses.&nbsp; There are <span class="red">13</span> in total <a href="EducationCenter/grade.jsp" class="red">check grade</a>
                 </p>
                 <p>
-              <font color="#FFFF00">You need to buy </font> <span class="red">0 </span>books.
-              </p>
+              <font color="#FFFF00">You need to buy </font> <span class="red">0 </span>books. <a href="EducationCenter/books.jsp" class="red">check booklist</a></p>
                 <div class="btright">
 <!--                     <a href="myExam.jsp">
                         <img src="images/Student/default/bt_jw.jpg" alt="academic center" width="121" height="25" /></a> -->
