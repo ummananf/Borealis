@@ -1,8 +1,12 @@
 package ca.objects;
 
+import java.sql.ResultSet;
+
 public class Degree
 {
 	private String degName, degProgram, degOption;
+
+
 	private int creditHrs;
 
 	// create Degree with less variables?
@@ -13,7 +17,23 @@ public class Degree
 		degOption = option;
 		creditHrs = crHrs;
 	}
+	
+	public String getDegName() {
+		return degName;
+	}
 
+	public String getDegProgram() {
+		return degProgram;
+	}
+
+	public String getDegOption() {
+		return degOption;
+	}
+
+	public int getCreditHrs() {
+		return creditHrs;
+	}
+	
 	public String toString()
 	{
 		String result = "";
@@ -24,19 +44,5 @@ public class Degree
 		return result;
 	}
 
-	// TODO - write method to call something in the model to insert this Degree record into the DB
-	public boolean dbInsert()
-	{
-		boolean success = false;
-
-		return success;
-	}
-
-	// TODO - write method to call something in the model to update this Degree record in the DB
-	public boolean dbUpdate()
-	{
-		boolean success = false;
-
-		return success;
-	}
 }
+

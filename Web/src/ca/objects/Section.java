@@ -12,7 +12,7 @@ public class Section extends Course
 		int crHrs, String sID, String sTime, String eTime, String loc, int maxSize,
 		float tuition, boolean[] days)
 	{
-		super(cID, name, fac, dept, desc, crHrs);
+		super(cID, name, fac, dept, desc, crHrs, false);
 		sectID = sID;
 		startTime = sTime;
 		endTime = eTime;

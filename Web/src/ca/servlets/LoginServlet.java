@@ -13,7 +13,7 @@ import ca.logic.LoginLogic;
 @SuppressWarnings("serial")
 public class LoginServlet extends HttpServlet {
 
-	public static final String CURRENT_SESSION_USER = "CURRENT_SESSION_USER";
+
 
 	/**
 	 * doGet is logic that should be done before the page is rendered
@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
 
 		if (user != null) {
 			HttpSession session = req.getSession(true);
-			session.setAttribute(CURRENT_SESSION_USER, user);
+			session.setAttribute(SessionGlobals.CURRENT_SESSION_USER, user);
 
 			res.sendRedirect("main");
 		}

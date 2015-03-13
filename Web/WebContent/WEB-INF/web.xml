@@ -16,16 +16,6 @@
     <url-pattern>/init</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>CourseSelectionServlet</display-name>
-    <servlet-name>CourseSelectionServlet</servlet-name>
-    <servlet-class>ca.servlets.CourseSelectionServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CourseSelectionServlet</servlet-name>
-    <url-pattern>/CourseSelectionServlet</url-pattern>
-  </servlet-mapping>  
-  <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>ca.servlets.LoginServlet</servlet-class>
   </servlet>
