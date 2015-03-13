@@ -30,80 +30,66 @@
 </ul>
 
 </div>
-<div class="workingSpace">
-    <table width="100%" cellpadding="0" cellspacing="0">
-        <tr>
-            <td align="right" width="129">name</td>
-            <td width="99">xxx</td>
-            <td align="right" width="101">student Id</td>
-            <td width="168">77xxxxx</td>
-            
-            <td width="326" rowspan="9"><div align="center"><img id="pic_face"  height="160" width="120" src="images/Student/photo.jpg" style="padding:2px 2px 5px; border:1px #ddd solid;" /></div>&nbsp;</td>
-        </tr>
-        <tr>
-            <td align="right">sex</td>
-            <td></td>
-            <td align="right">umnetID</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td align="right">student type</td>
-            <td></td>
-            <td align="right">major</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td align="right">specialization</td>
-            <td></td>
-            <td align="right">minor</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td align="right">Ungrad/Grad</td>
-            <td></td>
-            
-            <td align="right">entrance Time</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td align="right">graduation time</td>
-            <td></td>
-            <td align="right">status</td>
-            <td></td>
-        </tr>
+<div class="workingSpace" id="infoTable"></div>
+
+<script>
+	var myInfo = [
+		{"fName": "John", "lName":"Doe", "sID": "7777454",
+		"username": "johndoe", "email": "johndoe@school.ca"}
+	];
+	var myDegrees = [
+	    {"degName":"Computer Science - Honours"}
+	];
+	var mySections = [
+	    {"cID":"COMP 1010", "cName":"Introduction to Computer Science",
+	    "sectID":"A01", "start":"9:30", "end":"10:20", "days":"Mon, Wed, Fri"},
+	    {"cID":"COMP 1020", "cName":"Introduction to Computer Science 2",
+	    "sectID":"A02", "start":"10:30", "end": "11:20", "days":"Mon, Wed, Fri"}
+	];
+	
+	$(document).ready(function()
+	{
+        var table = $('<table/>').appendTo($('#infoTable'));
+        $(myInfo).each(function(i, person)
+        {
+	        $('<tr/>').appendTo(table)
+	        	.append($('<td align="right" width="125"/>').text("name:"))
+	        	.append($('<td width="125"/>').text(person.fName + " " + person.lName))
+	        	.append($('<td align="right" width="125"/>').text("student ID:"))
+	        	.append($('<td width="125"/>').text(person.sID));
+	        $('<tr/>').appendTo(table)
+	    		.append($('<td align="right"/>').text("email:"))
+	    		.append($('<td/>').text(person.email))
+	    		.append($('<td align="right"/>').text("user name:"))
+	    		.append($('<td/>').text(person.username));
+	        $(myDegrees).each(function(i, degree)
+	        {
+		        $('<tr/>').appendTo(table)
+	    			.append($('<td align="right"/>').text("degree:"))
+	    			.append($('<td colspan="3"/>').text(degree.degName));
+	        });
+	    });
         
-        <tr>
-            <td colspan="4" align="left"><strong>View/Update E-mail Addresses</strong></td>
-            
-        </tr>
-        <tr>
-            <td align="right">phone number</td>
-            <td>&nbsp;</td>
-            <td align="right">alternate phone </td>
-            <td></td>
-           
-        </tr>
-        <tr>
-            <td align="right">emergency contact</td>
-            <td></td>
-            <td align="right">email</td>
-            <td></td>
-            
-        </tr>
-        <tr>
-            <td align="right">addr</td>
-            <td colspan="4"></td>
-        </tr>
-        <tr align="center">
-            <td colspan="5" height="40">
-                <div align="center">
-                    
-                    <input type="button" id="button2" value="change contact info" onclick="submitMail()" class="input2" />
-                </div>
-            </td>
-        </tr>
-    </table>
-</div>
+        var table2 = $('<table/>').appendTo($('#infoTable'));
+        $('<tr/>').appendTo(table2)
+        	.append($('<td colspan="5"/>').text("Current Courses"));
+        $('<tr/>').appendTo(table2)
+			.append($('<td width="50"/>').text("section"))
+			.append($('<td width="75"/>').text("course"))
+			.append($('<td width="225"/>').text("course name"))
+			.append($('<td width="75"/>').text("time"))
+			.append($('<td width="85"/>').text("days"));
+        $(mySections).each(function(i, course)
+        {
+        	$('<tr/>').appendTo(table2)
+    			.append($('<td/>').text(course.sectID))
+    			.append($('<td/>').text(course.cID))
+    			.append($('<td/>').text(course.cName))
+    			.append($('<td/>').text(course.start + "-" + course.end))
+    			.append($('<td/>').text(course.days));
+        });
+    });
+</script>
 
             </div>
 <jsp:include page="template/footer.jsp" />
