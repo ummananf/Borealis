@@ -22,7 +22,7 @@
     
 
 <ul id="ulStudMsgHeadTab">
-    <li><a class="tab2" onclick="" href="main">personal info</a> </li>
+    <li><a class="tab2" onclick="" href="myInfo">my info</a> </li>
 <!--     <li><a class="tab2" onclick="" href="classInfo">class info</a></li>
     <li><a class="tab2" onclick="" href="messages">messages</a></li>
     <li><a class="tab2" onclick="" href="announcements">announcements<span style="color:#ff0000; padding-left:5px;" id="unreadSysMsgCount"></span></a></li>
