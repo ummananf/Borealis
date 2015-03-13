@@ -46,7 +46,9 @@
                     	<div>
                             <a href="myInfo">my info</a>
                         </div>
-                        <div>                        </div>
+                        <div>
+                        	<a href="classInfo">class info</a>
+                        </div>
                         <div>                        </div>
                         <div>                        </div>
                         <div>                        </div>
