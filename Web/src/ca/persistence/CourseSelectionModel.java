@@ -14,7 +14,7 @@ public class CourseSelectionModel {
 
 	private static String GET_COURSES_FOR_TERM =
 			"Select * " +
-			"from degrees " +
+			"from Degrees " +
 			"where term=? ";
 	
 	public static ArrayList<Degree> getDegrees( String term ){
@@ -28,6 +28,7 @@ public class CourseSelectionModel {
 		try {		
 			PreparedStatement statement = connection.prepareStatement(GET_COURSES_FOR_TERM);
 			statement.setString(1, term);
+System.out.println(statement.toString());
 			data = statement.executeQuery();
 			
 			// This needs to be done before statement and connection is closed!
