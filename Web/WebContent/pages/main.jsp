@@ -1,3 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
+<%@ page session="true" %>
+<%@ page import="ca.objects.User" %>
+
+<% 
+if (session == null)  
+{
+ System.out.println("session is null");
+ String address = "index.jsp";
+ RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(address);
+ dispatcher.forward(request,response);
+}
+else
+{
+  // the user *does* have a valid session.
+  // do whatever you need to for logged in users.
+ User user = (User)session.getAttribute("CURRENT_SESSION_USER");
+ String userName = user.getUsername();
+ String e_mail = user.getEmail();
+ 
+ System.out.println(userName);  // This is for testing purpose only
+ System.out.println(e_mail);  // This is for testing purpose only
+}
+%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
@@ -7,10 +33,29 @@
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
 		<script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
 	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>   <!-- this lib is for parsing the json data -->
+	    
+	    <script>
+            var persons = [
+                { "name": "John Doe", "studentID": "7777454" }
+            ];
+            $(document).ready(function() {
+                var table = $('<table/>').appendTo($('#welcomeTag'));
+                $(persons).each(function(i, person) {
+                    $('<tr/>').appendTo(table)
+                        .append($('<td/>').text(person.name))
+                        .append($('<td/>').text(person.studentID))
+                    	.append($('<td/>').text(",Welcome back!"));
+                });
+            });
+        </script>
 	</head>
 	<body>
 
 <jsp:include page="template/header_nav.jsp" />
+
+Your session ID is
+<span id="sessionId"><em><%= request.getSession(true).getId() %></em></span>.
 
 
 		<div class="rightbox">

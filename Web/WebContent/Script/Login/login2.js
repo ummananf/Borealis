@@ -40,6 +40,7 @@ $(function()
 			//ajax submit form，#login_form is form's ID. example：$('#login_form').ajaxSubmit(function(data) { ... });
 	//		show_msg('Redirecting...' , '/');
 			$(login_form).submit();
+
 		}
 	});
 });
