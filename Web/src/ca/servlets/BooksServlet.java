@@ -10,7 +10,6 @@ import javax.servlet.http.*;
 @SuppressWarnings("serial")
 public class BooksServlet extends HttpServlet {
 
-	public static final String CURRENT_SESSION_USER = "CURRENT_SESSION_USER";
 
 	/**
 	 * doGet is logic that should be done before the page is rendered

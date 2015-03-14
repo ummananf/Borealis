@@ -31,7 +31,6 @@ CREATE TABLE Courses
 	cID varchar(10) PRIMARY KEY, 
 	cName varchar(50), 
 	creditHrs smallint,
-	isFullYr boolean,
 	faculty varchar(50),
 	department varchar(50),
 	description varchar(200)
@@ -81,6 +80,7 @@ CREATE TABLE Teaches
 );
 CREATE TABLE Degrees
 (
+	term varchar(50) NOT NULL,
 	degProgram varchar(50) NOT NULL,
 	degOption varchar(50) NOT NULL,
 	degName varchar(50) PRIMARY KEY,
@@ -111,8 +111,11 @@ INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl
 -- INSERT INTO UserPrivs VALUES (1, 'admin');
 -- INSERT INTO UserPrivs VALUES (2, 'student');
 
-INSERT INTO Courses VALUES ('COMP1010', 'Intro to Computer Science', 3, 0, 'Science', 'Computer Science', 'Introduces you to computer science.');
-INSERT INTO Courses VALUES ('COMP1020', 'Intro to Computer Science 2', 3, 0, 'Science', 'Computer Science', 'Introduces you to more computer science!');
+INSERT INTO Courses VALUES ('COMP1010', 'Intro to Computer Science', 3, 'Science', 'Computer Science', 'Introduces you to computer science.');
+INSERT INTO Courses VALUES ('COMP1020', 'Intro to Computer Science 2', 3, 'Science', 'Computer Science', 'Introduces you to more computer science!');
+INSERT INTO Courses VALUES ('BIO1030', 'Intro to Biological Science 2', 3, 'Science', 'Biology', 'Introduces you to bio science!');
+INSERT INTO Courses VALUES ('BIO1040', 'Intro to Biological Science 2', 3, 'Science', 'Biology', 'Introduces you to bio science!');
+INSERT INTO Courses VALUES ('ENV1010', 'Intro to Environmental Science 2', 3, 'Science', 'Environment', 'Introduces you to our world!');
 
 INSERT INTO Prereqs VALUES ('COMP1010', 'COMP1020', 2.0);
 
@@ -122,4 +125,10 @@ INSERT INTO Sections VALUES ('A01', 'COMP1020', '2015-01-01', 100, 'MWF', '13:30
 INSERT INTO Enrolled VALUES (2, 'A01', 'COMP1010', '2014-09-01', 3.5);
 INSERT INTO Enrolled VALUES (2, 'A01', 'COMP1020', '2015-01-01', NULL);
 
-INSERT INTO Degrees VALUES ('Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
+INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
+INSERT INTO Degrees VALUES ('Winter2015', 'Biology', 'Major', 'B.Sc. Biology (Major)', 120);
+INSERT INTO Degrees VALUES ('Winter2015', 'Environment', 'Major', 'B.Sc. Environmental Science (Major)', 120);
+INSERT INTO Degrees VALUES ('Fall2014', 'Mathematics', 'Major', 'B.Sc. Mathematics (Major)', 120);
+INSERT INTO Degrees VALUES ('Fall2014', 'Architecture', 'Major', 'B.Sc. Architecture (Major)', 120);
+INSERT INTO Degrees VALUES ('Fall2014', 'Astronomy', 'Major', 'B.Sc. Astronomy (Major)', 120);
+

@@ -16,6 +16,7 @@ public class LoginServlet extends HttpServlet {
 	
 	// need this to keep url as "login" so the filter works properly as it checks for "login" page
 	// and not "index.jsp"
+
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		RequestDispatcher view = req.getRequestDispatcher("pages/index.jsp");
@@ -35,6 +36,7 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = req.getSession(true);
 			session.setAttribute(SessionGlobals.CURRENT_SESSION_USER, user);
 			res.setStatus(HttpServletResponse.SC_OK);
+
 		}
 		else {
 			res.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Incorrect user name or password.");

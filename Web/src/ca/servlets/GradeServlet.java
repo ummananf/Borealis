@@ -12,8 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @SuppressWarnings("serial")
 public class GradeServlet extends HttpServlet {
 
-	public static final String CURRENT_SESSION_USER = "CURRENT_SESSION_USER";
-
+	
 	/**
 	 * doGet is logic that should be done before the page is rendered
 	 */

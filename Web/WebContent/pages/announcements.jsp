@@ -15,7 +15,7 @@
 
             <div class="rightbox">
                 
-<h2 class="pathNavigator">my info &gt; annoucement</h2>
+<h2 class="pathNavigator">my info &gt; announcements</h2>
 <div class="changeViewMainArea">
     
 
@@ -23,7 +23,7 @@
     <li><a class="tab2" onclick="" href="myInfo">myInfo</a> </li>
     <li><a class="tab2" onclick="" href="classInfo">class info</a></li>
     <li><a class="tab2" onclick="" href="messages">messages</a></li>
-    <li><a class="tab2" onclick="" href="announcements">annoucement<span style="color:#ff0000; padding-left:5px;" id="unreadSysMsgCount"></span></a></li>
+    <li><a class="tab2" onclick="" href="announcements">announcements<span style="color:#ff0000; padding-left:5px;" id="unreadSysMsgCount"></span></a></li>
     <li><a class="tab2" onclick="" href="appeals">appeals</a></li>
 </ul>
 

@@ -16,13 +16,18 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
     $(document).ready(function() {
+    	
+    	$.ajaxSetup({
+    		  cache:false
+    		});
+    	
         $('#term').change(function(event) {  
         var $term=$("select#term").val();
-           $.get('CourseSelectionServlet',{termName:$term},function(responseJson) {   
+           $.post('registerCourses',{termName:$term},function(data) {   
         	   var $select = $('#category');                           
-               $select.find('option').remove();                          
-               $.each(responseJson, function(key, value) {               
-                   $('<option>').val(key).text(value).appendTo($select);      
+               $select.find('option').remove();  
+               $.each(data, function(key, value) { 
+                   $('<option>').val(0).text(value.degName).appendTo($select);      
                     });
             });
         });
@@ -45,9 +50,9 @@
     <div class="changeViewMainArea">
         <ul>
               <li><a class="tab1" href="registerCourses">Register Courses</a></li>
-<!--             <li><a class="tab1" href="myExam">my exams</a></li>
+            <li><a class="tab1" href="myExam">my exams</a></li>
             <li><a class="tab2" href="grade">my grade</a></li>
-            <li><a class="tab2" href="books">books & materials</a></li> -->
+            <li><a class="tab2" href="books">books & materials</a></li>
             
         </ul>
     </div>
@@ -78,8 +83,8 @@
 Select Term:
 <select id="term">
 <option selected="selected">Select Term:</option>
-<option value="201512">Winter 2015</option>
-<option value="201409">Fall 2014</option>
+<option value="winter2015">Winter 2015</option>
+<option value="fall2014">Fall 2014</option>
 </select>
 <br/>
 <br/>
@@ -95,6 +100,10 @@ Select Category:
             
         
             </div>
+        </div>
+        
+
 <jsp:include page="template/footer.jsp" />
+    </div>
 </body>
 </html>

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 @SuppressWarnings("serial")
 public class MainServlet extends HttpServlet {
 
-	public static final String CURRENT_SESSION_USER = "CURRENT_SESSION_USER";
+
 
 	/**
 	 * doGet is logic that should be done before the page is rendered
@@ -19,7 +19,7 @@ public class MainServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		// Check if user has a session, if not, don't allow access
-		if (req.getSession().getAttribute(CURRENT_SESSION_USER) != null) {
+		if (req.getSession().getAttribute(SessionGlobals.CURRENT_SESSION_USER) != null) {
 			RequestDispatcher view = req.getRequestDispatcher("main.jsp");
 			view.forward(req, res);
 		} else {
