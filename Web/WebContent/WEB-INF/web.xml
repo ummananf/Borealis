@@ -6,7 +6,7 @@
 	<display-name>Borealis-Web</display-name>
 	<!-- **** Welcome List **** -->
 	<welcome-file-list>
-		<welcome-file>/pages/index.jsp</welcome-file>
+		<welcome-file>init</welcome-file>
 	</welcome-file-list>
 
 	<!-- Filter -->

@@ -28,7 +28,7 @@ public class DBInitServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {
 		
-		 res.sendRedirect("login");
+		 res.sendRedirect("/pages/index.jsp");
 
 	}
 
