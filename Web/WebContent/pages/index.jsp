@@ -87,7 +87,7 @@ $("#login_form").submit(function(event) {
 	//thie is the post request
 	//first parameter the url, second is the data
 	//$(this) here is #login_form
-	var post = $.post(url, $(this).serialize())
+	var post = $.post(url, $(this).serialize());
 	
 	//something to do if the response we get is OK
 	post.done(function(data, textStatus, jqXHR) {
@@ -97,7 +97,7 @@ $("#login_form").submit(function(event) {
 	
 	//something to do if the response we get indicates some kind of failure
 	post.fail(function(jqXHR, textStatus, errorThrown) {
-		alert("u fail man");
+		alert("u fail");
 	});
 });
 
