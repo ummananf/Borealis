@@ -30,10 +30,11 @@ public class UserModel {
 			String email = (String) row.get("email");
 			String firstName = (String) row.get("fName");
 			String lastName = (String) row.get("lName");
+			String degName = (String) row.get("degName");
 			String userType = (String) row.get("userType");
 	
 			if(userType.equals(TYPE_STUDENT))
-				user = new Student(userID, username, password, email, firstName, lastName);
+				user = new Student(userID, username, password, email, firstName, lastName, degName);
 			else if(userType.equals(TYPE_PROFESSOR))
 				user = new Professor(userID, username, password, email, firstName, lastName);
 			else if(userType.equals(TYPE_ADMIN))

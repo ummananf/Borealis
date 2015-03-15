@@ -41,9 +41,7 @@ public class MyInfoServlet extends HttpServlet {
 		// get the model from DB
 		User student = (User)session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
 		String name = student.getUsername();
-		
-		//User student = UserModel.getUserData(name);
-		
+				
 		
 		students.add(student);
 		

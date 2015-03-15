@@ -38,18 +38,7 @@
 
 <script type="text/javascript">
 	
-	/*var myInfo = [
-		{"fName": "John", "lName":"Doe", "sID": "7777454",
-		"username": "johndoe", "email": "johndoe@school.ca"}
-	];*/
-	
-	//var myInfo = '@Session["studentInfo"]';
-	//var myInfo = session.getAttribute("studentInfo");
-	 var myInfo = ${studentInfo};
-
-	var myDegrees = [
-	    {"degName":"Computer Science - Honours"}
-	];
+	var myInfo = ${studentInfo};
 
 	$(document).ready(function()
 	{
@@ -66,7 +55,7 @@
 	    		.append($('<td/>').text(person.email))
 	    		.append($('<td align="right"/>').text("user name:"))
 	    		.append($('<td/>').text(person.username));
-	        $(myDegrees).each(function(i, degree)
+	        $(myInfo).each(function(i, degree)
 	        {
 		        $('<tr/>').appendTo(table)
 	    			.append($('<td align="right"/>').text("degree:"))

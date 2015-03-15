@@ -22,6 +22,7 @@ CREATE TABLE Users
 	email varchar(50) UNIQUE NOT NULL, 
 	fName varchar(20), 
 	lName varchar(20),
+	degName varchar(50),
     userType varchar(20)
 );
 -- CREATE TABLE UserPrivs( userID int NOT NULL, userType varchar(20) NOT NULL, PRIMARY KEY(userID, userType), FOREIGN KEY(userID) REFERENCES Users(userID) );
@@ -105,8 +106,8 @@ CREATE TABLE DegreeChoice
 
 
 
-INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'john', 'johnson', 'admin');
-INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl', 'carlson', 'student');
+INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'john', 'johnson','B.Sc. Computer Science (Major)', 'admin');
+INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl', 'carlson','B.Sc. Mathematics (Major)', 'student');
 
 -- INSERT INTO UserPrivs VALUES (1, 'admin');
 -- INSERT INTO UserPrivs VALUES (2, 'student');
