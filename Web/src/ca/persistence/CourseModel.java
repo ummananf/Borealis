@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import ca.objects.Course;
 import ca.objects.Prereq;
 
 public class CourseModel {
@@ -28,5 +29,27 @@ public class CourseModel {
 		}
 
 		return prereqs;
+	}
+	
+	public static ArrayList<Course> getCoursesByDepartment(String department) {
+		String query = "SELECT * FROM Courses WHERE department = '" + department + "';";
+		ArrayList<Course> courses = new ArrayList<Course>();
+		List<Map<String, Object>> resultList = DB.getData(query);
+		Iterator<Map<String, Object>> iter = resultList.iterator();
+		
+		while(iter.hasNext()) {
+			Map<String, Object> row = iter.next();
+			
+			Course course = new Course((String) row.get("cID"), 
+									   (String) row.get("cName"),
+									   (String) row.get("faculty"),
+									   (String) row.get("department"),
+									   (String) row.get("description"),
+									   (Integer) row.get("creditHrs"),
+									   false);
+			courses.add(course);
+		}
+		
+		return courses;
 	}
 }

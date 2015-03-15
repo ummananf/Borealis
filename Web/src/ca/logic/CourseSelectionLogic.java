@@ -3,7 +3,9 @@ package ca.logic;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import ca.objects.Course;
 import ca.objects.Degree;
+import ca.persistence.CourseModel;
 import ca.persistence.CourseSelectionModel;
 
 public class CourseSelectionLogic {
@@ -27,6 +29,24 @@ public class CourseSelectionLogic {
 		}
 		
 		return listOfDegrees;	
+	}
+	
+	public LinkedHashMap<String, LinkedHashMap<String, String>> getCourses(String department) {
+		LinkedHashMap<String, String> courseMap;
+		LinkedHashMap<String, LinkedHashMap<String, String>> listOfCourses = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+		ArrayList<Course> courses = CourseModel.getCoursesByDepartment(department);
+		
+		for(int i = 0; i < courses.size(); i++){
+			courseMap = new LinkedHashMap<String, String>();
+			courseMap.put("courseID", courses.get(i).getCourseID());
+			courseMap.put("courseName", courses.get(i).getCourseName());
+			courseMap.put("dept", courses.get(i).getDept());
+			courseMap.put("faculty", courses.get(i).getFaculty());
+			courseMap.put("creditHrs", String.valueOf(courses.get(i).getCreditHrs()));
+			listOfCourses.put(courses.get(i).getCourseID(), courseMap);
+		}
+		
+		return listOfCourses;
 	}
 	
 }
