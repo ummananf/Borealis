@@ -45,7 +45,7 @@ public class UserModelTest {
 		assertTrue(user instanceof Admin);
 		//assertTrue(user.equals(admin)); //this dont work cuz we didnt write it
 		
-		Student student = new Student(22, "test_student", "p", "b@b.c", "john", "johnson");
+		Student student = new Student(22, "test_student", "p", "b@b.c", "john", "johnson","degree");
 		user = UserModel.getUserData("test_student");
 		assertTrue(user instanceof Student);
 		//assertTrue(user.equals(student));
