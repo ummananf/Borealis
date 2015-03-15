@@ -114,19 +114,20 @@
 			
 			// go through courses taken and use them towards the degree
 			// if possible and not already used
-			$(coursesTaken).each(function(i, takenCourse)
+			$(coursesTaken).each(function(i, elective)
 			{
 				// note: need a way to mark if the takenCourse was already used
 				// towards the degree
-				if (crHrsElective > takenCourse.crHrs)
+				if (crHrsElective > elective.crHrs)
 				{
 					$('<tr/>').appendTo(table)
-						.append($('<td/>').text(takenCourse.cID + "(ELECTIVE)"))
-						.append($('<td/>').text(takenCourse.cName))
-						.append($('<td/>').text(takenCourse.crHrs))
-						.append($('<td/>').text(takenCourse.grade));
+						.append($('<td/>').text(elective.cID))
+						.append($('<td/>').text("ELECTIVE: " + elective.cName))
+						.append($('<td/>').text(elective.crHrs))
+						.append($('<td/>').text(elective.grade));
 					
-					crHrsElective -= takenCourse.crHrs;
+					crHrsElective -= elective.crHrs;
+					crHrsComplete += elective.crHrs;
 				}
 			});
 			
