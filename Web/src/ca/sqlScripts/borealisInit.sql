@@ -113,14 +113,18 @@ INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl
 -- INSERT INTO UserPrivs VALUES (2, 'student');
 
 -- Computer Science Courses:
--- First Year Courses
+-- First Year Computer Science Courses:
 INSERT INTO Courses VALUES ('COMP1010', 'Intro to Computer Science', 3, 'Science', 'Computer Science', 'Introduces you to computer science.');
 INSERT INTO Courses VALUES ('COMP1020', 'Intro to Computer Science 2', 3, 'Science', 'Computer Science', 'Introduces you to more computer science!');
 INSERT INTO Courses VALUES ('COMP1260', 'Introductory Computer Usage 1', 3, 'Science', 'Computer Science', 'an introduction to modern computer services');
 INSERT INTO Courses VALUES ('COMP1270', 'Introductory Computer Usage 2', 3, 'Science', 'Computer Science', 'Using advanced tools to design web pages');
 INSERT INTO Courses VALUES ('COMP1012', 'Computer Programming for Scientists and Engineers', 3, 'Science', 'Computer Science', 'An introduction to computer programming suitable for solving problems in science and engineering');
 
-
+-- Second Year Cmoputer Science Courses:
+INSERT INTO Courses VALUES ('COMP2140', 'Data Structures and Algorithms', 3, 'Science', 'Computer Science', ' Introduction to the representation and manipulation of data structures');
+INSERT INTO Courses VALUES ('COMP2150', 'Object Orientation', 3, 'Science', 'Computer Science', ' Design and development of object-oriented software');
+INSERT INTO Courses VALUES ('COMP2160', 'Programming Practices', 3, 'Science', 'Computer Science', 'Introduction to issues involved in real-world computing');
+INSERT INTO Courses VALUES ('COMP2280', 'Introduction to Computer Systems', 3, 'Science', 'Computer Science', 'assembly language programming');
 
 
 
