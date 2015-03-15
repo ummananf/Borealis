@@ -112,6 +112,9 @@ INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl
 -- INSERT INTO UserPrivs VALUES (1, 'admin');
 -- INSERT INTO UserPrivs VALUES (2, 'student');
 
+
+
+--***************START TO INSERT TO Courses TABLE****************************************************************************************
 -- Computer Science Courses:
 -- First Year Computer Science Courses:
 INSERT INTO Courses VALUES ('COMP1010', 'Intro to Computer Science', 3, 'Science', 'Computer Science', 'Introduces you to computer science.');
@@ -130,6 +133,36 @@ INSERT INTO Courses VALUES ('COMP2080', 'Analysis of Algorithms', 3, 'Science', 
 
 --Third Year Computer Science Courses:
 INSERT INTO Courses VALUES ('COMP3010', 'Distributed Computing', 3, 'Science', 'Computer Science', 'An introduction to the development of client server and peer-to-peer systems through web applications, distributed programming models, and distributed algorithms. ');
+INSERT INTO Courses VALUES ('COMP3040', 'Technical Communication in Computer Science', 3, 'Science', 'Computer Science', 'This course is designed to help students become more effective and confident writers in the context of the computing profession');
+INSERT INTO Courses VALUES ('COMP3170', 'Analysis of Algorithms and Data Structures', 3, 'Science', 'Computer Science', 'Fundamental algorithms for sorting, searching, storage management, graphs, databases and computational geometry. ');
+INSERT INTO Courses VALUES ('COMP3350', 'Software Engineering 1', 3, 'Science', 'Computer Science', 'Introduction to software engineering');
+INSERT INTO Courses VALUES ('COMP3430', 'Operating Systems', 3, 'Science', 'Computer Science', 'Operating systems, their design, implementation, and usage.');
+INSERT INTO Courses VALUES ('COMP3020', 'Human-Computer Interaction 1', 3, 'Science', 'Computer Science', 'Human-computer interaction: human factors and usability, user-centered design, prototyping, usability evaluation.');
+INSERT INTO Courses VALUES ('COMP3030', 'Automata Theory and Formal Languages', 3, 'Science', 'Computer Science', 'An introduction to automata theory, grammars, formal languages and their applications.');
+INSERT INTO Courses VALUES ('COMP3040', 'Technical Communication in Computer Science', 3, 'Science', 'Computer Science', 'This course is designed to help students become more effective and confident writers in the context of the computing profession.');
+INSERT INTO Courses VALUES ('COMP3190', 'Introduction to Artificial Intelligence', 3, 'Science', 'Computer Science', 'Principles of artificial intelligence: problem solving, knowledge representation and manipulation');
+INSERT INTO Courses VALUES ('COMP3370', 'Computer Organization', 3, 'Science', 'Computer Science', 'Principles of computer systems architecture, organization and design.');
+INSERT INTO Courses VALUES ('COMP3380', 'Databases Concepts and Usage', 3, 'Science', 'Computer Science', 'An introduction to database systems including the relational, hierarchical, network and entity-relationship models with emphasis on the relational model and SQL.');
+INSERT INTO Courses VALUES ('COMP3490', 'Computer Graphics 1', 3, 'Science', 'Computer Science', 'An introductory course in computer graphics');
+INSERT INTO Courses VALUES ('COMP3720', 'Computer Networks 1', 3, 'Science', 'Computer Science', ' This courses examines the principles of computer networks, including network architectures, algorithms, and performance.');
+
+
+--Four Year Computer Science Courses:
+INSERT INTO Courses VALUES ('COMP4140', 'Introduction to Cryptography and Cryptosystems', 3, 'Science', 'Computer Science', 'Description and analysis of cryptographic methods used in the authentication and protection of data.');
+INSERT INTO Courses VALUES ('COMP4510', 'Introduction to Parallel Computation', 3, 'Science', 'Computer Science', 'An overview of the architectures of current parallel processors and the techniques used to program them.');
+INSERT INTO Courses VALUES ('COMP4710', 'Introduction to Data Mining', 3, 'Science', 'Computer Science', 'Introduction to data mining concepts and their applications. ');
+INSERT INTO Courses VALUES ('COMP4720', 'Computer Networks 2', 3, 'Science', 'Computer Science', 'This course examines advanced topics in computer networks, including network security, network management, performance, and multimedia networking.');
+INSERT INTO Courses VALUES ('COMP4020', 'Human-Computer Interaction 2', 3, 'Science', 'Computer Science', 'This course examines advanced topics in computer networks, including network security, network management, performance, and multimedia networking.');
+INSERT INTO Courses VALUES ('COMP4180', 'Intelligent Mobile Robotics', 3, 'Science', 'Computer Science', 'Topics include artificial intelligence, computer vision, human-robot interaction, and multi-robot systems. ');
+INSERT INTO Courses VALUES ('COMP4190', 'Artificial Intelligence', 3, 'Science', 'Computer Science', 'Reasoning with temporal knowledge; causal reasoning; plausible reasoning; nonmonotonic reasoning; abductive reasoning.');
+INSERT INTO Courses VALUES ('COMP4350', 'Software Engineering 2', 3, 'Science', 'Computer Science', 'Advanced treatment of software development methods.');
+INSERT INTO Courses VALUES ('COMP4360', 'Machine Learning', 3, 'Science', 'Computer Science', ' Learning strategies; evaluation of learning; learning in symbolic systems; neural networks, genetic algorithms.');
+INSERT INTO Courses VALUES ('COMP4380', 'Database Implementation', 3, 'Science', 'Computer Science', ' Implementation of modern database systems including query modification/optimization, recovery, concurrency, integrity, and distribution. ');
+INSERT INTO Courses VALUES ('COMP4430', 'Operating Systems 2', 3, 'Science', 'Computer Science', '  Design and implementation of modern operating systems. Detailed analysis of an open source modern operating system and hands-on experience with its kernel and major components.');
+
+
+
+
 
 
 
@@ -138,6 +171,12 @@ INSERT INTO Courses VALUES ('COMP3010', 'Distributed Computing', 3, 'Science', '
 INSERT INTO Courses VALUES ('BIO1030', 'Intro to Biological Science 2', 3, 'Science', 'Biology', 'Introduces you to bio science!');
 INSERT INTO Courses VALUES ('BIO1040', 'Intro to Biological Science 2', 3, 'Science', 'Biology', 'Introduces you to bio science!');
 INSERT INTO Courses VALUES ('ENV1010', 'Intro to Environmental Science 2', 3, 'Science', 'Environment', 'Introduces you to our world!');
+
+
+
+--**********END OF INSERTING TO Courses Table*********************************************************************************************
+
+
 
 INSERT INTO Prereqs VALUES ('COMP1010', 'COMP1020', 2.0);
 
