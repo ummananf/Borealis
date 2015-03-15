@@ -42,7 +42,7 @@
 
 <script>
 	var degrees = [
-	    {"degName":"B. Sc. Computer Science (Major)", "crHrs":"120"}
+	    {"degName":"B. Sc. Computer Science (Major)", "crHrs":120}
 	];
 	var coursesTaken = [
 	    {"cID":"COMP1010", "cName":"Introduction to Computer Science", "grade":"A+", "crHrs":3},
@@ -97,8 +97,12 @@
 				{
 					if (takenCourse.cID == course.cID)
 					{
+						// mark cID as -1 if we are counting the course. This will permanently
+						// alter the JSON string so if you need the original JSON object being used for
+						// courseTaken, take courseTaken as a copy of the original
 						courseGrade = takenCourse.grade;
 						crHrsComplete += takenCourse.crHrs;
+						takenCourse.cID = "-1";
 					}
 				});
 				
@@ -116,9 +120,8 @@
 			// if possible and not already used
 			$(coursesTaken).each(function(i, elective)
 			{
-				// note: need a way to mark if the takenCourse was already used
-				// towards the degree
-				if (crHrsElective > elective.crHrs)
+				// cID is -1 if the course was counted above
+				if (crHrsElective > elective.crHrs && elective.cID != "-1")
 				{
 					$('<tr/>').appendTo(table)
 						.append($('<td/>').text(elective.cID))
