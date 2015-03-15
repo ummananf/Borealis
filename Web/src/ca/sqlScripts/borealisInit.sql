@@ -125,6 +125,13 @@ INSERT INTO Courses VALUES ('COMP2140', 'Data Structures and Algorithms', 3, 'Sc
 INSERT INTO Courses VALUES ('COMP2150', 'Object Orientation', 3, 'Science', 'Computer Science', ' Design and development of object-oriented software');
 INSERT INTO Courses VALUES ('COMP2160', 'Programming Practices', 3, 'Science', 'Computer Science', 'Introduction to issues involved in real-world computing');
 INSERT INTO Courses VALUES ('COMP2280', 'Introduction to Computer Systems', 3, 'Science', 'Computer Science', 'assembly language programming');
+INSERT INTO Courses VALUES ('COMP2130', 'Discrete Mathematics for Computer Science', 3, 'Science', 'Computer Science', 'An introduction to the set theory, logic, integers, combinatorics and functions');
+INSERT INTO Courses VALUES ('COMP2080', 'Analysis of Algorithms', 3, 'Science', 'Computer Science', 'Methods of analyzing the time and space requirements of algorithms');
+
+--Third Year Computer Science Courses:
+INSERT INTO Courses VALUES ('COMP3010', 'Distributed Computing', 3, 'Science', 'Computer Science', 'An introduction to the development of client server and peer-to-peer systems through web applications, distributed programming models, and distributed algorithms. ');
+
+
 
 
 
