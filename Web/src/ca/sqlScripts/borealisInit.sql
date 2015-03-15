@@ -147,7 +147,7 @@ INSERT INTO Courses VALUES ('COMP3490', 'Computer Graphics 1', 3, 'Science', 'Co
 INSERT INTO Courses VALUES ('COMP3720', 'Computer Networks 1', 3, 'Science', 'Computer Science', ' This courses examines the principles of computer networks, including network architectures, algorithms, and performance.');
 
 
---Four Year Computer Science Courses:
+--Fourth Year Computer Science Courses:
 INSERT INTO Courses VALUES ('COMP4140', 'Introduction to Cryptography and Cryptosystems', 3, 'Science', 'Computer Science', 'Description and analysis of cryptographic methods used in the authentication and protection of data.');
 INSERT INTO Courses VALUES ('COMP4510', 'Introduction to Parallel Computation', 3, 'Science', 'Computer Science', 'An overview of the architectures of current parallel processors and the techniques used to program them.');
 INSERT INTO Courses VALUES ('COMP4710', 'Introduction to Data Mining', 3, 'Science', 'Computer Science', 'Introduction to data mining concepts and their applications. ');
