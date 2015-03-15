@@ -25,7 +25,7 @@
 
 
 
-            <div class="rightbox">
+<div class="rightbox">
                 
     <h2 class="pathNavigator">
         learning center &gt; progress bar</h2>
@@ -35,65 +35,87 @@
             </ul>
         </div>
     </div>
-    
-    
-    <h2><a href="http://www.w3schools.com/bootstrap/bootstrap_progressbars.asp">This is an example from w3school</a></h2>
-    <div class="progress_bar">
-    	
-  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-  aria-valuemin="0" aria-valuemax="100" style="width:40%">
-    40% Complete (success)
-  </div>
+
+<div id="degreeCourses"></div>
+
+<div class="progress" id="degreeProgress"></div>
+
+<script>
+	var degrees = [
+	    {"degName":"B. Sc. Computer Science (Major)", "crHrs":"120"}
+	];
+	var coursesTaken = [
+	    {"cID":"COMP1010", "grade":"A+", "crHrs":3},
+	    {"cID":"COMP1020", "grade":"A", "crHrs":3},
+	    {"cID":"BIO1000", "grade":"A+", "crHrs":3},
+	    {"cID":"COMP2160","grade":"A", "crHrs":3},
+	    {"cID":"ECON1010","grade":"B", "crHrs":6}
+	];
+	var crHrsComplete = 0;
+	
+	$(document).ready(function()
+	{
+		$(degrees).each(function(i, degree)
+		{
+			var degCourses = [
+			    {"cID":"COMP1010", "cName":"Introduction to Computer Science", "crHrs":3},
+			    {"cID":"COMP1020", "cName":"Introduction to Computer Science 2", "crHrs":3},
+			    {"cID":"COMP2140", "cName":"Human-Computer Interaction", "crHrs":3},
+			    {"cID":"COMP2150", "cName":"Introduction to Object Oriented Programming", "crHrs":3},
+			    {"cID":"COMP2160", "cName":"Programming Language Concepts", "crHrs":3},
+			    {"cID":"COMP2170", "cName":"Programming Practices", "crHrs":3},
+			    {"cID":"COMP2180", "cName":"Computer Organization", "crHrs":3},
+			    {"cID":"COMP2190", "cName":"Introduction to Artificial Intelligence", "crHrs":3},
+			    {"cID":"COMP3150", "cName":"Object Oriented Programming 2", "crHrs":3},
+			    {"cID":"COMP3190", "cName":"Artificial Intelligence 2", "crHrs":3},
+			    {"cID":"COMP3350", "cName":"Software Engineering", "crHrs":3},
+			    {"cID":"COMP3430", "cName":"Operating Systems", "crHrs":3},
+			    {"cID":"COMP4190", "cName":"Advanced Artificial Intelligence", "crHrs":3},
+			    {"cID":"COMP4350", "cName":"Software Engineering 2", "crHrs":3}
+			];
+			
+			var table = $('<table/>').appendTo($('#degreeCourses'));
+			$('<tr/>').appendTo(table)
+				.append($('<td width="75"/>').text("course ID"))
+				.append($('<td width="300"/>').text("course name"))
+				.append($('<td width="75"/>').text("credit hours"))
+				.append($('<td width="50"/>').text("grade"));
+			
+			// print headers for degree course table
+			$(degCourses).each(function(i, course)
+			{
+				var courseGrade = "n/a";
+				
+				// print the course. look for course in courseTaken, if found,
+				// print the grade and increment crHrsComplete by the correct amount.
+				// if not found, leave grade field as "n/a"
+				// linear search is not efficient but number of courses taken will be small
+				// enough that it shouldn't really matter
+				$(coursesTaken).each(function(i, takenCourse)
+				{
+					if (takenCourse.cID == course.cID)
+					{
+						courseGrade = takenCourse.grade;
+						crHrsComplete += takenCourse.crHrs;
+					}
+				});
+				
+				$('<tr/>').appendTo(table)
+					.append($('<td/>').text(course.cID))
+					.append($('<td/>').text(course.cName))
+					.append($('<td/>').text(course.crHrs))
+					.append($('<td/>').text(courseGrade));
+			});
+			
+			// make a progress bar
+			var progressPct = (crHrsComplete / degree.crHrs) * 100;
+			var progressBarDiv = '<div class="progress-bar progress-bar-success" style="width:' + progressPct + '%"/>';
+			$(progressBarDiv).appendTo($('#degreeProgress'))
+		});
+	});
+</script>
+
 </div>
-
-<div class="progress">
-  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50"
-  aria-valuemin="0" aria-valuemax="100" style="width:50%">
-    50% Complete (info)
-  </div>
-</div>
-
-<div class="progress">
-  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
-  aria-valuemin="0" aria-valuemax="100" style="width:60%">
-    60% Complete (warning)
-  </div>
-</div>
-
-<div class="progress">
-  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
-  aria-valuemin="0" aria-valuemax="100" style="width:70%">
-    70% Complete (danger)
-  </div>
- 
-        
-        
-        
-        
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-        
-        
-        
-        
-    </div>
-    <script type="text/javascript">
-
-     
-    </script>
-
-            </div>
 <jsp:include page="template/footer.jsp" />
 </body>
 </html>

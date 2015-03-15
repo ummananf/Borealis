@@ -50,7 +50,7 @@
         $('<tr/>').appendTo(table2)
 			.append($('<td width="50"/>').text("section"))
 			.append($('<td width="75"/>').text("course"))
-			.append($('<td width="225"/>').text("course name"))
+			.append($('<td width="300"/>').text("course name"))
 			.append($('<td width="75"/>').text("time"))
 			.append($('<td width="85"/>').text("days"));
         $(mySections).each(function(i, course)

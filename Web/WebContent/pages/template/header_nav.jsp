@@ -91,7 +91,9 @@
                         </div>
                     </div>
                     <div class="changeViewLeftArea">
-                    	<div>                        </div>
+                    	<div>
+                    	<a href="progressBar">degree progress</a>
+                    	</div>
                         <div>                        </div>
                         <!-- <div>
                             <a href="materialsDownload"> material download</a></div>
