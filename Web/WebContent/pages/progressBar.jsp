@@ -45,13 +45,14 @@
 	    {"degName":"B. Sc. Computer Science (Major)", "crHrs":"120"}
 	];
 	var coursesTaken = [
-	    {"cID":"COMP1010", "grade":"A+", "crHrs":3},
-	    {"cID":"COMP1020", "grade":"A", "crHrs":3},
-	    {"cID":"BIO1000", "grade":"A+", "crHrs":3},
-	    {"cID":"COMP2160","grade":"A", "crHrs":3},
-	    {"cID":"ECON1010","grade":"B", "crHrs":6}
+	    {"cID":"COMP1010", "cName":"Introduction to Computer Science", "grade":"A+", "crHrs":3},
+	    {"cID":"COMP1020", "cName":"Introduction to Computer Science 2", "grade":"A", "crHrs":3},
+	    {"cID":"BIO1000", "cName":"Introduction to Biology", "grade":"A+", "crHrs":3},
+	    {"cID":"COMP2160", "cName":"Programming Language Concepts", "grade":"A", "crHrs":3},
+	    {"cID":"ECON1010", "cName":"Introduction to Economics", "grade":"B", "crHrs":6}
 	];
 	var crHrsComplete = 0;
+	var crHrsDegree = 0;
 	
 	$(document).ready(function()
 	{
@@ -85,6 +86,7 @@
 			$(degCourses).each(function(i, course)
 			{
 				var courseGrade = "n/a";
+				crHrsDegree += 3;
 				
 				// print the course. look for course in courseTaken, if found,
 				// print the grade and increment crHrsComplete by the correct amount.
@@ -105,6 +107,27 @@
 					.append($('<td/>').text(course.cName))
 					.append($('<td/>').text(course.crHrs))
 					.append($('<td/>').text(courseGrade));
+			});
+			
+			// calculate the number of credit hours available for electives
+			var crHrsElective = degree.crHrs - crHrsDegree;
+			
+			// go through courses taken and use them towards the degree
+			// if possible and not already used
+			$(coursesTaken).each(function(i, takenCourse)
+			{
+				// note: need a way to mark if the takenCourse was already used
+				// towards the degree
+				if (crHrsElective > takenCourse.crHrs)
+				{
+					$('<tr/>').appendTo(table)
+						.append($('<td/>').text(takenCourse.cID + "(ELECTIVE)"))
+						.append($('<td/>').text(takenCourse.cName))
+						.append($('<td/>').text(takenCourse.crHrs))
+						.append($('<td/>').text(takenCourse.grade));
+					
+					crHrsElective -= takenCourse.crHrs;
+				}
 			});
 			
 			// make a progress bar
