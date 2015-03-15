@@ -26,7 +26,7 @@ public class ClassInfoServlet extends HttpServlet {
 		System.out.println("**** MADE IT TO   __" + this.getServletName() + "__ ****");
 		
 		
-		// create a list of courses
+		// create an Arraylist ot hold courses
 		ArrayList<Course> courses = new ArrayList<Course>();
 		
 		// get the model from DB

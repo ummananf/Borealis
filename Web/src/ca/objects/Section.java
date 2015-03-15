@@ -18,7 +18,11 @@ public class Section extends Course
 		endTime = eTime;
 		location = loc;
 		this.maxSize = maxSize;
-		daysOffered = days;
+		daysOffered = days;	
+	}
+	
+	public Section(String crn, String sectID,String cID, String termStart, String startTime, String endTime, String location, int maxSize, String days)
+	{
 		
 	}
 

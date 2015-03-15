@@ -47,6 +47,7 @@ CREATE TABLE Prereqs
 );
 CREATE TABLE Sections
 (
+	crn varchar(6) PRIMARY KEY NOT NULL,
 	sectID varchar(5) NOT NULL, 
 	cID varchar(10) NOT NULL,
 	termStart DATE NOT NULL,
@@ -55,29 +56,30 @@ CREATE TABLE Sections
 	startTime TIME, 
 	endTime TIME, 
 	location varchar(30), 
-	PRIMARY KEY(sectID, cID, termStart), 
 	FOREIGN KEY(cID) REFERENCES Courses(cID) ON DELETE CASCADE
 );
 CREATE TABLE Enrolled
 (
-	userID int NOT NULL, 
+	userID int NOT NULL,
+	crn varchar(6) NOT NULL,
 	sectID varchar(5) NOT NULL, 
 	cID varchar(10) NOT NULL,
 	termStart DATE NOT NULL,
 	grade FLOAT, 
-	PRIMARY KEY(userID, sectID, cID, termStart), 
-	FOREIGN KEY(userID) REFERENCES Users(userID), 
-	FOREIGN KEY(sectID, cID, termStart) REFERENCES Sections(sectID, cID, termStart)
+	PRIMARY KEY(userID, crn),
+	FOREIGN KEY(userID) REFERENCES Users(userID),
+	FOREIGN KEY(crn) REFERENCES Sections(crn)
 );
 CREATE TABLE Teaches
 (
-	userID int NOT NULL, 
+	userID int NOT NULL,
+	crn varchar(6) NOT NULL,
 	sectID varchar(5) NOT NULL, 
 	cID varchar(10) NOT NULL,
 	termStart DATE NOT NULL,
-	PRIMARY KEY(userID, sectID, cID, termStart), 
+	PRIMARY KEY(userID, crn), 
 	FOREIGN KEY(userID) REFERENCES Users(userID), 
-	FOREIGN KEY(sectID, cID, termStart) REFERENCES Sections(sectID, cID, termStart)
+	FOREIGN KEY(crn) REFERENCES Sections(crn)
 );
 CREATE TABLE Degrees
 (
@@ -133,7 +135,6 @@ INSERT INTO Courses VALUES ('COMP2080', 'Analysis of Algorithms', 3, 'Science', 
 
 --Third Year Computer Science Courses:
 INSERT INTO Courses VALUES ('COMP3010', 'Distributed Computing', 3, 'Science', 'Computer Science', 'An introduction to the development of client server and peer-to-peer systems through web applications, distributed programming models, and distributed algorithms. ');
-INSERT INTO Courses VALUES ('COMP3040', 'Technical Communication in Computer Science', 3, 'Science', 'Computer Science', 'This course is designed to help students become more effective and confident writers in the context of the computing profession');
 INSERT INTO Courses VALUES ('COMP3170', 'Analysis of Algorithms and Data Structures', 3, 'Science', 'Computer Science', 'Fundamental algorithms for sorting, searching, storage management, graphs, databases and computational geometry. ');
 INSERT INTO Courses VALUES ('COMP3350', 'Software Engineering 1', 3, 'Science', 'Computer Science', 'Introduction to software engineering');
 INSERT INTO Courses VALUES ('COMP3430', 'Operating Systems', 3, 'Science', 'Computer Science', 'Operating systems, their design, implementation, and usage.');
@@ -163,11 +164,7 @@ INSERT INTO Courses VALUES ('COMP4430', 'Operating Systems 2', 3, 'Science', 'Co
 
 
 
-
-
-
-
-
+-- Other Courses
 INSERT INTO Courses VALUES ('BIO1030', 'Intro to Biological Science 2', 3, 'Science', 'Biology', 'Introduces you to bio science!');
 INSERT INTO Courses VALUES ('BIO1040', 'Intro to Biological Science 2', 3, 'Science', 'Biology', 'Introduces you to bio science!');
 INSERT INTO Courses VALUES ('ENV1010', 'Intro to Environmental Science 2', 3, 'Science', 'Environment', 'Introduces you to our world!');
@@ -180,11 +177,11 @@ INSERT INTO Courses VALUES ('ENV1010', 'Intro to Environmental Science 2', 3, 'S
 
 INSERT INTO Prereqs VALUES ('COMP1010', 'COMP1020', 2.0);
 
-INSERT INTO Sections VALUES ('A01', 'COMP1010', '2014-09-01', 100, 'MWF', '13:30:00', '14:20:00', 'E2-105');
-INSERT INTO Sections VALUES ('A01', 'COMP1020', '2015-01-01', 100, 'MWF', '13:30:00', '14:20:00', 'E2-110');
+INSERT INTO Sections VALUES ('10000','A01', 'COMP1010', '2014-09-01', 100, 'MWF', '13:30:00', '14:20:00', 'E2-105');
+INSERT INTO Sections VALUES ('10001','A01', 'COMP1020', '2015-01-01', 100, 'MWF', '13:30:00', '14:20:00', 'E2-110');
 
-INSERT INTO Enrolled VALUES (2, 'A01', 'COMP1010', '2014-09-01', 3.5);
-INSERT INTO Enrolled VALUES (2, 'A01', 'COMP1020', '2015-01-01', NULL);
+INSERT INTO Enrolled VALUES (2, '10000','A01', 'COMP1010', '2014-09-01', 3.5);
+INSERT INTO Enrolled VALUES (2, '10001','A01', 'COMP1020', '2015-01-01', NULL);
 
 INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Biology', 'Major', 'B.Sc. Biology (Major)', 120);
