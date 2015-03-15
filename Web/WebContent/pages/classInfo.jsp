@@ -38,13 +38,16 @@
 <!-- end of working space -->
 </div>
 
-<script>
-	var mySections = [
+<script type="text/javascript">
+	/*var mySections = [
         {"cID":"COMP 1010", "cName":"Introduction to Computer Science",
         "sectID":"A01", "start":"9:30", "end":"10:20", "days":"Mon, Wed, Fri"},
         {"cID":"COMP 1020", "cName":"Introduction to Computer Science 2",
         "sectID":"A02", "start":"10:30", "end": "11:20", "days":"Mon, Wed, Fri"}
-    ];
+    ];*/
+    
+    var mySections = ${currentEnrolled};
+    
 	
 	$(document).ready(function()
 	{
