@@ -2,16 +2,6 @@
 <%@ page session="true" %>
 
 
-<%
-
-System.out.println(session.getAttribute("studentInfo"));
-
-
-%>
-
-
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,36 +11,7 @@ System.out.println(session.getAttribute("studentInfo"));
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
 	    <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
 	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	    
-	    
-	 	<script type="text/javascript">
-	$(document).ready(function() {
-	 $("#tablediv").hide();
-	     $("#showTable").click(function(event){
-	           $.get('myInfo',function(responseJson) {
-	            if(responseJson!=null){
-                $("#countrytable").find("tr:gt(0)").remove();
-                var table1 = $("#countrytable");
-               $.each(responseJson, function(key,value) {
-	                        rowNew.children().eq(0).text(value['userID']);
-                        rowNew.children().eq(1).text(value['username']);
-                        rowNew.children().eq(2).text(value['password']);
-                        rowNew.children().eq(3).text(value['email']);
-                       rowNew.children().eq(5).text(value['capitfNamea']);
-	                        rowNew.appendTo(table1);
-	                });
-	            }
-	            $("#tablediv").show();         
-	  });     
-	});   
-	    </script>
-	    
-	    
-	    
-	    
-	    
-	    
+	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>  
 	</head>
 <body>
 
@@ -115,23 +76,7 @@ System.out.println(session.getAttribute("studentInfo"));
     });
 </script>
 
-            </div>
-            
- <h1>AJAX Retrieve Data from Database in Servlet and JSP using JSONArray</h1>
-	<input type="button" value="Show Table" id="showTable"/>
-	<div id="tablediv">
-	<table cellspacing="0" id="countrytable">
-	    <tr>
-	        <th scope="col"></th>
-	        <th scope="col"></th>
-	        <th scope="col"></th>
-            <th scope="col"></th>
-	        <th scope="col"></th>
-	    </tr>
-	</table>
-	</div>           
-            
-   
+            </div> 
 <jsp:include page="template/footer.jsp" />
 </body>
 

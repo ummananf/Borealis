@@ -16,6 +16,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
 import ca.objects.Student;
+import ca.objects.User;
+import ca.persistence.UserModel;
 
 //Extend HttpServlet class
 @SuppressWarnings("serial")
@@ -32,12 +34,17 @@ public class MyInfoServlet extends HttpServlet {
 		
 		HttpSession session = req.getSession(true);
 		
-		// create a list of students
-		ArrayList<Student> students = new ArrayList<Student>();
+		// create a list of users, actually we assume all users are students for now. It would be convenient for gson to analyze if we create a list here
+		ArrayList<User> students = new ArrayList<User>();
 		
-		// create a dummy student for testing purposes
-		Student student = new Student(7777777,  "donKnow","adfb", "kkk@gmail.com",
-				   "don", "Know");
+		
+		// get the model from DB
+		User student = (User)session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
+		String name = student.getUsername();
+		
+		//User student = UserModel.getUserData(name);
+		
+		
 		students.add(student);
 		
 		Gson gsonStudent = new Gson();
