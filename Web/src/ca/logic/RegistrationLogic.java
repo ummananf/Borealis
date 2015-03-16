@@ -21,7 +21,6 @@ public class RegistrationLogic
 		ArrayList<Prereq> prereqs = CourseModel.getPrereqs(courseID);
 		boolean allPrereqsMet = true; //start as true, so if no prereq, still true
 		
-		// TODO: make efficient SQL query instead of this?
 		for(int i = 0; i < prereqs.size() && allPrereqsMet; i++)
 		{
 			Prereq p = prereqs.get(i);
