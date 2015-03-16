@@ -22,12 +22,8 @@ import ca.persistence.EnrollmentModel;
 
 //Extend HttpServlet class
 @SuppressWarnings("serial")
-public class ClassInfoServlet extends HttpServlet {
-
-
-	/**
-	 * doGet is logic that should be done before the page is rendered
-	 */
+public class ClassInfoServlet extends HttpServlet 
+{
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		
@@ -71,13 +67,9 @@ public class ClassInfoServlet extends HttpServlet {
 		view.forward(req, res);
 	}
 
-	/**
-	 * doPost is logic that should be done after a button is clicked
-	 */
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		
-		//manipulate data on submit here
-
 	}
 }

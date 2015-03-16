@@ -10,14 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 
 //Extend HttpServlet class
 @SuppressWarnings("serial")
-public class InvalidLoginServlet extends HttpServlet {
-
-
-	/**
-	 * doGet is logic that should be done before the page is rendered
-	 */
+public class InvalidLoginServlet extends HttpServlet 
+{
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		
 		System.out.println("**** MADE IT TO   __" + this.getServletName() + "__ ****");
 		RequestDispatcher view = req.getRequestDispatcher("invalidLogin.jsp");
@@ -26,13 +23,8 @@ public class InvalidLoginServlet extends HttpServlet {
 
 	}
 
-	/**
-	 * doPost is logic that should be done after a button is clicked
-	 */
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		
-		//manipulate data on submit here
-
+			throws ServletException, IOException 
+	{	
 	}
 }

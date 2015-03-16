@@ -10,22 +10,23 @@ import java.util.ArrayList;
 import ca.objects.Degree;
 
 
-public class CourseSelectionModel {
-
+public class CourseSelectionModel 
+{
 	private static String GET_COURSES_FOR_TERM =
 			"Select * " +
 			"from Degrees " +
 			"where term=? ";
 	
-	public static ArrayList<Degree> getDegrees( String term ){
-		
+	public static ArrayList<Degree> getDegrees( String term )
+	{	
 		Connection connection = ConnectionManager.getConnection();
 		
 		ResultSet data = null;
 		ArrayList<Degree> degrees = new ArrayList<Degree>();
 	
 		
-		try {		
+		try 
+		{		
 			PreparedStatement statement = connection.prepareStatement(GET_COURSES_FOR_TERM);
 			statement.setString(1, term);
 System.out.println(statement.toString());
@@ -42,7 +43,8 @@ System.out.println(statement.toString());
 				degrees.add(temp);
 			}
 			statement.close();
-		} catch (SQLException e) {
+		} catch (SQLException e) 
+		{
 			System.out.println("error reading degrees data from DB");
 			e.printStackTrace();
 		}

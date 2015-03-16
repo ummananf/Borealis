@@ -8,7 +8,8 @@ import ca.persistence.CourseModel;
 import ca.persistence.StudentModel;
 
 
-public class RegistrationLogic {
+public class RegistrationLogic 
+{
 
 	public RegistrationLogic() {}
 	

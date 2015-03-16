@@ -10,7 +10,8 @@ import ca.objects.Professor;
 import ca.objects.Student;
 import ca.objects.User;
 
-public class UserModelTest {
+public class UserModelTest 
+{
 
 	User user;
 	String queryInsertUser1;
@@ -21,7 +22,8 @@ public class UserModelTest {
 	String queryDeleteUser3;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws Exception
+	 {
 		
 		queryInsertUser1 = "INSERT INTO Users VALUES (11, 'test_admin', 'p', 'a@b.c', 'john', 'johnson', 'admin');";
 		queryDeleteUser1 = "DELETE FROM Users WHERE userID=11;";
@@ -38,7 +40,8 @@ public class UserModelTest {
 	}
 
 	@Test
-	public final void testGetUserData() {
+	public final void testGetUserData() 
+	{
 		
 		Admin admin = new Admin(11, "test_admin", "p", "a@b.c", "john", "johnson");
 		user = UserModel.getUserData("test_admin");
@@ -54,11 +57,11 @@ public class UserModelTest {
 		user = UserModel.getUserData("test_prof");
 		assertTrue(user instanceof Professor);
 		//assertTrue(user.equals(professor));
-
 	}
 	
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() throws Exception 
+	{
 		DB.execute(queryDeleteUser1);
 		DB.execute(queryDeleteUser2);
 		DB.execute(queryDeleteUser3);

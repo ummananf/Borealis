@@ -8,16 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//Extend HttpServlet class
-@SuppressWarnings("serial")
-public class TuitionServlet extends HttpServlet {
+public class TuitionServlet extends HttpServlet 
+{
 
-
-	/**
-	 * doGet is logic that should be done before the page is rendered
-	 */
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		
 		System.out.println("**** MADE IT TO   __" + this.getServletName() + "__ ****");
 		RequestDispatcher view = req.getRequestDispatcher("tuition.jsp");
@@ -26,13 +22,10 @@ public class TuitionServlet extends HttpServlet {
 
 	}
 
-	/**
-	 * doPost is logic that should be done after a button is clicked
-	 */
-	public void doPost(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		
-		//manipulate data on submit here
 
+	public void doPost(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException
+	{
+	
 	}
 }

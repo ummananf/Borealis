@@ -9,9 +9,11 @@ import java.util.Map;
 
 import ca.objects.Section;
 
-public class SectionModel {
+public class SectionModel 
+{
 	
-	public static ArrayList<Section> getSectionByCourseId(String courseId) {
+	public static ArrayList<Section> getSectionByCourseId(String courseId) 
+	{
 		String query = "SELECT * FROM Sections WHERE cID = '" + courseId + "';";
 		ArrayList<Section> sections = new ArrayList<Section>();
 		List<Map<String, Object>> resultList = DB.getData(query);

@@ -10,16 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import ca.session.SessionGlobals;
 
-@SuppressWarnings("serial")
-public class MainServlet extends HttpServlet {
-
-
-
-	/**
-	 * doGet is logic that should be done before the page is rendered
-	 */
+public class MainServlet extends HttpServlet 
+{
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		// Check if user has a session, if not, don't allow access
 		if (req.getSession().getAttribute(SessionGlobals.CURRENT_SESSION_USER) != null) {
 			RequestDispatcher view = req.getRequestDispatcher("main.jsp");
@@ -32,12 +27,8 @@ public class MainServlet extends HttpServlet {
 
 	}
 
-	/**
-	 * doPost is logic that should be done after a button is clicked
-	 */
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		// post data and links
-
+			throws ServletException, IOException 
+	{
 	}
 }

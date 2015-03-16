@@ -18,19 +18,23 @@ public class Degree
 		creditHrs = crHrs;
 	}
 	
-	public String getDegName() {
+	public String getDegName()
+	{
 		return degName;
 	}
 
-	public String getDegProgram() {
+	public String getDegProgram() 
+	{
 		return degProgram;
 	}
 
-	public String getDegOption() {
+	public String getDegOption() 
+	{
 		return degOption;
 	}
 
-	public int getCreditHrs() {
+	public int getCreditHrs() 
+	{
 		return creditHrs;
 	}
 	

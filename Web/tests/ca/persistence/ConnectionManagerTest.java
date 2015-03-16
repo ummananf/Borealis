@@ -10,26 +10,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ConnectionManagerTest {
+public class ConnectionManagerTest 
+{
 	
 	Connection connection;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws Exception 
+	{
 	}
 
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() throws Exception 
+	{
 	}
 
 	@Test
-	public final void testGetConnection() {
+	public final void testGetConnection() 
+	{
 		connection = ConnectionManager.getConnection();
 		assertNotNull(connection);
 	}
 
 	@Test
-	public final void testCloseConnection() {
+	public final void testCloseConnection() 
+	{
 		ConnectionManager.closeConnection(connection);
 		assertNull(connection);
 	}
