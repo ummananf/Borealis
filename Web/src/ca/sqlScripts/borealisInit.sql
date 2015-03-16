@@ -110,6 +110,8 @@ CREATE TABLE DegreeChoice
 
 INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'john', 'johnson','B.Sc. Computer Science (Major)', 'admin');
 INSERT INTO Users VALUES (7651245, 'bob', '4350', 'bob@school.ca', 'Bob', 'Carslon','B.Sc. Computer Science (Major)', 'student');
+INSERT INTO Users VALUES (7651785, 'alice', '4350', 'alice@umanitoba.ca', 'Alice', 'Queen','B.Sc. Computer Science (Co-op)', 'student');
+INSERT INTO Users VALUES (6812459, 'frank', '4350', 'frank@umanitoba.ca', 'Frank', 'Frank','B.Sc. Computer Science (Honor)', 'student');
 INSERT INTO Users VALUES (3, 'jason', '123456', 'jason@myumanitoba.ca','Jason', 'King', 'B.Sc. Computer Science (Major)', 'student');
 INSERT INTO Users VALUES (4, 'Francis','654321', 'frank@myumanitoba.ca','Francis','King','B.Sc. Computer Science (Major)','student');
 INSERT INTO Users VALUES (5, 'Kevin','123','Kevin@uwaterloo.ca','Kevin','Queen','B.Sc. Computer Science (Major)','student');
