@@ -25,13 +25,13 @@ public class UserModelTest
 	public void setUp() throws Exception
 	 {
 		
-		queryInsertUser1 = "INSERT INTO Users VALUES (11, 'test_admin', 'p', 'a@b.c', 'john', 'johnson', 'admin');";
+		queryInsertUser1 = "INSERT INTO Users VALUES (11, 'test_admin', 'p', 'a@b.c', 'john', 'johnson', 'computer sicence','admin');";
 		queryDeleteUser1 = "DELETE FROM Users WHERE userID=11;";
 		
-		queryInsertUser2 = "INSERT INTO Users VALUES (22, 'test_student', 'p', 'b@b.c', 'john', 'johnson', 'student');";
+		queryInsertUser2 = "INSERT INTO Users VALUES (22, 'test_student', 'p', 'b@b.c', 'john', 'johnson', 'computer science','student');";
 		queryDeleteUser2 = "DELETE FROM Users WHERE userID=22;";
 		
-		queryInsertUser3 = "INSERT INTO Users VALUES (33, 'test_prof', 'p', 'c@b.c', 'john', 'johnson', 'prof');";
+		queryInsertUser3 = "INSERT INTO Users VALUES (33, 'test_prof', 'p', 'c@b.c', 'john', 'johnson','comnputer science', 'prof');";
 		queryDeleteUser3 = "DELETE FROM Users WHERE userID=33;";
 
 		DB.execute(queryInsertUser1);
