@@ -16,15 +16,14 @@
                             value="1"> full time</option>
                     </select> -->
 <div id="welcomeTag" align="right"></div>
-				
-				
 				<!-- <a href="myInfo">MyInfo</a> <a href="announcements">
                         announcements</a> <a href="changePassword">change psw</a> <a onclick="loginOut()"
                             href="javascript:">logout</a> -->
                 </div>
                 <div class="blog_nav">
                   <ul>
-                    <li><a href="myInfo">myInfo</a></li>
+                    <li><a href="myInfo">my info</a></li>
+                    <li><a href="grade">academics</a></li>
 <!--                     <li><a href="grade">services</a></li>
                     <li><a href="tuition">tuition</a></li>
                     <li><a href="materialsDownload">materials</a></li> -->
