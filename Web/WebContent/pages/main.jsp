@@ -54,10 +54,6 @@ else
 
 <jsp:include page="template/header_nav.jsp" />
 
-Your session ID is
-<span id="sessionId"><em><%= request.getSession(true).getId() %></em></span>.
-
-
 		<div class="rightbox">
 
 
@@ -127,68 +123,7 @@ Your session ID is
                         <img src="images/Student/default/bt_cw.jpg" alt="finance cne" width="121" height="25" /></a> -->
                 </div>
 
-    <!-- <div class="securityDiv">
-        <strong class="securityBanner">Security track:</strong>
-    </div>
-    <div class="trackTable">
-        <div class="timeCell">
-            2015-02-01</div>
-        <div class="timeCell">
-            2015-02-02</div>
-        <div class="timeCell">
-             2015-02-03</div>
-        <div class="lctime2">
-            2015-02-04</div>
-        <div class="timeCell">
-             2014-02-05</div>
-        <div class="timeCell">
-             2014-02-06</div>
-        <div class="timeCell">
-             2014-02-07</div>
-    </div>
-    <div class="xxjl">
-    
-        <div align="center">
-        <span>
-            18:10 login
-            
-              <a></a>
-             
-              </span>
-            </div>
-           
-           
-        <div align="center">
-        <span>
-            18:20 logout
-            
-              <a></a>
-             
-              </span>
-            </div>
-           
-           
-        <div align="center">
-        <span>
-            20:06 login
-            
-              <a></a>
-             
-              </span>
-            </div>
-           
-           
-        <div align="center">
-        <span>
-            20:50 logout
-            
-              <a></a>
-             
-              </span>
-            </div>
-           
-           
-    </div> -->
+
 
             </div>
         </div>
