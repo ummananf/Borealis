@@ -16,6 +16,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
 import ca.objects.Enrollment;
+import ca.objects.Section;
 import ca.objects.Student;
 import ca.objects.User;
 import ca.persistence.EnrollmentModel;
@@ -39,20 +40,21 @@ public class ClassInfoServlet extends HttpServlet {
 		
 		
 		// Create an ArrayList to hold Enrollment Records
-		ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>();
+		ArrayList<Section> enrollments = new ArrayList<Section>();
 		
 		// before we call the model to get enrollment records from the db, we need to know the userID
 		User student = (User)session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
 		int userID = student.getUserID();
 		
 		//We can now use the userID to call the model
-		enrollments = EnrollmentModel.getEnrollmentRecord(userID);
+		enrollments = EnrollmentModel.getDetailedEnrollmentRecords(userID);
+		//enrollments = EnrollmentModel.getEnrollmentRecord(userID);
 		
 		// setup gson for coverting object to json object
 		Gson gsonEnrollment = new Gson();
 		
 		// start to converting object to json....
-		JsonElement element = gsonEnrollment.toJsonTree(enrollments, new TypeToken<ArrayList<Enrollment>>() {}.getType());
+		JsonElement element = gsonEnrollment.toJsonTree(enrollments, new TypeToken<ArrayList<Section>>() {}.getType());
 		
 		// final conversion
 		JsonArray enrollmentInfo = element.getAsJsonArray();
