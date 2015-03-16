@@ -42,15 +42,60 @@
 		$("#category").change(function(event) {
 			var category = $("select#category option:selected").text();
 			$.post("registerCourses", {
-				categoryName : category
+				categoryName: category
 			}, function(data) {
 				$("#course_table").empty();
 				var headers = "<tr><th align='left'>Course ID</th><th align='left'>Section</th><th align='left'>Capacity</th><th align='left'>Days</th><th align='left'>Start Time</th><th align='left'>End Time</th><th align='left'>Location</th></tr>";
 				$("#course_table").append(headers);
 				$.each(data, function(ley, value) {
 					var row = "";
-					row = "<tr><td>" + value.cID + "</td><td>" + value.sectID + "</td><td>" + value.maxSize + "</td><td>" + value.days + "</td><td>" + value.startTime + "</td><td>" + value.endTime + "</td><td>" + value.location + "</td><td><button>Register</button></td></tr>";
-					$("#course_table").append(row);
+					var registerButton = "<button type='button' id='register_" + value.cID + "'>Register</button>";
+					var dropButton = "<button type='button' id='drop_" + value.cID + "'>Drop</button>";
+					row = "<tr><td>" + value.cID + "</td><td>" + value.sectID + "</td><td>" + value.maxSize + "</td><td>" + value.days + "</td><td>" + value.startTime + "</td><td>" + value.endTime + "</td><td>" + value.location + "</td><td>" + registerButton + dropButton + "</td></tr>";
+					$("#course_table").append($.parseHTML(row));
+					
+					
+					// on register
+					$(document).on("click", "#register_" + value.cID, function() { 
+						
+						var post = $.post("register", {
+							action: "register",
+							cID: value.cID,
+							sectID: value.sectID,
+							startDate: value.termStart
+						});
+						
+						post.done(function(data, textStatus, jqXHR) {
+							alert("Successfully registered to " + value.cID + "!");
+						});
+						
+						post.fail(function(jqXHR, textStatus, errorThrown) {
+							alert("Registration to " + value.cID + " failed.");
+						});
+						
+					});
+					
+					// on drop
+					$(document).on("click", "#drop_" + value.cID, function() { 
+						
+						var post = $.post("register", {
+							action: "drop",
+							cID: value.cID,
+							sectID: value.sectID,
+							startDate: value.termStart
+						});
+						
+						post.done(function(data, textStatus, jqXHR) {
+							alert("Successfully dropped " + value.cID + "!");
+						});
+						
+						post.fail(function(jqXHR, textStatus, errorThrown) {
+							alert("Dropping " + value.cID + " failed.");
+						});
+						
+					});
+						
+						
 				});
 
 			});

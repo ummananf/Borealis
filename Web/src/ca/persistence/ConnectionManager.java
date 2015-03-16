@@ -45,13 +45,13 @@ public class ConnectionManager {
 			// Try to connect to local db (if previous code failed)
 			if (connection == null) {
 				try {
-			//		 connection = DriverManager.getConnection(
-			//		 "jdbc:mysql://localhost:3306/borealisDB", "user",
-			//		 "comp4350");
+					 connection = DriverManager.getConnection(
+					 "jdbc:mysql://localhost:3306/borealisDB", "user",
+					 "comp4350");
 	
-					connection = DriverManager
-							.getConnection("jdbc:mysql://localhost:3306/MySQL",
-									"root", "mysql");
+			//		connection = DriverManager
+			//				.getConnection("jdbc:mysql://localhost:3306/MySQL",
+			//						"root", "mysql");
 				} catch (SQLException ex) {
 	
 					// handle any errors
