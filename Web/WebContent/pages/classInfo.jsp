@@ -68,8 +68,8 @@
         	$('<tr/>').appendTo(table2)
     			.append($('<td/>').text(course.sectID))
     			.append($('<td/>').text(course.courseID))
-    			.append($('<td/>').text(course.cName))
-    			.append($('<td/>').text(course.start + "-" + course.end))
+    			.append($('<td/>').text(course.courseName))
+    			.append($('<td/>').text(course.startTime + "-" + course.endTime))
     			.append($('<td/>').text(course.days));
         });
 	});

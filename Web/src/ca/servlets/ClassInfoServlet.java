@@ -15,9 +15,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
-import ca.objects.Enrollment;
 import ca.objects.Section;
-import ca.objects.Student;
 import ca.objects.User;
 import ca.persistence.EnrollmentModel;
 
@@ -69,8 +67,8 @@ public class ClassInfoServlet extends HttpServlet {
 		
 		session.setAttribute("enrollmentInfo", enrollmentInfo);
 				
-		//RequestDispatcher view = req.getRequestDispatcher("classInfo.jsp");	
-		//view.forward(req, res);
+		RequestDispatcher view = req.getRequestDispatcher("classInfo.jsp");	
+		view.forward(req, res);
 	}
 
 	/**
