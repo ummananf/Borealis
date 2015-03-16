@@ -8,8 +8,8 @@ import java.util.Map;
 import ca.objects.Course;
 import ca.objects.Prereq;
 
-public class CourseModel {
-
+public class CourseModel 
+{
 	// Gets list of prereqs for given courseID
 	public static ArrayList<Prereq> getPrereqs(String courseID)
 	{
@@ -19,7 +19,8 @@ public class CourseModel {
 		List<Map<String, Object>> resultList = DB.getData(query);
 		Iterator<Map<String, Object>> iter = resultList.iterator();
 		
-		while(iter.hasNext()) {
+		while(iter.hasNext()) 
+		{
 			Map<String, Object> row = iter.next();
 			
 			Prereq prereq = new Prereq((String) row.get("cID"), 
@@ -38,7 +39,8 @@ public class CourseModel {
 		List<Map<String, Object>> resultList = DB.getData(query);
 		Iterator<Map<String, Object>> iter = resultList.iterator();
 		
-		while(iter.hasNext()) {
+		while(iter.hasNext()) 
+		{
 			Map<String, Object> row = iter.next();
 			
 			Course course = new Course((String) row.get("cID"), 

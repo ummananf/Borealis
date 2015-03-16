@@ -17,18 +17,16 @@ import com.google.gson.reflect.TypeToken;
 
 import ca.objects.Student;
 import ca.objects.User;
-import ca.persistence.UserModel;
-
-//Extend HttpServlet class
-@SuppressWarnings("serial")
-public class MyInfoServlet extends HttpServlet {
 
 
-	/**
-	 * doGet is logic that should be done before the page is rendered
-	 */
+public class MyInfoServlet extends HttpServlet 
+{
+	private static final long serialVersionUID = 1L;
+
+
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		
 		System.out.println("**** MADE IT TO   __" + this.getServletName() + "__ ****");
 		
@@ -40,9 +38,6 @@ public class MyInfoServlet extends HttpServlet {
 		
 		// get the model from DB
 		User student = (User)session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
-		String name = student.getUsername();
-				
-		
 		students.add(student);
 		
 		Gson gsonStudent = new Gson();
@@ -64,13 +59,10 @@ public class MyInfoServlet extends HttpServlet {
 
 	}
 
-	/**
-	 * doPost is logic that should be done after a button is clicked
-	 */
-	public void doPost(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		
-		//manipulate data on submit here
 
+	public void doPost(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException 
+	{
+		
 	}
 }

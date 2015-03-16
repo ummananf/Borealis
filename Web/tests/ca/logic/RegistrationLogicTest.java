@@ -5,16 +5,19 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class RegistrationLogicTest {
+public class RegistrationLogicTest 
+{
 	RegistrationLogic regLogic;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws Exception 
+	{
 		regLogic = new RegistrationLogic();
 	}
 
 	@Test
-	public final void testMeetsPrereqs() {
+	public final void testMeetsPrereqs() 
+	{
 		
 		// has one prereq
 		assertTrue(regLogic.meetsPrereqs(2, "COMP1020"));

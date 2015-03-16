@@ -11,7 +11,8 @@ import org.junit.Test;
 
 import ca.objects.Enrollment;
 
-public class StudentModelTest {
+public class StudentModelTest 
+{
 	
 	String queryInsertStudent;
 	String queryDeleteStudent;
@@ -19,8 +20,8 @@ public class StudentModelTest {
 	String queryDeleteEnrollment;
 
 	@Before
-	public void setUp() throws Exception {
-		
+	public void setUp() throws Exception 
+	{	
 		queryInsertStudent = "INSERT INTO Users VALUES (99, 'somestudent', 'p', 'qwe@qwe.qwe', 'john', 'johnson', 'student');";
 		queryDeleteStudent = "DELETE FROM Users WHERE userID=99;";
 		
@@ -35,7 +36,8 @@ public class StudentModelTest {
 	}
 
 	@Test
-	public final void testGetCompletedCourses() {
+	public final void testGetCompletedCourses() 
+	{
 		ArrayList<Enrollment> enrollment = StudentModel.getCompletedCourses(99);
 		assertTrue(enrollment.size() == 1);
 		Enrollment en = new Enrollment(99, "10000","A01", "COMP1010", Date.valueOf("2014-09-01"), 3.5f);
@@ -43,7 +45,8 @@ public class StudentModelTest {
 	}
 	
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() throws Exception 
+	{
 		DB.execute(queryDeleteStudent);
 		DB.execute(queryDeleteEnrollment);
 	}

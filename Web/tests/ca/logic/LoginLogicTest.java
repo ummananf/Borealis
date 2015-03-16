@@ -5,19 +5,21 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class LoginLogicTest {
+public class LoginLogicTest 
+{
 	
 	LoginLogic loginLogic;
 	
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws Exception 
+	{
 		
 		loginLogic = new LoginLogic();
 	}
 
 	@Test
-	public final void testGetUserIfValid() {
-		
+	public final void testGetUserIfValid() 
+	{	
 		// test with existing user
 		assertNotNull(loginLogic.getUserIfValid("student1", "password"));
 		assertNotNull(loginLogic.getUserIfValid("admin1", "password"));
