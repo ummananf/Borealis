@@ -21,6 +21,7 @@ public class RegisterDropCourseServlet extends HttpServlet{
 		User user = (User)session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
 		String userId = String.valueOf(user.getUserID());
 		String action = req.getParameter("action");
+		String crn = req.getParameter("crn");
 		String course = req.getParameter("cID");
 		String section = req.getParameter("sectID");
 		String startDate = req.getParameter("startDate");
@@ -31,13 +32,13 @@ public class RegisterDropCourseServlet extends HttpServlet{
 		boolean actionSuccessful = false;
 		
 		if (action.equals("register")) {
-			
-			query = "INSERT INTO Enrolled VALUES (" + userId + ", '" + section + "', '" + course + "', '" + startDate + "', NULL);";
+			query = "INSERT INTO Enrolled VALUES (" + userId + ",'" + crn + "', '" + section + "', '" + course + "', '" + startDate + "', NULL);";
 			actionSuccessful = DB.execute(query);
 			
 		} else if (action.equals("drop")) {
 			
-			query = "DELETE FROM Enrolled WHERE userID='" + userId + "' AND sectID='" + section + "' AND cID='" + course + "' AND termStart='" + startDate + "';";
+			query = "DELETE FROM Enrolled WHERE userID='" + userId + "' AND crn='" + crn + "';";
+			
 			actionSuccessful = DB.execute(query);
 		}
 		
