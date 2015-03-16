@@ -40,7 +40,7 @@
                     
                     <div class="form-group">
 						<font color="#CC0000">
-         <strong>For testing purposes: userName: student1 password: password</strong></font>
+         <strong>For testing purposes: userName: bob password: 4350</strong></font>
 					</div>
                     
 					<div class="form-group">

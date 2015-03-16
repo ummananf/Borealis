@@ -2,11 +2,18 @@ package ca.servlets;
 
 //Import required java libraries
 import java.io.*;
+import java.util.ArrayList;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.reflect.TypeToken;
+
 import ca.objects.*;
+import ca.persistence.UserModel;
 import ca.session.SessionGlobals;
 import ca.logic.LoginLogic;
 
@@ -35,6 +42,22 @@ public class LoginServlet extends HttpServlet {
 		if (user != null) {
 			HttpSession session = req.getSession(true);
 			session.setAttribute(SessionGlobals.CURRENT_SESSION_USER, user);
+			
+			
+			/*************CREATE JSON*******************/
+			ArrayList<User> users = new ArrayList<User>();
+			Gson gsonUser = new Gson();
+			users.add(user);
+			JsonElement element = gsonUser.toJsonTree(users, new TypeToken<ArrayList<User>>() {}.getType());
+			JsonArray userInfo = element.getAsJsonArray();
+			System.out.println("dlkjfdlkjaf;lkdjs;lfkajsd"+userInfo.toString());
+			req.setAttribute("userInfo", userInfo);
+			res.setContentType("application/json");	
+			res.getWriter().print(userInfo);	
+			session.setAttribute("userInfo", userInfo);		
+			
+			/************END OF CREATING**************/
+			
 			res.setStatus(HttpServletResponse.SC_OK);
 
 		}

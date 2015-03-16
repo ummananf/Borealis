@@ -109,7 +109,7 @@ CREATE TABLE DegreeChoice
 
 
 INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'john', 'johnson','B.Sc. Computer Science (Major)', 'admin');
-INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl', 'carlson','B.Sc. Computer Science (Major)', 'student');
+INSERT INTO Users VALUES (7651245, 'bob', '4350', 'bob@school.ca', 'Bob', 'Carslon','B.Sc. Computer Science (Major)', 'student');
 INSERT INTO Users VALUES (3, 'jason', '123456', 'jason@myumanitoba.ca','Jason', 'King', 'B.Sc. Computer Science (Major)', 'student');
 INSERT INTO Users VALUES (4, 'Francis','654321', 'frank@myumanitoba.ca','Francis','King','B.Sc. Computer Science (Major)','student');
 INSERT INTO Users VALUES (5, 'Kevin','123','Kevin@uwaterloo.ca','Kevin','Queen','B.Sc. Computer Science (Major)','student');
@@ -278,8 +278,8 @@ INSERT INTO Sections VALUES ('10351','A02', 'ENV1010', '2015-01-01', 36, 'TR', '
 
 
 
-INSERT INTO Enrolled VALUES (2, '10000','A01', 'COMP1010', '2014-09-01', 3.5);
-INSERT INTO Enrolled VALUES (2, '10010','A01', 'COMP1020', '2015-01-01', NULL);
+INSERT INTO Enrolled VALUES (7651245, '10000','A01', 'COMP1010', '2014-09-01', 3.5);
+INSERT INTO Enrolled VALUES (7651245, '10010','A01', 'COMP1020', '2015-01-01', NULL);
 
 
 INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
