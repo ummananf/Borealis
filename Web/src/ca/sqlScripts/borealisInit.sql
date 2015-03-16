@@ -111,6 +111,8 @@ CREATE TABLE DegreeChoice
 INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'john', 'johnson','B.Sc. Computer Science (Major)', 'admin');
 INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl', 'carlson','B.Sc. Computer Science (Major)', 'student');
 INSERT INTO Users VALUES (3, 'jason', '123456', 'jason@myumanitoba.ca','Jason', 'King', 'B.Sc. Computer Science (Major)', 'student');
+INSERT INTO Users VALUES (4, 'Francis','654321', 'frank@myumanitoba.ca','Francis','King','B.Sc. Computer Science (Major)','student');
+INSERT INTO Users VALUES (5, 'Kevin','123','Kevin@uwaterloo.ca','Kevin','Queen','B.Sc. Computer Science (Major)','student');
 
 -- INSERT INTO UserPrivs VALUES (1, 'admin');
 -- INSERT INTO UserPrivs VALUES (2, 'student');
@@ -214,6 +216,61 @@ INSERT INTO Sections VALUES ('10061','A02', 'COMP2160', '2014-09-01', 90, 'TR', 
 INSERT INTO Sections VALUES ('10062','A01', 'COMP2160', '2015-01-01', 60, 'MWF', '13:30:00', '14:20:00', 'E2-130');
 
 INSERT INTO Sections VALUES ('10070','A01', 'COMP2080', '2015-01-01', 100, 'MWF', '11:30:00', '12:45:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10080','A01', 'COMP2280', '2015-01-01', 100, 'MWF', '10:00:00', '11:15:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10090','A01', 'COMP2150', '2015-01-01', 100, 'MWF', '10:00:00', '11:15:00', 'E3-270');
+INSERT INTO Sections VALUES ('10091','A02', 'COMP2150', '2015-01-01', 100, 'MWF', '14:30:00', '15:20', 'E2-105');
+
+INSERT INTO Sections VALUES ('10100','A01', 'COMP3010', '2015-01-01', 67, 'MWF', '11:30:00', '12:20:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10110','A01', 'COMP3040', '2015-01-01', 30, 'TR', '11:30:00', '12:45:00', 'E2-330');
+
+INSERT INTO Sections VALUES ('10120','A01', 'COMP3170', '2015-01-01', 60, 'MWF', '10:30:00', '11:20:00', 'E2-160');
+
+INSERT INTO Sections VALUES ('10130','A01', 'COMP3350', '2015-01-01', 60, 'MWF', '9:30:00', '10:20:00', 'E2-165');
+
+INSERT INTO Sections VALUES ('10140','A01', 'COMP3430', '2015-01-01', 90, 'MWF', '13:30:00', '14:20:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10150','A01', 'COMP3620', '2015-01-01', 30, 'MWF', '14:30:00', '15:45:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10160','A01', 'COMP3020', '2014-09-01', 50, 'MWF', '11:30:00', '12:20:00', 'E2-160');
+
+INSERT INTO Sections VALUES ('10170','A01', 'COMP3030', '2014-09-01', 68, 'MWF', '14:30:00', '15:30:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10180','A01', 'COMP3040', '2014-09-01', 25, 'TR', '10:00:00', '11:15:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10190','A01', 'COMP3190', '2014-09-01', 70, 'MWF', '10:30:00', '11:20:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10200','A01', 'COMP3370', '2014-09-01', 68, 'TR', '14:30:00', '15:45:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10210','A01', 'COMP3380', '2014-09-01', 90, 'MWF', '16:00:00', '17:15:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10220','A01', 'COMP3490', '2014-09-01', 45, 'TR', '8:30:00', '9:45:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10230','A01', 'COMP3720', '2014-09-01', 38, 'MWF', '15:30:00', '16:20:00', 'arms-115');
+
+INSERT INTO Sections VALUES ('10240','A01', 'COMP4140', '2014-09-01', 56, 'MWF', '9:30:00', '10:20:00', 'E2-160');
+
+INSERT INTO Sections VALUES ('10250','A01', 'COMP4510', '2014-09-01', 68, 'MWF', '10:30:00', '11:20:00', 'E2-304');
+
+INSERT INTO Sections VALUES ('10260','A01', 'COMP4710', '2014-09-01', 68, 'TR', '14:30:00', '15:45:00', 'E2-320');
+
+INSERT INTO Sections VALUES ('10270','A01', 'COMP4720', '2014-09-01', 30, 'MWF', '13:30:00', '14:20:00', 'buller-315');
+
+INSERT INTO Sections VALUES ('10280','A01', 'COMP4020', '2015-01-01', 36, 'MWF', '13:30:00', '14:20:00', 'E2-351');
+
+INSERT INTO Sections VALUES ('10290','A01', 'COMP4180', '2015-01-01', 20, 'TR', '16:00:00', '17:15:00', 'E2-304');
+
+INSERT INTO Sections VALUES ('10300','A01', 'COMP4190', '2015-01-01', 40, 'MWF', '11:30:00', '12:20:00', 'E2-304');
+
+INSERT INTO Sections VALUES ('10310','A01', 'COMP4350', '2015-01-01', 36, 'TR', '11:30:00', '12:45:00', 'E2-320');
+
+INSERT INTO Sections VALUES ('10320','A01', 'COMP4360', '2015-01-01', 30, 'MWF', '15:30:00', '16:20:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10330','A01', 'COMP4380', '2015-01-01', 50, 'TR', '14:30:00', '15:45:00', 'E2-350');
+
+INSERT INTO Sections VALUES ('10340','A01', 'COMP4430', '2015-01-01', 36, 'MW', '16:30:00', '17:45:00', 'E2-350');
 
 
 
