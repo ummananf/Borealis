@@ -74,7 +74,9 @@
                    		<div>
                             <a href="registerCourses">register courses</a>
                         </div>
-						<div>                        </div>
+						<div>
+							<a href="grade">gradebook</a>
+						</div>
                         <div>                        </div>
                         <div>                        </div>
                         <!-- <div>
