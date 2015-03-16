@@ -8,17 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//Extend HttpServlet class
-@SuppressWarnings("serial")
-public class ProgressBarServlet extends HttpServlet {
 
-	public static final String CURRENT_SESSION_USER = "CURRENT_SESSION_USER";
+public class ProgressBarServlet extends HttpServlet 
+{
 
-	/**
-	 * doGet is logic that should be done before the page is rendered
-	 */
+	private static final long serialVersionUID = 1L;
+
+
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		
 		System.out.println("**** MADE IT TO   __" + this.getServletName() + "__ ****");
 		RequestDispatcher view = req.getRequestDispatcher("progressBar.jsp");
@@ -27,13 +26,10 @@ public class ProgressBarServlet extends HttpServlet {
 
 	}
 
-	/**
-	 * doPost is logic that should be done after a button is clicked
-	 */
-	public void doPost(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		
-		//manipulate data on submit here
 
+	public void doPost(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException 
+	{
+		
 	}
 }

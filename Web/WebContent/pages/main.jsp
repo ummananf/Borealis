@@ -1,3 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
+<%@ page session="true" %>
+<%@ page import="ca.objects.User" %>
+
+<% 
+if (session == null)  
+{
+ System.out.println("session is null");
+ String address = "index.jsp";
+ RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(address);
+ dispatcher.forward(request,response);
+}
+else
+{
+  // the user *does* have a valid session.
+  // do whatever you need to for logged in users.
+ User user = (User)session.getAttribute("CURRENT_SESSION_USER");
+ String userName = user.getUsername();
+ String e_mail = user.getEmail();
+ 
+ System.out.println(userName);  // This is for testing purpose only
+ System.out.println(e_mail);  // This is for testing purpose only
+}
+%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
@@ -7,11 +33,26 @@
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
 		<script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
 	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>   <!-- this lib is for parsing the json data -->
+	    
+	    <script>
+            
+            var persons = ${userInfo};
+            
+            $(document).ready(function() {
+                var table = $('<table/>').appendTo($('#welcomeTag'));
+                $(persons).each(function(i, person) {
+                    $('<tr/>').appendTo(table)
+                        .append($('<td/>').text(person.username))
+                        .append($('<td/>').text(person.userID))
+                    	.append($('<td/>').text(",Welcome back!"));
+                });
+            });
+        </script>
 	</head>
 	<body>
 
 <jsp:include page="template/header_nav.jsp" />
-
 
 		<div class="rightbox">
 
@@ -39,12 +80,14 @@
         <div class="dh2">
             <div class="topLeftFrame">
                 <p>
-              You have <span class="red">0</span> exams <a href="EducationCenter/myExam.jsp" class="red">check exam schedule</a></p>
+              You have <span class="red">0</span> exams.
+              </p>
                 <p>
-                   <font color="#FFFF33"> You passed</font> <span class="red">0 </span>courses.&nbsp; There are <span class="red">13</span> in total <a href="EducationCenter/grade.jsp" class="red">check grade</a>
+                   <font color="#FFFF33"> You passed</font> <span class="red">0 </span>courses.&nbsp; There are <span class="red">13</span> in total. 
                 </p>
                 <p>
-              <font color="#FFFF00">You need to buy </font> <span class="red">0 </span>books. <a href="EducationCenter/books.jsp" class="red">check booklist</a></p>
+              <font color="#FFFF00">You need to buy </font> <span class="red">0 </span>books.
+              </p>
                 <div class="btright">
 <!--                     <a href="myExam.jsp">
                         <img src="images/Student/default/bt_jw.jpg" alt="academic center" width="121" height="25" /></a> -->
@@ -80,68 +123,7 @@
                         <img src="images/Student/default/bt_cw.jpg" alt="finance cne" width="121" height="25" /></a> -->
                 </div>
 
-    <!-- <div class="securityDiv">
-        <strong class="securityBanner">Security track:</strong>
-    </div>
-    <div class="trackTable">
-        <div class="timeCell">
-            2015-02-01</div>
-        <div class="timeCell">
-            2015-02-02</div>
-        <div class="timeCell">
-             2015-02-03</div>
-        <div class="lctime2">
-            2015-02-04</div>
-        <div class="timeCell">
-             2014-02-05</div>
-        <div class="timeCell">
-             2014-02-06</div>
-        <div class="timeCell">
-             2014-02-07</div>
-    </div>
-    <div class="xxjl">
-    
-        <div align="center">
-        <span>
-            18:10 login
-            
-              <a></a>
-             
-              </span>
-            </div>
-           
-           
-        <div align="center">
-        <span>
-            18:20 logout
-            
-              <a></a>
-             
-              </span>
-            </div>
-           
-           
-        <div align="center">
-        <span>
-            20:06 login
-            
-              <a></a>
-             
-              </span>
-            </div>
-           
-           
-        <div align="center">
-        <span>
-            20:50 logout
-            
-              <a></a>
-             
-              </span>
-            </div>
-           
-           
-    </div> -->
+
 
             </div>
         </div>

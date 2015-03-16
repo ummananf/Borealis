@@ -10,7 +10,8 @@ import ca.objects.Professor;
 import ca.objects.Student;
 import ca.objects.User;
 
-public class UserModelTest {
+public class UserModelTest 
+{
 
 	User user;
 	String queryInsertUser1;
@@ -21,15 +22,16 @@ public class UserModelTest {
 	String queryDeleteUser3;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws Exception
+	 {
 		
-		queryInsertUser1 = "INSERT INTO Users VALUES (11, 'test_admin', 'p', 'a@b.c', 'john', 'johnson', 'admin');";
+		queryInsertUser1 = "INSERT INTO Users VALUES (11, 'test_admin', 'p', 'a@b.c', 'john', 'johnson', 'computer sicence','admin');";
 		queryDeleteUser1 = "DELETE FROM Users WHERE userID=11;";
 		
-		queryInsertUser2 = "INSERT INTO Users VALUES (22, 'test_student', 'p', 'b@b.c', 'john', 'johnson', 'student');";
+		queryInsertUser2 = "INSERT INTO Users VALUES (22, 'test_student', 'p', 'b@b.c', 'john', 'johnson', 'computer science','student');";
 		queryDeleteUser2 = "DELETE FROM Users WHERE userID=22;";
 		
-		queryInsertUser3 = "INSERT INTO Users VALUES (33, 'test_prof', 'p', 'c@b.c', 'john', 'johnson', 'prof');";
+		queryInsertUser3 = "INSERT INTO Users VALUES (33, 'test_prof', 'p', 'c@b.c', 'john', 'johnson','comnputer science', 'prof');";
 		queryDeleteUser3 = "DELETE FROM Users WHERE userID=33;";
 
 		DB.execute(queryInsertUser1);
@@ -38,14 +40,15 @@ public class UserModelTest {
 	}
 
 	@Test
-	public final void testGetUserData() {
+	public final void testGetUserData() 
+	{
 		
 		Admin admin = new Admin(11, "test_admin", "p", "a@b.c", "john", "johnson");
 		user = UserModel.getUserData("test_admin");
 		assertTrue(user instanceof Admin);
 		//assertTrue(user.equals(admin)); //this dont work cuz we didnt write it
 		
-		Student student = new Student(22, "test_student", "p", "b@b.c", "john", "johnson");
+		Student student = new Student(22, "test_student", "p", "b@b.c", "john", "johnson","degree");
 		user = UserModel.getUserData("test_student");
 		assertTrue(user instanceof Student);
 		//assertTrue(user.equals(student));
@@ -54,11 +57,11 @@ public class UserModelTest {
 		user = UserModel.getUserData("test_prof");
 		assertTrue(user instanceof Professor);
 		//assertTrue(user.equals(professor));
-
 	}
 	
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() throws Exception 
+	{
 		DB.execute(queryDeleteUser1);
 		DB.execute(queryDeleteUser2);
 		DB.execute(queryDeleteUser3);

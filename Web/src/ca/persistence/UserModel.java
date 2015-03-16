@@ -8,7 +8,8 @@ import ca.objects.Professor;
 import ca.objects.Student;
 import ca.objects.User;
 
-public class UserModel {
+public class UserModel 
+{
 	
 	public static final String TYPE_STUDENT = "student";
 	public static final String TYPE_PROFESSOR = "prof";
@@ -16,12 +17,14 @@ public class UserModel {
 	
 	
 	// Returns user associated with username given, or null if no such user
-	public static User getUserData(String input) {
+	public static User getUserData(String input) 
+	{
 		String query = "SELECT * FROM Users WHERE username = '"+input+"';";
 		User user = null;
 		List<Map<String, Object>> resultList = DB.getData(query);
 		
-		if (!resultList.isEmpty()){
+		if (!resultList.isEmpty())
+		{
 			Map<String, Object> row = resultList.get(0);
 	        
 	        int userID = (Integer) row.get("userID");
@@ -30,10 +33,11 @@ public class UserModel {
 			String email = (String) row.get("email");
 			String firstName = (String) row.get("fName");
 			String lastName = (String) row.get("lName");
+			String degName = (String) row.get("degName");
 			String userType = (String) row.get("userType");
 	
 			if(userType.equals(TYPE_STUDENT))
-				user = new Student(userID, username, password, email, firstName, lastName);
+				user = new Student(userID, username, password, email, firstName, lastName, degName);
 			else if(userType.equals(TYPE_PROFESSOR))
 				user = new Professor(userID, username, password, email, firstName, lastName);
 			else if(userType.equals(TYPE_ADMIN))

@@ -154,7 +154,7 @@
     </div>
     <div class="tis red" style="color: #333; margin-bottom: 20px;">
         <p>
-            <strong>Policy：</strong>
+            <strong>Policy</strong>
         </p>
         <p>
           Students must remain available until all examination and test obligations have been fulfilled   

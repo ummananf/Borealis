@@ -3,26 +3,24 @@ package ca.objects;
 import java.sql.Date;
 
 
-public class Enrollment {
-
-	private int userID;
-	private String sectID, courseID;
-	private Date termStart; 
+public class Enrollment 
+{
+	private String courseID;
 	private float grade;
 	
-	public Enrollment(int studentID, String sectID, String courseID, Date startDate, float grade) {
-		userID = studentID;
-		this.sectID = sectID;
+	public Enrollment(int studentID, String crn, String sectID, String courseID, Date startDate, float grade) 
+	{
 		this.courseID = courseID;
-		termStart = startDate;
 		this.grade = grade;
 	}
 	
-	// TODO: write more getters
-	public String getCourseID() {
+	public String getCourseID() 
+	{
 		return courseID;
 	}
-	public float getGrade() {
+	
+	public float getGrade() 
+	{
 		return grade;
 	}
 

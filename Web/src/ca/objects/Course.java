@@ -7,7 +7,6 @@ public class Course
 	private String courseID, courseName, faculty, dept, description;
 	private int creditHrs;
 	private boolean isFullYr;
-	private ArrayList<Section> sections;
 
 	// probably want to be able to create a Course without all of these variables though
 	public Course(String cID, String name, String fac, String dept, String desc, int crHrs, boolean fullYr)
@@ -19,20 +18,57 @@ public class Course
 		description = desc;
 		creditHrs = crHrs;
 		isFullYr = fullYr;
-		
-		sections = new ArrayList<Section>();
 	}
 
-	public String getID()
-	{
+	public String getCourseID() {
 		return courseID;
 	}
 
-	public void addSection(Section section)
-	{
-		sections.add(section);
+	public void setCourseID(String courseID) {
+		this.courseID = courseID;
 	}
-	
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public String getFaculty() {
+		return faculty;
+	}
+
+	public void setFaculty(String faculty) {
+		this.faculty = faculty;
+	}
+
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
+	public int getCreditHrs() {
+		return creditHrs;
+	}
+
+	public void setCreditHrs(int creditHrs) {
+		this.creditHrs = creditHrs;
+	}
+
+	public boolean isFullYr() {
+		return isFullYr;
+	}
+
+	public void setFullYr(boolean isFullYr) {
+		this.isFullYr = isFullYr;
+	}
+
+>>>>>>> 8323079faf8ca673298b4cc3e57cf7d1fcc510e8
 	public String toString()
 	{
 		String result = "";
@@ -49,7 +85,6 @@ public class Course
 		return result;
 	}
 
-	// TODO - write method to call something in the model to insert this Course record into the DB
 	public boolean dbInsert()
 	{
 		boolean success = false;
@@ -57,7 +92,6 @@ public class Course
 		return success;
 	}
 
-	// TODO - write method to call something in the model to update this Course record in the DB
 	public boolean dbUpdate()
 	{
 		boolean success = false;

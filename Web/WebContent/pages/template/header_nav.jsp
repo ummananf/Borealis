@@ -7,6 +7,7 @@
                     </a>
                 </div>
                 <div class="topOptions">
+                 
                     <!-- <select name="select" style="font-size: 11px; background: #4991cf;
                         color: #fff;" onchange="changeCateory($(this))">
                       <option 
@@ -14,13 +15,16 @@
                       <option selected='selected'
                             value="1"> full time</option>
                     </select> -->
-77xxxxx student: xx, Welcome back !Å <!-- <a href="myInfo">MyInfo</a> <a href="announcements">
+<div id="welcomeTag" align="right"></div>
+				<!-- <a href="myInfo">MyInfo</a> <a href="announcements">
                         announcements</a> <a href="changePassword">change psw</a> <a onclick="loginOut()"
                             href="javascript:">logout</a> -->
                 </div>
                 <div class="blog_nav">
                   <ul>
-                    <li><a href="myInfo">myInfo</a></li>
+                    <li><a href="myInfo">my info</a></li>
+                    <li><a href="grade">academics</a></li>
+                    <li><a href="progressBar">progress</a></li>
 <!--                     <li><a href="grade">services</a></li>
                     <li><a href="tuition">tuition</a></li>
                     <li><a href="materialsDownload">materials</a></li> -->
@@ -42,7 +46,9 @@
                     	<div>
                             <a href="myInfo">my info</a>
                         </div>
-                        <div>                        </div>
+                        <div>
+                        	<a href="classInfo">class info</a>
+                        </div>
                         <div>                        </div>
                         <div>                        </div>
                         <div>                        </div>
@@ -68,7 +74,9 @@
                    		<div>
                             <a href="registerCourses">register courses</a>
                         </div>
-						<div>                        </div>
+						<div>
+							<a href="grade">gradebook</a>
+						</div>
                         <div>                        </div>
                         <div>                        </div>
                         <!-- <div>
@@ -85,7 +93,9 @@
                         </div>
                     </div>
                     <div class="changeViewLeftArea">
-                    	<div>                        </div>
+                    	<div>
+                    	<a href="progressBar">degree progress</a>
+                    	</div>
                         <div>                        </div>
                         <!-- <div>
                             <a href="materialsDownload"> material download</a></div>
