@@ -20,11 +20,6 @@ public class Section extends Course
 		this.maxSize = maxSize;
 		daysOffered = days;	
 	}
-	
-	public Section(String crn, String sectID,String cID, String termStart, String startTime, String endTime, String location, int maxSize, String days)
-	{
-		
-	}
 
 	public String getID()
 	{

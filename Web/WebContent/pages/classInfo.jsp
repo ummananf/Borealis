@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
 <%@ page session="true" %>
 
+<!--hint: Use enrollmentInfo to grab session for this page-->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -44,9 +45,11 @@
         "sectID":"A01", "start":"9:30", "end":"10:20", "days":"Mon, Wed, Fri"},
         {"cID":"COMP 1020", "cName":"Introduction to Computer Science 2",
         "sectID":"A02", "start":"10:30", "end": "11:20", "days":"Mon, Wed, Fri"}
-    ];*/
+    ];
+    */
     
-    var mySections = ${currentEnrolled};
+    
+    var mySections = ${enrollmentInfo};
     
 	
 	$(document).ready(function()
@@ -64,7 +67,7 @@
         {
         	$('<tr/>').appendTo(table2)
     			.append($('<td/>').text(course.sectID))
-    			.append($('<td/>').text(course.cID))
+    			.append($('<td/>').text(course.courseID))
     			.append($('<td/>').text(course.cName))
     			.append($('<td/>').text(course.start + "-" + course.end))
     			.append($('<td/>').text(course.days));

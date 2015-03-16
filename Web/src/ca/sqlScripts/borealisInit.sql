@@ -109,7 +109,8 @@ CREATE TABLE DegreeChoice
 
 
 INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'john', 'johnson','B.Sc. Computer Science (Major)', 'admin');
-INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl', 'carlson','B.Sc. Mathematics (Major)', 'student');
+INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl', 'carlson','B.Sc. Computer Science (Major)', 'student');
+INSERT INTO Users VALUES (3, 'jason', '123456', 'jason@myumanitoba.ca','Jason', 'King', 'B.Sc. Computer Science (Major)', 'student');
 
 -- INSERT INTO UserPrivs VALUES (1, 'admin');
 -- INSERT INTO UserPrivs VALUES (2, 'student');

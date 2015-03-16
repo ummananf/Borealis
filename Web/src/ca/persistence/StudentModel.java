@@ -27,6 +27,7 @@ public class StudentModel {
 			Map<String, Object> row = iter.next();
 			
 			Enrollment temp = new Enrollment((Integer) row.get("userID"), 
+											(String) row.get("crn"),
 											(String) row.get("sectID"),
 											(String) row.get("cID"), 
 											(Date) row.get("termStart"),
