@@ -42,16 +42,17 @@
 
 <script>
 	var degrees = [
-	    {"degName":"B. Sc. Computer Science (Major)", "crHrs":"120"}
+	    {"degName":"B. Sc. Computer Science (Major)", "crHrs":120}
 	];
 	var coursesTaken = [
-	    {"cID":"COMP1010", "grade":"A+", "crHrs":3},
-	    {"cID":"COMP1020", "grade":"A", "crHrs":3},
-	    {"cID":"BIO1000", "grade":"A+", "crHrs":3},
-	    {"cID":"COMP2160","grade":"A", "crHrs":3},
-	    {"cID":"ECON1010","grade":"B", "crHrs":6}
+	    {"cID":"COMP1010", "cName":"Introduction to Computer Science", "grade":"A+", "crHrs":3},
+	    {"cID":"COMP1020", "cName":"Introduction to Computer Science 2", "grade":"A", "crHrs":3},
+	    {"cID":"BIO1000", "cName":"Introduction to Biology", "grade":"A+", "crHrs":3},
+	    {"cID":"COMP2160", "cName":"Programming Language Concepts", "grade":"A", "crHrs":3},
+	    {"cID":"ECON1010", "cName":"Introduction to Economics", "grade":"B", "crHrs":6}
 	];
 	var crHrsComplete = 0;
+	var crHrsDegree = 0;
 	
 	$(document).ready(function()
 	{
@@ -85,6 +86,7 @@
 			$(degCourses).each(function(i, course)
 			{
 				var courseGrade = "n/a";
+				crHrsDegree += 3;
 				
 				// print the course. look for course in courseTaken, if found,
 				// print the grade and increment crHrsComplete by the correct amount.
@@ -95,8 +97,12 @@
 				{
 					if (takenCourse.cID == course.cID)
 					{
+						// mark cID as -1 if we are counting the course. This will permanently
+						// alter the JSON string so if you need the original JSON object being used for
+						// courseTaken, take courseTaken as a copy of the original
 						courseGrade = takenCourse.grade;
 						crHrsComplete += takenCourse.crHrs;
+						takenCourse.cID = "-1";
 					}
 				});
 				
@@ -105,6 +111,27 @@
 					.append($('<td/>').text(course.cName))
 					.append($('<td/>').text(course.crHrs))
 					.append($('<td/>').text(courseGrade));
+			});
+			
+			// calculate the number of credit hours available for electives
+			var crHrsElective = degree.crHrs - crHrsDegree;
+			
+			// go through courses taken and use them towards the degree
+			// if possible and not already used
+			$(coursesTaken).each(function(i, elective)
+			{
+				// cID is -1 if the course was counted above
+				if (crHrsElective > elective.crHrs && elective.cID != "-1")
+				{
+					$('<tr/>').appendTo(table)
+						.append($('<td/>').text(elective.cID))
+						.append($('<td/>').text("ELECTIVE: " + elective.cName))
+						.append($('<td/>').text(elective.crHrs))
+						.append($('<td/>').text(elective.grade));
+					
+					crHrsElective -= elective.crHrs;
+					crHrsComplete += elective.crHrs;
+				}
 			});
 			
 			// make a progress bar
