@@ -40,7 +40,7 @@
                     
                     <div class="form-group">
 						<font color="#CC0000">
-         <strong>For testing purposes: userName: bob password: 4350</strong></font>
+         <strong>For testing purposes: userName: bob password: 4350 (Readme.md contains more testing account names)</strong></font>
 					</div>
                     
 					<div class="form-group">
@@ -97,7 +97,7 @@ $("#login_form").submit(function(event) {
 	
 	//something to do if the response we get indicates some kind of failure
 	post.fail(function(jqXHR, textStatus, errorThrown) {
-		alert("u fail");
+		alert("Sorry:(, login unsuccessfully");
 	});
 });
 
