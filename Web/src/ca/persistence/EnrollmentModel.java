@@ -7,12 +7,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import ca.objects.Enrollment;
-import ca.objects.Section;  //not a good design, need to refactor  later
+import ca.objects.Section;  
 
 
 
 // get the Enrollment Record based on the given userID
-public class EnrollmentModel {
+public class EnrollmentModel 
+{
 	private static String GET_ALL_ENROLLMENT_RECORDS =
 			"SELECT * "
 			+ "FROM Enrolled "
@@ -30,7 +31,8 @@ public class EnrollmentModel {
 			+ "WHERE Enrolled.userID=? ";
 	
 	
-	public static ArrayList<Enrollment> getEnrollmentRecord( int userID ){
+	public static ArrayList<Enrollment> getEnrollmentRecord( int userID )
+	{
 		
 		Connection connection = ConnectionManager.getConnection();
 		
@@ -38,7 +40,8 @@ public class EnrollmentModel {
 		ArrayList<Enrollment> currEnrollments = new ArrayList<Enrollment>();
 		PreparedStatement prepStatement = null;
 	
-		try {		
+		try 
+		{		
 			prepStatement = connection.prepareStatement(GET_ALL_ENROLLMENT_RECORDS);
 			prepStatement.setInt(1, userID);
 System.out.println(prepStatement.toString());
@@ -58,17 +61,23 @@ System.out.println(prepStatement.toString());
 				currEnrollments.add(tempEnrollment);
 			}
 			
-		} catch (SQLException e) {
+		} 
+		catch (SQLException e) 
+		{
 			System.out.println("error reading Enrollment data from DB");
 			e.printStackTrace();
 		}
-		finally{ // We have to clean up no matter what
-			try {
-				if (null != prepStatement){ // make sure we don't call method based on a null value
+		finally
+		{ // We have to clean up no matter what
+			try 
+			{
+				if (null != prepStatement)
+				{ // make sure we don't call method based on a null value
 					prepStatement.close();
 				}
-			} catch (SQLException e) {
-				
+			} 
+			catch (SQLException e) 
+			{	
 				e.printStackTrace();
 			}
 			prepStatement = null;  // The final clean up, free everything
@@ -80,15 +89,16 @@ System.out.println(prepStatement.toString());
 	
 	
 	
-	public static ArrayList<Section> getDetailedEnrollmentRecords( int userID ){
-			
+	public static ArrayList<Section> getDetailedEnrollmentRecords( int userID )
+	{		
 			Connection connection = ConnectionManager.getConnection();
 			
 			ResultSet data = null;
 			ArrayList<Section> currEnrollments = new ArrayList<Section>();
 			PreparedStatement prepStatement = null;
 		
-			try {		
+			try 
+			{		
 				prepStatement = connection.prepareStatement(GET_ALL_DETAILED_ENROLLMENT_RECORDS);
 				prepStatement.setInt(1, userID);
 	System.out.println(prepStatement.toString());
@@ -112,17 +122,22 @@ System.out.println(prepStatement.toString());
 					currEnrollments.add(tempSection);
 				}
 				
-			} catch (SQLException e) {
+			} catch (SQLException e) 
+			{
 				System.out.println("error reading Enrollment data from DB");
 				e.printStackTrace();
 			}
-			finally{ // We have to clean up no matter what
-				try {
-					if (null != prepStatement){ // make sure we don't call method based on a null value
+			finally
+			{ // We have to clean up no matter what
+				try 
+				{
+					if (null != prepStatement)
+					{ // make sure we don't call method based on a null value
 						prepStatement.close();
 					}
-				} catch (SQLException e) {
-					
+				} 
+				catch (SQLException e) 
+				{	
 					e.printStackTrace();
 				}
 				prepStatement = null;  // The final clean up, free everything

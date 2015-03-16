@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import ca.persistence.DB;
 
-@SuppressWarnings("serial")
-public class DBInitServlet extends HttpServlet {
-	
+public class DBInitServlet extends HttpServlet 
+{	
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * This is the starting point when we are connecting to the website.
 	 * Here we will create the tables, and then redirect to the Login servlet.
@@ -19,14 +20,16 @@ public class DBInitServlet extends HttpServlet {
 	 * NOTE: every time the app starts here, tables and values are added to your connected schema
 	 */
 	@Override
-	public void init() {
+	public void init() 
+	{
 		
 		DB.init();
 	}
 	
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse res) 
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		
 		 res.sendRedirect("/pages/index.jsp");
 

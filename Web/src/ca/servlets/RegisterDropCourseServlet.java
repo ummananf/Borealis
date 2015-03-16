@@ -57,7 +57,5 @@ public class RegisterDropCourseServlet extends HttpServlet {
 			res.sendError(HttpServletResponse.SC_BAD_REQUEST,
 					"Action unsuccessful.");
 		}
-
 	}
-
 }
