@@ -29,7 +29,7 @@ public class Section extends Course {
 	}
 */
 	
-	private String sectID, cID, days, location;
+	private String sectID, crn, cID, days, location;
 	private Date termStart;
 	private int maxSize;
 	private Time startTime, endTime;
@@ -40,6 +40,19 @@ public class Section extends Course {
 		
 		this.sectID = sectID;
 		this.cID = cID;
+		this.termStart = termStart;
+		this.maxSize = maxSize;
+		this.days = days;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.location = location;
+	}
+	
+	public Section(String sectID,String crn, String cID,String courseName, Date termStart, int maxSize,
+			String days, Time startTime, Time endTime, String location) {
+		super(cID, courseName, null, null, null, 0, false);
+		this.sectID = sectID;
+		this.crn = crn;
 		this.termStart = termStart;
 		this.maxSize = maxSize;
 		this.days = days;

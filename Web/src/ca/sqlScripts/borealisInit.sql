@@ -47,6 +47,7 @@ CREATE TABLE Prereqs
 );
 CREATE TABLE Sections
 (
+	crn varchar(6) PRIMARY KEY NOT NULL,
 	sectID varchar(5) NOT NULL, 
 	cID varchar(10) NOT NULL,
 	termStart DATE NOT NULL,
@@ -55,29 +56,30 @@ CREATE TABLE Sections
 	startTime TIME, 
 	endTime TIME, 
 	location varchar(30), 
-	PRIMARY KEY(sectID, cID, termStart), 
 	FOREIGN KEY(cID) REFERENCES Courses(cID) ON DELETE CASCADE
 );
 CREATE TABLE Enrolled
 (
-	userID int NOT NULL, 
+	userID int NOT NULL,
+	crn varchar(6) NOT NULL,
 	sectID varchar(5) NOT NULL, 
 	cID varchar(10) NOT NULL,
 	termStart DATE NOT NULL,
 	grade FLOAT, 
-	PRIMARY KEY(userID, sectID, cID, termStart), 
-	FOREIGN KEY(userID) REFERENCES Users(userID), 
-	FOREIGN KEY(sectID, cID, termStart) REFERENCES Sections(sectID, cID, termStart)
+	PRIMARY KEY(userID, crn),
+	FOREIGN KEY(userID) REFERENCES Users(userID),
+	FOREIGN KEY(crn) REFERENCES Sections(crn)
 );
 CREATE TABLE Teaches
 (
-	userID int NOT NULL, 
+	userID int NOT NULL,
+	crn varchar(6) NOT NULL,
 	sectID varchar(5) NOT NULL, 
 	cID varchar(10) NOT NULL,
 	termStart DATE NOT NULL,
-	PRIMARY KEY(userID, sectID, cID, termStart), 
+	PRIMARY KEY(userID, crn), 
 	FOREIGN KEY(userID) REFERENCES Users(userID), 
-	FOREIGN KEY(sectID, cID, termStart) REFERENCES Sections(sectID, cID, termStart)
+	FOREIGN KEY(crn) REFERENCES Sections(crn)
 );
 CREATE TABLE Degrees
 (
@@ -107,24 +109,117 @@ CREATE TABLE DegreeChoice
 
 
 INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'john', 'johnson','B.Sc. Computer Science (Major)', 'admin');
-INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl', 'carlson','B.Sc. Mathematics (Major)', 'student');
+INSERT INTO Users VALUES (2, 'student1', 'password', 'student1@school.ca', 'carl', 'carlson','B.Sc. Computer Science (Major)', 'student');
+INSERT INTO Users VALUES (3, 'jason', '123456', 'jason@myumanitoba.ca','Jason', 'King', 'B.Sc. Computer Science (Major)', 'student');
 
 -- INSERT INTO UserPrivs VALUES (1, 'admin');
 -- INSERT INTO UserPrivs VALUES (2, 'student');
 
+
+
+--***************START TO INSERT TO Courses TABLE****************************************************************************************
+-- Computer Science Courses:
+-- First Year Computer Science Courses:
 INSERT INTO Courses VALUES ('COMP1010', 'Intro to Computer Science', 3, 'Science', 'Computer Science', 'Introduces you to computer science.');
 INSERT INTO Courses VALUES ('COMP1020', 'Intro to Computer Science 2', 3, 'Science', 'Computer Science', 'Introduces you to more computer science!');
+INSERT INTO Courses VALUES ('COMP1260', 'Introductory Computer Usage 1', 3, 'Science', 'Computer Science', 'an introduction to modern computer services');
+INSERT INTO Courses VALUES ('COMP1270', 'Introductory Computer Usage 2', 3, 'Science', 'Computer Science', 'Using advanced tools to design web pages');
+INSERT INTO Courses VALUES ('COMP1012', 'Computer Programming for Scientists and Engineers', 3, 'Science', 'Computer Science', 'An introduction to computer programming suitable for solving problems in science and engineering');
+
+-- Second Year Cmoputer Science Courses:
+INSERT INTO Courses VALUES ('COMP2140', 'Data Structures and Algorithms', 3, 'Science', 'Computer Science', ' Introduction to the representation and manipulation of data structures');
+INSERT INTO Courses VALUES ('COMP2150', 'Object Orientation', 3, 'Science', 'Computer Science', ' Design and development of object-oriented software');
+INSERT INTO Courses VALUES ('COMP2160', 'Programming Practices', 3, 'Science', 'Computer Science', 'Introduction to issues involved in real-world computing');
+INSERT INTO Courses VALUES ('COMP2280', 'Introduction to Computer Systems', 3, 'Science', 'Computer Science', 'assembly language programming');
+INSERT INTO Courses VALUES ('COMP2130', 'Discrete Mathematics for Computer Science', 3, 'Science', 'Computer Science', 'An introduction to the set theory, logic, integers, combinatorics and functions');
+INSERT INTO Courses VALUES ('COMP2080', 'Analysis of Algorithms', 3, 'Science', 'Computer Science', 'Methods of analyzing the time and space requirements of algorithms');
+
+--Third Year Computer Science Courses:
+INSERT INTO Courses VALUES ('COMP3010', 'Distributed Computing', 3, 'Science', 'Computer Science', 'An introduction to the development of client server and peer-to-peer systems through web applications, distributed programming models, and distributed algorithms. ');
+INSERT INTO Courses VALUES ('COMP3170', 'Analysis of Algorithms and Data Structures', 3, 'Science', 'Computer Science', 'Fundamental algorithms for sorting, searching, storage management, graphs, databases and computational geometry. ');
+INSERT INTO Courses VALUES ('COMP3350', 'Software Engineering 1', 3, 'Science', 'Computer Science', 'Introduction to software engineering');
+INSERT INTO Courses VALUES ('COMP3430', 'Operating Systems', 3, 'Science', 'Computer Science', 'Operating systems, their design, implementation, and usage.');
+INSERT INTO Courses VALUES ('COMP3020', 'Human-Computer Interaction 1', 3, 'Science', 'Computer Science', 'Human-computer interaction: human factors and usability, user-centered design, prototyping, usability evaluation.');
+INSERT INTO Courses VALUES ('COMP3030', 'Automata Theory and Formal Languages', 3, 'Science', 'Computer Science', 'An introduction to automata theory, grammars, formal languages and their applications.');
+INSERT INTO Courses VALUES ('COMP3040', 'Technical Communication in Computer Science', 3, 'Science', 'Computer Science', 'This course is designed to help students become more effective and confident writers in the context of the computing profession.');
+INSERT INTO Courses VALUES ('COMP3190', 'Introduction to Artificial Intelligence', 3, 'Science', 'Computer Science', 'Principles of artificial intelligence: problem solving, knowledge representation and manipulation');
+INSERT INTO Courses VALUES ('COMP3370', 'Computer Organization', 3, 'Science', 'Computer Science', 'Principles of computer systems architecture, organization and design.');
+INSERT INTO Courses VALUES ('COMP3380', 'Databases Concepts and Usage', 3, 'Science', 'Computer Science', 'An introduction to database systems including the relational, hierarchical, network and entity-relationship models with emphasis on the relational model and SQL.');
+INSERT INTO Courses VALUES ('COMP3490', 'Computer Graphics 1', 3, 'Science', 'Computer Science', 'An introductory course in computer graphics');
+INSERT INTO Courses VALUES ('COMP3720', 'Computer Networks 1', 3, 'Science', 'Computer Science', ' This courses examines the principles of computer networks, including network architectures, algorithms, and performance.');
+
+
+--Fourth Year Computer Science Courses:
+INSERT INTO Courses VALUES ('COMP4140', 'Introduction to Cryptography and Cryptosystems', 3, 'Science', 'Computer Science', 'Description and analysis of cryptographic methods used in the authentication and protection of data.');
+INSERT INTO Courses VALUES ('COMP4510', 'Introduction to Parallel Computation', 3, 'Science', 'Computer Science', 'An overview of the architectures of current parallel processors and the techniques used to program them.');
+INSERT INTO Courses VALUES ('COMP4710', 'Introduction to Data Mining', 3, 'Science', 'Computer Science', 'Introduction to data mining concepts and their applications. ');
+INSERT INTO Courses VALUES ('COMP4720', 'Computer Networks 2', 3, 'Science', 'Computer Science', 'This course examines advanced topics in computer networks, including network security, network management, performance, and multimedia networking.');
+INSERT INTO Courses VALUES ('COMP4020', 'Human-Computer Interaction 2', 3, 'Science', 'Computer Science', 'This course examines advanced topics in computer networks, including network security, network management, performance, and multimedia networking.');
+INSERT INTO Courses VALUES ('COMP4180', 'Intelligent Mobile Robotics', 3, 'Science', 'Computer Science', 'Topics include artificial intelligence, computer vision, human-robot interaction, and multi-robot systems. ');
+INSERT INTO Courses VALUES ('COMP4190', 'Artificial Intelligence', 3, 'Science', 'Computer Science', 'Reasoning with temporal knowledge; causal reasoning; plausible reasoning; nonmonotonic reasoning; abductive reasoning.');
+INSERT INTO Courses VALUES ('COMP4350', 'Software Engineering 2', 3, 'Science', 'Computer Science', 'Advanced treatment of software development methods.');
+INSERT INTO Courses VALUES ('COMP4360', 'Machine Learning', 3, 'Science', 'Computer Science', ' Learning strategies; evaluation of learning; learning in symbolic systems; neural networks, genetic algorithms.');
+INSERT INTO Courses VALUES ('COMP4380', 'Database Implementation', 3, 'Science', 'Computer Science', ' Implementation of modern database systems including query modification/optimization, recovery, concurrency, integrity, and distribution. ');
+INSERT INTO Courses VALUES ('COMP4430', 'Operating Systems 2', 3, 'Science', 'Computer Science', '  Design and implementation of modern operating systems. Detailed analysis of an open source modern operating system and hands-on experience with its kernel and major components.');
+
+
+
+
+-- Other Courses
 INSERT INTO Courses VALUES ('BIO1030', 'Intro to Biological Science 2', 3, 'Science', 'Biology', 'Introduces you to bio science!');
 INSERT INTO Courses VALUES ('BIO1040', 'Intro to Biological Science 2', 3, 'Science', 'Biology', 'Introduces you to bio science!');
 INSERT INTO Courses VALUES ('ENV1010', 'Intro to Environmental Science 2', 3, 'Science', 'Environment', 'Introduces you to our world!');
 
+
+
+--**********END OF INSERTING TO Courses Table*********************************************************************************************
+
+
+
 INSERT INTO Prereqs VALUES ('COMP1010', 'COMP1020', 2.0);
 
-INSERT INTO Sections VALUES ('A01', 'COMP1010', '2014-09-01', 100, 'MWF', '13:30:00', '14:20:00', 'E2-105');
-INSERT INTO Sections VALUES ('A01', 'COMP1020', '2015-01-01', 100, 'MWF', '13:30:00', '14:20:00', 'E2-110');
 
-INSERT INTO Enrolled VALUES (2, 'A01', 'COMP1010', '2014-09-01', 3.5);
-INSERT INTO Enrolled VALUES (2, 'A01', 'COMP1020', '2015-01-01', NULL);
+
+-- Computer Science Sections info
+INSERT INTO Sections VALUES ('10000','A01', 'COMP1010', '2014-09-01', 100, 'MWF', '13:30:00', '14:20:00', 'E2-105');
+INSERT INTO Sections VALUES ('10001','A02', 'COMP1010', '2014-09-01', 105, 'MWF', '9:30:00', '10:20:00', 'E2-105');
+INSERT INTO Sections VALUES ('10002','A03', 'COMP1010', '2014-09-01', 80, 'TR', '10:00:00', '11:15:00', 'E2-330');
+INSERT INTO Sections VALUES ('10003','A04', 'COMP1010', '2014-09-01', 175, 'TR', '12:30:00', '13:30:00', 'E3-270');
+INSERT INTO Sections VALUES ('10004','A01', 'COMP1010', '2015-01-01', 100, 'MWF', '12:30:00', '13:20:00', 'E2-105');
+INSERT INTO Sections VALUES ('10005','A02', 'COMP1010', '2015-01-01', 100, 'MWF', '14:30:00', '15:45:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10010','A01', 'COMP1020', '2014-09-01', 175, 'MWF', '11:30:00', '12:20:00', 'E2-105');
+INSERT INTO Sections VALUES ('10011','A02', 'COMP1020', '2014-09-01', 175, 'MWF', '11:30:00', '12:20:00', 'E3-270');
+INSERT INTO Sections VALUES ('10012','A01', 'COMP1020', '2015-01-01', 85, 'MWF', '10:30:00', '11:20:00', 'E2-105');
+INSERT INTO Sections VALUES ('10013','A02', 'COMP1020', '2015-01-01', 70, 'TR', '10:00:00', '11:15:00', 'Buller207');
+
+
+
+INSERT INTO Sections VALUES ('10020','A01', 'COMP1260', '2014-09-01', 125, 'MWF', '11:30:00', '12:20:00', 'E2-110');
+INSERT INTO Sections VALUES ('10021','A01', 'COMP1260', '2015-01-01', 175, 'MWF', '11:30:00', '12:20:00', 'E2-105');
+
+INSERT INTO Sections VALUES ('10030','A01', 'COMP1270', '2014-09-01', 75, 'MWF', '11:30:00', '12:20:00', 'E2-105');
+INSERT INTO Sections VALUES ('10031','A01', 'COMP1270', '2015-01-01', 105, 'MWF', '11:30:00', '12:20:00', 'E2-105');
+INSERT INTO Sections VALUES ('10032','A02', 'COMP1270', '2015-01-01', 105, 'MWF', '10:30:00', '11:20:00', 'Buller207');
+
+INSERT INTO Sections VALUES ('10040','A01', 'COMP2130', '2014-09-01', 100, 'MWF', '15:30:00', '16:20:00', 'E2-105');
+INSERT INTO Sections VALUES ('10041','A01', 'COMP2130', '2015-01-01', 65, 'MWF', '15:30:00', '16:20:00', 'E2-155');
+
+INSERT INTO Sections VALUES ('10050','A01', 'COMP2140', '2014-09-01', 90, 'TR', '14:30:00', '15:45:00', 'E2-110');
+INSERT INTO Sections VALUES ('10051','A02', 'COMP2140', '2014-09-01', 90, 'MWF', '13:30:00', '14:20:00', 'E2-105');
+INSERT INTO Sections VALUES ('10052','A01', 'COMP2140', '2015-09-01', 55, 'MWF', '9:30:00', '10:20:00', 'E2-330');
+
+INSERT INTO Sections VALUES ('10060','A01', 'COMP2160', '2014-09-01', 90, 'TR', '11:30:00', '12:45:00', 'E2-105');
+INSERT INTO Sections VALUES ('10061','A02', 'COMP2160', '2014-09-01', 90, 'TR', '8:30:00', '9:45:00', 'E2-105');
+INSERT INTO Sections VALUES ('10062','A01', 'COMP2160', '2015-01-01', 60, 'MWF', '13:30:00', '14:20:00', 'E2-130');
+
+INSERT INTO Sections VALUES ('10070','A01', 'COMP2080', '2015-01-01', 100, 'MWF', '11:30:00', '12:45:00', 'E2-105');
+
+
+
+INSERT INTO Enrolled VALUES (2, '10000','A01', 'COMP1010', '2014-09-01', 3.5);
+INSERT INTO Enrolled VALUES (2, '10010','A01', 'COMP1020', '2015-01-01', NULL);
+
 
 INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Biology', 'Major', 'B.Sc. Biology (Major)', 120);
