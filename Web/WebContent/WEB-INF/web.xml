@@ -22,6 +22,15 @@
 
 	<!-- **** Servlet Files **** -->
 	<servlet>
+		<servlet-name>RegisterDropCourseServlet</servlet-name>
+		<servlet-class>ca.servlets.RegisterDropCourseServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterDropCourseServlet</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>InitServlet</servlet-name>
 		<servlet-class>ca.servlets.DBInitServlet</servlet-class>
 	</servlet>

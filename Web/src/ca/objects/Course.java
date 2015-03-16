@@ -18,9 +18,52 @@ public class Course
 		isFullYr = fullYr;
 	}
 
-	public String getID()
-	{
+	public String getCourseID() {
 		return courseID;
+	}
+
+	public void setCourseID(String courseID) {
+		this.courseID = courseID;
+	}
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public String getFaculty() {
+		return faculty;
+	}
+
+	public void setFaculty(String faculty) {
+		this.faculty = faculty;
+	}
+
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
+	public int getCreditHrs() {
+		return creditHrs;
+	}
+
+	public void setCreditHrs(int creditHrs) {
+		this.creditHrs = creditHrs;
+	}
+
+	public boolean isFullYr() {
+		return isFullYr;
+	}
+
+	public void setFullYr(boolean isFullYr) {
+		this.isFullYr = isFullYr;
 	}
 
 	public String toString()

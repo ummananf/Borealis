@@ -42,16 +42,17 @@
 
 <script>
 	var degrees = [
-	    {"degName":"B. Sc. Computer Science (Major)", "crHrs":"120"}
+	    {"degName":"B. Sc. Computer Science (Major)", "crHrs":120}
 	];
 	var coursesTaken = [
-	    {"cID":"COMP1010", "grade":"A+", "crHrs":3},
-	    {"cID":"COMP1020", "grade":"A", "crHrs":3},
-	    {"cID":"BIO1000", "grade":"A+", "crHrs":3},
-	    {"cID":"COMP2160","grade":"A", "crHrs":3},
-	    {"cID":"ECON1010","grade":"B", "crHrs":6}
+	    {"cID":"COMP1010", "cName":"Introduction to Computer Science", "grade":4.5, "crHrs":3},
+	    {"cID":"COMP1020", "cName":"Introduction to Computer Science 2", "grade":4, "crHrs":3},
+	    {"cID":"BIO1000", "cName":"Introduction to Biology", "grade":4.5, "crHrs":3},
+	    {"cID":"COMP2160", "cName":"Programming Language Concepts", "grade":4, "crHrs":3},
+	    {"cID":"ECON1010", "cName":"Introduction to Economics", "grade":3.5, "crHrs":6},
 	];
 	var crHrsComplete = 0;
+	var crHrsDegree = 0;
 	
 	$(document).ready(function()
 	{
@@ -76,6 +77,8 @@
 			
 			var table = $('<table/>').appendTo($('#degreeCourses'));
 			$('<tr/>').appendTo(table)
+				.append($('<td colspan="4"/>').text("Progress towards: " + degree.degName));
+			$('<tr/>').appendTo(table)
 				.append($('<td width="75"/>').text("course ID"))
 				.append($('<td width="300"/>').text("course name"))
 				.append($('<td width="75"/>').text("credit hours"))
@@ -85,6 +88,7 @@
 			$(degCourses).each(function(i, course)
 			{
 				var courseGrade = "n/a";
+				crHrsDegree += 3;
 				
 				// print the course. look for course in courseTaken, if found,
 				// print the grade and increment crHrsComplete by the correct amount.
@@ -93,10 +97,19 @@
 				// enough that it shouldn't really matter
 				$(coursesTaken).each(function(i, takenCourse)
 				{
+					var intGrade = takenCourse.grade;
+					
 					if (takenCourse.cID == course.cID)
 					{
-						courseGrade = takenCourse.grade;
-						crHrsComplete += takenCourse.crHrs;
+						// mark cID as -1 if we are counting the course. This will permanently
+						// alter the JSON string so if you need the original JSON object being used for
+						// courseTaken, take courseTaken as a copy of the original
+						courseGrade = getLetterGrade(intGrade);
+						takenCourse.cID = "-1";
+						
+						// VWs, Fs do not count as credit hours towards your degree
+						if (intGrade > 0)
+							crHrsComplete += takenCourse.crHrs;
 					}
 				});
 				
@@ -107,12 +120,71 @@
 					.append($('<td/>').text(courseGrade));
 			});
 			
+			// calculate the number of credit hours available for electives
+			var crHrsElective = degree.crHrs - crHrsDegree;
+			
+			// go through courses taken and use them towards the degree
+			// if possible and not already used
+			$(coursesTaken).each(function(i, elective)
+			{
+				var intGrade = elective.grade;
+				var electiveGrade = getLetterGrade(intGrade);
+				
+				// cID is -1 if the course was counted above
+				if (crHrsElective > elective.crHrs && elective.cID != "-1" && intGrade > 0)
+				{
+					$('<tr/>').appendTo(table)
+						.append($('<td/>').text(elective.cID))
+						.append($('<td/>').text("ELECTIVE: " + elective.cName))
+						.append($('<td/>').text(elective.crHrs))
+						.append($('<td/>').text(electiveGrade));
+					
+					crHrsElective -= elective.crHrs;
+					crHrsComplete += elective.crHrs;
+				}
+			});
+			
 			// make a progress bar
 			var progressPct = (crHrsComplete / degree.crHrs) * 100;
 			var progressBarDiv = '<div class="progress-bar progress-bar-success" style="width:' + progressPct + '%"/>';
 			$(progressBarDiv).appendTo($('#degreeProgress'))
 		});
 	});
+	
+	function getLetterGrade(grade)
+    {
+    	var result = "n/a";
+    	
+    	// grade is represented by a number depending on grade points
+    	// (ie. 4.5 for A+, 4.0 for A, etc.)
+    	// voluntary withdrawl is represented by a -1 grade.
+    	// if grade is null, the course is not yet completed
+    	switch(grade)
+    	{
+    		case 4.5: result = "A+";
+    			break;
+    		case 4.0: result = "A";
+    			break;
+    		case 3.5: result = "B+";
+    			break;
+    		case 3.0: result = "B";
+    			break;
+    		case 2.5: result = "C+";
+    			break;
+    		case 2.0: result = "C";
+    			break;
+    		case 1.0: result = "D";
+    			break;
+    		case 0.0: result = "F";
+    			break;
+    		case -1.0: result = "VW";
+    			break;
+    		case "null": result = "inc.";
+    			break;
+    	}
+    	
+    	return result;
+    }
 </script>
 
 </div>

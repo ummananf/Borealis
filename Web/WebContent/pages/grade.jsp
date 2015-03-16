@@ -26,157 +26,103 @@
     <div class="changeViewMainArea">
         <ul>
               <li><a class="tab1" href="registerCourses">Register Courses</a></li>
-            <li><a class="tab2" href="myExam">my exams</a></li>
+            <!-- <li><a class="tab2" href="myExam">my exams</a></li> -->
             <li><a class="tab1" href="grade">my grade</a></li>
-            <li><a class="tab2" href="books">books &amp; materials</a></li>
-            
+            <!-- <li><a class="tab2" href="books">books &amp; materials</a></li> -->
         </ul>
     </div>
-    <div class="workingSpace">
-        <div class="tis red">
-            Notices: Please check your grade carefully, and report as soon as possible if you dectect any error</div>
-        
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tbody>
-                 <tr> 
-                    <th width="162" valign="top" scope="col">
-                        <div class="crn">
-                            CRN</div>
-                     </th>
-                     <th width="278">
-                        <div class="courseName">
-                             Course Name</div>
-                      </th>
-                      <th width="262">
-                      	<div class="grade">
-                        	Grade
-                        </div>
-                      </th>
-                      <th width="122">
-                   	  <div align="center">operation</div></th>
-                 </tr>
-                    <tr>
-                    	<td>
-                        <div align="center">00001 </div></td>
-                        <td>
-                        <div align="center">Comp 1260 </div></td>
-                        <td align="center">
-                        <div align="center">A+ </div></td>
-                        <td>
-                        <button onclick=""> 
-                        	appeal
-                        </button>
-                        <button onclick="">
-                        	accept
-                        </button>
-                        </td>
-                    </tr>
-                    	
-                    <tr>
-                    	<td>
-                        <div align="center">00002 </div></td>
-                        <td align="center">
-                         <div align="center">Comp 1270 </div></td>
-                         <td><div align="center">A+</div></td>
-                         <td>
-                         	<button onclick="">
-                        	appeal
-                        	</button>
-                        	<button onclick="">
-                        	accept
-                        	</button>
-                         </td>
-                    </tr>
-                    <tr>
-                    	<td>
-                        <div class="crn" align="center">
-                            00003</div>
-                        </td>
-                        <td>
-                        <div class="courseName" align="center">Comp 2140</div>
-                        </td>
-                        <td>
-                        <div align="center">A+ </div></td>
-                        <td>
-                        	<button onclick="">
-                        	appeal
-                        	</button>
-                        	<button onclick="">
-                        	accept
-                        	</button>
-                        </td>
-                    </tr>
-                    
-                   <tr>
-                    	<td>
-                        <div class="crn" align="center">
-                            00004</div>
-                        </td>
-                        <td>
-                        <div class="courseName" align="center">Comp 2160</div>
-                        </td>
-                        <td>
-                        <div align="center">A+ </div></td>
-                        <td>
-                        	<button onclick="">
-                        	appeal
-                        	</button>
-                        	<button onclick="">
-                        	accept
-                        	</button>
-                        </td>
-                    </tr>
-                    
-                   <tr>
-                    	<td>
-                        <div class="crn" align="center">
-                            00005</div>
-                        </td>
-                        <td>
-                        <div class="courseName" align="center">Comp 2280</div>
-                        </td>
-                        <td>
-                        <div align="center">A+ </div></td>
-                        <td>
-                        	<button onclick="">
-                        	appeal
-                        	</button>
-                        	<button onclick="">
-                        	accept
-                        	</button>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                    	<td>
-                        <div class="crn" align="center">
-                            00006</div>
-                        </td>
-                        <td>
-                        <div class="courseName" align="center">Comp 2190</div>
-                        </td>
-                        <td>
-                        <div align="center">A+ </div></td>
-                        <td>
-                        	<button onclick="">
-                        	appeal
-                        	</button>
-                        	<button onclick="">
-                        	accept
-                        	</button>
-                        </td>
-                    </tr>
-                
-                <tr align="center">
-                    <td colspan="15">
-                        <div style="color: #ff0000; font-weight: bold;">
-                            no other info</div>
-                    </td>
-                </tr>
-                
-            </tbody>
-        </table>
+    <div>
+    <select id="termSelect">
+    	<option value="noterm">Select Term:</option>
+    	<option value="fall2014">Fall 2014</option>
+    	<option value="winter2015">Winter 2015</option>
+    </select>
     </div>
+    <div class="workingSpace" id="gradeTable">
+    
+    <script>
+    // convention: courses taken over more than one term are
+    // reported in the final term (ie. the term grade is received in)
+    var coursesTaken = [
+        {"cID":"COMP1010", "cName":"Introduction to Computer Science", "grade":4.5, "crHrs":3, "term":"fall2014"},
+        {"cID":"COMP1020", "cName":"Introduction to Computer Science 2", "grade":4, "crHrs":3, "term":"fall2014"},
+        {"cID":"BIO1000", "cName":"Introduction to Biology", "grade":4.5, "crHrs":3, "term":"winter2015"},
+        {"cID":"COMP2160", "cName":"Programming Language Concepts", "grade":4, "crHrs":3, "term":"winter2015"},
+        {"cID":"ECON1010", "cName":"Introduction to Economics", "grade":3.5, "crHrs":6, "term":"winter2015"},
+    ];
+    
+    var table = $('<table/>').appendTo($('#gradeTable'));
+    
+    $('#termSelect').change(function()
+    {
+    	// clear previous information
+    	$('#gradeTable').empty();
+    	
+    	var table = $('<table/>').appendTo($('#gradeTable'));
+    	$('<tr/>').appendTo(table)
+    		.append($('<td width="75"/>').text("course ID"))
+    		.append($('<td width="300"/>').text("course name"))
+    		.append($('<td width="35"/>').text("grade"));
+    	
+    	// populate table with courses from the selected term
+    	$(coursesTaken).each(function(i, course)
+    	{
+    		var courseGrade = getLetterGrade(course.grade);
+    		
+    		if (course.term == $('#termSelect').val())
+    		{
+				$('<tr/>').appendTo(table)
+					.append($('<td/>').text(course.cID))
+					.append($('<td/>').text(course.cName))
+					.append($('<td/>').text(courseGrade));
+    		}
+    	});
+    });
+    
+    $(document).ready(function()
+    {
+    	// show first row of table now
+    	$('<tr/>').appendTo(table)
+    		.append($('<td width="75"/>').text("course ID"))
+    		.append($('<td width="300"/>').text("course name"))
+    		.append($('<td width="35"/>').text("grade"));
+    });
+    
+    function getLetterGrade(grade)
+    {
+    	var result = "n/a";
+    	
+    	// grade is represented by a number depending on grade points
+    	// (ie. 4.5 for A+, 4.0 for A, etc.)
+    	// voluntary withdrawl is represented by a -1 grade.
+    	// if grade is null, the course is not yet completed
+    	switch(grade)
+    	{
+    		case 4.5: result = "A+";
+    			break;
+    		case 4.0: result = "A";
+    			break;
+    		case 3.5: result = "B+";
+    			break;
+    		case 3.0: result = "B";
+    			break;
+    		case 2.5: result = "C+";
+    			break;
+    		case 2.0: result = "C";
+    			break;
+    		case 1.0: result = "D";
+    			break;
+    		case 0.0: result = "F";
+    			break;
+    		case -1.0: result = "VW";
+    			break;
+    		case "null": result = "inc.";
+    			break;
+    	}
+    	
+    	return result;
+    }
+    </script>
 
             </div>
 <jsp:include page="template/footer.jsp" />

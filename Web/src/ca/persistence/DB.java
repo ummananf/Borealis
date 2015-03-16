@@ -56,12 +56,13 @@ public class DB {
 
 		boolean success = false;
 		Statement statement = null;
+		int rowsUpdated = 0;
 
 		Connection connection = ConnectionManager.getConnection();
 
 		try {
 			statement = connection.createStatement();
-			success = statement.execute(query);
+			rowsUpdated = statement.executeUpdate(query);
 			statement.close();
 			ConnectionManager.closeConnection(connection);
 		} catch (SQLException e) {
@@ -71,6 +72,10 @@ public class DB {
 			System.out.println("VendorError: " + e.getErrorCode());
 		}
 
+		if (rowsUpdated > 0) {
+			success = true;
+		}
+		
 		return success;
 	}
 
