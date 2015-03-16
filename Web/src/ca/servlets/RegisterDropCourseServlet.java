@@ -27,14 +27,20 @@ public class RegisterDropCourseServlet extends HttpServlet{
 		String startDate = req.getParameter("startDate");
 		
 		System.out.println("RegisterDropCourseServlet: " + userId + " " + action + " " + course + " " + section + " " + startDate);
-		
+		String test = 
+				"INSERT INTO Enrolled VALUES (" 
+			      + userId + ",'" + crn + "', '" + section + "', '" + course + "', '" + startDate + "', NULL);";
+System.out.println(test);
 		String query;
 		boolean actionSuccessful = false;
 		
 		if (action.equals("register")) {
-			query = "INSERT INTO Enrolled VALUES (" + userId + ",'" + crn + "', '" + section + "', '" + course + "', '" + startDate + "', NULL);";
+			query = 
+			"INSERT INTO Enrolled VALUES (" 
+					+ userId + ",'" + crn + "', '" + section + "', '" + course + "', '" + startDate + "', NULL);";
+	
 			actionSuccessful = DB.execute(query);
-			
+	
 		} else if (action.equals("drop")) {
 			
 			query = "DELETE FROM Enrolled WHERE userID='" + userId + "' AND crn='" + crn + "';";

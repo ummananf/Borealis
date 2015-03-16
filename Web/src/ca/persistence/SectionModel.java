@@ -2,13 +2,11 @@ package ca.persistence;
 
 import java.sql.Date;
 import java.sql.Time;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import ca.objects.Course;
 import ca.objects.Section;
 
 public class SectionModel {
@@ -22,9 +20,16 @@ public class SectionModel {
 		while(iter.hasNext()) {
 			Map<String, Object> row = iter.next();
 			
-			Section course = new Section((String) row.get("sectID"), (String) row.get("cID"), (Date) row.get("termStart"),
-					(Integer) row.get("maxSize"), (String) row.get("days"), (Time) row.get("startTime"),
-					(Time) row.get("endTime"), (String) row.get("location"));
+			Section course = new Section(
+					(String)row.get("crn"),
+					(String) row.get("sectID"), 
+					(String) row.get("cID"), 
+					(Date) row.get("termStart"),
+					(Integer) row.get("maxSize"), 
+					(String) row.get("days"), 
+					(Time) row.get("startTime"),
+					(Time) row.get("endTime"), 
+					(String) row.get("location"));
 			
 			sections.add(course);
 		}

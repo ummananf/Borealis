@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>my exam</title>
+<title>register courses</title>
 <link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 <link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet"
 	type="text/css" />
@@ -47,13 +47,13 @@
 				// clear table so not to append to previous courses
 				$("#course_table").empty();
 				// add table headers
-				var headers = "<tr><th align='left'>Course ID</th><th align='left'>Section</th><th align='left'>Capacity</th><th align='left'>Days</th><th align='left'>Start Time</th><th align='left'>End Time</th><th align='left'>Location</th></tr>";
+				var headers = "<tr><th align='left'>Course ID</th><th align='left'>crn</th><th align='left'>Section</th><th align='left'>Capacity</th><th align='left'>Days</th><th align='left'>Start Time</th><th align='left'>End Time</th><th align='left'>Location</th></tr>";
 				$("#course_table").append(headers);
 				// populate table
 				$.each(data, function(key, value) {
 					var registerButton = "<button type='button' id='register_" + value.cID + "'>Register</button>";
 					var dropButton = "<button type='button' id='drop_" + value.cID + "'>Drop</button>";
-					var row = "<tr><td>" + value.cID + "</td><td>" + value.sectID + "</td><td>" + value.maxSize + "</td><td>" + value.days + "</td><td>" + value.startTime + "</td><td>" + value.endTime + "</td><td>" + value.location + "</td><td>" + registerButton + dropButton + "</td></tr>";
+					var row = "<tr><td>" + value.cID + "</td><td>" + value.crn + "</td><td>" + value.sectID + "</td><td>" + value.maxSize + "</td><td>" + value.days + "</td><td>" + value.startTime + "</td><td>" + value.endTime + "</td><td>" + value.location + "</td><td>" + registerButton + dropButton + "</td></tr>";
 					$("#course_table").append($.parseHTML(row));
 					
 					// add event handlers to the buttons that were created
@@ -64,7 +64,8 @@
 							action: "register",
 							cID: value.cID,
 							sectID: value.sectID,
-							startDate: value.termStart
+							startDate: value.termStart,
+							crn:value.crn
 						});
 						
 						post.done(function(data, textStatus, jqXHR) {
@@ -84,7 +85,8 @@
 							action: "drop",
 							cID: value.cID,
 							sectID: value.sectID,
-							startDate: value.termStart
+							startDate: value.termStart,
+							crn: value.crn
 						});
 						
 						post.done(function(data, textStatus, jqXHR) {

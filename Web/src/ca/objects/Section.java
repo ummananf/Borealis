@@ -34,10 +34,11 @@ public class Section extends Course {
 	private int maxSize;
 	private Time startTime, endTime;
 	
-	public Section(String sectID, String cID, Date termStart, int maxSize,
+	public Section(String crn, String sectID, String cID, Date termStart, int maxSize,
 			String days, Time startTime, Time endTime, String location) {
 		super(null, null, null, null, null, 0, false);
 		
+		this.crn = crn;
 		this.sectID = sectID;
 		this.cID = cID;
 		this.termStart = termStart;
