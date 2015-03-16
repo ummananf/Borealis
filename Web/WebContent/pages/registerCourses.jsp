@@ -45,11 +45,11 @@
 				categoryName : category
 			}, function(data) {
 				$("#course_table").empty();
-				var headers = "<tr><th align='left'>Course ID</th><th align='left'>Course Name</th><th align='left'>Credit Hours</th><th align='left'>Faculty</th><th align='left'>Department</th></tr>";
+				var headers = "<tr><th align='left'>Course ID</th><th align='left'>Section</th><th align='left'>Capacity</th><th align='left'>Days</th><th align='left'>Start Time</th><th align='left'>End Time</th><th align='left'>Location</th></tr>";
 				$("#course_table").append(headers);
 				$.each(data, function(ley, value) {
 					var row = "";
-					row = "<tr><td>" + value.courseID + "</td><td>" + value.courseName + "</td><td>" + value.creditHrs + "</td><td>" + value.faculty + "</td><td>" + value.dept + "</td><td><button>Register</button></td></tr>";
+					row = "<tr><td>" + value.cID + "</td><td>" + value.sectID + "</td><td>" + value.maxSize + "</td><td>" + value.days + "</td><td>" + value.startTime + "</td><td>" + value.endTime + "</td><td>" + value.location + "</td><td><button>Register</button></td></tr>";
 					$("#course_table").append(row);
 				});
 

@@ -5,8 +5,10 @@ import java.util.LinkedHashMap;
 
 import ca.objects.Course;
 import ca.objects.Degree;
+import ca.objects.Section;
 import ca.persistence.CourseModel;
 import ca.persistence.CourseSelectionModel;
+import ca.persistence.SectionModel;
 
 public class CourseSelectionLogic {
 
@@ -47,6 +49,27 @@ public class CourseSelectionLogic {
 		}
 		
 		return listOfCourses;
+	}
+	
+	public LinkedHashMap<String, LinkedHashMap<String, String>> getSections(String courseId) {
+		LinkedHashMap<String, String> sectionMap;
+		LinkedHashMap<String, LinkedHashMap<String, String>> listOfSections = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+		ArrayList<Section> sections = SectionModel.getSectionByCourseId(courseId);
+		
+		for(int i = 0; i < sections.size(); i++){
+			sectionMap = new LinkedHashMap<String, String>();
+			sectionMap.put("sectID", sections.get(i).getSectID());
+			sectionMap.put("cID", sections.get(i).getcID());
+			sectionMap.put("termStart", sections.get(i).getTermStart().toString());
+			sectionMap.put("maxSize", String.valueOf(sections.get(i).getMaxSize()));
+			sectionMap.put("days", sections.get(i).getDays());
+			sectionMap.put("startTime", sections.get(i).getStartTime().toString());
+			sectionMap.put("endTime", sections.get(i).getEndTime().toString());
+			sectionMap.put("location", sections.get(i).getLocation());
+			listOfSections.put(sections.get(i).getcID(), sectionMap);
+		}
+		
+		return listOfSections;
 	}
 	
 }

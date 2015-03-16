@@ -1,8 +1,10 @@
 package ca.servlets;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ca.logic.CourseSelectionLogic;
+import ca.persistence.SectionModel;
 
 import com.google.gson.Gson;
 
@@ -75,7 +78,21 @@ public class RegisterCoursesServlet extends HttpServlet {
 		
 		if (category != null) {
 			LinkedHashMap<String, LinkedHashMap<String, String>> courses = csLogic.getCourses(category);
-			json = new Gson().toJson(courses);
+			LinkedHashMap<String, LinkedHashMap<String, String>> sections = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+			
+			Set<String> courseKeys = courses.keySet();
+			Iterator<String> iterator = courseKeys.iterator();
+			
+			while(iterator.hasNext()) {
+				String key = (String) iterator.next();
+				LinkedHashMap<String, LinkedHashMap<String, String>> section = csLogic.getSections(key);
+				
+				LinkedHashMap<String, String> sec = section.get(key);
+				
+				sections.put(key, sec);
+			}
+			
+			json = new Gson().toJson(sections);
 		}
 		
 		System.out.println("Sending json: " + json);
