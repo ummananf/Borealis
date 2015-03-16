@@ -44,11 +44,11 @@
     // convention: courses taken over more than one term are
     // reported in the final term (ie. the term grade is received in)
     var coursesTaken = [
-        {"cID":"COMP1010", "cName":"Introduction to Computer Science", "grade":"A+", "crHrs":3, "term":"fall2014"},
-        {"cID":"COMP1020", "cName":"Introduction to Computer Science 2", "grade":"A", "crHrs":3, "term":"fall2014"},
-        {"cID":"BIO1000", "cName":"Introduction to Biology", "grade":"A+", "crHrs":3, "term":"winter2015"},
-        {"cID":"COMP2160", "cName":"Programming Language Concepts", "grade":"A", "crHrs":3, "term":"winter2015"},
-        {"cID":"ECON1010", "cName":"Introduction to Economics", "grade":"B+", "crHrs":6, "term":"winter2015"},
+        {"cID":"COMP1010", "cName":"Introduction to Computer Science", "grade":4.5, "crHrs":3, "term":"fall2014"},
+        {"cID":"COMP1020", "cName":"Introduction to Computer Science 2", "grade":4, "crHrs":3, "term":"fall2014"},
+        {"cID":"BIO1000", "cName":"Introduction to Biology", "grade":4.5, "crHrs":3, "term":"winter2015"},
+        {"cID":"COMP2160", "cName":"Programming Language Concepts", "grade":4, "crHrs":3, "term":"winter2015"},
+        {"cID":"ECON1010", "cName":"Introduction to Economics", "grade":3.5, "crHrs":6, "term":"winter2015"},
     ];
     
     var table = $('<table/>').appendTo($('#gradeTable'));
@@ -67,7 +67,7 @@
     	// populate table with courses from the selected term
     	$(coursesTaken).each(function(i, course)
     	{
-    		var courseGrade = course.grade;
+    		var courseGrade = getLetterGrade(course.grade);
     		
     		if (course.term == $('#termSelect').val())
     		{
@@ -87,6 +87,41 @@
     		.append($('<td width="300"/>').text("course name"))
     		.append($('<td width="35"/>').text("grade"));
     });
+    
+    function getLetterGrade(grade)
+    {
+    	var result = "n/a";
+    	
+    	// grade is represented by a number depending on grade points
+    	// (ie. 4.5 for A+, 4.0 for A, etc.)
+    	// voluntary withdrawl is represented by a -1 grade.
+    	// if grade is null, the course is not yet completed
+    	switch(grade)
+    	{
+    		case 4.5: result = "A+";
+    			break;
+    		case 4.0: result = "A";
+    			break;
+    		case 3.5: result = "B+";
+    			break;
+    		case 3.0: result = "B";
+    			break;
+    		case 2.5: result = "C+";
+    			break;
+    		case 2.0: result = "C";
+    			break;
+    		case 1.0: result = "D";
+    			break;
+    		case 0.0: result = "F";
+    			break;
+    		case -1.0: result = "VW";
+    			break;
+    		case "null": result = "inc.";
+    			break;
+    	}
+    	
+    	return result;
+    }
     </script>
 
             </div>
