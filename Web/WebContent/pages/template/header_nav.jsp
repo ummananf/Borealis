@@ -24,6 +24,7 @@
                   <ul>
                     <li><a href="myInfo">my info</a></li>
                     <li><a href="grade">academics</a></li>
+                    <li><a href="progressBar">progress</a></li>
 <!--                     <li><a href="grade">services</a></li>
                     <li><a href="tuition">tuition</a></li>
                     <li><a href="materialsDownload">materials</a></li> -->
