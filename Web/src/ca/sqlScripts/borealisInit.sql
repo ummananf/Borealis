@@ -174,6 +174,7 @@ INSERT INTO Courses VALUES ('ENV1010', 'Intro to Environmental Science 2', 3, 'S
 
 
 
+
 --**********END OF INSERTING TO Courses Table*********************************************************************************************
 
 
@@ -272,6 +273,9 @@ INSERT INTO Sections VALUES ('10330','A01', 'COMP4380', '2015-01-01', 50, 'TR', 
 
 INSERT INTO Sections VALUES ('10340','A01', 'COMP4430', '2015-01-01', 36, 'MW', '16:30:00', '17:45:00', 'E2-350');
 
+INSERT INTO Sections VALUES ('10350','A01', 'ENV1010', '2015-01-01', 36, 'MWF', '11:30:00', '12:20:00', 'Wallace-221');
+INSERT INTO Sections VALUES ('10351','A02', 'ENV1010', '2015-01-01', 36, 'TR', '11:30:00', '12:45:00', 'Wallace-221');
+
 
 
 INSERT INTO Enrolled VALUES (2, '10000','A01', 'COMP1010', '2014-09-01', 3.5);
@@ -284,4 +288,3 @@ INSERT INTO Degrees VALUES ('Winter2015', 'Environment', 'Major', 'B.Sc. Environ
 INSERT INTO Degrees VALUES ('Fall2014', 'Mathematics', 'Major', 'B.Sc. Mathematics (Major)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Architecture', 'Major', 'B.Sc. Architecture (Major)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Astronomy', 'Major', 'B.Sc. Astronomy (Major)', 120);
-

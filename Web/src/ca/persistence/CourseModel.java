@@ -33,6 +33,7 @@ public class CourseModel {
 	
 	public static ArrayList<Course> getCoursesByDepartment(String department) {
 		String query = "SELECT * FROM Courses WHERE department = '" + department + "';";
+		
 		ArrayList<Course> courses = new ArrayList<Course>();
 		List<Map<String, Object>> resultList = DB.getData(query);
 		Iterator<Map<String, Object>> iter = resultList.iterator();
