@@ -49,6 +49,8 @@ public class Section extends Course {
 		this.location = location;
 	}
 	
+
+
 	public Section(String sectID,String crn, String cID,String courseName, Date termStart, int maxSize,
 			String days, Time startTime, Time endTime, String location) {
 		super(cID, courseName, null, null, null, 0, false);
@@ -62,6 +64,11 @@ public class Section extends Course {
 		this.location = location;
 	}
 
+	public String getCrn() {
+		return crn;
+	}
+
+	
 	public String getSectID() {
 		return sectID;
 	}

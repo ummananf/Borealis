@@ -59,6 +59,7 @@ public class CourseSelectionLogic {
 		for(int i = 0; i < sections.size(); i++){
 			sectionMap = new LinkedHashMap<String, String>();
 			sectionMap.put("sectID", sections.get(i).getSectID());
+			sectionMap.put("crn", sections.get(i).getCrn());
 			sectionMap.put("cID", sections.get(i).getcID());
 			sectionMap.put("termStart", sections.get(i).getTermStart().toString());
 			sectionMap.put("maxSize", String.valueOf(sections.get(i).getMaxSize()));
