@@ -17,11 +17,11 @@ import com.google.gson.reflect.TypeToken;
 
 import ca.objects.Student;
 import ca.objects.User;
-import ca.persistence.UserModel;
 
 
 public class MyInfoServlet extends HttpServlet 
 {
+	private static final long serialVersionUID = 1L;
 
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
@@ -38,9 +38,6 @@ public class MyInfoServlet extends HttpServlet
 		
 		// get the model from DB
 		User student = (User)session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
-		String name = student.getUsername();
-				
-		
 		students.add(student);
 		
 		Gson gsonStudent = new Gson();

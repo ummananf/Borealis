@@ -2,7 +2,6 @@ package ca.logic;
 
 
 import ca.objects.User;
-import ca.persistence.DB;
 import ca.persistence.UserModel;
 
 

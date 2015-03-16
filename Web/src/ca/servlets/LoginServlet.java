@@ -12,12 +12,14 @@ import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
 import ca.objects.*;
-import ca.persistence.UserModel;
 import ca.session.SessionGlobals;
 import ca.logic.LoginLogic;
 
-public class LoginServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet 
+{
 	
+	private static final long serialVersionUID = 1L;
+
 	// need this to keep url as "login" so the filter works properly as it checks for "login" page
 	// and not "index.jsp"
 	public void doGet(HttpServletRequest req, HttpServletResponse res)

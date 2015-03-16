@@ -11,6 +11,8 @@ import ca.persistence.DB;
 
 public class DBInitServlet extends HttpServlet 
 {	
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * This is the starting point when we are connecting to the website.
 	 * Here we will create the tables, and then redirect to the Login servlet.

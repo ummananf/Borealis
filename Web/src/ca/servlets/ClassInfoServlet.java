@@ -20,10 +20,10 @@ import ca.objects.User;
 import ca.persistence.EnrollmentModel;
 
 
-//Extend HttpServlet class
-@SuppressWarnings("serial")
 public class ClassInfoServlet extends HttpServlet 
 {
+	private static final long serialVersionUID = 1L;
+
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		
