@@ -13,7 +13,8 @@
 		<script src="Script/Login/jquery-1.8.2.min.js"></script>
 		<script src="Script/Login/jquery.form.js" type="text/javascript"></script>
 		<script src="Script/Login/tooltips.js" type="text/javascript"></script>
- 		<script src="Script/Login/login2.js" type="text/javascript"></script> 
+ 		<script src="Script/Login/login2.js" type="text/javascript"></script>
+ 		<script src="Script/tests/testLogin.js" type="text/javascript"></script>  
 	</head>
 
 <body>
