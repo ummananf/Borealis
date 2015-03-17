@@ -25,7 +25,7 @@ public class ProfessorTest
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception
 	{
-		System.out.println("Finished running Professor Test");
+		System.out.println("Finished running Professor Tests");
 		System.out.println("--------------------------------");
 	}
 	
