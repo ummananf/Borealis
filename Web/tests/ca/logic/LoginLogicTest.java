@@ -88,6 +88,4 @@ public class LoginLogicTest
 		String type = "student";
 		assertEquals(type,this.testUser.getType());
 	}
-	
-
 }

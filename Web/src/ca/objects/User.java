@@ -1,8 +1,10 @@
 package ca.objects;
 
+import ca.validate.EmailValidator;
+import ca.validate.UsernameValidator;
 
-public class User {
-
+public class User
+{
 	private int userID;
 	private String username, password, email, firstName, lastName, type;
 
@@ -35,7 +37,10 @@ public class User {
 
 	public void setEmail(String email) 
 	{
-		this.email = email;
+		if(EmailValidator.validate(email))
+		{
+			this.email = email;
+		}
 	}
 
 	public String getFirstName() 
@@ -45,7 +50,10 @@ public class User {
 
 	public void setFirstName(String firstName) 
 	{
-		this.firstName = firstName;
+		if( UsernameValidator.validate(firstName))
+		{
+			this.firstName = firstName;
+		}
 	}
 
 	public String getLastName() 
@@ -55,7 +63,10 @@ public class User {
 
 	public void setLastName(String lastName) 
 	{
-		this.lastName = lastName;
+		if( UsernameValidator.validate(lastName))
+		{
+			this.lastName = lastName;
+		}
 	}
 
 	public String getType() 
@@ -70,7 +81,10 @@ public class User {
 
 	public void setUsername(String username) 
 	{
-		this.username = username;
+		if (UsernameValidator.validate(username))
+		{
+			this.username = username;
+		}
 	}
 
 	public String getUsername() 
@@ -81,6 +95,14 @@ public class User {
 	public String getPassword() 
 	{
 		return password;
+	}
+	
+	public void setPassword(String password)
+	{
+		if (password.length() >= 3) // The length of the password must greater than 3 digits
+		{
+			this.password = password;
+		}
 	}
 
 	public String toString() 

@@ -11,4 +11,6 @@ public class Admin extends User
 	{
 		super(userID, username, password, email, fName, lName, UserModel.TYPE_ADMIN);	
 	}
+	
+	
 }
