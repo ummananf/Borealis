@@ -147,5 +147,5 @@ public class Section extends Course
 
 		return success;
 	}
->>>>>>> 8323079faf8ca673298b4cc3e57cf7d1fcc510e8
+
 }

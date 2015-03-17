@@ -37,6 +37,7 @@ public class SessionFilter implements Filter
                 boolean isCSS = uri.contains(".css");
                 boolean isJS = uri.contains(".js");
                 boolean isJSP = uri.contains(".jsp");
+                boolean isJSTest = uri.contains("TestRunner");
                 
                 System.out.println("FILTER: REQUEST URL: " + request.getRequestURI());
                 System.out.println("isSessionActive: " + isSessionActive);
@@ -45,11 +46,11 @@ public class SessionFilter implements Filter
                 System.out.println("isCSS: " + isCSS);
                 System.out.println("isJS: " + isJS);
         
-                if ((isSessionActive || isLoginPage || isImage || isCSS || isJS) && !isJSP) 
+                if ((isSessionActive || isLoginPage || isImage || isCSS || isJS || isJSTest) && !isJSP) 
                 {
         	       filter.doFilter(request, response);
                 } 
-                else 
+                else
                 {
         	       response.sendRedirect("login");
                 }
