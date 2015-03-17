@@ -130,23 +130,6 @@
 		</div>
 
 		<div class="workingSpace">
-
-
-			<!--  
-	<form action="" METHOD="POST" onSubmit="">        
-	<table width="100%">
-	<tr>
-		<td>
-		<span>Term:</span>
-		<select name="term"  ID="termID">
-		<option value="0">None
-		<option value="201512">Winter 2015
-		<option value="201409">Fall 2014
- 	</td>
- </tr>
- 
-                               
- 
  </table>
  
  -->
@@ -164,22 +147,15 @@
 					<select id="category">
 						<option selected="selected">Select Category</option>
 					</select>
-
-
 				</table>
 			</form>
-
-
-
 		</div>
 
 		<div id="course_list">
 			<table id="course_table" style="width: 100%">
 			</table>
 		</div>
-
 	</div>
-
 
 	<jsp:include page="template/footer.jsp" />
 	</div>

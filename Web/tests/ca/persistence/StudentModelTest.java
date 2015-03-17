@@ -51,7 +51,6 @@ public class StudentModelTest
 	public void testEnrollmentCID()
 	{
 		ArrayList<Enrollment> enrollment = StudentModel.getCompletedCourses(99);
-		Enrollment en = new Enrollment(99, "10000","A01", "COMP1010", Date.valueOf("2014-09-01"), 3.5f);
 		assertTrue(enrollment.get(0).getCourseID().equals("COMP1010"));
 	}
 	

@@ -1,5 +1,7 @@
 package ca.objects;
 
+import java.util.ArrayList;
+
 public class Course
 {
 	private String courseID, courseName, faculty, dept, description;
@@ -74,6 +76,10 @@ public class Course
 		result += "Faculty: " + faculty + " - Department: " + dept + "\n";
 		result += "Credit Hours: " + creditHrs + "\n";
 		result += "Description: " + description + "\n";
+		if(isFullYr)
+			result += "Length: Full Year\n";
+		else
+			result += "Length: 1 Term\n";
 
 		return result;
 	}
