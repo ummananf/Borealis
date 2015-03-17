@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import ca.objects.User;;
+import ca.objects.User;
 
 public class UserTest 
 {
@@ -165,5 +165,11 @@ public class UserTest
 	{
 		testUser.setLastName("joss");
 		assertEquals("joss",testUser.getLastName());
+	}
+	
+	@Test
+	public void testGetType()
+	{
+		assertEquals("student",testUser.getType());
 	}
 }
