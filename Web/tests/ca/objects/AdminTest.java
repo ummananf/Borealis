@@ -16,13 +16,13 @@ public class AdminTest
 	public static void setupBeforeClass() throws Exception
 	{
 		System.out.println("-------------------------------");
-		System.out.println("Running Admin Test");
+		System.out.println("Running Admin Tests");
 	}
 	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception
 	{
-		System.out.println("Finished running Admin Test");
+		System.out.println("Finished running Admin Tests");
 		System.out.println("--------------------------------");
 	}
 	
