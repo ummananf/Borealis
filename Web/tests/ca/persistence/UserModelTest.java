@@ -1,6 +1,7 @@
 package ca.persistence;
 
 import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,16 +44,19 @@ public class UserModelTest
 	public final void testGetUserData() 
 	{
 		
+		@SuppressWarnings("unused")
 		Admin admin = new Admin(11, "test_admin", "p", "a@b.c", "john", "johnson");
 		user = UserModel.getUserData("test_admin");
 		assertTrue(user instanceof Admin);
 		//assertTrue(user.equals(admin)); //this dont work cuz we didnt write it
 		
+		@SuppressWarnings("unused")
 		Student student = new Student(22, "test_student", "p", "b@b.c", "john", "johnson","degree");
 		user = UserModel.getUserData("test_student");
 		assertTrue(user instanceof Student);
 		//assertTrue(user.equals(student));
 		
+		@SuppressWarnings("unused")
 		Professor professor = new Professor(33, "test_prof", "p", "c@b.c", "john", "johnson");
 		user = UserModel.getUserData("test_prof");
 		assertTrue(user instanceof Professor);

@@ -1,6 +1,5 @@
 package ca.objects;
 
-import java.util.ArrayList;
 
 public class Course
 {
