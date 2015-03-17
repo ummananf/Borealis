@@ -23,10 +23,8 @@
         academic center &gt; my grade</h2>
     <div class="changeViewMainArea">
         <ul>
-              <li><a class="tab1" href="registerCourses">Register Courses</a></li>
-            <!-- <li><a class="tab2" href="myExam">my exams</a></li> -->
+              <li><a class="tab1" href="registerCourses">Register Courses</a</li>
             <li><a class="tab1" href="grade">my grade</a></li>
-            <!-- <li><a class="tab2" href="books">books &amp; materials</a></li> -->
         </ul>
     </div>
     <div>

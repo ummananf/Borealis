@@ -28,9 +28,6 @@
 <ul id="ulStudMsgHeadTab">
     <li><a class="tab2" onclick="" href="myInfo">personal info</a> </li>
     <li><a class="tab2" onclick="" href="classInfo">class info</a></li>
-<!--     <li><a class="tab2" onclick="" href="messages">messages</a></li>
-    <li><a class="tab2" onclick="" href="announcements">announcements<span style="color:#ff0000; padding-left:5px;" id="unreadSysMsgCount"></span></a></li>
-    <li><a class="tab2" onclick="" href="appeals">appeals</a></li> -->
 </ul>
 
 </div>
@@ -40,17 +37,7 @@
 </div>
 
 <script type="text/javascript">
-	/*var mySections = [
-        {"cID":"COMP 1010", "cName":"Introduction to Computer Science",
-        "sectID":"A01", "start":"9:30", "end":"10:20", "days":"Mon, Wed, Fri"},
-        {"cID":"COMP 1020", "cName":"Introduction to Computer Science 2",
-        "sectID":"A02", "start":"10:30", "end": "11:20", "days":"Mon, Wed, Fri"}
-    ];
-    */
-    
-    
     var mySections = ${enrollmentInfo};
-    
 	
 	$(document).ready(function()
 	{

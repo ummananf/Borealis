@@ -20,11 +20,7 @@
 </head>
 <body>
 
-
-
 <jsp:include page="template/header_nav.jsp" />
-
-
 
 <div class="rightbox">
                 

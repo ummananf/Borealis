@@ -89,24 +89,11 @@ else
               <font color="#FFFF00">You need to buy </font> <span class="red">0 </span>books.
               </p>
                 <div class="btright">
-<!--                     <a href="myExam.jsp">
-                        <img src="images/Student/default/bt_jw.jpg" alt="academic center" width="121" height="25" /></a> -->
                 </div>
             </div>
         </div>
         <div class="dh3" style="margin: 0 27px 15px 0;">
             <div class="topLeftFrame">
-<!--                 <p align="center">
-                    <a href="">sample exams</a></p>
-                <p align="center">
-                    <a href="">exercises</a>
-                </p>
-                <p align="center">
-                    <a href="">online homeworks</a></p>
-                <div class="btright">
-                    <a href="">
-                        <img src="images/Student/default/bt_ks.jpg" alt="exam" width="121" height="25" /></a>
-                </div> -->
             </div>
         </div>
         <div class="dh4">
@@ -117,14 +104,7 @@ else
                     owned $ <span class="red">4100.00</span></p>
                 <p>
                     You have <span class="red">3</span> financial rewards to be checkout</p>
-                
-<!--                 <div class="btright">
-                    <a href="tuition.jsp">
-                        <img src="images/Student/default/bt_cw.jpg" alt="finance cne" width="121" height="25" /></a> -->
                 </div>
-
-
-
             </div>
         </div>
     </div>
