@@ -68,6 +68,7 @@ public class Course
 		this.isFullYr = isFullYr;
 	}
 
+>>>>>>> 8323079faf8ca673298b4cc3e57cf7d1fcc510e8
 	public String toString()
 	{
 		String result = "";
