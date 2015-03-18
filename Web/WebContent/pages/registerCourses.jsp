@@ -122,17 +122,15 @@
 		<div class="changeViewMainArea">
 			<ul>
 				<li><a class="tab1" href="registerCourses">Register Courses</a></li>
-				<li><a class="tab1" href="myExam">my exams</a></li>
-				<li><a class="tab2" href="grade">my grade</a></li>
-				<li><a class="tab2" href="books">books & materials</a></li>
+				<!-- <li><a class="tab1" href="myExam">my exams</a></li> -->
+				<li><a class="tab2" href="grade">my grade</a></li> 
+				<!-- <li><a class="tab2" href="books">books & materials</a></li> -->
 
 			</ul>
 		</div>
 
 		<div class="workingSpace">
- </table>
  
- -->
 			<form action="" METHOD="POST" onSubmit="">
 				<table width="100%">
 
