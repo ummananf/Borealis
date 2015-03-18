@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+<head>
+ <!-- <script src="Script/Login/login2.js" type="text/javascript"></script> -->
+</head>
 
 <div class="login_form">
 				<form action="login" id="login_form" method="post" name="login" onSubmit="return">

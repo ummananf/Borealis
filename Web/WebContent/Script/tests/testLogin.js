@@ -1,39 +1,32 @@
 
 describe("Test Front end login logic", function()
 {
-	// Specify where to find jsp files
-	jasmine.getFixtures().fixturesPath = '../../Script/tests/fixtures';
+	beforeEach(function() {
+		// Specify where to find jsp files
+		jasmine.getFixtures().fixturesPath = '../../Script/tests/fixtures';
+	  });
 
-	
-//	beforeEach(function(){
-//		// TODO use sandbox()
-//	    form = $('<form action="login" id="login_form" method="post" name="login" onSubmit=""> <input id="username" value="" name="username" type="text"/></form> ');
-//	    $(document.body).append(form);
-//	  });
-   
-  it('should not allow user to enter non English or non number chacter as the user name', function() {
-	  //view.render();
-	  //var form = $('login_form');
-	  //var submitCallback = jasmine.createSpy().andReturn(false);
-	  //form.submit(submitCallback);
-	  //var input = $('<input value=someVal>');
+  it('Should not allow user to enter non-valid characters in login form', function() {
+
 	  loadFixtures('indexFixt.jsp'); //the one with login form
 	  expect( $('#login_form')).toExist();
 	  
+	  // Spy on this so the actual method doesn't get executed
+	  show_err_msg = jasmine.createSpy("showErrSpy");
 	  
-	  //form.elements['username'].value = 'bob';
-	  //$('#username').val("bob");
-
-	  //$('#submit_btn').click();
-	  //validateForm(submitCallback);
-
-	 // expect(helloWorld()).toEqual("Hello dworld!");
-	 //expect(form.attr('name')).toEqual('login');
-	 //expect(input.val()).toEqual('someVal');
-	 //expect(input).toHaveValue('someVal');// .toEqual('someVal');
-	  //expect($('#username').attr('value')).toEqual('1');// TODO
-	  //expect(submitCallback).toHaveBeenCalled();
-	 
+	  // Set invalid entry data on the form
+	  $('#username').val("bob");
+	  $('#password').val("");
+	  
+	  expect(validateForm()).toEqual(false);
+	  expect(show_err_msg).toHaveBeenCalled();
+	  
+	  // Set valid entry data on the form
+	  $('#username').val("bob");
+	  $('#password').val("wrongpass");
+	  
+	  expect(validateForm()).toEqual(true);
+	  expect(show_err_msg).toHaveBeenCalled();
 	});
 });
 
