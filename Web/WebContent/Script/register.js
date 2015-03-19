@@ -1,5 +1,3 @@
-// Formerly in registerCourses.jsp
-
 $(document).ready(function() {
 
 	$.ajaxSetup({
@@ -12,7 +10,13 @@ $(document).ready(function() {
 		var $term = $("select#term").val();
 		$.post('registerCourses', {
 			termName : $term
-		}, populateCategories(data));
+		}, function(data) {
+			var $select = $('#category');
+			$select.find('option').remove();
+			$.each(data, function(key, value) {
+				$('<option>').val(value.degName).text(value.degName).appendTo($select);
+			});
+		});
 	});
 
 	$("#category").change(function(event) {
@@ -84,7 +88,7 @@ $(document).ready(function() {
 
 
 // Populates the selector element with JSON data receieved
-function populateCategories(data)
+var populateCategories = function(data)
 {
 	var $select = $('#category');
 	$select.find('option').remove();

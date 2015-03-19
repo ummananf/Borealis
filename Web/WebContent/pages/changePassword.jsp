@@ -60,7 +60,7 @@
 
             <div class="rightbox">
                 
-<h2 class="pathNavigator">my info &gt; change password</h2>
+<h2 class="pathNavigator">Change Password</h2>
 <div class="workingSpace">
 <table border="0" cellspacing="0" cellpadding="0" width="500px" style="margin:30px auto 0px auto;">
     <tr align="center">

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>register courses</title>
+<title>Register Courses</title>
 <link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 <link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet"
 	type="text/css" />
@@ -29,14 +29,11 @@
 
 	<div class="rightbox">
 
-		<h2 class="pathNavigator">academic center &gt; my exam</h2>
+		<h2 class="pathNavigator">Academic Center</h2> <!-- &gt; register courses</h2> -->
 		<div class="changeViewMainArea">
 			<ul>
 				<li><a class="tab1" href="registerCourses">Register Courses</a></li>
-				<!-- <li><a class="tab1" href="myExam">my exams</a></li> -->
-				<li><a class="tab2" href="grade">my grade</a></li> 
-				<!-- <li><a class="tab2" href="books">books & materials</a></li> -->
-
+				<li><a class="tab2" href="grade">My Grades</a></li> 
 			</ul>
 		</div>
 

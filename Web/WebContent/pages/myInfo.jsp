@@ -6,12 +6,14 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>personal info</title>
+		<title>My Info</title>
 		<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
 	    <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
 	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>  
+	    <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+	    
+	    
 	</head>
 <body>
 
@@ -21,17 +23,21 @@
 
             <div class="rightbox">
                 
-<h2 class="pathNavigator">my info &gt; personal info &nbsp;&nbsp;&nbsp;</h2>       
+<h2 class="pathNavigator">Personal Center</h2>       
 <div class="changeViewMainArea">
     
 
 <ul id="ulStudMsgHeadTab">
-    <li><a class="tab2" onclick="" href="myInfo">personal info</a> </li>
-    <li><a class="tab2" onclick="" href="classInfo">class info</a></li>
+    <li><a class="tab1" onclick="" href="myInfo">My Info</a></li>
+    <li><a class="tab2" onclick="" href="classInfo">My Classes</a></li>
 </ul>
 
 </div>
-<div class="workingSpace" id="infoTable"></div>
+<div class="workingSpace" id="infoTable">
+	<!-- could put change password here -->
+</div>
+
+
 
 <script type="text/javascript">
 	
@@ -61,6 +67,8 @@
 	    });
     });
 </script>
+
+	
 
             </div> 
 <jsp:include page="template/footer.jsp" />
