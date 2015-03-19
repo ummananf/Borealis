@@ -1,5 +1,5 @@
 
-describe("Test Front end login logic", function()
+describe("Login logic", function()
 {
 	beforeEach(function() {
 		// Specify where to find jsp files
@@ -8,7 +8,7 @@ describe("Test Front end login logic", function()
 		
 		// Spy on this so the actual method doesn't get executed
 		show_err_msg = jasmine.createSpy("showErrSpy");
-	  });
+	});
 
 	it('Checks that blank fields fail validation', function() {
 		expect( $('#login_form')).toExist();
