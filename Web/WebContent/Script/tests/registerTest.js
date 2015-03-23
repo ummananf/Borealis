@@ -24,9 +24,11 @@ describe("Course registering logic", function()
 		
 		populateCategories(jsonObj);
 		
+		
 		expect($('#category option[value="Comp"]').text()).toEqual("Comp");
 		expect($('#category option:selected').text()).toEqual("Bio");
 		expect($('#category option').size()).toEqual(2);
 		expect(selectCat.val()).toEqual("Bio");
+		
 	});
 });
