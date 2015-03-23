@@ -14,7 +14,7 @@
     
     <script src="Script/Common.js" type="text/javascript"></script>
     <script src="Script/Data.js" type="text/javascript"></script>
-    <script src="Script/jquery-1.4.1.js" type="text/javascript"></script>
+    <script src="Script/libs/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="Script/letterGrade.js" type="text/javascript"></script>
     <link href="Style/history.css" rel="stylesheet" type="text/css" />
 </head>
