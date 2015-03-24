@@ -8,6 +8,11 @@ function populateCategories(data)
 	});
 };
 
+function onTermChange(event) {
+	var $term = $("select#term").val();
+	$.post('registerCourses', { termName : $term }, populateCategories);
+}
+
 
 $(document).ready(function() {
 
@@ -18,9 +23,7 @@ $(document).ready(function() {
 
 	// Changes the options in course category selector when term selector is changed
 	$('#term').change(function(event) {
-		var $term = $("select#term").val();
-		$.post('registerCourses', { termName : $term }, populateCategories);
-
+		onTermChange(event);
 	});
 	
 	

@@ -6,7 +6,7 @@ describe("Course registering logic", function()
 		loadFixtures('registerCoursesFixt.jsp');
 	});
 
-	it('Checks that the category selector has been filled in with proper data', function() {
+	it('Checks that the category selector has been filled in when term selector is changed', function() {
 		
 		//var obj = jasmine.createSpyObj('catSpy', ['populateCategories']);
 		var selectCat = $('#category');
@@ -22,7 +22,13 @@ describe("Course registering logic", function()
 		                {"degName":"Comp"} ];
 		
 		
-		populateCategories(jsonObj);
+		// Replace $.ajax with stub function
+		$.ajax = function(opts) {
+			var successCallback = opts.success;
+			successCallback(jsonObj);
+		};
+		
+		onTermChange(event);
 		
 		
 		expect($('#category option[value="Comp"]').text()).toEqual("Comp");

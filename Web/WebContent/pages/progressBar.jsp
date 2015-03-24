@@ -1,22 +1,17 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <title>Degree Progress</title><link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" /><link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" /><link href="Style/start.css" rel="stylesheet" type="text/css" />
     <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    
-    <script src="Script/Common.js" type="text/javascript"></script>
-    <script src="Script/Data.js" type="text/javascript"></script>
     <script src="Script/libs/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="Script/letterGrade.js" type="text/javascript"></script>
-    <link href="Style/history.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 

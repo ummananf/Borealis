@@ -6,9 +6,6 @@
     <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
     
-    <script src="Script/Common.js" type="text/javascript"></script>
-    <script src="Script/Data.js" type="text/javascript"></script>
-    
     
 <script type="text/javascript">
 
