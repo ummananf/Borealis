@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.ArrayList;
 
+import ca.objects.Course;
 import ca.objects.Enrollment;
 import ca.objects.Section;  
 
@@ -31,6 +33,7 @@ public class EnrollmentModel
 			+ "WHERE Enrolled.userID=? ";
 	
 	
+	// no info about section
 	public static ArrayList<Enrollment> getEnrollmentRecord( int userID )
 	{
 		
@@ -51,12 +54,9 @@ System.out.println(prepStatement.toString());
 			while(data.next())
 			{
 				Enrollment tempEnrollment = new Enrollment(
-										 data.getInt("userID"),
-										 data.getString("crn"),
-										 data.getString("sectID"),
-										 data.getString("cID"),
-										 data.getDate("termStart"),
-										 data.getFloat("grade"));
+											data.getInt("userID"),
+											data.getString("crn"),
+											data.getFloat("grade"), null);
 				
 				currEnrollments.add(tempEnrollment);
 			}
@@ -89,12 +89,12 @@ System.out.println(prepStatement.toString());
 	
 	
 	
-	public static ArrayList<Section> getDetailedEnrollmentRecords( int userID )
+	public static ArrayList<Enrollment> getDetailedEnrollmentRecords( int userID )
 	{		
 			Connection connection = ConnectionManager.getConnection();
 			
 			ResultSet data = null;
-			ArrayList<Section> currEnrollments = new ArrayList<Section>();
+			ArrayList<Enrollment> currEnrollments = new ArrayList<Enrollment>();
 			PreparedStatement prepStatement = null;
 		
 			try 
@@ -106,20 +106,33 @@ System.out.println(prepStatement.toString());
 				
 			
 				while(data.next())
-				{					
-					Section tempSection = new Section(
-										  data.getString("sectID"),
-										  data.getString("crn"),
-										  data.getString("cID"),
-										  data.getString("cName"),
-										  data.getDate("termStart"),
-										  data.getInt("maxSize"),
-										  data.getString("days"),
-										  data.getTime("startTime"),
-										  data.getTime("endTime"),
-										  data.getString("location"));
+				{
+					Course course = new Course(
+									data.getString("cID"),
+									data.getString("cName"),
+									data.getString("faculty"),
+									data.getString("department"),
+									data.getString("description"),
+									data.getInt("creditHrs"),
+									data.getBoolean("isFullYr") );
 					
-					currEnrollments.add(tempSection);
+					Section sect = new Section(
+									data.getString("crn"),
+									data.getString("sectID"), 
+									data.getString("cID"), 
+									data.getString("termStart"),
+									data.getInt("maxSize"), 
+									data.getString("days"), 
+									data.getTime("startTime"),
+									data.getTime("endTime"), 
+									data.getString("location"), course);
+					
+					Enrollment enrol = new Enrollment(
+									data.getInt("userID"),
+									data.getString("crn"),
+									data.getFloat("grade"), sect);
+					
+					currEnrollments.add(enrol);
 				}
 				
 			} catch (SQLException e) 

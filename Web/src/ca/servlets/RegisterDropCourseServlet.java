@@ -38,6 +38,7 @@ System.out.println(test);
 		
 		if (action.equals("register")) 
 		{
+			
 			query = 
 			"INSERT INTO Enrolled VALUES (" 
 					+ userId + ",'" + crn + "', '" + section + "', '" + course + "', '" + startDate + "', NULL);";

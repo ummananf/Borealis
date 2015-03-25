@@ -1,6 +1,5 @@
 package ca.persistence;
 
-import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -26,12 +25,13 @@ public class SectionModel
 					(String)row.get("crn"),
 					(String) row.get("sectID"), 
 					(String) row.get("cID"), 
-					(Date) row.get("termStart"),
+					(String) row.get("termStart"),
 					(Integer) row.get("maxSize"), 
 					(String) row.get("days"), 
 					(Time) row.get("startTime"),
 					(Time) row.get("endTime"), 
-					(String) row.get("location"));
+					(String) row.get("location"),
+					null);
 			
 			sections.add(course);
 		}
