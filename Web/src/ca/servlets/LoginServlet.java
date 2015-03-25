@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet
 			users.add(user);
 			JsonElement element = gsonUser.toJsonTree(users, new TypeToken<ArrayList<User>>() {}.getType());
 			JsonArray userInfo = element.getAsJsonArray();
-			System.out.println("dlkjfdlkjaf;lkdjs;lfkajsd"+userInfo.toString());
+			System.out.println(userInfo.toString());
 			req.setAttribute("userInfo", userInfo);
 			res.setContentType("application/json");	
 			res.getWriter().print(userInfo);	
