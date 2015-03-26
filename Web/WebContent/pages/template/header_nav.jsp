@@ -33,9 +33,6 @@
                     	<div>
                             <a href="myInfo">My Info</a>
                         </div>
-                        <div>
-                        	<a href="classInfo">My Classes</a>
-                        </div>
                     </div>
                     <div class="ta1">
                         <strong>Academic Center</strong>
@@ -46,6 +43,9 @@
                     <div class="changeViewLeftArea">
                    		<div>
                             <a href="registerCourses">Register Courses</a>
+                        </div>
+                        <div>
+                        	<a href="classInfo">My Courses</a>
                         </div>
 						<div>
 							<a href="grade">My Grades</a>

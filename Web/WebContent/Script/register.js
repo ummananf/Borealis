@@ -42,10 +42,7 @@ $(document).ready(function() {
 					
 					var post = $.post("register", {
 						action: "register",
-						cID: value.cID,
-						sectID: value.sectID,
-						startDate: value.termStart,
-						crn:value.crn
+						crn: value.crn
 					});
 					
 					post.done(function(data, textStatus, jqXHR) {
@@ -63,9 +60,6 @@ $(document).ready(function() {
 					
 					var post = $.post("register", {
 						action: "drop",
-						cID: value.cID,
-						sectID: value.sectID,
-						startDate: value.termStart,
 						crn: value.crn
 					});
 					

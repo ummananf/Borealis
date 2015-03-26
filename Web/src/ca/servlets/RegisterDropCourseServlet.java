@@ -24,14 +24,11 @@ public class RegisterDropCourseServlet extends HttpServlet
 		String userId = String.valueOf(user.getUserID());
 		String action = req.getParameter("action");
 		String crn = req.getParameter("crn");
-		String course = req.getParameter("cID");
-		String section = req.getParameter("sectID");
-		String startDate = req.getParameter("startDate");
 		
-		System.out.println("RegisterDropCourseServlet: " + userId + " " + action + " " + course + " " + section + " " + startDate);
+		System.out.println("RegisterDropCourseServlet: " + userId + " " + action + " " + crn);
 		String test = 
 				"INSERT INTO Enrolled VALUES (" 
-			      + userId + ",'" + crn + "', '" + section + "', '" + course + "', '" + startDate + "', NULL);";
+			      + userId + ",'" + crn + "', NULL);";
 System.out.println(test);
 		String query;
 		boolean actionSuccessful = false;
@@ -40,8 +37,7 @@ System.out.println(test);
 		{
 			
 			query = 
-			"INSERT INTO Enrolled VALUES (" 
-					+ userId + ",'" + crn + "', '" + section + "', '" + course + "', '" + startDate + "', NULL);";
+			"INSERT INTO Enrolled VALUES (" + userId + ",'" + crn + "', NULL);";
 	
 			actionSuccessful = DB.execute(query);
 	

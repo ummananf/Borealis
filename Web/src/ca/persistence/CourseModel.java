@@ -49,7 +49,7 @@ public class CourseModel
 									   (String) row.get("department"),
 									   (String) row.get("description"),
 									   (Integer) row.get("creditHrs"),
-									   false);
+									   (Boolean) row.get("isFullYr") );
 			courses.add(course);
 		}
 		

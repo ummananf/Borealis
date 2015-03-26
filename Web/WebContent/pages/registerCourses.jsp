@@ -33,7 +33,8 @@
 		<div class="changeViewMainArea">
 			<ul>
 				<li><a class="tab1" href="registerCourses">Register Courses</a></li>
-				<li><a class="tab2" href="grade">My Grades</a></li> 
+				<li><a class="tab2" href="classInfo">My Courses</a></li>
+				<li><a class="tab2" href="grade">My Grades</a></li>
 			</ul>
 		</div>
 

@@ -8,8 +8,7 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>My Classes</title><link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" /><link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" /><link href="Style/start.css" rel="stylesheet" type="text/css" />
     <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-    <script src="Script/Common.js" type="text/javascript"></script>
-    <script src="Script/Data.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 
@@ -21,14 +20,14 @@
             <div class="rightbox">
                 
 
-<h2 class="pathNavigator">Personal Center</h2>  
+<h2 class="pathNavigator">Academic Center</h2>  
 <div class="changeViewMainArea">
-    
+	<ul>
+	    <li><a class="tab2" href="registerCourses">Register Courses</a></li>
+	    <li><a class="tab1" href="classInfo">My Courses</a></li>
+	    <li><a class="tab2" href="grade">My Grades</a></li>
+	</ul>
 
-<ul id="ulStudMsgHeadTab">
-    <li><a class="tab2" onclick="" href="myInfo">My Info</a> </li>
-    <li><a class="tab1" onclick="" href="classInfo">My Classes</a></li>
-</ul>
 
 </div>
 <div class="workingSpace" id="infoTable">
@@ -40,26 +39,54 @@
 <script type="text/javascript">
     var mySections = ${enrollmentInfo};
 	
+    
 	$(document).ready(function()
 	{
 		var table2 = $('<table/>').appendTo($('#infoTable'));
         $('<tr/>').appendTo(table2)
-        	.append($('<td colspan="5"/>').text("Current Courses"));
+        	.append($('<td colspan="8"/>').text("Current Courses"));
         $('<tr/>').appendTo(table2)
-			.append($('<td width="50"/>').text("section"))
-			.append($('<td width="75"/>').text("course"))
-			.append($('<td width="300"/>').text("course name"))
-			.append($('<td width="75"/>').text("time"))
-			.append($('<td width="85"/>').text("days"));
-        $(mySections).each(function(i, course)
+        	.append($('<th width="75"/>').text("Course"))
+			.append($('<th width="50"/>').text("Section"))
+			.append($('<th width="280"/>').text("Course Name"))
+			.append($('<th width="50"/>').text("Credits"))
+			.append($('<th width="60"/>').text("Days"))
+			.append($('<th width="80"/>').text("Time"))
+			.append($('<th width="65"/>').text("Location"))
+			.append($('<th width="40"/>').text("Drop\nCourse"));
+        $.each(mySections, function(i, enrol)
         {
         	$('<tr/>').appendTo(table2)
-    			.append($('<td/>').text(course.sectID))
-    			.append($('<td/>').text(course.courseID))
-    			.append($('<td/>').text(course.courseName))
-    			.append($('<td/>').text(course.startTime + "-" + course.endTime))
-    			.append($('<td/>').text(course.days));
+    			.append($('<td/>').text(enrol.section.cID))
+    			.append($('<td/>').text(enrol.section.sectID))
+    			.append($('<td/>').text(enrol.section.course.courseName))
+    			.append($('<td/>').text(enrol.section.course.creditHrs))
+    			.append($('<td/>').text(enrol.section.days))
+    			.append($('<td/>').text(enrol.section.startTime + "-\n" + enrol.section.endTime))
+    			.append($('<td/>').text(enrol.section.location))
+    			.append($("<td align='center'><button type='button' id='drop_" + enrol.section.cID + "'>Drop</button></td>"));
+        	
+        	// on drop
+			$(document).on("click", "#drop_" + enrol.section.cID, function(event) { 
+				
+				var post = $.post("register", {
+					action: "drop",
+					crn: enrol.crn
+				});
+				
+				post.done(function(data, textStatus, jqXHR) {
+					alert("Successfully dropped " + enrol.section.cID + "!");
+					location.reload(); //to update table
+				});
+				
+				post.fail(function(jqXHR, textStatus, errorThrown) {
+					alert("Dropping " + enrol.section.cID + " failed.");
+				});
+				
+			});
         });
+        
+        $('<tr/>').appendTo(table2).append($('<td colspan="100%"/>').text("Max credit hours: 15"));
 	});
 </script>
 

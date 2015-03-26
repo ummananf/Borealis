@@ -23,7 +23,8 @@
     <div class="changeViewMainArea">
         <ul>
             <li><a class="tab2" href="registerCourses">Register Courses</a></li>
-            <li><a class="tab1" href="grade">My Grades</a></li>
+	    	<li><a class="tab2" href="classInfo">My Courses</a></li>
+	    	<li><a class="tab1" href="grade">My Grades</a></li>
         </ul>
     </div>
     <div>
@@ -47,18 +48,22 @@
         {"cID":"ECON1010", "cName":"Introduction to Economics", "grade":3.5, "crHrs":6, "term":"winter2015"},
     ];
     
+    
+    
+
     var table = $('<table/>').appendTo($('#gradeTable'));
+    
     
     $('#termSelect').change(function()
     {
     	// clear previous information
     	$('#gradeTable').empty();
     	
-    	var table = $('<table/>').appendTo($('#gradeTable'));
-    	$('<tr/>').appendTo(table)
-    		.append($('<td width="75"/>').text("course ID"))
-    		.append($('<td width="300"/>').text("course name"))
-    		.append($('<td width="35"/>').text("grade"));
+     	var table = $('<table/>').appendTo($('#gradeTable'));
+     	$('<tr/>').appendTo(table)
+    		.append($('<th width="75"/>').text("Course ID"))
+    		.append($('<th width="300"/>').text("Course name"))
+    		.append($('<th width="40"/>').text("Grade"));  
     	
     	// populate table with courses from the selected term
     	$(coursesTaken).each(function(i, course)
@@ -78,11 +83,13 @@
     $(document).ready(function()
     {
     	// show first row of table now
-    	$('<tr/>').appendTo(table)
-    		.append($('<td width="75"/>').text("course ID"))
-    		.append($('<td width="300"/>').text("course name"))
-    		.append($('<td width="35"/>').text("grade"));
+     	$('<tr/>').appendTo(table)
+    		.append($('<th width="75"/>').text("Course ID"))
+    		.append($('<th width="300"/>').text("Course Name"))
+    		.append($('<th width="40"/>').text("Grade")); 
     });
+    
+    
     </script>
 
             </div>
