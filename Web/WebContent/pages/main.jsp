@@ -31,18 +31,8 @@ else
 		<title>Borealis</title>
 		<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
-	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
-	    
-	    
-	    <script src="Script/extractInfo/welcomeTag.js"></script>
-	    <script>  
-	    var persons = ${userInfo};  // get the session info 
-        
-        $(document).ready(function() {    	
-        	parseWelcomeTag(persons);
-        });
-        
-        </script>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+	   
 	</head>
 	<body>
 

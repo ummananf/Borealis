@@ -1,3 +1,15 @@
+ 		<script src="Script/extractInfo/welcomeTag.js"></script>
+	    
+	    <script>  
+	    var persons = ${userInfo};  // get the session info 
+        
+        $(document).ready(function() {    	
+        	parseWelcomeTag(persons);
+        });
+        
+        </script>    
+	    
+	    
 	    <div class="banner">
         <div class="bannerFrame">
             <div class="page">
