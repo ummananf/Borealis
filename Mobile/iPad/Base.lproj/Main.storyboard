@@ -445,10 +445,6 @@
                         <color key="backgroundColor" red="0.26666668059999998" green="0.36862745879999997" blue="0.58823531870000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Info" id="lzu-Dm-SDY"/>
-                    <connections>
-                        <outlet property="name" destination="7Ef-wl-ndb" id="g35-Uh-4Ku"/>
-                        <outlet property="userID" destination="K0i-sY-Sn4" id="E1a-a7-jOj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7K-zB-UfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

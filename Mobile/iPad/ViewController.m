@@ -19,16 +19,10 @@
 
 @implementation ViewController
 
-NSString *degree;
-NSString *firstName;
-NSString *lastName;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.userID.text = degree;
-    self.name.text = (@"%@" @" %@", firstName, lastName);
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,7 +70,7 @@ NSString *lastName;
                 NSLog(@"jsonData: %@",jsonData);
                 
                 NSArray *key = [jsonData valueForKey:@"degName"];
-                degree = [key objectAtIndex:0];
+                NSString *degree = [key objectAtIndex:0];
                 NSLog(@"degName: %@", degree);
                 
                 key = [jsonData valueForKey:@"email"];
@@ -84,11 +78,11 @@ NSString *lastName;
                 NSLog(@"email: %@", email);
                 
                 key = [jsonData valueForKey:@"firstName"];
-                firstName = [key objectAtIndex:0];
+                NSString *firstName = [key objectAtIndex:0];
                 NSLog(@"firstName: %@", firstName);
                 
                 key = [jsonData valueForKey:@"lastName"];
-                lastName = [key objectAtIndex:0];
+                NSString *lastName = [key objectAtIndex:0];
                 NSLog(@"lastName: %@", lastName);
                 
                 key = [jsonData valueForKey:@"password"];
