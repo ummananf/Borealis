@@ -10,12 +10,9 @@
 		<link href="Style/supersized.css" rel="stylesheet">
 		<link href="Style/login.css" rel="stylesheet">
 		<link href="Style/bootstrap.min.css" rel="stylesheet">
-<<<<<<< HEAD
-		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-=======
-		<script src="Script/libs/jquery-1.8.2.min.js"></script>
-		<script src="Script/libs/jquery.form.js" type="text/javascript"></script>
->>>>>>> origin/jasmine
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+
 		<script src="Script/Login/tooltips.js" type="text/javascript"></script>
  		<script src="Script/Login/login.js" type="text/javascript"></script>
 	</head>
