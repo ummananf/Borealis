@@ -9,11 +9,8 @@
 		<title>My Info</title>
 		<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
-	    <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
-	    <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
-	    
-	    
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>  
 	</head>
 <body>
 

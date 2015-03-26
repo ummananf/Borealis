@@ -15,7 +15,6 @@ document.onkeydown = function(e)
 
 $(function()
 {
-	//submit form
 	$('#submit_btn').click(function()
 	{
 		if(validateForm())

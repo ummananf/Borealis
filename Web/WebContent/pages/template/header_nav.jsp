@@ -1,3 +1,16 @@
+ 		<script src="Script/extractInfo/welcomeTag.js"></script>
+		<script src="Script/logout/logout.js"></script>
+	    
+	    <script>  
+	    var persons = ${userInfo};  // get the session info 
+        
+        $(document).ready(function() {    	
+        	parseWelcomeTag(persons);
+        });
+        
+        </script>    
+	    
+	    
 	    <div class="banner">
         <div class="bannerFrame">
             <div class="page">
@@ -7,8 +20,9 @@
                     </a>
                 </div>
                 <div class="topOptions">
-                  <ul>
-                    <li><div id="welcomeTag" align="right"></div></li>
+
+                    <div id="welcomeTag" align="right"></div>
+                    <a onclick="logout()" href=" ">logout</a>
                 </div>
                 <div class="blog_nav">
                   <ul>

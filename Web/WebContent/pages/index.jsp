@@ -10,8 +10,7 @@
 		<link href="Style/supersized.css" rel="stylesheet">
 		<link href="Style/login.css" rel="stylesheet">
 		<link href="Style/bootstrap.min.css" rel="stylesheet">
-		<script src="Script/Login/jquery-1.8.2.min.js"></script>
-		<script src="Script/Login/jquery.form.js" type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="Script/Login/tooltips.js" type="text/javascript"></script>
  		<script src="Script/Login/login2.js" type="text/javascript"></script>
 	</head>
