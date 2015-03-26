@@ -1,3 +1,19 @@
+// Populates the selector element with JSON data receieved
+function populateCategories(data)
+{
+	var $select = $('#category');
+	$select.find('option').remove();
+	$.each(data, function(key, value) {
+		$('<option>').val(value.degName).text(value.degName).appendTo($select);
+	});
+};
+
+function onTermChange(event) {
+	var $term = $("select#term").val();
+	$.post('registerCourses', { termName : $term }, populateCategories);
+}
+
+
 $(document).ready(function() {
 
 	$.ajaxSetup({
@@ -5,20 +21,12 @@ $(document).ready(function() {
 	});
 
 
-	
+	// Changes the options in course category selector when term selector is changed
 	$('#term').change(function(event) {
-		var $term = $("select#term").val();
-		$.post('registerCourses', {
-			termName : $term
-		}, function(data) {
-			var $select = $('#category');
-			$select.find('option').remove();
-			$.each(data, function(key, value) {
-				$('<option>').val(value.degName).text(value.degName).appendTo($select);
-			});
-		});
+		onTermChange(event);
 	});
-
+	
+	
 	$("#category").change(function(event) {
 		var category = $("select#category option:selected").text();
 		$.post("registerCourses", {
@@ -87,12 +95,4 @@ $(document).ready(function() {
 });
 
 
-// Populates the selector element with JSON data receieved
-var populateCategories = function(data)
-{
-	var $select = $('#category');
-	$select.find('option').remove();
-	$.each(data, function(key, value) {
-		$('<option>').val(value.degName).text(value.degName).appendTo($select);
-	});
-};
+

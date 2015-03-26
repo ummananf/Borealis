@@ -7,14 +7,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Register Courses</title>
 <link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
-<link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet"
-	type="text/css" />
 <link href="Style/start.css" rel="stylesheet" type="text/css" />
+<<<<<<< HEAD
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 <script src="Script/Common.js" type="text/javascript"></script>
 <script src="Script/Data.js" type="text/javascript"></script>
+=======
+<script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+>>>>>>> origin/jasmine
 <link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
-<script src="Script/Base.js" type="text/javascript"></script>
 <script src="Script/register.js" type="text/javascript"></script>
 
 

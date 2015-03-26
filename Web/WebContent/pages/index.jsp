@@ -10,9 +10,14 @@
 		<link href="Style/supersized.css" rel="stylesheet">
 		<link href="Style/login.css" rel="stylesheet">
 		<link href="Style/bootstrap.min.css" rel="stylesheet">
+<<<<<<< HEAD
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+=======
+		<script src="Script/libs/jquery-1.8.2.min.js"></script>
+		<script src="Script/libs/jquery.form.js" type="text/javascript"></script>
+>>>>>>> origin/jasmine
 		<script src="Script/Login/tooltips.js" type="text/javascript"></script>
- 		<script src="Script/Login/login2.js" type="text/javascript"></script>
+ 		<script src="Script/Login/login.js" type="text/javascript"></script>
 	</head>
 
 <body>
@@ -64,9 +69,9 @@
 
 <!-- Javascript -->
 
-<script src="Script/Login/supersized.3.2.7.min.js"></script>
-<script src="Script/Login/supersized-init.js"></script>
-<script src="Script/Login/scripts.js"></script>
+<script src="Script/libs/supersized.3.2.7.min.js"></script>
+<script src="Script/libs/supersized-init.js"></script>
+<script src="Script/libs/scripts.js"></script>
 <div style="text-align:center;">
 </div>
 
