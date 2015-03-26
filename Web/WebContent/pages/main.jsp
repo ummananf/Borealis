@@ -31,20 +31,17 @@ else
 		<title>Borealis</title>
 		<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
-	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>   <!-- this lib is for parsing the json data -->
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 	    
-	    <script>     
-            var persons = ${userInfo};
-            
-            $(document).ready(function() {
-                var table = $('<table/>').appendTo($('#welcomeTag'));
-                $(persons).each(function(i, person) {
-                    $('<tr/>').appendTo(table)
-                        .append($('<td/>').text(person.username))
-                        .append($('<td/>').text(person.userID))
-                    	.append($('<td/>').text(",Welcome back!"));
-                });
-            });
+	    
+	    <script src="Script/extractInfo/welcomeTag.js"></script>
+	    <script>  
+	    var persons = ${userInfo};  // get the session info 
+        
+        $(document).ready(function() {    	
+        	parseWelcomeTag(persons);
+        });
+        
         </script>
 	</head>
 	<body>
