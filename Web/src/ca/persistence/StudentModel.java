@@ -8,6 +8,7 @@ import java.util.Map;
 
 import java.sql.Time;
 
+import ca.objects.Course;
 import ca.objects.Enrollment;
 import ca.objects.Section;
 
@@ -51,25 +52,72 @@ public class StudentModel
 		return enrollments;
 	}
 	
-//	public static ArrayList<Enrollment> getCurrentEnrollments(int studentID)
-//	{
-//		String query = "SELECT * FROM Enrolled WHERE userID = "+studentID+" AND grade IS NOT NULL;";
-//		
-//		ArrayList<Course> enrollments = new ArrayList<Course>();
-//		List<Map<String, Object>> resultList = DB.getData(query);
-//		Iterator<Map<String, Object>> iter = resultList.iterator();
-//		
-//		while(iter.hasNext()) 
-//		{
-//			Map<String, Object> row = iter.next();
-//			
-//			Enrollment temp = new Enrollment((Integer) row.get("userID"), 
-//											(String) row.get("crn"),
-//											(Float) row.get("grade") );
-//			enrollments.add(temp);
-//		}
-//
-//		return enrollments;
-//	}
+	
+	public static ArrayList<Enrollment> getCurrentEnrollments(int studentID, String currTerm)
+	{
+		String query = "SELECT * FROM Enrolled E, Sections S, Courses C "
+					  +"WHERE E.crn = S.crn AND S.cID = C.cID "
+					  +"AND E.userID = "+studentID+" AND S.termStart = '"+currTerm+"';";
+		
+		ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>();
+		List<Map<String, Object>> resultList = DB.getData(query);
+		Iterator<Map<String, Object>> iter = resultList.iterator();
+		
+		while(iter.hasNext()) 
+		{
+			Map<String, Object> row = iter.next();
+			
+			Course course = new Course(
+							(String) row.get("cID"),
+							(String) row.get("cName"),
+							(String) row.get("faculty"),
+							(String) row.get("department"),
+							(String) row.get("description"),
+							(Integer) row.get("creditHrs"),
+							(Boolean) row.get("isFullYr") );
+	
+			Section sect = new Section(
+							(String) row.get("crn"),
+							(String) row.get("sectID"), 
+							(String) row.get("cID"), 
+							(String) row.get("termStart"),
+							(Integer) row.get("maxSize"), 
+							(String) row.get("days"), 
+							(Time) row.get("startTime"),
+							(Time) row.get("endTime"), 
+							(String) row.get("location"), course);
+			
+			Enrollment enrol = new Enrollment(
+							(Integer) row.get("userID"),
+							(String) row.get("crn"),
+							(Float) row.get("grade"), sect);
+			
+			enrollments.add(enrol);
+		}
+
+		return enrollments;
+	}
+	
+	// Returns total num of credit hrs student is registered for in term given
+	public static int getNumCreditHrsRegistered(int studentID, String term)
+	{
+		String query = "SELECT creditHrs FROM Courses C, Enrolled E, Sections S "
+					   +"WHERE E.crn = S.crn AND S.cID = C.cID "
+					   +"AND E.userID = "+studentID+" AND S.termStart = '"+term+"';";
+		
+		int count = 0;
+		
+		List<Map<String, Object>> resultList = DB.getData(query);
+		Iterator<Map<String, Object>> iter = resultList.iterator();
+		
+		while(iter.hasNext()) 
+		{
+			Map<String, Object> row = iter.next();
+			
+			count += (Integer) row.get("creditHrs");
+		}
+		
+		return count;
+	}
 
 }

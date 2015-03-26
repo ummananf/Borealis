@@ -9,6 +9,7 @@
     <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 </head>
 <body>
 
@@ -64,10 +65,10 @@
     			.append($('<td/>').text(enrol.section.days))
     			.append($('<td/>').text(enrol.section.startTime + "-\n" + enrol.section.endTime))
     			.append($('<td/>').text(enrol.section.location))
-    			.append($("<td align='center'><button type='button' id='drop_" + enrol.section.cID + "'>Drop</button></td>"));
+    			.append($("<td align='center'><button class='btn btn-primary' type='button' id='drop_" + enrol.crn + "'>Drop</button></td>"));
         	
         	// on drop
-			$(document).on("click", "#drop_" + enrol.section.cID, function(event) { 
+			$(document).on("click", "#drop_" + enrol.crn, function(event) { 
 				
 				var post = $.post("register", {
 					action: "drop",
@@ -86,6 +87,7 @@
 			});
         });
         
+        // TODO: get user info as json and display this for reals
         $('<tr/>').appendTo(table2).append($('<td colspan="100%"/>').text("Max credit hours: 15"));
 	});
 </script>

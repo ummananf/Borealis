@@ -2,14 +2,19 @@ package ca.servlets;
 
 import java.io.IOException;
 
+import javax.servlet.Registration;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import ca.logic.RegistrationLogic;
+import ca.objects.RegisterResponse;
 import ca.objects.User;
 import ca.persistence.DB;
+import ca.persistence.EnrollmentModel;
+import ca.persistence.StudentModel;
 
 public class RegisterDropCourseServlet extends HttpServlet
 {
@@ -26,27 +31,28 @@ public class RegisterDropCourseServlet extends HttpServlet
 		String crn = req.getParameter("crn");
 		
 		System.out.println("RegisterDropCourseServlet: " + userId + " " + action + " " + crn);
-		String test = 
-				"INSERT INTO Enrolled VALUES (" 
-			      + userId + ",'" + crn + "', NULL);";
-System.out.println(test);
+
 		String query;
 		boolean actionSuccessful = false;
+		RegistrationLogic regLogic = new RegistrationLogic();
 		
 		if (action.equals("register")) 
 		{
+			// Check if user is allowed to register for this course
+			RegisterResponse regResponse = regLogic.canRegister(Integer.parseInt(userId), crn);
 			
-			query = 
-			"INSERT INTO Enrolled VALUES (" + userId + ",'" + crn + "', NULL);";
-	
-			actionSuccessful = DB.execute(query);
-	
+			
+			if(regResponse == RegisterResponse.SUCCESS)
+				actionSuccessful = EnrollmentModel.addNewEnrollment(userId, crn);  //actually do the register
+			else
+			{
+				// TODO: send error msg as json to client
+				System.out.println(regLogic.getRegistrationErrorMessage(regResponse));
+			}
 		} 
 		else if (action.equals("drop")) 
-		{	
-			query = "DELETE FROM Enrolled WHERE userID='" + userId + "' AND crn='" + crn + "';";
-			
-			actionSuccessful = DB.execute(query);
+		{
+			EnrollmentModel.deleteEnrollment(userId, crn);
 		}
 		
 		if (actionSuccessful) 

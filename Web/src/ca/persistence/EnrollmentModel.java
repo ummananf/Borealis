@@ -158,5 +158,22 @@ System.out.println(prepStatement.toString());
 			ConnectionManager.closeConnection(connection);
 	
 			return currEnrollments;
-		}	
+	}
+	
+	
+	public static boolean addNewEnrollment(String userID, String crn)
+	{
+		String query = "INSERT INTO Enrolled VALUES (" + userID + ",'" + crn + "', NULL);";
+		boolean actionSuccessful = DB.execute(query);
+		
+		return actionSuccessful;
+	}
+	
+	public static boolean deleteEnrollment(String userID, String crn)
+	{
+		String query = "DELETE FROM Enrolled WHERE userID='" + userID + "' AND crn='" + crn + "';";
+		boolean success = DB.execute(query);
+		
+		return success;
+	}
 }

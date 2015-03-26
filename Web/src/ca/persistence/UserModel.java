@@ -20,6 +20,18 @@ public class UserModel
 	public static User getUserData(String input) 
 	{
 		String query = "SELECT * FROM Users WHERE username = '"+input+"';";
+		return createUserFromQuery(query);
+	}
+	
+	public static User getUserByID(int userID) 
+	{
+		String query = "SELECT * FROM Users WHERE userID = '"+userID+"';";
+		return createUserFromQuery(query);
+	}
+	
+	
+	private static User createUserFromQuery(String query)
+	{
 		User user = null;
 		List<Map<String, Object>> resultList = DB.getData(query);
 		
@@ -34,10 +46,11 @@ public class UserModel
 			String firstName = (String) row.get("fName");
 			String lastName = (String) row.get("lName");
 			String degName = (String) row.get("degName");
+			int maxCreditHrs = (Integer) row.get("maxCreditsPerTerm");
 			String userType = (String) row.get("userType");
 	
 			if(userType.equals(TYPE_STUDENT))
-				user = new Student(userID, username, password, email, firstName, lastName, degName);
+				user = new Student(userID, username, password, email, firstName, lastName, degName, maxCreditHrs);
 			else if(userType.equals(TYPE_PROFESSOR))
 				user = new Professor(userID, username, password, email, firstName, lastName);
 			else if(userType.equals(TYPE_ADMIN))

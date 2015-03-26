@@ -49,7 +49,6 @@ public class ClassInfoServlet extends HttpServlet
 		Gson gsonEnrollment = new Gson();
 		
 		
-		// TODO: a proper conversion of java obj (in each object's class) to a Map data struct so it can be converted to JSON
 		// start to converting object to json....
 		JsonElement element = gsonEnrollment.toJsonTree(enrollments, new TypeToken<ArrayList<Enrollment>>() {}.getType());
 		
