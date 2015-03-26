@@ -40,7 +40,6 @@ else
 
 		<div class="rightbox">
 
-
     <h2 class="pathNavigator">
         My Zone</h2>
 

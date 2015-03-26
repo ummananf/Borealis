@@ -1,4 +1,5 @@
  		<script src="Script/extractInfo/welcomeTag.js"></script>
+		<script src="Script/logout/logout.js"></script>
 	    
 	    <script>  
 	    var persons = ${userInfo};  // get the session info 
@@ -20,6 +21,7 @@
                 </div>
                 <div class="topOptions">
                     <div id="welcomeTag" align="right"></div>
+                    <a onclick="logout()" href=" ">logout</a>
                 </div>
                 <div class="blog_nav">
                   <ul>
