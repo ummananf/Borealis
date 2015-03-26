@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TabBarControllerDelegate : NSObject <UITabBarControllerDelegate>
+@interface TabBarControllerDelegate : UIViewController <UITabBarControllerDelegate>
 
 @property(nonatomic, assign) NSDictionary *jsondata;
 

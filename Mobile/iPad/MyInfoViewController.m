@@ -8,6 +8,8 @@
 
 #import "MyInfoViewController.h"
 
+#import "TabBarControllerDelegate.h"
+
 @interface MyInfoViewController ()
 
 @end
@@ -27,13 +29,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //self.username.text = @"test";
+    self.username.text = @"test";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) initMyInfo: (NSDictionary *) data {
+    
 }
 
 @end

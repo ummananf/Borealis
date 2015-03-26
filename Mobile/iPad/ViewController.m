@@ -140,7 +140,7 @@ NSDictionary *user;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"login_success"]){
         UITabBarController *controller = (UITabBarController *)segue.destinationViewController;
-        TabBarControllerDelegate *delegate = controller.delegate;
+        TabBarControllerDelegate *delegate = (TabBarControllerDelegate *) controller.delegate;
         delegate.jsondata = user;
     }
 }

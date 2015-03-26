@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MyInfoViewController : UIViewController
-//@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UILabel *username;
 
 @end
