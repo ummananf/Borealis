@@ -3,9 +3,8 @@ package ca.objects;
 public class Degree
 {
 	private String degName, degProgram, degOption;
-
-
 	private int creditHrs;
+	
 
 	public Degree(String name, String program, String option, int crHrs)
 	{

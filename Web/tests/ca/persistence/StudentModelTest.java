@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import ca.objects.Enrollment;
+import ca.objects.Section;
 
 public class StudentModelTest 
 {
@@ -24,7 +25,7 @@ public class StudentModelTest
 		queryInsertStudent = "INSERT INTO Users VALUES (99, 'somestudent', 'p', 'qwe@qwe.qwe', 'john', 'johnson','computer science', 'student');";
 		queryDeleteStudent = "DELETE FROM Users WHERE userID=99;";
 		
-		queryInsertEnrollment = "INSERT INTO Enrolled VALUES (99, '10000','A01', 'COMP1010', '2014-09-01', 3.5);";
+		queryInsertEnrollment = "INSERT INTO Enrolled VALUES (99, '10000', 3.5);";
 		queryDeleteEnrollment = "DELETE FROM Enrolled WHERE userID=99;";
 		
 		
@@ -42,15 +43,16 @@ public class StudentModelTest
 	@Test
 	public final void testGetCompletedCourses() 
 	{
-		ArrayList<Enrollment> enrollment = StudentModel.getCompletedCourses(99);
-		assertTrue(enrollment.size() == 1);
-		
+		ArrayList<Enrollment> enrols = StudentModel.getCompletedEnrollments(99);
+		assertTrue(enrols.size() == 1);
+		assertTrue(enrols.get(0).getSection() != null);
 	}
 	@Test
 	public void testEnrollmentCID()
 	{
-		ArrayList<Enrollment> enrollment = StudentModel.getCompletedCourses(99);
-		assertTrue(enrollment.get(0).getCourseID().equals("COMP1010"));
+		ArrayList<Enrollment> enrols = StudentModel.getCompletedEnrollments(99);
+		assertTrue(enrols.size() == 1);
+		assertTrue(enrols.get(0).getSection().getCourseID().equals("COMP1010"));
 	}
 	
 	

@@ -26,7 +26,6 @@
 
 <ul id="ulStudMsgHeadTab">
     <li><a class="tab1" onclick="" href="myInfo">My Info</a></li>
-    <li><a class="tab2" onclick="" href="classInfo">My Classes</a></li>
 </ul>
 
 </div>

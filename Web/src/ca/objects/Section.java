@@ -1,21 +1,20 @@
 package ca.objects;
 
-import java.sql.Date;
 import java.sql.Time;
+import java.util.ArrayList;
 
-public class Section extends Course 
+public class Section
 {
-	
-	private String sectID, crn, cID, days, location;
-	private Date termStart;
+	private String crn, sectID, cID, days, location, termStart;
 	private int maxSize;
 	private Time startTime, endTime;
 	
-	public Section(String crn, String sectID, String cID, Date termStart, int maxSize,
-			String days, Time startTime, Time endTime, String location) 
+	private ArrayList<Enrollment> enrollments;
+	private Course course; //the course this section belongs to
+	
+	public Section(String crn, String sectID, String cID, String termStart, int maxSize,
+			String days, Time startTime, Time endTime, String location, Course course) 
 	{
-		super(null, null, null, null, null, 0, false);
-		
 		this.crn = crn;
 		this.sectID = sectID;
 		this.cID = cID;
@@ -25,22 +24,25 @@ public class Section extends Course
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.location = location;
+		
+		enrollments = new ArrayList<Enrollment>();
+		this.course = course;
 	}
 	
-
-
-	public Section(String sectID,String crn, String cID,String courseName, Date termStart, int maxSize,
-			String days, Time startTime, Time endTime, String location) 
+	
+	public void addEnrollment(Enrollment enroll)
 	{
-		super(cID, courseName, null, null, null, 0, false);
-		this.sectID = sectID;
-		this.crn = crn;
-		this.termStart = termStart;
-		this.maxSize = maxSize;
-		this.days = days;
-		this.startTime = startTime;
-		this.endTime = endTime;
-		this.location = location;
+		enrollments.add(enroll);
+	}
+	
+	public ArrayList<Enrollment> getEnrollments()
+	{
+		return enrollments;
+	}
+	
+	public Course getCourse()
+	{
+		return course;
 	}
 
 	public String getCrn()
@@ -59,12 +61,12 @@ public class Section extends Course
 		this.sectID = sectID;
 	}
 
-	public String getcID() 
+	public String getCourseID() 
 	{
 		return cID;
 	}
 
-	public void setcID(String cID) 
+	public void setCourseID(String cID) 
 	{
 		this.cID = cID;
 	}
@@ -89,12 +91,12 @@ public class Section extends Course
 		this.location = location;
 	}
 
-	public Date getTermStart() 
+	public String getTermStart() 
 	{
 		return termStart;
 	}
 
-	public void setTermStart(Date termStart) 
+	public void setTermStart(String termStart) 
 	{
 		this.termStart = termStart;
 	}
@@ -132,20 +134,6 @@ public class Section extends Course
 	public String getID() 
 	{
 		return sectID;
-	}
-	
-	public boolean dbInsert() 
-	{
-		boolean success = false;
-
-		return success;
-	}
-
-	public boolean dbUpdate() 
-	{
-		boolean success = false;
-
-		return success;
 	}
 
 }

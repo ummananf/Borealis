@@ -29,8 +29,10 @@ $(document).ready(function() {
 	
 	$("#category").change(function(event) {
 		var category = $("select#category option:selected").text();
+		var term = $("select#term").val();
 		$.post("registerCourses", {
-			categoryName: category
+			categoryName: category,
+			termName: term
 		}, function(data) {
 			// clear table so not to append to previous courses
 			$("#course_table").empty();
@@ -39,21 +41,19 @@ $(document).ready(function() {
 			$("#course_table").append(headers);
 			// populate table
 			$.each(data, function(key, value) {
-				var registerButton = "<button type='button' id='register_" + value.cID + "'>Register</button>";
-				var dropButton = "<button type='button' id='drop_" + value.cID + "'>Drop</button>";
+				
+				var registerButton = "<button type='button' id='register_" + value.crn + "'>Register</button>";
+				var dropButton = "<button type='button' id='drop_" + value.crn + "'>Drop</button>";
 				var row = "<tr><td>" + value.cID + "</td><td>" + value.crn + "</td><td>" + value.sectID + "</td><td>" + value.maxSize + "</td><td>" + value.days + "</td><td>" + value.startTime + "</td><td>" + value.endTime + "</td><td>" + value.location + "</td><td>" + registerButton + dropButton + "</td></tr>";
 				$("#course_table").append($.parseHTML(row));
 				
 				// add event handlers to the buttons that were created
 				// on register
-				$(document).on("click", "#register_" + value.cID, function() { 
+				$(document).on("click", "#register_" + value.crn, function() { 
 					
 					var post = $.post("register", {
 						action: "register",
-						cID: value.cID,
-						sectID: value.sectID,
-						startDate: value.termStart,
-						crn:value.crn
+						crn: value.crn
 					});
 					
 					post.done(function(data, textStatus, jqXHR) {
@@ -67,13 +67,10 @@ $(document).ready(function() {
 				});
 				
 				// on drop
-				$(document).on("click", "#drop_" + value.cID, function() { 
+				$(document).on("click", "#drop_" + value.crn, function() { 
 					
 					var post = $.post("register", {
 						action: "drop",
-						cID: value.cID,
-						sectID: value.sectID,
-						startDate: value.termStart,
 						crn: value.crn
 					});
 					
