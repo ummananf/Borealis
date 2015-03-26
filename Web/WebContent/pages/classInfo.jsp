@@ -36,6 +36,7 @@
 
 <script type="text/javascript">
     var mySections = ${enrollmentInfo};
+    var myInfo = ${userInfo};
 	
     
 	$(document).ready(function()
@@ -84,8 +85,9 @@
 			});
         });
         
-        // TODO: get user info as json and display this for reals
-        $('<tr/>').appendTo(table2).append($('<td colspan="100%"/>').text("Max credit hours: 15"));
+        $(myInfo).each(function(i, person){
+        	$('<tr/>').appendTo(table2).append($('<td colspan="100%"/>').text("Max credit hours: " + person.maxCreditsPerTerm ));
+        });
 	});
 </script>
 

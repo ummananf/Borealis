@@ -37,7 +37,7 @@
 
 <script type="text/javascript">
 	
-	var myInfo = ${studentInfo};
+	var myInfo = ${userInfo};
 
 	$(document).ready(function()
 	{
