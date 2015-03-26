@@ -10,4 +10,8 @@
 
 @interface TabBarControllerDelegate : NSObject <UITabBarControllerDelegate>
 
+@property(nonatomic, assign) int testInt;
+
+- (void) setTestInt: (int) value;
+
 @end

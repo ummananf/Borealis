@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "SBJson.h"
 
+#import "TabBarControllerDelegate.h"
+
 
 @interface ViewController ()
 
@@ -92,4 +94,13 @@
     [self loginClicked:nil];
     return YES;
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"login_success"]){
+        UITabBarController *controller = (UITabBarController *)segue.destinationViewController;
+        TabBarControllerDelegate *delegate = controller.delegate;
+        delegate.testInt = 123;
+    }
+}
+
 @end
