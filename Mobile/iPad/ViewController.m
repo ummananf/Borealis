@@ -51,12 +51,14 @@
             [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
             [request setHTTPBody:postData];
 
-            NSURLResponse *requestResponse;
+            NSHTTPURLResponse *requestResponse;
             NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
             
             NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
             NSLog(@"requestRply: %@", requestReply);
-            if ([requestReply isEqualToString:@""]) {
+
+            // check status code of resonse. if 200 (OK response) -> success, otherwise failure.
+            if ([requestResponse statusCode] == 200) {
                 success = 1;
             }
         }
