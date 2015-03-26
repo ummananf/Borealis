@@ -12,16 +12,23 @@
 #import "TabBarControllerDelegate.h"
 
 
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
+NSString *degree;
+NSString *firstName;
+NSString *lastName;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.userID.text = degree;
+    self.name.text = (@"%@" @" %@", firstName, lastName);
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,6 +70,42 @@
             // check status code of resonse. if 200 (OK response) -> success, otherwise failure.
             if ([requestResponse statusCode] == 200) {
                 success = 1;
+                
+                SBJsonParser *jsonParser = [SBJsonParser new];
+                NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
+                NSLog(@"jsonData: %@",jsonData);
+                
+                NSArray *key = [jsonData valueForKey:@"degName"];
+                degree = [key objectAtIndex:0];
+                NSLog(@"degName: %@", degree);
+                
+                key = [jsonData valueForKey:@"email"];
+                NSString *email = [key objectAtIndex:0];
+                NSLog(@"email: %@", email);
+                
+                key = [jsonData valueForKey:@"firstName"];
+                firstName = [key objectAtIndex:0];
+                NSLog(@"firstName: %@", firstName);
+                
+                key = [jsonData valueForKey:@"lastName"];
+                lastName = [key objectAtIndex:0];
+                NSLog(@"lastName: %@", lastName);
+                
+                key = [jsonData valueForKey:@"password"];
+                NSString *password = [key objectAtIndex:0];
+                NSLog(@"password: %@", password);
+                
+                key = [jsonData valueForKey:@"type"];
+                NSString *type = [key objectAtIndex:0];
+                NSLog(@"type: %@", type);
+                
+                key = [jsonData valueForKey:@"userID"];
+                NSString *userID = [key objectAtIndex:0];
+                NSLog(@"userID: %@", userID);
+                
+                key = [jsonData valueForKey:@"username"];
+                NSString *username = [key objectAtIndex:0];
+                NSLog(@"username: %@", username);
             }
         }
     }

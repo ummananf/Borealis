@@ -136,7 +136,7 @@
         <!--View Controller - Home-->
         <scene sceneID="dtR-5O-tn8">
             <objects>
-                <viewController id="yIF-UL-gPO" sceneMemberID="viewController">
+                <viewController id="yIF-UL-gPO" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5nR-2b-zjI"/>
                         <viewControllerLayoutGuide type="bottom" id="96L-p2-fJV"/>
@@ -209,7 +209,7 @@
         <!--View Controller - My Info-->
         <scene sceneID="diU-NO-HZZ">
             <objects>
-                <viewController id="0K7-e6-kQi" sceneMemberID="viewController">
+                <viewController id="0K7-e6-kQi" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="600-5W-iLw"/>
                         <viewControllerLayoutGuide type="bottom" id="FDV-Il-fxj"/>
@@ -445,6 +445,10 @@
                         <color key="backgroundColor" red="0.26666668059999998" green="0.36862745879999997" blue="0.58823531870000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Info" id="lzu-Dm-SDY"/>
+                    <connections>
+                        <outlet property="name" destination="7Ef-wl-ndb" id="g35-Uh-4Ku"/>
+                        <outlet property="userID" destination="K0i-sY-Sn4" id="E1a-a7-jOj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7K-zB-UfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
