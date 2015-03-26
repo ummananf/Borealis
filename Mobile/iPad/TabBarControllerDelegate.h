@@ -10,8 +10,8 @@
 
 @interface TabBarControllerDelegate : NSObject <UITabBarControllerDelegate>
 
-@property(nonatomic, assign) int testInt;
+@property(nonatomic, assign) NSDictionary *jsondata;
 
-- (void) setTestInt: (int) value;
+- (void) setTestInt: (NSDictionary *) value;
 
 @end

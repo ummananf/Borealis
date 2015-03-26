@@ -8,24 +8,27 @@
 
 #import "TabBarControllerDelegate.h"
 
+#import "MyInfoViewController.m"
+
 @implementation TabBarControllerDelegate
-@synthesize testInt;
+@synthesize jsondata;
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *) viewController{
     
-    NSLog(@"testInt: %d", testInt);
+    NSLog(@"testInt: %@", jsondata);
         
-    if ([viewController.title  isEqual: @"Home"]) {
+    if (tabBarController.selectedIndex == 0) {
+        //MyInfoViewController *myInfo = (MyInfoViewController *) viewController;
+        //myInfo.username.text = @"hello";
         NSLog(@"HOME");
-        NSLog(@"testInt: %d", testInt);
     } else if ([viewController.title isEqual: @"MyInfo"]){
         NSLog(@"MYINFO");
     }
     
 }
 
-- (void) setTestInt: (int) value {
-    testInt = value;
+- (void) setTestInt: (NSDictionary *) value {
+    jsondata = value;
 }
 
 @end

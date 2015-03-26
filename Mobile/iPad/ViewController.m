@@ -18,6 +18,7 @@
 @end
 
 @implementation ViewController
+NSDictionary *user;
 
 - (void)viewDidLoad
 {
@@ -68,7 +69,9 @@
                 SBJsonParser *jsonParser = [SBJsonParser new];
                 NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
                 NSLog(@"jsonData: %@",jsonData);
+                user = jsonData;
                 
+                /*
                 NSArray *key = [jsonData valueForKey:@"degName"];
                 NSString *degree = [key objectAtIndex:0];
                 NSLog(@"degName: %@", degree);
@@ -100,6 +103,8 @@
                 key = [jsonData valueForKey:@"username"];
                 NSString *username = [key objectAtIndex:0];
                 NSLog(@"username: %@", username);
+                */
+                
             }
         }
     }
@@ -136,7 +141,7 @@
     if([segue.identifier isEqualToString:@"login_success"]){
         UITabBarController *controller = (UITabBarController *)segue.destinationViewController;
         TabBarControllerDelegate *delegate = controller.delegate;
-        delegate.testInt = 123;
+        delegate.jsondata = user;
     }
 }
 
