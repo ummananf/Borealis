@@ -26,13 +26,13 @@ public class UserModelTest
 	public void setUp() throws Exception
 	 {
 		
-		queryInsertUser1 = "INSERT INTO Users VALUES (11, 'test_admin', 'p', 'a@b.c', 'john', 'johnson', 'computer sicence','admin');";
+		queryInsertUser1 = "INSERT INTO Users VALUES (11, 'test_admin', 'p', 'a@b.c', 'john', 'johnson', 'computer sicence',0, 'admin');";
 		queryDeleteUser1 = "DELETE FROM Users WHERE userID=11;";
 		
-		queryInsertUser2 = "INSERT INTO Users VALUES (22, 'test_student', 'p', 'b@b.c', 'john', 'johnson', 'computer science','student');";
+		queryInsertUser2 = "INSERT INTO Users VALUES (22, 'test_student', 'p', 'b@b.c', 'john', 'johnson', 'computer science',15,'student');";
 		queryDeleteUser2 = "DELETE FROM Users WHERE userID=22;";
 		
-		queryInsertUser3 = "INSERT INTO Users VALUES (33, 'test_prof', 'p', 'c@b.c', 'john', 'johnson','comnputer science', 'prof');";
+		queryInsertUser3 = "INSERT INTO Users VALUES (33, 'test_prof', 'p', 'c@b.c', 'john', 'johnson','comnputer science', 0, 'prof');";
 		queryDeleteUser3 = "DELETE FROM Users WHERE userID=33;";
 
 		DB.execute(queryInsertUser1);
@@ -51,7 +51,7 @@ public class UserModelTest
 		//assertTrue(user.equals(admin)); //this dont work cuz we didnt write it
 		
 		@SuppressWarnings("unused")
-		Student student = new Student(22, "test_student", "p", "b@b.c", "john", "johnson","degree");
+		Student student = new Student(22, "test_student", "p", "b@b.c", "john", "johnson","degree", 15);
 		user = UserModel.getUserData("test_student");
 		assertTrue(user instanceof Student);
 		//assertTrue(user.equals(student));

@@ -22,7 +22,7 @@ public class StudentModelTest
 	@Before
 	public void setUp() throws Exception 
 	{	
-		queryInsertStudent = "INSERT INTO Users VALUES (99, 'somestudent', 'p', 'qwe@qwe.qwe', 'john', 'johnson','computer science', 'student');";
+		queryInsertStudent = "INSERT INTO Users VALUES (99, 'somestudent', 'p', 'qwe@qwe.qwe', 'john', 'johnson','computer science', 15, 'student');";
 		queryDeleteStudent = "DELETE FROM Users WHERE userID=99;";
 		
 		queryInsertEnrollment = "INSERT INTO Enrolled VALUES (99, '10000', 3.5);";

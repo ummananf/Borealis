@@ -36,7 +36,7 @@ public class StudentTest
 	@Before
 	public void setUp() throws Exception
 	{
-		this.testStudent = new Student(681201, "Eve", "123456", "eve@gmail.com", "Eve", "Titan", "computer science");
+		this.testStudent = new Student(681201, "Eve", "123456", "eve@gmail.com", "Eve", "Titan", "computer science", 15);
 	}
 	
 	@After
