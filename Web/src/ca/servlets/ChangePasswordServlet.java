@@ -1,6 +1,7 @@
 package ca.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -43,14 +44,20 @@ public class ChangePasswordServlet extends HttpServlet
 		String newPassword = req.getParameter("newPassword");
 		
 		ChangePasswordLogic changePasswordLogic = new ChangePasswordLogic(newPassword,oldPassword,userID);
+		
+		 res.setContentType("text/html");
+		 PrintWriter out = res.getWriter();
+		 
+		
+		
 		if(changePasswordLogic.changePassword())
 		{
-			
+			out.append("message has been changed");
 		}
 		else
 		{
-			
+			out.append("message has not been changed");
 		}
-			res.setStatus(HttpServletResponse.SC_OK);
+		res.setStatus(HttpServletResponse.SC_OK);
 	}
 }
