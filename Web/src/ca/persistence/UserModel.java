@@ -1,7 +1,13 @@
 package ca.persistence;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 import java.util.Map;
+
+
 
 import ca.objects.Admin;
 import ca.objects.Professor;
@@ -27,6 +33,48 @@ public class UserModel
 	{
 		String query = "SELECT * FROM Users WHERE userID = '"+userID+"';";
 		return createUserFromQuery(query);
+	}
+	
+	public static String getUserPasswordByID(int userID)
+	{
+		Connection connection = ConnectionManager.getConnection();
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		String dbPassword = null;
+		String query = "SELECT password FROM Users WHERE userID = '"+userID+"';";
+System.out.println(query);
+		
+		try {
+			stmt = connection.createStatement();
+			rs = stmt.executeQuery(query);
+			
+			if(rs.next()){
+				dbPassword = rs.getString("password");
+			}
+		} catch (SQLException e) {
+			System.out.println("error in UserModel: getUserPasswordByID");
+			e.printStackTrace();
+		}
+		finally
+		{
+			try {
+				stmt.close();
+				rs.close();
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		return dbPassword;
+	}
+	
+	public static boolean updatePasswordByID(int userID, String newPassword)
+	{
+		String query = "UPDATE Users SET password = '"+newPassword+"' WHERE userID = '"+userID+"';";
+		
+		return DB.execute(query);
 	}
 	
 	

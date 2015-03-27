@@ -60,7 +60,6 @@ public class ClassInfoServlet extends HttpServlet
 		// Tell servlet that we are sending JSON
 		res.setContentType("application/json");
 		
-		
 		res.getWriter().print(enrollmentInfo);
 		
 		session.setAttribute("enrollmentInfo", enrollmentInfo);

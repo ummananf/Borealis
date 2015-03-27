@@ -4,25 +4,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>change password</title><link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" /><link href="Style/start.css" rel="stylesheet" type="text/css" />
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
-    
-    
+    <script src="Script/libs/jquery-1.4.2.min.js"></script>
+    <script src="Script/libs/jquery.jBox-2.3.min.js"></script> 
+     
 <script type="text/javascript" language="javascript">
     function changePassword() {
         var oldPwd = $("#txtOldPwd").val();
         var newPwd = $("#txtNewPwd").val();
         var confirmNewPwd = $("#txtConfirmNewPwd").val();
+        
+       //for Tesing
+        console.log(oldPwd);
+        console.log(newPwd);
+        console.log(confirmNewPwd);
+        //for testing
 
         if (oldPwd == "" || newPwd == "" || confirmNewPwd=="") {
-            $.jBox.tip("You cannot leave your password empty！", 'error');
+            $.jBox.tip("You cannot leave your password empty", 'error');
             return false;
         }
-        if (oldPwd.length < 6 || oldPwd.length > 16) {
-            $.jBox.tip("The length of the old password should be between 6 and 16 and it is case sensitive！", 'error');
+        if (oldPwd.length < 4 || oldPwd.length > 16) {
+            $.jBox.tip("The length of the old password should be between 4 and 16 and it is case sensitive", 'error');
             return false;
         }
-        if (newPwd.length < 6 || newPwd.length > 16) {
-            $.jBox.tip("The length of the new password should be between 6 and 16 and it is case sensitive！", 'error');
+        if (newPwd.length < 4 || newPwd.length > 16) {
+            $.jBox.tip("The length of the new password should be between 4 and 16 and it is case sensitive", 'error');
             return false;
         }
         if (newPwd != confirmNewPwd) {
@@ -30,7 +36,7 @@
             return false;
         }
 
-        studentAccount.changePassword(oldPwd, newPwd, function (data) {
+       /* studentAccount.changePassword(oldPwd, newPwd, function (data) {
             var obj = $.parseJSON(data);
             if (obj.ok) {
                 jBox.alert(obj.message, "notice");
@@ -42,6 +48,17 @@
                 jBox.tip(obj.message, 'error');
             }
         });
+       */
+       $(document).ready(function(){
+    	        $.post("changePassword",
+    	        {
+    	          oldPassword: oldPwd,
+    	          newPassword: newPwd
+    	        },
+    	        function(data,status){
+    	            alert("Data: " + data + "\nStatus: " + status);
+    	        });
+    	});
     }
 </script>
 
