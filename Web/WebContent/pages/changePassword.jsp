@@ -12,6 +12,12 @@
         var oldPwd = $("#txtOldPwd").val();
         var newPwd = $("#txtNewPwd").val();
         var confirmNewPwd = $("#txtConfirmNewPwd").val();
+        
+       //for Tesing
+        console.log(oldPwd);
+        console.log(newPwd);
+        console.log(confirmNewPwd);
+        //for testing
 
         if (oldPwd == "" || newPwd == "" || confirmNewPwd=="") {
             $.jBox.tip("You cannot leave your password empty", 'error');
@@ -43,6 +49,17 @@
             }
         });
        */
+       $(document).ready(function(){
+    	        $.post("changePassword",
+    	        {
+    	          oldPassword: oldPwd,
+    	          newPassword: newPwd
+    	        },
+    	        function(data,status){
+    	            alert("Data: " + data + "\nStatus: " + status);
+    	        });
+    	});
+    }
 </script>
 
 <style type="text/css">
