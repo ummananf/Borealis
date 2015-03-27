@@ -21,12 +21,10 @@ public class ChangePasswordServlet extends HttpServlet
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException 
 	{
-		
 		System.out.println("**** MADE IT TO   __" + this.getServletName() + "__ ****");
 		RequestDispatcher view = req.getRequestDispatcher("changePassword.jsp");
 		
 		view.forward(req, res);
-
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
@@ -34,7 +32,6 @@ public class ChangePasswordServlet extends HttpServlet
 	{
 		
 		HttpSession session = req.getSession(true);
-		
 		// before we call the model to get enrollment records from the db, we need to know the userID
 		User student = (User)session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
 		
@@ -47,16 +44,14 @@ public class ChangePasswordServlet extends HttpServlet
 		
 		 res.setContentType("text/html");
 		 PrintWriter out = res.getWriter();
-		 
-		
-		
+		 	
 		if(changePasswordLogic.changePassword())
 		{
-			out.append("message has been changed");
+			out.append("password has been changed");
 		}
 		else
 		{
-			out.append("message has not been changed");
+			out.append("password has not been changed");
 		}
 		res.setStatus(HttpServletResponse.SC_OK);
 	}

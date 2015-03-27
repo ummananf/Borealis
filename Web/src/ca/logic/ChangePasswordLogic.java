@@ -23,7 +23,6 @@ public class ChangePasswordLogic
 		
 		this.oldPasswordInDB = UserModel.getUserPasswordByID(userID);
 		
-		
 		if(!PasswordValidator.validate(oldPasswordByUser, oldPasswordInDB))
 		{
 			System.out.println("db password error");

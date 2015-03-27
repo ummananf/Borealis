@@ -20,9 +20,9 @@
                     </a>
                 </div>
                 <div class="topOptions">
-                    <div id="welcomeTag" align="right"></div>
                     <a href="changePassword" >change password</a>
                     <a onclick="logout()" href=" ">logout</a>
+                    <div id="welcomeTag" align="right"></div>
                 </div>
                 <div class="blog_nav">
                   <ul>
