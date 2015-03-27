@@ -33,7 +33,19 @@ public class CourseModel
 	}
 	
 	public static ArrayList<Course> getCoursesByDepartment(String department) {
+		
 		String query = "SELECT * FROM Courses WHERE department = '" + department + "';";
+		return createCoursesFromQuery(query);
+	}
+	
+	public static Course getCourseByID(String cID) {
+		
+		String query = "SELECT * FROM Courses WHERE cID = '" + cID + "';";
+		return createCoursesFromQuery(query).get(0);
+	}
+	
+	
+	public static ArrayList<Course> createCoursesFromQuery(String query) {
 		
 		ArrayList<Course> courses = new ArrayList<Course>();
 		List<Map<String, Object>> resultList = DB.getData(query);
@@ -49,7 +61,7 @@ public class CourseModel
 									   (String) row.get("department"),
 									   (String) row.get("description"),
 									   (Integer) row.get("creditHrs"),
-									   false);
+									   (Boolean) row.get("isFullYr") );
 			courses.add(course);
 		}
 		

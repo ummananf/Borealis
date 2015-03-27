@@ -66,14 +66,14 @@ public class CourseSelectionLogic
 			sectionMap = new LinkedHashMap<String, String>();
 			sectionMap.put("sectID", sections.get(i).getSectID());
 			sectionMap.put("crn", sections.get(i).getCrn());
-			sectionMap.put("cID", sections.get(i).getcID());
-			sectionMap.put("termStart", sections.get(i).getTermStart().toString());
+			sectionMap.put("cID", sections.get(i).getCourseID());
+			sectionMap.put("termStart", sections.get(i).getTermStart());
 			sectionMap.put("maxSize", String.valueOf(sections.get(i).getMaxSize()));
 			sectionMap.put("days", sections.get(i).getDays());
 			sectionMap.put("startTime", sections.get(i).getStartTime().toString());
 			sectionMap.put("endTime", sections.get(i).getEndTime().toString());
 			sectionMap.put("location", sections.get(i).getLocation());
-			listOfSections.put(sections.get(i).getcID(), sectionMap);
+			listOfSections.put(sections.get(i).getCourseID(), sectionMap);
 		}
 		
 		return listOfSections;

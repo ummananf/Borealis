@@ -1,3 +1,16 @@
+ 		<script src="Script/extractInfo/welcomeTag.js"></script>
+		<script src="Script/logout/logout.js"></script>
+	    
+	    <script>  
+	    var persons = ${userInfo};  // get the session info 
+        
+        $(document).ready(function() {    	
+        	parseWelcomeTag(persons);
+        });
+        
+        </script>    
+	    
+	    
 	    <div class="banner">
         <div class="bannerFrame">
             <div class="page">
@@ -7,13 +20,16 @@
                     </a>
                 </div>
                 <div class="topOptions">
+
+                    <a href="changePassword" >change password</a>
+                    <a onclick="logout()" href=" ">logout</a>
                     <div id="welcomeTag" align="right"></div>
                 </div>
                 <div class="blog_nav">
                   <ul>
-                    <li><a href="myInfo">my info</a></li>
-                    <li><a href="grade">academics</a></li>
-                    <li><a href="progressBar">progress</a></li>
+                    <li><a href="myInfo">Personal</a></li>
+                    <li><a href="registerCourses">Academic</a></li>
+                    <li><a href="progressBar">Progress</a></li>
                   </ul>
                 </div>
             </div>
@@ -24,59 +40,41 @@
            <div class="leftArea">
                 <div class="leftAreaNavigate">
                     <div class="ta1">
-                        <strong>personal center</strong>
+                        <strong>Personal Center</strong>
                         <div class="leftDecoration">
                         </div>
                     </div>
                     <div class="changeViewLeftArea">
                     	<div>
-                            <a href="myInfo">my info</a>
+                            <a href="myInfo">My Info</a>
                         </div>
-                        <div>
-                        	<a href="classInfo">class info</a>
-                        </div>
-                        <div>                        </div>
-                        <div>                        </div>
-                        <div>                        </div>
                     </div>
                     <div class="ta1">
-                        <strong>academic center</strong>
+                        <strong>Academic Center</strong>
                         <div class="leftDecoration2">
                         </div>
                     </div>
 
                     <div class="changeViewLeftArea">
                    		<div>
-                            <a href="registerCourses">register courses</a>
+                            <a href="registerCourses">Register Courses</a>
+                        </div>
+                        <div>
+                        	<a href="classInfo">My Courses</a>
                         </div>
 						<div>
-							<a href="grade">gradebook</a>
+							<a href="grade">My Grades</a>
 						</div>
-                        <div>                        </div>
-                        <div>                        </div>
                     </div>
                     <div class="ta1">
-                        <strong>learning center</strong><div class="leftDecoration2">
+                        <strong>Progress Center</strong><div class="leftDecoration2">
                         </div>
                     </div>
                     <div class="changeViewLeftArea">
                     	<div>
-                    	<a href="progressBar">degree progress</a>
+                    	<a href="progressBar">Degree Progress</a>
                     	</div>
-                        <div>                        </div>
                     </div>
                    
-                    <div class="ta1">
-                        <strong>finance center</strong><div class="leftDecoration2">
-                        </div>
-                    </div>
-                    <div class="changeViewLeftArea">
-                    	<div>                        </div>
-                   	</div>
-					<div class="ta1">
-						<strong>teaching system</strong>
-                        <div class="leftDecoration2">
-                        </div>
-                    </div>
                 </div>
             </div>

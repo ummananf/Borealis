@@ -2,13 +2,16 @@ package ca.objects;
 
 import java.util.ArrayList;
 
+
 public class Course
 {
 	private String courseID, courseName, faculty, dept, description;
 	private int creditHrs;
 	private boolean isFullYr;
+	
+	ArrayList<Section> sections;
 
-	// probably want to be able to create a Course without all of these variables though
+
 	public Course(String cID, String name, String fac, String dept, String desc, int crHrs, boolean fullYr)
 	{
 		courseID = cID;
@@ -18,6 +21,18 @@ public class Course
 		description = desc;
 		creditHrs = crHrs;
 		isFullYr = fullYr;
+		
+		sections = new ArrayList<Section>();
+	}
+	
+	public void addSection(Section sect)
+	{
+		sections.add(sect);
+	}
+	
+	public ArrayList<Section> getSections()
+	{
+		return sections;
 	}
 
 	public String getCourseID() {
@@ -82,19 +97,5 @@ public class Course
 			result += "Length: 1 Term\n";
 
 		return result;
-	}
-
-	public boolean dbInsert()
-	{
-		boolean success = false;
-
-		return success;
-	}
-
-	public boolean dbUpdate()
-	{
-		boolean success = false;
-
-		return success;
 	}
 }

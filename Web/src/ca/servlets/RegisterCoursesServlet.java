@@ -1,6 +1,7 @@
 package ca.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Set;
@@ -10,8 +11,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import ca.logic.CourseSelectionLogic;
+import ca.objects.Enrollment;
+import ca.objects.Section;
+import ca.objects.User;
+import ca.persistence.SectionModel;
+
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.reflect.TypeToken;
 
 public class RegisterCoursesServlet extends HttpServlet 
 {
@@ -65,36 +75,46 @@ public class RegisterCoursesServlet extends HttpServlet
 		    }
 		}
 		
+		
+		
 		String category = req.getParameter("categoryName");
 		
 		System.out.println("RegisterCourses: Category: " + category);
+		boolean sendingSects = false;
+		JsonArray jsonSections = null;
 		
 		if (category != null) 
 		{
-			LinkedHashMap<String, LinkedHashMap<String, String>> courses = csLogic.getCourses(category);
-			LinkedHashMap<String, LinkedHashMap<String, String>> sections = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+			sendingSects = true;
 			
-			Set<String> courseKeys = courses.keySet();
-			Iterator<String> iterator = courseKeys.iterator();
-			
-			while(iterator.hasNext()) 
-			{
-				String key = (String) iterator.next();
-				LinkedHashMap<String, LinkedHashMap<String, String>> section = csLogic.getSections(key);
-				
-				LinkedHashMap<String, String> sec = section.get(key);
-				
-				sections.put(key, sec);
-			}
-			
-			json = new Gson().toJson(sections);
-		}
-		
-		System.out.println("Sending json: " + json);
+			ArrayList<Section> sections = new ArrayList<Section>();
 
+			sections = SectionModel.getSectionsByDeptAndTerm(category, term);
+
+			// setup gson for coverting object to json object
+			Gson gsonSection = new Gson();
+			
+			// start converting object to json....
+			JsonElement element = gsonSection.toJsonTree(sections, new TypeToken<ArrayList<Section>>() {}.getType());
+			
+			// final conversion
+			jsonSections = element.getAsJsonArray();
+			
+			req.setAttribute("currSections", jsonSections);
+			
+			// Tell servlet that we are sending JSON
+			res.setContentType("application/json");
+			
+		}
 
 	    res.setContentType("application/json");
-	    res.setCharacterEncoding("UTF-8");
-	    res.getWriter().write(json);    
+	    
+	    if(sendingSects)
+	    	res.getWriter().print(jsonSections);
+	    else
+	    {
+	    	res.setCharacterEncoding("UTF-8");
+	    	res.getWriter().write(json);    
+	    }
 	}
 }
