@@ -42,7 +42,7 @@ $(document).ready(function() {
 			// populate table
 			$.each(data, function(key, value) {
 				
-				var registerButton = "<button type='button' id='register_" + value.crn + "'>Register</button>";
+				var registerButton = "<button class='btn btn-primary' type='button' id='register_" + value.crn + "'>Register</button>";
 				var dropButton = "<button type='button' id='drop_" + value.crn + "'>Drop</button>";
 				var row = "<tr><td>" + value.cID + "</td><td>" + value.crn + "</td><td>" + value.sectID + "</td><td>" + value.maxSize + "</td><td>" + value.days + "</td><td>" + value.startTime + "</td><td>" + value.endTime + "</td><td>" + value.location + "</td><td>" + registerButton + dropButton + "</td></tr>";
 				$("#course_table").append($.parseHTML(row));
@@ -84,7 +84,11 @@ $(document).ready(function() {
 					
 				});
 					
-					
+				
+				// hide drop if not registered
+				$("#register_10012").text('registered');
+				$("#register_10012").prop('disabled',true);
+				//$("#register_10012").attr('class','btn1');
 			});
 
 		});
