@@ -6,7 +6,7 @@ function logout()
 	 		    url: "LogoutServlet",
 	 		    type: "post",
 	 		  }).success(function(result){
-	 			 alert("logout successfully");
+	 			 window.location.href = "login";
 	 		  });
 	    } 
 	 
