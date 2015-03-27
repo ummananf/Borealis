@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import ca.logic.ChangePasswordLogic;
 import ca.objects.User;
 
 
@@ -41,9 +42,15 @@ public class ChangePasswordServlet extends HttpServlet
 		String oldPassword = req.getParameter("oldPassword");
 		String newPassword = req.getParameter("newPassword");
 		
-		
-		
-		
-		res.setStatus(HttpServletResponse.SC_OK);
+		ChangePasswordLogic changePasswordLogic = new ChangePasswordLogic(newPassword,oldPassword,userID);
+		if(changePasswordLogic.changePassword())
+		{
+			
+		}
+		else
+		{
+			
+		}
+			res.setStatus(HttpServletResponse.SC_OK);
 	}
 }

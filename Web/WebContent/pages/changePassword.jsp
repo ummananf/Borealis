@@ -23,12 +23,12 @@
             $.jBox.tip("You cannot leave your password empty", 'error');
             return false;
         }
-        if (oldPwd.length < 6 || oldPwd.length > 16) {
-            $.jBox.tip("The length of the old password should be between 6 and 16 and it is case sensitive", 'error');
+        if (oldPwd.length < 4 || oldPwd.length > 16) {
+            $.jBox.tip("The length of the old password should be between 4 and 16 and it is case sensitive", 'error');
             return false;
         }
-        if (newPwd.length < 6 || newPwd.length > 16) {
-            $.jBox.tip("The length of the new password should be between 6 and 16 and it is case sensitive", 'error');
+        if (newPwd.length < 4 || newPwd.length > 16) {
+            $.jBox.tip("The length of the new password should be between 4 and 16 and it is case sensitive", 'error');
             return false;
         }
         if (newPwd != confirmNewPwd) {
