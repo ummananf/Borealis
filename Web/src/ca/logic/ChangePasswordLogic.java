@@ -33,6 +33,4 @@ public class ChangePasswordLogic
 		}
 		return indicator;
 	}
-	
-	
 }
