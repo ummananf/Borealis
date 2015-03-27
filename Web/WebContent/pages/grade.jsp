@@ -9,15 +9,14 @@
     <script src="Script/Data.js" type="text/javascript"></script>
     <script src="Script/letterGrade.js" type="text/javascript"></script>
     <script src="Script/Base.js" type="text/javascript"></script>
+    <script src="Script/gradeScripts/populateCourseTable.js" type="text/javascript"></script>
+    <script src="Script/gradeScripts/prepareTable.js" type="text/javascript"></script>
 </head>
 <body>
 
 
 <jsp:include page="template/header_nav.jsp" />
-
-
-
-            <div class="rightbox">
+    <div class="rightbox">
        
     <h2 class="pathNavigator">Academic Center</h2>
     <div class="changeViewMainArea">
@@ -48,51 +47,19 @@
         {"cID":"ECON1010", "cName":"Introduction to Economics", "grade":3.5, "crHrs":6, "term":"winter2015"},
     ];
     
-    
-    
-
-    var table = $('<table/>').appendTo($('#gradeTable'));
-    
-    
     $('#termSelect').change(function()
     {
-    	// clear previous information
-    	$('#gradeTable').empty();
-    	
-     	var table = $('<table/>').appendTo($('#gradeTable'));
-     	$('<tr/>').appendTo(table)
-    		.append($('<th width="75"/>').text("Course ID"))
-    		.append($('<th width="300"/>').text("Course name"))
-    		.append($('<th width="40"/>').text("Grade"));  
-    	
-    	// populate table with courses from the selected term
-    	$(coursesTaken).each(function(i, course)
-    	{
-    		var courseGrade = getLetterGrade(course.grade);
-    		
-    		if (course.term == $('#termSelect').val())
-    		{
-				$('<tr/>').appendTo(table)
-					.append($('<td/>').text(course.cID))
-					.append($('<td/>').text(course.cName))
-					.append($('<td/>').text(courseGrade));
-    		}
-    	});
+    	populateCourseTable(coursesTaken);
     });
     
     $(document).ready(function()
     {
-    	// show first row of table now
-     	$('<tr/>').appendTo(table)
-    		.append($('<th width="75"/>').text("Course ID"))
-    		.append($('<th width="300"/>').text("Course Name"))
-    		.append($('<th width="40"/>').text("Grade")); 
+    	prepareTable();
     });
-    
     
     </script>
 
-            </div>
+    </div>
 <jsp:include page="template/footer.jsp" />
 </body>
 </html>
