@@ -45,7 +45,6 @@ public class ClassInfoServlet extends HttpServlet
 		User student = (User)session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
 		int userID = student.getUserID();
 		
-		// TODO: get currently enrolled courses (and future ones too)
 		
 		// Get current term by current date, then get all of this user's enrollments for that term
 		Term currTerm = TermLogic.getTerm(new Date(System.currentTimeMillis()));
@@ -79,6 +78,33 @@ public class ClassInfoServlet extends HttpServlet
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException 
 	{
+		HttpSession session = req.getSession();
+		User user = (User) session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
+		int userID = user.getUserID();
+		
+		System.out.println("class info userid " + userID);
+		
+		// Create an ArrayList to hold Enrollment Records
+		ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>();
+
+		
+		// Get current term by current date, then get all of this user's enrollments for that term
+		Term currTerm = TermLogic.getTerm(new Date(System.currentTimeMillis()));
+		enrollments = StudentModel.getEnrollmentsByTerm(userID, currTerm.getTermID());
+		
+		// start to converting object to json....
+		JsonElement element = new Gson().toJsonTree(enrollments, new TypeToken<ArrayList<Enrollment>>() {}.getType());
+		
+		// final conversion
+		JsonArray enrollmentInfo = element.getAsJsonArray();
+		
+		//req.setAttribute("enrollmentInfo", enrollmentInfo);
+		
+		// Tell servlet that we are sending JSON
+		res.setContentType("application/json");
+		
+		res.getWriter().print(enrollmentInfo);
+		
 		
 	}
 }

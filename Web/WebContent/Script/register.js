@@ -80,21 +80,30 @@ var register = {
 				});
 				
 			});
-				
 			
+			
+			// Show this sections as currently registered if user already registered
+			$.each(currEnrols, function(i, enrol) {
+				
+				if(enrol.crn == value.crn) {
+					$("#drop_" + value.crn).show();
+					$("#register_" + value.crn).text('Registered!');
+					$("#register_" + value.crn).prop('disabled', true);
+				}
+			});
 
 		});
 	},
 	
-	// TODO: update registered buttons when course list if first loaded
-//	getCurrentEnrollments: function() {
-//		$.post("classInfo", {}, 
-//			function(userEnrols) {
-//				$.each(userEnrols, function(i, enrol) {
-//					
-//				}
-//			}
-//	}
+	
+	getCurrentEnrollments: function(termStart) {
+
+		var post = $.post("classInfo", {term : termStart});
+		
+		post.done(function(data, textStatus, jqXHR) {
+			currEnrols = data; //global for register.js
+		});
+	}
 };
 
 

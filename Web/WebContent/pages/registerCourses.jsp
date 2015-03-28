@@ -65,6 +65,8 @@
 	<script type="text/javascript">
 
 	var currTerm = ${currTerm};
+	var currEnrols; //used for showing currently registered courses when all sections are displayed first time
+	register.getCurrentEnrollments(currTerm.termID);
 
 	</script>
 
