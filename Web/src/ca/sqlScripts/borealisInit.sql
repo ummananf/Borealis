@@ -8,7 +8,8 @@ DROP TABLE IF EXISTS Teaches;
 DROP TABLE IF EXISTS Enrolled; 
 DROP TABLE IF EXISTS Sections;
 DROP TABLE IF EXISTS Prereqs; 
-DROP TABLE IF EXISTS Courses; 
+DROP TABLE IF EXISTS Courses;
+DROP TABLE IF EXISTS Terms;
 DROP TABLE IF EXISTS UserPrivs; 
 DROP TABLE IF EXISTS Users;
 
@@ -28,6 +29,11 @@ CREATE TABLE Users
 );
 -- CREATE TABLE UserPrivs( userID int NOT NULL, userType varchar(20) NOT NULL, PRIMARY KEY(userID, userType), FOREIGN KEY(userID) REFERENCES Users(userID) );
 
+CREATE TABLE Terms
+(
+	termID varchar(20) PRIMARY KEY,
+	startDate date NOT NULL
+);
 CREATE TABLE Courses
 (
 	cID varchar(10) PRIMARY KEY, 
@@ -58,7 +64,8 @@ CREATE TABLE Sections
 	startTime TIME, 
 	endTime TIME, 
 	location varchar(30), 
-	FOREIGN KEY(cID) REFERENCES Courses(cID) ON DELETE CASCADE
+	FOREIGN KEY(cID) REFERENCES Courses(cID) ON DELETE CASCADE,
+	FOREIGN KEY(termStart) REFERENCES Terms(termID)
 );
 CREATE TABLE Enrolled
 (
@@ -80,7 +87,8 @@ CREATE TABLE Teaches
 	term varchar(50) NOT NULL,
 	PRIMARY KEY(userID, crn), 
 	FOREIGN KEY(userID) REFERENCES Users(userID), 
-	FOREIGN KEY(crn) REFERENCES Sections(crn)
+	FOREIGN KEY(crn) REFERENCES Sections(crn),
+	FOREIGN KEY(term) REFERENCES Terms(termID)
 );
 CREATE TABLE Degrees
 (
@@ -109,6 +117,7 @@ CREATE TABLE DegreeChoice
 
 
 
+
 INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'john', 'johnson','B.Sc. Computer Science (Major)', 0, 'admin');
 INSERT INTO Users VALUES (7651245, 'bob', '4350', 'bob@school.ca', 'Bob', 'Carslon','B.Sc. Computer Science (Major)', 15, 'student');
 INSERT INTO Users VALUES (7651785, 'alice', '4350', 'alice@umanitoba.ca', 'Alice', 'Queen','B.Sc. Computer Science (Co-op)', 15, 'student');
@@ -117,8 +126,11 @@ INSERT INTO Users VALUES (3, 'jason', '123456', 'jason@myumanitoba.ca','Jason', 
 INSERT INTO Users VALUES (4, 'Francis','654321', 'frank@myumanitoba.ca','Francis','King','B.Sc. Computer Science (Major)', 15,'student');
 INSERT INTO Users VALUES (5, 'Kevin','123','Kevin@uwaterloo.ca','Kevin','Queen','B.Sc. Computer Science (Major)', 18, 'student');
 
--- INSERT INTO UserPrivs VALUES (1, 'admin');
--- INSERT INTO UserPrivs VALUES (2, 'student');
+-- Must do this before sections and enrolled
+INSERT INTO Terms VALUES ('Fall2014', '2014-09-01');
+INSERT INTO Terms VALUES ('Winter2015', '2015-01-01');
+INSERT INTO Terms VALUES ('Spring2015', '2015-05-01');
+INSERT INTO Terms VALUES ('Fall2015', '2015-09-01');
 
 
 
@@ -291,3 +303,5 @@ INSERT INTO Degrees VALUES ('Winter2015', 'Environment', 'Major', 'B.Sc. Environ
 INSERT INTO Degrees VALUES ('Fall2014', 'Mathematics', 'Major', 'B.Sc. Mathematics (Major)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Architecture', 'Major', 'B.Sc. Architecture (Major)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Astronomy', 'Major', 'B.Sc. Astronomy (Major)', 120);
+
+

@@ -16,7 +16,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
 import ca.objects.Enrollment;
-import ca.objects.Section;
 import ca.objects.User;
 import ca.persistence.EnrollmentModel;
 
@@ -40,6 +39,8 @@ public class ClassInfoServlet extends HttpServlet
 		// before we call the model to get enrollment records from the db, we need to know the userID
 		User student = (User)session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
 		int userID = student.getUserID();
+		
+		// TODO: get currently enrolled courses (and future ones too)
 		
 		//We can now use the userID to call the model
 		enrollments = EnrollmentModel.getDetailedEnrollmentRecords(userID);
