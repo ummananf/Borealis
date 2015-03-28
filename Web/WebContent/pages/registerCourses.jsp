@@ -60,6 +60,13 @@
 			</table>
 		</div>
 	</div>
+	
+	
+	<script type="text/javascript">
+
+	var currTerm = ${currTerm};
+
+	</script>
 
 	<jsp:include page="template/footer.jsp" />
 	</div>

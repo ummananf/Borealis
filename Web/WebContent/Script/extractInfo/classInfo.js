@@ -11,7 +11,7 @@ function displayClassInfo(mySections, myInfo)
 		.append($('<th width="60"/>').text("Days"))
 		.append($('<th width="80"/>').text("Time"))
 		.append($('<th width="65"/>').text("Location"))
-		.append($('<th width="40"/>').text("Drop\nCourse"));
+		.append($('<th width="50"/>').text("Drop"));
     $.each(mySections, function(i, enrol)
     {
         $('<tr/>').appendTo(table2)
@@ -33,8 +33,10 @@ function displayClassInfo(mySections, myInfo)
 			});
 				
 			post.done(function(data, textStatus, jqXHR) {
-				alert("Successfully dropped " + enrol.section.cID + "!");
-				location.reload(); //to update table
+				// Update view to show course dropped:
+				var tableRow = $("#drop_" + enrol.crn).parents("tr");
+				tableRow.empty();
+				tableRow.append($('<td colspan="100%" align="center"/>').text("Successfully dropped " + enrol.section.cID + "!"));
 			});
 				
 			post.fail(function(jqXHR, textStatus, errorThrown) {

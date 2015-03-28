@@ -33,7 +33,6 @@
 <script type="text/javascript">
 
 	var myInfo = ${userInfo};
-	var termInfo = ${termInfo};
 
 	$(document).ready(function()
 	{
