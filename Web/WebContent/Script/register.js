@@ -42,12 +42,16 @@ var register = {
 					crn: value.crn
 				});
 				
-				post.done(function(data, textStatus, jqXHR) {
-					//alert("Successfully registered to " + value.cID + "!");
-					
-					$("#drop_" + value.crn).show(100);
-					$("#register_" + value.crn).text('Registered!');
-					$("#register_" + value.crn).prop('disabled', true);
+				post.done(function(regResponse, textStatus, jqXHR) {
+
+					if(regResponse.success == true) {
+						$("#drop_" + value.crn).show(100);
+						$("#register_" + value.crn).text('Registered!');
+						$("#register_" + value.crn).prop('disabled', true);
+					}
+					else {
+						alert("Registration to " + value.cID + " failed.\n\n"+regResponse.msg);
+					}
 				});
 				
 				post.fail(function(jqXHR, textStatus, errorThrown) {
@@ -66,8 +70,6 @@ var register = {
 				});
 				
 				post.done(function(data, textStatus, jqXHR) {
-					//alert("Successfully dropped " + value.cID + "!");
-					
 					$("#drop_" + value.crn).hide(100);
 					$("#register_" + value.crn).text('Register');
 					$("#register_" + value.crn).prop('disabled', false);

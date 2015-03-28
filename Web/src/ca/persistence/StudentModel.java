@@ -20,7 +20,7 @@ public class StudentModel
 	{
 		String query = "SELECT * FROM Sections S, Enrolled E" +
 					   " WHERE S.crn = E.crn AND E.userID = "+studentID +
-					   " AND E.grade IS NOT NULL;";
+					   " AND E.grade >= 0;";
 		
 		ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>();
 		List<Map<String, Object>> resultList = DB.getData(query);
@@ -53,7 +53,7 @@ public class StudentModel
 	}
 	
 	
-	public static ArrayList<Enrollment> getCurrentEnrollments(int studentID, String currTerm)
+	public static ArrayList<Enrollment> getEnrollmentsByTerm(int studentID, String currTerm)
 	{
 		String query = "SELECT * FROM Enrolled E, Sections S, Courses C "
 					  +"WHERE E.crn = S.crn AND S.cID = C.cID "

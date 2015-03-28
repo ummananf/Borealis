@@ -71,9 +71,7 @@ CREATE TABLE Enrolled
 (
 	userID int NOT NULL,
 	crn varchar(6) NOT NULL,
---	sectID varchar(5) NOT NULL, 
---	cID varchar(10) NOT NULL,
-	grade FLOAT, 
+	grade FLOAT NOT NULL, 
 	PRIMARY KEY(userID, crn),
 	FOREIGN KEY(userID) REFERENCES Users(userID),
 	FOREIGN KEY(crn) REFERENCES Sections(crn)
@@ -294,7 +292,7 @@ INSERT INTO Sections VALUES ('10351','A02', 'ENV1010', 'Winter2015', 36, 'TR', '
 
 
 INSERT INTO Enrolled VALUES (7651245, '10000', 3.5);
-INSERT INTO Enrolled VALUES (7651245, '10010', NULL);
+INSERT INTO Enrolled VALUES (7651245, '10012', -1.0);
 
 
 INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
