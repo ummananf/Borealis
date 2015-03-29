@@ -29,9 +29,21 @@ public class SessionFilter implements Filter
                 
                 String uri = request.getRequestURI();
                 
+                String iosheader = ((String)request.getAttribute("IOS"));
+                boolean isIos = false;
+                if (iosheader != null) {
+                	isIos = true;
+                }
+                boolean sessionActived = false;
+                if(null != request.getSession())
+                {
+                	sessionActived = null != (request.getSession()
+            				.getAttribute(SessionGlobals.CURRENT_SESSION_USER));
+                }
+                
+
                 boolean isSessionActive = 
-                		(request.getSession()
-                				.getAttribute(SessionGlobals.CURRENT_SESSION_USER)) != null;
+                		sessionActived || isIos;
                 boolean isLoginPage = uri.contains("login");
                 boolean isImage = uri.contains(".jpg") || uri.contains(".png");
                 boolean isCSS = uri.contains(".css");
