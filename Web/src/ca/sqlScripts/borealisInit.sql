@@ -28,7 +28,7 @@ CREATE TABLE Users
 CREATE TABLE Courses
 (
 	cID varchar(10) PRIMARY KEY, 
-	cName varchar(50), 
+	cName varchar(70), 
 	creditHrs smallint,
 	faculty varchar(50),
 	department varchar(50),
@@ -82,12 +82,12 @@ CREATE TABLE Degrees
 	term varchar(50) NOT NULL,
 	degProgram varchar(50) NOT NULL,
 	degOption varchar(50) NOT NULL,
-	degName varchar(50) PRIMARY KEY,
+	degName varchar(60) PRIMARY KEY,
 	totalCreditHrs int
 );
 CREATE TABLE DegreeCourses
 (
-	degName varchar(50) NOT NULL,
+	degName varchar(60) NOT NULL,
 	cID varchar(10) NOT NULL,
 	PRIMARY KEY(degName, cID),
 	FOREIGN KEY(degName) REFERENCES Degrees(degName) ON DELETE CASCADE,
@@ -96,7 +96,7 @@ CREATE TABLE DegreeCourses
 CREATE TABLE DegreeChoice
 (
 	userID int NOT NULL,
-	degName varchar(50) NOT NULL,
+	degName varchar(60) NOT NULL,
 	PRIMARY KEY(userID, degName),
 	FOREIGN KEY(userID) REFERENCES Users(userID),
 	FOREIGN KEY(degName) REFERENCES Degrees(degName)
@@ -105,7 +105,7 @@ CREATE TABLE DegreeChoice
 -- Create Users
 INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'John', 'Johnson', NULL, 0, 'admin');
 INSERT INTO Users VALUES (7651245, 'bob', '4350', 'bob@school.ca', 'Bob', 'Carslon','B.Sc. Computer Science (Major)', 15, 'student');
-INSERT INTO Users VALUES (7651785, 'alice', '4350', 'alice@umanitoba.ca', 'Alice', 'Queen','B.Sc. Computer Science (Honours)' 15, 'student');
+INSERT INTO Users VALUES (7651785, 'alice', '4350', 'alice@umanitoba.ca', 'Alice', 'Queen','B.Sc. Computer Science (Honours)', 15, 'student');
 INSERT INTO Users VALUES (6812459, 'frank', '4350', 'frank@umanitoba.ca', 'Frank', 'Frank','B.Sc. Computer Science (Honours)', 15, 'student');
 INSERT INTO Users VALUES (3, 'jason', '123456', 'jason@myumanitoba.ca','Jason', 'King', 'B.Sc. Astronomy (Major)', 15, 'student');
 INSERT INTO Users VALUES (4, 'francis','654321', 'frank@myumanitoba.ca','Francis','King','B.Sc. Chemistry (Major)', 15,'student');
@@ -164,7 +164,7 @@ INSERT INTO Courses VALUES ('BIOL1030', 'Biology II - Biological Diversity, Func
 INSERT INTO Courses VALUES ('BIOL2300', 'Principles of Ecology', 3, 'Science', 'Biology', 'Principles of ecology at the individual, population, community and ecosystem levels.', FALSE);
 INSERT INTO Courses VALUES ('BIOL2500', 'Genetics I', 3, 'Science', 'Biology', 'Principles of heredity, gametogenesis and the cytological basis of inheritance in plants and animals.', FALSE);
 INSERT INTO Courses VALUES ('BIOL2210', 'The Chordates', 3, 'Science', 'Biology', 'A study of the original, evolutionary history and structure of the major groups of chordates.', FALSE);
-INSERT INTO Courses VALUES ('BIOL2240', 'Human Physiology I', 3, 'Science', 'Biology', 'The mechanisms of action of the body nervous, endocrine, muscular and reproductive systems.', FALSE);
+INSERT INTO Courses VALUES ('BIOL2240', 'Human Physiology I', 3, 'Science', 'Biology', 'The mechanisms of action of the body\'s nervous, endocrine, muscular and reproductive systems.', FALSE);
 INSERT INTO Courses VALUES ('BIOL3360', 'Animal Behaviour', 3, 'Science', 'Biology', 'An introduction to the study of animal behaviour including key concepts from the parent disciplines of ethology, comparastive psychology, behavioural ecology.', FALSE);
 INSERT INTO Courses VALUES ('BIOL3500', 'Genetics II', 3, 'Science', 'Biology', 'Deals with various aspects of linkage and crossing over, gene funciton, mutation and repair and the use of bacteria and viruses as genetic tools.', FALSE);
 INSERT INTO Courses VALUES ('BIOL4362', 'Behavioural Ecology and Cognitive Ethology', 3, 'Science', 'Biology', 'Examines questions relating to mating, parental behaviour, communication, social parasitism and animal intellect.', FALSE);
@@ -202,7 +202,7 @@ INSERT INTO Courses VALUES ('PHYS3180', 'Stars', 3, 'Science', 'Physics and Astr
 INSERT INTO Courses VALUES ('PHYS3380', 'Quantum Physics 2', 3, 'Science', 'Physics and Astronomy', 'Focuses on solutions of the three-dimensional Schrodinger equation with special emphasis on one-electron atoms.', FALSE);
 INSERT INTO Courses VALUES ('PHYS3670', 'Classical Thermodynamics', 3, 'Science', 'Physics and Astronomy', 'An introduction to the laws of classical equilibrium thermodynamics and their applications.', FALSE);
 INSERT INTO Courses VALUES ('PHYS2490', 'Theoretical Physics 2', 3, 'Science', 'Physics and Astronomy', 'This course provides a continuation of the introduction to the mathematics required for both the Honours and Major programs in Physics and Astronomy.', FALSE);
-INSERT INTO Courses VALUES ('PHYS2380', 'Quantum Physics 1', 3, 'Science', 'Physics and Astronomy', 'Introduces the basic principles of quantum theory including cavity radiation and Plancks postulate, wave-particle duality, the Bohr model, and the Schrodinger theory.', FALSE);
+INSERT INTO Courses VALUES ('PHYS2380', 'Quantum Physics 1', 3, 'Science', 'Physics and Astronomy', 'Introduces the basic principles of quantum theory including cavity radiation and Planck\'s postulate, wave-particle duality, the Bohr model, and the Schrodinger theory.', FALSE);
 INSERT INTO Courses VALUES ('PHYS2390', 'Theoretical Physics 1', 3, 'Science', 'Physics and Astronomy', 'This course provides an introduction to the mathematics required for both the Honours and Major programs in Physics and Astronomy.', FALSE);
 INSERT INTO Courses VALUES ('PHYS1070', 'Physics 2 - Waves and Modern Physics', 3, 'Science', 'Physics and Astronomy', 'Learn about the mysterious quantum world, the basis of the latest nanotechnology, where particles are waves and waves are particles.', FALSE);
 INSERT INTO Courses VALUES ('PHYS1050', 'Physics 1 - Mechanics', 3, 'Science', 'Physics and Astronomy', 'The science of describing and explaining motion.', FALSE);
@@ -213,8 +213,8 @@ INSERT INTO Courses VALUES ('CHEM4590', 'Bioanalytical Methods', 3, 'Science', '
 INSERT INTO Courses VALUES ('CHEM4550', 'Aquatic Chemistry', 3, 'Science', 'Chemistry', 'An examination of biogeochemical processes affecting the distribution, speciation and bioavailability of chemical substances in the aquatic environment.', FALSE);
 INSERT INTO Courses VALUES ('CHEM4600', 'Advanced Chemical Techniques', 6, 'Science', 'Chemistry', 'A workshop course consisting of lectures, problem solving and advanced instrumental techniques.', TRUE);
 INSERT INTO Courses VALUES ('CHEM3590', 'Instrumental Analysis', 3, 'Science', 'Chemistry', 'A course dealing with theory and use of standard instruments used for chemical and biochemical analyses.', FALSE);
-INSERT INTO Courses VALUES ('CHEM3400', 'Inorganic Chemistry: Reactivity and Properties', 3, 'Science', 'Chemistry', 'Advanced chemistry of the elements with emphasis on chemical reactivity, electronic structure and physical properties of inorganic compounds', FALSE);
-INSERT INTO Courses VALUES ('CHEM2370', 'Biochemistry 2 - Catabolism, Synthesis and Information Pathways', 3, 'Science', 'Chemistry', 'An introductory course dealing with the basic metabolic processes that occur in living cells.', FALSE);
+INSERT INTO Courses VALUES ('CHEM3400', 'Inorganic Chemistry: Reactivity and Properties', 3, 'Science', 'Chemistry', 'Advanced chemistry of the elements with emphasis on chemical reactivity, electronic structure and physical properties of inorganic compounds.', FALSE);
+INSERT INTO Courses VALUES ('CHEM2370', '"Biochemistry 2 - Catabolism, Synthesis and Information Pathways"', 3, 'Science', 'Chemistry', 'An introductory course dealing with the basic metabolic processes that occur in living cells.', FALSE);
 INSERT INTO Courses VALUES ('CHEM2470', 'Introductory Analytical Chemistry', 3, 'Science', 'Chemistry', 'Equips the students with the theoretical principles on which analytical methods are based with the ability to plan and perform experimental work.', FALSE);
 INSERT INTO Courses VALUES ('CHEM2400', 'Inorganic Chemistry: Structure and Applications', 3, 'Science', 'Chemistry', 'Overview of chemical bonding, structure and reactivity across the periodic table.', FALSE);
 INSERT INTO Courses VALUES ('CHEM2360', 'Biochemistry 1 - Biomolecules and an Introduction to Metabolic Energy', 3, 'Science', 'Chemistry', 'An introductory course dealing with molecules encountered in biochemistry and the concept of metabolic energy as a product of catabolism.', FALSE);
@@ -241,7 +241,6 @@ INSERT INTO Prereqs VALUES ('COMP3430', 'COMP4430', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2140', 'COMP3720', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2280', 'COMP3720', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2140', 'COMP3490', 2.0);
-INSERT INTO Prereqs VALUES ('COMP2190', 'COMP3490', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2140', 'COMP3380', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2280', 'COMP3370', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2140', 'COMP3190', 2.0);
@@ -279,8 +278,6 @@ INSERT INTO Prereqs VALUES ('BIOL2300', 'BIOL3360', 2.0);
 INSERT INTO Prereqs VALUES ('BIOL2210', 'BIOL3360', 2.0);
 INSERT INTO Prereqs VALUES ('BIOL2500', 'BIOL3500', 2.0);
 INSERT INTO Prereqs VALUES ('BIOL3360', 'BIOL4362', 2.0);
-INSERT INTO Prereqs VALUES ('BIOL2410', 'BIOL4470', 2.0);
-INSERT INTO Prereqs VALUES ('BIOL2300', 'BIOL4220', 2.0);
 
 -- Environmental Science Prereqs:
 INSERT INTO Prereqs VALUES ('ENVR2000', 'ENVR4110', 2.0);
@@ -439,8 +436,6 @@ INSERT INTO Sections VALUES ('21780','A01', 'BIOL2210', 'Winter2015', 150, 'MWF'
 
 INSERT INTO Sections VALUES ('21741','A01', 'BIOL2300', 'Winter2015', 125, 'MWF', '9:30:00', '10:20:00', '200 Biological Science');
 
-INSERT INTO Sections VALUES ('11701','A01', 'BIOL2410', 'Fall2014', 75, 'MWF', '9:30:00', '10:20:00', '308 Biological Science');
-
 INSERT INTO Sections VALUES ('21744','A01', 'BIOL2500', 'Winter2015', 120, 'MWF', '12:30:00', '13:20:00', '204 Biological Science');
 INSERT INTO Sections VALUES ('11647','A01', 'BIOL2500', 'Fall2014', 150, 'TR', '13:00:00', '14:15:00', '202 Biological Science');
 
@@ -448,8 +443,6 @@ INSERT INTO Sections VALUES ('11706','A01', 'BIOL3360', 'Fall2014', 80, 'MWF', '
 
 INSERT INTO Sections VALUES ('21797','A01', 'BIOL3500', 'Winter2015', 75, 'MWF', '12:30:00', '13:20:00', '215 Buller');
 INSERT INTO Sections VALUES ('12271','A01', 'BIOL3500', 'Fall2014', 75, 'MWF', '9:30:00', '10:20:00', '308 Biological Science');
-
-INSERT INTO Sections VALUES ('12206','A01', 'BIOL4220', 'Fall2014', 50, 'TR', '11:30:00', '12:45:00', '325 Buller');
 
 INSERT INTO Sections VALUES ('23107','A01', 'BIOL4362', 'Winter2015', 50, 'TR', '13:00:00', '14:15:00', '318 Biological Science');
 
@@ -523,7 +516,7 @@ INSERT INTO Sections VALUES ('14034', 'A01', 'PHYS2380', 'Fall2014', 35, 'MWF', 
 INSERT INTO Sections VALUES ('14035', 'A01', 'PHYS2380', 'Winter2015', 35, 'MWF', '13:30:00', '14:20:00', '319 Allen');
 
 INSERT INTO Sections VALUES ('14036', 'A01', 'PHYS2390', 'Fall2014', 40, 'TR', '8:30:00', '9:45:00', '301 Biological Sciences');
-INSERT INTO Sections VALUES ('14037', 'A02', 'PHYS 2390', 'Fall2014', 30, 'TR', '10:00:00', '11:15:00', '330 Allen');
+INSERT INTO Sections VALUES ('14037', 'A02', 'PHYS2390', 'Fall2014', 30, 'TR', '10:00:00', '11:15:00', '330 Allen');
 
 INSERT INTO Sections VALUES ('14038', 'A01', 'PHYS1070', 'Winter2015', 100, 'MWF', '9:30:00', '10:20:00', '306 Buller');
 INSERT INTO Sections VALUES ('14039', 'A02', 'PHYS1070', 'Winter2015', 95, 'MWF', '13:30:00', '14:20:00', '306 Buller');
