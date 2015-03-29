@@ -30,6 +30,13 @@ else
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
 	   
+	   	<script>  
+	    	var otherInfo = ${otherInfo};  // get the session info 
+        
+        	console.log(otherInfo);
+        
+        </script>    	   
+	   
 	</head>
 	<body>
 
@@ -45,6 +52,7 @@ else
             <div class="topLeftFrame">
                 <p>
                     You have <span class="red">0</span> announcements <span class="red">0 </span>unread
+                
                 </p>
                 <p>
                     You have <span class="red">0 </span>messages <span class="red">0</span> appeals <span class="red">
