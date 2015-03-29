@@ -8,7 +8,8 @@ DROP TABLE IF EXISTS Teaches;
 DROP TABLE IF EXISTS Enrolled; 
 DROP TABLE IF EXISTS Sections;
 DROP TABLE IF EXISTS Prereqs; 
-DROP TABLE IF EXISTS Courses; 
+DROP TABLE IF EXISTS Courses;
+DROP TABLE IF EXISTS Terms;
 DROP TABLE IF EXISTS UserPrivs; 
 DROP TABLE IF EXISTS Users;
 
@@ -24,7 +25,12 @@ CREATE TABLE Users
 	maxCreditsPerTerm int,
     userType varchar(20)
 );
--- CREATE TABLE UserPrivs( userID int NOT NULL, userType varchar(20) NOT NULL, PRIMARY KEY(userID, userType), FOREIGN KEY(userID) REFERENCES Users(userID) );
+
+CREATE TABLE Terms
+(
+	termID varchar(20) PRIMARY KEY,
+	startDate date NOT NULL
+);
 CREATE TABLE Courses
 (
 	cID varchar(10) PRIMARY KEY, 
@@ -115,6 +121,13 @@ INSERT INTO Users VALUES (7, 'andrea','123456789', 'andrea@myumanitoba.ca','Andr
 INSERT INTO Users VALUES (8, 'craig', '987654321', 'craig@myumanitoba.ca','Craig', 'Stephenson', 'B.Sc. Mathematics (Major)', 15, 'student');
 INSERT INTO Users VALUES (9, 'thomas','0000', 'thomas@myumanitoba.ca','Thomas','Klassen','B.Sc. Biology (Major)', 15,'student');
 
+
+-- Must do this before sections and enrolled
+INSERT INTO Terms VALUES ('Fall2014', '2014-09-01');
+INSERT INTO Terms VALUES ('Winter2015', '2015-01-01');
+INSERT INTO Terms VALUES ('Spring2015', '2015-05-01');
+INSERT INTO Terms VALUES ('Fall2015', '2015-09-01');
+
 -- ***************START TO INSERT TO Courses TABLE****************************************************************************************
 -- Computer Science Courses:
 -- First Year Computer Science Courses:
@@ -202,7 +215,7 @@ INSERT INTO Courses VALUES ('PHYS3180', 'Stars', 3, 'Science', 'Physics and Astr
 INSERT INTO Courses VALUES ('PHYS3380', 'Quantum Physics 2', 3, 'Science', 'Physics and Astronomy', 'Focuses on solutions of the three-dimensional Schrodinger equation with special emphasis on one-electron atoms.', FALSE);
 INSERT INTO Courses VALUES ('PHYS3670', 'Classical Thermodynamics', 3, 'Science', 'Physics and Astronomy', 'An introduction to the laws of classical equilibrium thermodynamics and their applications.', FALSE);
 INSERT INTO Courses VALUES ('PHYS2490', 'Theoretical Physics 2', 3, 'Science', 'Physics and Astronomy', 'This course provides a continuation of the introduction to the mathematics required for both the Honours and Major programs in Physics and Astronomy.', FALSE);
-INSERT INTO Courses VALUES ('PHYS2380', 'Quantum Physics 1', 3, 'Science', 'Physics and Astronomy', 'Introduces the basic principles of quantum theory including cavity radiation and Planck\'s postulate, wave-particle duality, the Bohr model, and the Schrodinger theory.', FALSE);
+INSERT INTO Courses VALUES ('PHYS2380', 'Quantum Physics 1', 3, 'Science', 'Physics and Astronomy', 'Introduces the basic principles of quantum theory including cavity radiation and Plancks postulate, wave-particle duality, the Bohr model, and the Schrodinger theory.', FALSE);
 INSERT INTO Courses VALUES ('PHYS2390', 'Theoretical Physics 1', 3, 'Science', 'Physics and Astronomy', 'This course provides an introduction to the mathematics required for both the Honours and Major programs in Physics and Astronomy.', FALSE);
 INSERT INTO Courses VALUES ('PHYS1070', 'Physics 2 - Waves and Modern Physics', 3, 'Science', 'Physics and Astronomy', 'Learn about the mysterious quantum world, the basis of the latest nanotechnology, where particles are waves and waves are particles.', FALSE);
 INSERT INTO Courses VALUES ('PHYS1050', 'Physics 1 - Mechanics', 3, 'Science', 'Physics and Astronomy', 'The science of describing and explaining motion.', FALSE);
