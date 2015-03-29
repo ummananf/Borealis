@@ -13,7 +13,9 @@ import javax.servlet.http.HttpSession;
 
 import com.google.gson.JsonObject;
 
+import ca.objects.Enrollment;
 import ca.objects.User;
+import ca.persistence.EnrollmentModel;
 import ca.persistence.StudentModel;
 import ca.session.SessionGlobals;
 
@@ -43,10 +45,16 @@ public class MainServlet extends HttpServlet
 			
 			int winter2015CreditHours = StudentModel.getNumCreditHrsRegistered(userID, "Winter2015");
 			int fall2014CreditHours = StudentModel.getNumCreditHrsRegistered(userID, "Fall2014");
+			double gpa = StudentModel.getOverallGPA(userID);
+			double numCompleted = StudentModel.getNumCompletedEnrollments(userID);
+			double numTotalEnrolled = StudentModel.getNumTotalEnrollments(userID);
+			
 			
 			obj.addProperty("winter2015CreditHours", winter2015CreditHours);
 			obj.addProperty("fall2014CreditHours", fall2014CreditHours);
-			
+			obj.addProperty("gpa", gpa);
+			obj.addProperty("numCompleted", numCompleted);
+			obj.addProperty("numTotalEnrolled",numTotalEnrolled);
 			
 			
 			/*obj.addProperty("numCoursesRegistered", numCoursesRegistered);*/

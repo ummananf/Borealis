@@ -100,5 +100,45 @@ public class StudentModel
 
 		return enrollments;
 	}
-
+	
+	public static double getOverallGPA(int studentID)
+	{
+		double gpa = 0.0;
+		
+		ArrayList<Enrollment> enrollments = getCompletedEnrollments(studentID);
+		
+		if(enrollments.size()>0)
+		{
+			for(int i = 0; i < enrollments.size();i++)
+			{
+				gpa +=enrollments.get(i).getGrade();
+			}
+			gpa = gpa/enrollments.size();
+		}
+		return gpa;
+	}
+	
+	
+	public static int getNumCompletedEnrollments(int studentID)
+	{
+		int numCompleted = 0;
+		
+		ArrayList<Enrollment> enrollments = getCompletedEnrollments(studentID);
+		
+		numCompleted = enrollments.size();
+		
+		return numCompleted;
+	}
+	
+	public static int getNumTotalEnrollments(int studentID)
+	{
+		int numTotal = 0;
+		
+		ArrayList<Enrollment> enrollments = EnrollmentModel.getEnrollmentRecord(studentID);
+		
+		numTotal = enrollments.size();
+		
+		return numTotal;
+	}
+	
 }

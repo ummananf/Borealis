@@ -40,14 +40,11 @@
         <div class="dh2">
             <div class="topLeftFrame">
                 <p>
-              You have <span class="red">0</span> exams.
+              Your GPA is<span class="red" id="gpa"></span> .
               </p>
                 <p>
-                   <font color="#FFFF33"> You passed</font> <span class="red">0 </span>courses.&nbsp; There are <span class="red">13</span> in total. 
+                   <font color="#FFFF33"> You passed</font> <span class="red" id="numCompleted"></span>courses.&nbsp; There are <span class="red" id="numTotalEnrolled"></span> courses you have enrolled in history. 
                 </p>
-                <p>
-              <font color="#FFFF00">You need to buy </font> <span class="red">0 </span>books.
-              </p>
                 <div class="btright">
                 </div>
             </div>
@@ -59,7 +56,7 @@
         <div class="dh4">
             <div class="topLeftFrame">
                 <p>
-                    You should pay $<span class="blue">7800.00</span> ，paid $<span class="green">3700.00</span></p>
+                    You should pay $<span class="blue">7800.00</span> paid $<span class="green">3700.00</span></p>
                     <p>
                     owned $ <span class="red">4100.00</span></p>
                 <p>
@@ -78,6 +75,12 @@
 	    		otherInfo.winter2015CreditHours;
 	    	document.getElementById("fall2014").innerHTML = 
 	    		otherInfo.fall2014CreditHours;
+	    	document.getElementById("gpa").innerHTML = 
+	    		otherInfo.gpa;
+	    	document.getElementById("numCompleted").innerHTML = 
+	    		otherInfo.numCompleted;
+	    	document.getElementById("numTotalEnrolled").innerHTML = 
+	    		otherInfo.numTotalEnrolled;
 	    		
       </script> 
 </body>
