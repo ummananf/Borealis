@@ -109,6 +109,9 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
 }
 
 - (IBAction)categoryChangedSegment:(id)sender {
+    
+    [tableData removeAllObjects];
+    
     currentCategory = [_categoryControl titleForSegmentAtIndex:_categoryControl.selectedSegmentIndex];
     NSString *post =[[NSString alloc] initWithFormat:@"termName=%@&categoryName=%@", currentTerm, currentCategory];
     NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/registerCourses"];
@@ -137,7 +140,7 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
         cell.courseId.text = [key valueForKey:@"cID"];
         cell.crn.text = [key valueForKey:@"crn"];
         cell.section.text = [key valueForKey:@"sectID"];
-        cell.capacity.text = [key valueForKey:@"capacity"];
+        cell.capacity.text = [NSString stringWithFormat:@"%@",[key valueForKey:@"maxSize"]];
         cell.days.text = [key valueForKey:@"days"];
         cell.startTime.text = [key valueForKey:@"startTime"];
         cell.endTime.text = [key valueForKey:@"endTime"];
@@ -170,7 +173,6 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     CourseCell *cell = (CourseCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-  //      cell = [[CourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
         cell = [tableData objectAtIndex:indexPath.row];
     }
     
