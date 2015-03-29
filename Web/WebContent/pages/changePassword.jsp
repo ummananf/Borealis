@@ -32,7 +32,7 @@
     </tr>
     <tr align="center">
         <th style="width:20%; text-align:left;">new :</th>
-        <td style="width:70%; text-align:left;"><input id="txtNewPwd" value="" type="password" class="input_2 txtinput1" />&nbsp;&nbsp;6~16 characters</td>
+        <td style="width:70%; text-align:left;"><input id="txtNewPwd" value="" type="password" class="input_2 txtinput1" />&nbsp;&nbsp;4~16 characters</td>
     </tr>
     <tr align="center">
         <th style="width:20%; text-align:left;">confirm:</th>
