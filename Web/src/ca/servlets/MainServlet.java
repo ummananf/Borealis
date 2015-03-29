@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ca.session.SessionGlobals;
 
@@ -21,6 +22,19 @@ public class MainServlet extends HttpServlet
 		if (req.getSession().getAttribute(SessionGlobals.CURRENT_SESSION_USER) != null) 
 		{
 			RequestDispatcher view = req.getRequestDispatcher("main.jsp");
+			
+			/****start of getting some JSON object to render the main page***/
+			
+			
+			// activate the session through request
+			HttpSession session = req.getSession(true);
+			
+			
+			
+			
+			
+			
+			/***end of getting some JSON object to render the main page***/
 			view.forward(req, res);
 		} 
 		else 

@@ -17,9 +17,6 @@ else
  User user = (User)session.getAttribute("CURRENT_SESSION_USER");
  String userName = user.getUsername();
  String e_mail = user.getEmail();
- 
- System.out.println(userName);  // This is for testing purpose only
- System.out.println(e_mail);  // This is for testing purpose only
 }
 %>
 
@@ -52,7 +49,7 @@ else
                 <p>
                     You have <span class="red">0 </span>messages <span class="red">0</span> appeals <span class="red">
                         0 </span>opinions
-</p>
+				</p>
                 <p>&nbsp; </p>
                 <div class="btright">
 <!--                     <a href="messages.jsp">
