@@ -28,7 +28,7 @@ CREATE TABLE Users
 CREATE TABLE Courses
 (
 	cID varchar(10) PRIMARY KEY, 
-	cName varchar(50), 
+	cName varchar(70), 
 	creditHrs smallint,
 	faculty varchar(50),
 	department varchar(50),
@@ -82,12 +82,12 @@ CREATE TABLE Degrees
 	term varchar(50) NOT NULL,
 	degProgram varchar(50) NOT NULL,
 	degOption varchar(50) NOT NULL,
-	degName varchar(50) PRIMARY KEY,
+	degName varchar(60) PRIMARY KEY,
 	totalCreditHrs int
 );
 CREATE TABLE DegreeCourses
 (
-	degName varchar(50) NOT NULL,
+	degName varchar(60) NOT NULL,
 	cID varchar(10) NOT NULL,
 	PRIMARY KEY(degName, cID),
 	FOREIGN KEY(degName) REFERENCES Degrees(degName) ON DELETE CASCADE,
@@ -96,7 +96,7 @@ CREATE TABLE DegreeCourses
 CREATE TABLE DegreeChoice
 (
 	userID int NOT NULL,
-	degName varchar(50) NOT NULL,
+	degName varchar(60) NOT NULL,
 	PRIMARY KEY(userID, degName),
 	FOREIGN KEY(userID) REFERENCES Users(userID),
 	FOREIGN KEY(degName) REFERENCES Degrees(degName)
@@ -105,7 +105,7 @@ CREATE TABLE DegreeChoice
 -- Create Users
 INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'John', 'Johnson', NULL, 0, 'admin');
 INSERT INTO Users VALUES (7651245, 'bob', '4350', 'bob@school.ca', 'Bob', 'Carslon','B.Sc. Computer Science (Major)', 15, 'student');
-INSERT INTO Users VALUES (7651785, 'alice', '4350', 'alice@umanitoba.ca', 'Alice', 'Queen','B.Sc. Computer Science (Honours)' 15, 'student');
+INSERT INTO Users VALUES (7651785, 'alice', '4350', 'alice@umanitoba.ca', 'Alice', 'Queen','B.Sc. Computer Science (Honours)', 15, 'student');
 INSERT INTO Users VALUES (6812459, 'frank', '4350', 'frank@umanitoba.ca', 'Frank', 'Frank','B.Sc. Computer Science (Honours)', 15, 'student');
 INSERT INTO Users VALUES (3, 'jason', '123456', 'jason@myumanitoba.ca','Jason', 'King', 'B.Sc. Astronomy (Major)', 15, 'student');
 INSERT INTO Users VALUES (4, 'francis','654321', 'frank@myumanitoba.ca','Francis','King','B.Sc. Chemistry (Major)', 15,'student');
@@ -241,7 +241,6 @@ INSERT INTO Prereqs VALUES ('COMP3430', 'COMP4430', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2140', 'COMP3720', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2280', 'COMP3720', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2140', 'COMP3490', 2.0);
-INSERT INTO Prereqs VALUES ('COMP2190', 'COMP3490', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2140', 'COMP3380', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2280', 'COMP3370', 2.0);
 INSERT INTO Prereqs VALUES ('COMP2140', 'COMP3190', 2.0);
@@ -279,8 +278,6 @@ INSERT INTO Prereqs VALUES ('BIOL2300', 'BIOL3360', 2.0);
 INSERT INTO Prereqs VALUES ('BIOL2210', 'BIOL3360', 2.0);
 INSERT INTO Prereqs VALUES ('BIOL2500', 'BIOL3500', 2.0);
 INSERT INTO Prereqs VALUES ('BIOL3360', 'BIOL4362', 2.0);
-INSERT INTO Prereqs VALUES ('BIOL2410', 'BIOL4470', 2.0);
-INSERT INTO Prereqs VALUES ('BIOL2300', 'BIOL4220', 2.0);
 
 -- Environmental Science Prereqs:
 INSERT INTO Prereqs VALUES ('ENVR2000', 'ENVR4110', 2.0);
@@ -439,8 +436,6 @@ INSERT INTO Sections VALUES ('21780','A01', 'BIOL2210', 'Winter2015', 150, 'MWF'
 
 INSERT INTO Sections VALUES ('21741','A01', 'BIOL2300', 'Winter2015', 125, 'MWF', '9:30:00', '10:20:00', '200 Biological Science');
 
-INSERT INTO Sections VALUES ('11701','A01', 'BIOL2410', 'Fall2014', 75, 'MWF', '9:30:00', '10:20:00', '308 Biological Science');
-
 INSERT INTO Sections VALUES ('21744','A01', 'BIOL2500', 'Winter2015', 120, 'MWF', '12:30:00', '13:20:00', '204 Biological Science');
 INSERT INTO Sections VALUES ('11647','A01', 'BIOL2500', 'Fall2014', 150, 'TR', '13:00:00', '14:15:00', '202 Biological Science');
 
@@ -448,8 +443,6 @@ INSERT INTO Sections VALUES ('11706','A01', 'BIOL3360', 'Fall2014', 80, 'MWF', '
 
 INSERT INTO Sections VALUES ('21797','A01', 'BIOL3500', 'Winter2015', 75, 'MWF', '12:30:00', '13:20:00', '215 Buller');
 INSERT INTO Sections VALUES ('12271','A01', 'BIOL3500', 'Fall2014', 75, 'MWF', '9:30:00', '10:20:00', '308 Biological Science');
-
-INSERT INTO Sections VALUES ('12206','A01', 'BIOL4220', 'Fall2014', 50, 'TR', '11:30:00', '12:45:00', '325 Buller');
 
 INSERT INTO Sections VALUES ('23107','A01', 'BIOL4362', 'Winter2015', 50, 'TR', '13:00:00', '14:15:00', '318 Biological Science');
 
@@ -523,7 +516,7 @@ INSERT INTO Sections VALUES ('14034', 'A01', 'PHYS2380', 'Fall2014', 35, 'MWF', 
 INSERT INTO Sections VALUES ('14035', 'A01', 'PHYS2380', 'Winter2015', 35, 'MWF', '13:30:00', '14:20:00', '319 Allen');
 
 INSERT INTO Sections VALUES ('14036', 'A01', 'PHYS2390', 'Fall2014', 40, 'TR', '8:30:00', '9:45:00', '301 Biological Sciences');
-INSERT INTO Sections VALUES ('14037', 'A02', 'PHYS 2390', 'Fall2014', 30, 'TR', '10:00:00', '11:15:00', '330 Allen');
+INSERT INTO Sections VALUES ('14037', 'A02', 'PHYS2390', 'Fall2014', 30, 'TR', '10:00:00', '11:15:00', '330 Allen');
 
 INSERT INTO Sections VALUES ('14038', 'A01', 'PHYS1070', 'Winter2015', 100, 'MWF', '9:30:00', '10:20:00', '306 Buller');
 INSERT INTO Sections VALUES ('14039', 'A02', 'PHYS1070', 'Winter2015', 95, 'MWF', '13:30:00', '14:20:00', '306 Buller');
@@ -607,7 +600,7 @@ INSERT INTO Enrolled VALUES (9, '20245', -1.0);
 -- Insert Degrees
 INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
 -- INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Honours', 'B.Sc. Computer Science (Honours)', 120);
--- INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Co-op', 'B.Sc. Computer Science (Co-op)', 120);
+INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Co-op', 'B.Sc. Computer Science (Co-op)', 120);
 -- INSERT INTO Degrees VALUES ('Fall2014', 'Environmental Science', 'Major', 'B.Sc. Environment (Major)', 90);
 INSERT INTO Degrees VALUES ('Fall2014', 'Environmental Science', 'Co-op', 'B.Sc. Environment (Co-op)', 90);
 -- INSERT INTO Degrees VALUES ('Fall2014', 'Biology', 'Major', 'B.Sc. Biology (Major)', 120);
@@ -616,7 +609,7 @@ INSERT INTO Degrees VALUES ('Fall2014', 'Biology', 'Honours', 'B.Sc. Biology (Ho
 INSERT INTO Degrees VALUES ('Fall2014', 'Chemistry', 'Honours', 'B.Sc. Chemistry (Honours)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Mathematics', 'Major', 'B.Sc. Mathematics (Major)', 120);
 -- INSERT INTO Degrees VALUES ('Fall2014', 'Mathematics', 'Honours', 'B.Sc. Mathematics (Honours)', 120);
--- INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Major', 'B.Sc. Physics (Major)', 120);
+INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Major', 'B.Sc. Physics (Major)', 120);
 -- INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Honours', 'B.Sc. Physics (Honours)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Major', 'B.Sc. Astronomy (Major)', 120);
 
