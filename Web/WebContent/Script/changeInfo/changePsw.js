@@ -40,7 +40,7 @@
     	          newPassword: newPwd
     	        },
     	        function(data,status){
-    	            alert("Data: " + data + "\nStatus: " + status);
+    	        	$.jBox.tip(data);
     	        });
     	});
     }

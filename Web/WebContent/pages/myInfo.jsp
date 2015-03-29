@@ -11,6 +11,13 @@
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	    <script src="Script/extractInfo/personalInfo.js" type="text/javascript"></script>
+	    <script src="Script/changeInfo/changePersonalInfo.js"></script>
+	    <script src="Script/libs/jquery-1.4.2.min.js"></script>
+    	<script src="Script/libs/jquery.jBox-2.3.min.js"></script>
+    	<script src="Script/frontEndChecking/validateName.js"></script>
+    	<script src="Script/frontEndChecking/validateEmail.js"></script>
+    	<link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" /> 
+	    <link href="Style/buttonStyle.css" rel="stylesheet" type="text/css" />
 	</head>
 <body>
 
@@ -39,8 +46,10 @@
         showPersonalInfo(myInfo);
     });
 
-</script>	
-
+</script>
+<div style="margin:0 auto;width:200px;">	
+<button class='btn btn-primary' type='button' id='' onclick="changePersonalInfo()">Change Info</button>
+      </div>
 </div> 
 <jsp:include page="template/footer.jsp" />
 </body>

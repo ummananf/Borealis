@@ -6,8 +6,9 @@
 
     <script src="Script/libs/jquery-1.4.2.min.js"></script>
     <script src="Script/libs/jquery.jBox-2.3.min.js"></script> 
+    <link href="Script/jBox/Skins/Blue/jbox.css" rel="stylesheet" type="text/css" />
      
-<script type="text/javascript" src="Script/changePassword/changePsw.js"></script>
+<script type="text/javascript" src="Script/changeInfo/changePsw.js"></script>
 
 <style type="text/css">
     .txtinput1{width:180px;}
