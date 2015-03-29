@@ -29,5 +29,5 @@
  	        });
          });
 	}
-		 $.jBox(html, { title: "Change Info", submit: submit });
+		 $.jBox(html, { title: "Change Info", buttons:{'ok':1}, submit:submit});
  }
