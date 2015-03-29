@@ -43,7 +43,6 @@ public class UserModel
 		
 		String dbPassword = null;
 		String query = "SELECT password FROM Users WHERE userID = '"+userID+"';";
-System.out.println(query);
 		
 		try {
 			stmt = connection.createStatement();
@@ -111,5 +110,19 @@ System.out.println(query);
 		}
 
 		return user;
+	}
+	
+	public static boolean updateUserName(int userID, String newName)
+	{
+		String query = "UPDATE Users SET username = '"+newName+"' WHERE userID = '"+userID+"';";
+		
+		return DB.execute(query);
+	}
+	
+	public static boolean updateUserEmail(int userID, String newEmail)
+	{
+		String query = "UPDATE Users SET email = '"+newEmail+"' WHERE userID = '"+userID+"';";
+		
+		return DB.execute(query);
 	}
 }
