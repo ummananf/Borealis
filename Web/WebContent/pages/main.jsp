@@ -1,24 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
 <%@ page session="true" %>
-<%@ page import="ca.objects.User" %>
-
-<% 
-if (session == null)  
-{
- System.out.println("session is null");
- String address = "index.jsp";
- RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(address);
- dispatcher.forward(request,response);
-}
-else
-{
-  // the user *does* have a valid session.
-  // do whatever you need to for logged in users.
- User user = (User)session.getAttribute("CURRENT_SESSION_USER");
- String userName = user.getUsername();
- String e_mail = user.getEmail();
-}
-%>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -28,15 +9,7 @@ else
 		<title>Borealis</title>
 		<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
-	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
-	   
-	   	<script>  
-	    	var otherInfo = ${otherInfo};  // get the session info 
-        
-        	console.log(otherInfo);
-        
-        </script>    	   
-	   
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>     	  
 	</head>
 	<body>
 
@@ -49,14 +22,13 @@ else
 
     <div class="innerMainFrame">
         <div class="innerMainFrameTopLeft" style="margin: 0 27px 15px 0;">
-            <div class="topLeftFrame">
+            <div class="topLeftFrame" id="askProfessor">
                 <p>
-                    You have <span class="red">0</span> announcements <span class="red">0 </span>unread
-                
+                    You have registered <span class="red" id="winter2015"> </span> credit hours in winter 2015 
                 </p>
+                
                 <p>
-                    You have <span class="red">0 </span>messages <span class="red">0</span> appeals <span class="red">
-                        0 </span>opinions
+                    You have registered <span class="red" id="fall2014"> </span> credit hours in fall 2014  
 				</p>
                 <p>&nbsp; </p>
                 <div class="btright">
@@ -97,5 +69,16 @@ else
         </div>
     </div>
 <jsp:include page="template/footer.jsp" />
+
+
+	<script>  
+	    	var otherInfo = ${otherInfo};  // get the session info
+
+	    	document.getElementById("winter2015").innerHTML =
+	    		otherInfo.winter2015CreditHours;
+	    	document.getElementById("fall2014").innerHTML = 
+	    		otherInfo.fall2014CreditHours;
+	    		
+      </script> 
 </body>
 </html>
