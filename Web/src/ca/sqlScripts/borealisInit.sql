@@ -428,143 +428,143 @@ INSERT INTO Sections VALUES ('10330','A01', 'COMP4380', 'Winter2015', 50, 'TR', 
 INSERT INTO Sections VALUES ('10340','A01', 'COMP4430', 'Winter2015', 36, 'MW', '16:30:00', '17:45:00', 'E2-350 EITC');
 
 -- Biology Sections:
-INSERT INTO Sections VALUES ('10248','A01', 'BIOL1020', 'Fall2014', 150, 'MWF', '8:30:00', '9:20:00', 'E2-350 EITC');
-INSERT INTO Sections VALUES ('10249','A02', 'BIOL1020', 'Fall2014', 150, 'MWF', '9:30:00', '10:20:00', 'E2-350 EITC');
-INSERT INTO Sections VALUES ('10253','A03', 'BIOL1020', 'Fall2014', 150, 'MWF', '10:30:00', '11:20:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('10248','A01', 'BIOL1020', 'Fall2014', 150, 'MWF', '8:30:00', '9:20:00', '205 Armes');
+INSERT INTO Sections VALUES ('10249','A02', 'BIOL1020', 'Fall2014', 150, 'MWF', '9:30:00', '10:20:00', '204 Armes');
+INSERT INTO Sections VALUES ('10253','A03', 'BIOL1020', 'Fall2014', 150, 'MWF', '10:30:00', '11:20:00', '200 Armes');
 
-INSERT INTO Sections VALUES ('20245','A01', 'BIOL1030', 'Winter2015', 150, 'MWF', '8:30:00', '9:20:00', 'E2-350 EITC');
-INSERT INTO Sections VALUES ('20247','A02', 'BIOL1030', 'Winter2015', 150, 'MWF', '9:30:00', '10:20:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('20245','A01', 'BIOL1030', 'Winter2015', 150, 'MWF', '8:30:00', '9:20:00', '100 Fletcher Argue');
+INSERT INTO Sections VALUES ('20247','A02', 'BIOL1030', 'Winter2015', 150, 'MWF', '9:30:00', '10:20:00', '315 Biological Science');
 
-INSERT INTO Sections VALUES ('21780','A01', 'BIOL2210', 'Winter2015', 150, 'MWF', '12:30:00', '13:20:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('21780','A01', 'BIOL2210', 'Winter2015', 150, 'MWF', '12:30:00', '13:20:00', '201 Armes');
 
-INSERT INTO Sections VALUES ('21741','A01', 'BIOL2300', 'Winter2015', 125, 'MWF', '9:30:00', '10:20:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('21741','A01', 'BIOL2300', 'Winter2015', 125, 'MWF', '9:30:00', '10:20:00', '200 Biological Science');
 
-INSERT INTO Sections VALUES ('11701','A01', 'BIOL2410', 'Fall2014', 75, 'MWF', '9:30:00', '10:20:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('11701','A01', 'BIOL2410', 'Fall2014', 75, 'MWF', '9:30:00', '10:20:00', '308 Biological Science');
 
-INSERT INTO Sections VALUES ('21744','A01', 'BIOL2500', 'Winter2015', 120, 'MWF', '12:30:00', '13:20:00', 'E2-350 EITC');
-INSERT INTO Sections VALUES ('11647','A01', 'BIOL2500', 'Fall2014', 150, 'TR', '13:00:00', '14:15:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('21744','A01', 'BIOL2500', 'Winter2015', 120, 'MWF', '12:30:00', '13:20:00', '204 Biological Science');
+INSERT INTO Sections VALUES ('11647','A01', 'BIOL2500', 'Fall2014', 150, 'TR', '13:00:00', '14:15:00', '202 Biological Science');
 
-INSERT INTO Sections VALUES ('11706','A01', 'BIOL3360', 'Fall2014', 80, 'MWF', '10:30:00', '11:20:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('11706','A01', 'BIOL3360', 'Fall2014', 80, 'MWF', '10:30:00', '11:20:00', '305 Biological Science');
 
-INSERT INTO Sections VALUES ('21797','A01', 'BIOL3500', 'Winter2015', 75, 'MWF', '12:30:00', '13:20:00', 'E2-350 EITC');
-INSERT INTO Sections VALUES ('12271','A01', 'BIOL3500', 'Fall2014', 75, 'MWF', '9:30:00', '10:20:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('21797','A01', 'BIOL3500', 'Winter2015', 75, 'MWF', '12:30:00', '13:20:00', '215 Buller');
+INSERT INTO Sections VALUES ('12271','A01', 'BIOL3500', 'Fall2014', 75, 'MWF', '9:30:00', '10:20:00', '308 Biological Science');
 
-INSERT INTO Sections VALUES ('12206','A01', 'BIOL4220', 'Fall2014', 50, 'TR', '11:30:00', '12:45:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('12206','A01', 'BIOL4220', 'Fall2014', 50, 'TR', '11:30:00', '12:45:00', '325 Buller');
 
-INSERT INTO Sections VALUES ('23107','A01', 'BIOL4362', 'Winter2015', 50, 'TR', '13:00:00', '14:15:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('23107','A01', 'BIOL4362', 'Winter2015', 50, 'TR', '13:00:00', '14:15:00', '318 Biological Science');
 
-INSERT INTO Sections VALUES ('22503','A01', 'BIOL4470', 'Winter2015', 45, 'TR', '10:00:00', '11:15:00', 'E2-350 EITC');
+INSERT INTO Sections VALUES ('22503','A01', 'BIOL4470', 'Winter2015', 45, 'TR', '10:00:00', '11:15:00', '318 Biological Science');
 
 -- Environmental Science Sections:
-INSERT INTO Sections VALUES ('14000', 'a01', 'ENVR4110', 'Fall2014', 35, 'mwf', '10:30:00', '11:20:00', '215 Wallace');
+INSERT INTO Sections VALUES ('14000', 'A01', 'ENVR4110', 'Fall2014', 35, 'MWF', '10:30:00', '11:20:00', '215 Wallace');
 
-INSERT INTO Sections VALUES ('14001', 'a01', 'ENVR3160', 'Winter2015', 35, 'tr', '11:30:00', '12:45:00', '215 Wallace');
+INSERT INTO Sections VALUES ('14001', 'A01', 'ENVR3160', 'Winter2015', 35, 'TR', '11:30:00', '12:45:00', '215 Wallace');
 
-INSERT INTO Sections VALUES ('14002', 'a01', 'ENVR2270', 'Fall2014', 45, 'tr', '14:30:00', '15:45:00', '218 Wallace');
+INSERT INTO Sections VALUES ('14002', 'A01', 'ENVR2270', 'Fall2014', 45, 'TR', '14:30:00', '15:45:00', '218 Wallace');
 
-INSERT INTO Sections VALUES ('14003', 'a01', 'ENVR2000', 'Winter2015', 150, 'mwf', '12:30:00', '13:20:00', '221 Wallace');
+INSERT INTO Sections VALUES ('14003', 'A01', 'ENVR2000', 'Winter2015', 150, 'MWF', '12:30:00', '13:20:00', '221 Wallace');
 
-INSERT INTO Sections VALUES ('14004', 'a01', 'ENVR1000', 'Fall2014', 150, 'mwf', '10:30:00', '11:20:00', '223 Wallace');
-INSERT INTO Sections VALUES ('14005', 'a02', 'ENVR1000', 'Fall2014', 150, 'tr', '13:00:00', '14:15:00', '223 Wallace');
+INSERT INTO Sections VALUES ('14004', 'A01', 'ENVR1000', 'Fall2014', 150, 'MWF', '10:30:00', '11:20:00', '223 Wallace');
+INSERT INTO Sections VALUES ('14005', 'A02', 'ENVR1000', 'Fall2014', 150, 'TR', '13:00:00', '14:15:00', '223 Wallace');
 
 -- Math Sections:
-INSERT INTO Sections VALUES ('14043', 'a01', 'MATH4250', 'Fall2014', 15, 'tr', '13:00:00', '14:15:00', '318 Machray Hall');
+INSERT INTO Sections VALUES ('14043', 'A01', 'MATH4250', 'Fall2014', 15, 'TR', '13:00:00', '14:15:00', '318 Machray Hall');
 
-INSERT INTO Sections VALUES ('14044', 'a01', 'MATH4430', 'Winter2015', 25, 'tr', '13:00:00', '14:15:00', '124 Machray Hall');
+INSERT INTO Sections VALUES ('14044', 'A01', 'MATH4430', 'Winter2015', 25, 'TR', '13:00:00', '14:15:00', '124 Machray Hall');
 
-INSERT INTO Sections VALUES ('14045', 'a01', 'MATH4810', 'Fall2014', 20, 'mwf', '14:30:00', '15:20:00', '316 Machray Hall');
+INSERT INTO Sections VALUES ('14045', 'A01', 'MATH4810', 'Fall2014', 20, 'MWF', '14:30:00', '15:20:00', '316 Machray Hall');
 
-INSERT INTO Sections VALUES ('14046', 'a01', 'MATH3350', 'Fall2014', 14, 'mwf', '11:30:00', '12:20:00', '415 Machray Hall');
+INSERT INTO Sections VALUES ('14046', 'A01', 'MATH3350', 'Fall2014', 14, 'MWF', '11:30:00', '12:20:00', '415 Machray Hall');
 
-INSERT INTO Sections VALUES ('14047', 'a01', 'MATH3810', 'Winter2015', 25, 'mwf', '09:30:00', '10:20:00', '415 Machray Hall');
+INSERT INTO Sections VALUES ('14047', 'A01', 'MATH3810', 'Winter2015', 25, 'MWF', '9:30:00', '10:20:00', '415 Machray Hall');
 
-INSERT INTO Sections VALUES ('14048', 'a01', 'MATH3800', 'Fall2014', 25, 'tr', '14:30:00', '15:45:00', '124 Machray Hall');
-INSERT INTO Sections VALUES ('14049', 'a01', 'MATH3800', 'Winter2015', 25, 'tr', '14:30:00', '15:45:00', '124 Machray Hall');
+INSERT INTO Sections VALUES ('14048', 'A01', 'MATH3800', 'Fall2014', 25, 'TR', '14:30:00', '15:45:00', '124 Machray Hall');
+INSERT INTO Sections VALUES ('14049', 'A01', 'MATH3800', 'Winter2015', 25, 'TR', '14:30:00', '15:45:00', '124 Machray Hall');
 
-INSERT INTO Sections VALUES ('14050', 'a01', 'MATH2500', 'Fall2014', 70, 'mwf', '12:30:00', '13:20:00', '315 Buller');
-INSERT INTO Sections VALUES ('14051', 'a01', 'MATH2500', 'Winter2015', 70, 'mwf', '11:30:00', '12:20:00', '315 Buller');
+INSERT INTO Sections VALUES ('14050', 'A01', 'MATH2500', 'Fall2014', 70, 'MWF', '12:30:00', '13:20:00', '315 Buller');
+INSERT INTO Sections VALUES ('14051', 'A01', 'MATH2500', 'Winter2015', 70, 'MWF', '11:30:00', '12:20:00', '315 Buller');
 
-INSERT INTO Sections VALUES ('14053', 'a01', 'MATH2352', 'Fall2014', 30, 'tr', '08:30:00', '09:45:00', '316 Machray Hall');
-INSERT INTO Sections VALUES ('14054', 'a02', 'MATH2352', 'Fall2014', 30, 'mwf', '10:30:00', '11:20:00', '316 Machray Hall');
+INSERT INTO Sections VALUES ('14053', 'A01', 'MATH2352', 'Fall2014', 30, 'TR', '0:30:00', '9:45:00', '316 Machray Hall');
+INSERT INTO Sections VALUES ('14054', 'A02', 'MATH2352', 'Fall2014', 30, 'MWF', '10:30:00', '11:20:00', '316 Machray Hall');
 
-INSERT INTO Sections VALUES ('14055', 'a01', 'MATH2750', 'Fall2014', 25, 'mwf', '10:30:00', '11:20:00', '415 Machray Hall');
+INSERT INTO Sections VALUES ('14055', 'A01', 'MATH2750', 'Fall2014', 25, 'MWF', '10:30:00', '11:20:00', '415 Machray Hall');
 
-INSERT INTO Sections VALUES ('14056', 'a01', 'MATH2800', 'Winter2015', 65, 'mwf', '12:30:00', '13:20:00', '218 Wallace');
+INSERT INTO Sections VALUES ('14056', 'A01', 'MATH2800', 'Winter2015', 65, 'MWF', '12:30:00', '13:20:00', '218 Wallace');
 
-INSERT INTO Sections VALUES ('14057', 'a01', 'MATH1300', 'Fall2014', 140, 'mwf', '10:30:00', '11:20:00', '204 Armes');
-INSERT INTO Sections VALUES ('14058', 'a02', 'MATH1300', 'Fall2014', 140, 'tr', '10:00:00', '11:15:00', '208 Armes');
-INSERT INTO Sections VALUES ('14059', 'a01', 'MATH1300', 'Winter2015', 140, 'mwf', '13:30:00', '14:20:00', '204 Armes');
+INSERT INTO Sections VALUES ('14057', 'A01', 'MATH1300', 'Fall2014', 140, 'MWF', '10:30:00', '11:20:00', '204 Armes');
+INSERT INTO Sections VALUES ('14058', 'A02', 'MATH1300', 'Fall2014', 140, 'TR', '10:00:00', '11:15:00', '208 Armes');
+INSERT INTO Sections VALUES ('14059', 'A01', 'MATH1300', 'Winter2015', 140, 'MWF', '13:30:00', '14:20:00', '204 Armes');
 
-INSERT INTO Sections VALUES ('14060', 'a01', 'MATH1700', 'Winter2015', 200, 'mwf', '09:30:00', '10:20:00', '231 Isbister');
-INSERT INTO Sections VALUES ('14061', 'a02', 'MATH1700', 'Winter2015', 200, 'tr', '13:00:00', '14:15:00', '100 Fletcher Argue');
+INSERT INTO Sections VALUES ('14060', 'A01', 'MATH1700', 'Winter2015', 200, 'MWF', '9:30:00', '10:20:00', '231 Isbister');
+INSERT INTO Sections VALUES ('14061', 'A02', 'MATH1700', 'Winter2015', 200, 'TR', '13:00:00', '14:15:00', '100 Fletcher Argue');
 
-INSERT INTO Sections VALUES ('14062', 'a01', 'MATH1500', 'Fall2014', 90, 'mwf', '10:30:00', '11:20:00', '118 St. John\'s');
-INSERT INTO Sections VALUES ('14063', 'a02', 'MATH1500', 'Fall2014', 120, 'mwf', '09:30:00', '10:20:00', '201 Armes');
-INSERT INTO Sections VALUES ('14064', 'a01', 'MATH1500', 'Winter2015', 140, 'tr', '08:30:00', '09:45:00', '208 Armes');
+INSERT INTO Sections VALUES ('14062', 'A01', 'MATH1500', 'Fall2014', 90, 'MWF', '10:30:00', '11:20:00', '118 St. Johns');
+INSERT INTO Sections VALUES ('14063', 'A02', 'MATH1500', 'Fall2014', 120, 'MWF', '9:30:00', '10:20:00', '201 Armes');
+INSERT INTO Sections VALUES ('14064', 'A01', 'MATH1500', 'Winter2015', 140, 'TR', '8:30:00', '9:45:00', '208 Armes');
 
--- Physics & Astronomy Sections:
-INSERT INTO Sections VALUES ('14026', 'a01', 'PHYS4230', 'Fall2014', 8, 'mwf', '10:30:00', '11:20:00', '321 Allen');
+-- Physics & AsTRonomy Sections:
+INSERT INTO Sections VALUES ('14026', 'A01', 'PHYS4230', 'Fall2014', 8, 'MWF', '10:30:00', '11:20:00', '321 Allen');
 
-INSERT INTO Sections VALUES ('14027', 'a01', 'PHYS4300', 'Winter2015', 15, 'tr', '11:30:00', '12:45:00', '500 Machray Hall');
+INSERT INTO Sections VALUES ('14027', 'A01', 'PHYS4300', 'Winter2015', 15, 'TR', '11:30:00', '12:45:00', '500 Machray Hall');
 
-INSERT INTO Sections VALUES ('14028', 'a01', 'PHYS4390', 'Fall2014', 16, 'mwf', '08:30:00', '09:20:00', '319 Allen');
+INSERT INTO Sections VALUES ('14028', 'A01', 'PHYS4390', 'Fall2014', 16, 'MWF', '8:30:00', '9:20:00', '319 Allen');
 
-INSERT INTO Sections VALUES ('14029', 'a01', 'PHYS4510', 'Winter2015', 15, 'tr', '13:00:00', '14:15:00', '319 Allen');
+INSERT INTO Sections VALUES ('14029', 'A01', 'PHYS4510', 'Winter2015', 15, 'TR', '13:00:00', '14:15:00', '319 Allen');
 
-INSERT INTO Sections VALUES ('14030', 'a01', 'PHYS3180', 'Fall2014', 38, 'tr', '11:30:00', '12:45:00', '330 Allen');
+INSERT INTO Sections VALUES ('14030', 'A01', 'PHYS3180', 'Fall2014', 38, 'TR', '11:30:00', '12:45:00', '330 Allen');
 
-INSERT INTO Sections VALUES ('14031', 'a01', 'PHYS3380', 'Winter2015', 25, 'mwf', '08:30:00', '09:20:00', '330 Allen');
+INSERT INTO Sections VALUES ('14031', 'A01', 'PHYS3380', 'Winter2015', 25, 'MWF', '8:30:00', '9:20:00', '330 Allen');
 
-INSERT INTO Sections VALUES ('14032', 'a01', 'PHYS3670', 'Fall2014', 25, 'mwf', '08:30:00', '09:20:00', '330 Allen');
+INSERT INTO Sections VALUES ('14032', 'A01', 'PHYS3670', 'Fall2014', 25, 'MWF', '8:30:00', '9:20:00', '330 Allen');
 
-INSERT INTO Sections VALUES ('14033', 'a01', 'PHYS2490', 'Winter2015', 35, 'tr', '08:30:00', '09:45:00', '319 Allen');
+INSERT INTO Sections VALUES ('14033', 'A01', 'PHYS2490', 'Winter2015', 35, 'TR', '8:30:00', '9:45:00', '319 Allen');
 
-INSERT INTO Sections VALUES ('14034', 'a01', 'PHYS2380', 'Fall2014', 35, 'mwf', '13:30:00', '14:20:00', '319 Allen');
-INSERT INTO Sections VALUES ('14035', 'a01', 'PHYS2380', 'Winter2015', 35, 'mwf', '13:30:00', '14:20:00', '319 Allen');
+INSERT INTO Sections VALUES ('14034', 'A01', 'PHYS2380', 'Fall2014', 35, 'MWF', '13:30:00', '14:20:00', '319 Allen');
+INSERT INTO Sections VALUES ('14035', 'A01', 'PHYS2380', 'Winter2015', 35, 'MWF', '13:30:00', '14:20:00', '319 Allen');
 
-INSERT INTO Sections VALUES ('14036', 'a01', 'PHYS2390', 'Fall2014', 40, 'tr', '08:30:00', '09:45:00', '301 Biological Sciences');
-INSERT INTO Sections VALUES ('14037', 'a02', 'PHYS 2390', 'Fall2014', 30, 'tr', '10:00:00', '11:15:00', '330 Allen');
+INSERT INTO Sections VALUES ('14036', 'A01', 'PHYS2390', 'Fall2014', 40, 'TR', '8:30:00', '9:45:00', '301 Biological Sciences');
+INSERT INTO Sections VALUES ('14037', 'A02', 'PHYS 2390', 'Fall2014', 30, 'TR', '10:00:00', '11:15:00', '330 Allen');
 
-INSERT INTO Sections VALUES ('14038', 'a01', 'PHYS1070', 'Winter2015', 100, 'mwf', '09:30:00', '10:20:00', '306 Buller');
-INSERT INTO Sections VALUES ('14039', 'a02', 'PHYS1070', 'Winter2015', 95, 'mwf', '13:30:00', '14:20:00', '306 Buller');
+INSERT INTO Sections VALUES ('14038', 'A01', 'PHYS1070', 'Winter2015', 100, 'MWF', '9:30:00', '10:20:00', '306 Buller');
+INSERT INTO Sections VALUES ('14039', 'A02', 'PHYS1070', 'Winter2015', 95, 'MWF', '13:30:00', '14:20:00', '306 Buller');
 
-INSERT INTO Sections VALUES ('14040', 'a01', 'PHYS1050', 'Fall2014', 148, 'mwf', '09:30:00', '10:20:00', '100 St. Paul\'s');
-INSERT INTO Sections VALUES ('14041', 'a02', 'PHYS1050', 'Fall2014', 139, 'mwf', '09:30:00', '10:20:00', '221 Wallace');
-INSERT INTO Sections VALUES ('14042', 'a01', 'PHYS1050', 'Winter2015', 178, 'mwf', '13:30:00', '14:20:00', '205 Armes');
+INSERT INTO Sections VALUES ('14040', 'A01', 'PHYS1050', 'Fall2014', 148, 'MWF', '9:30:00', '10:20:00', '100 St. Pauls');
+INSERT INTO Sections VALUES ('14041', 'A02', 'PHYS1050', 'Fall2014', 139, 'MWF', '9:30:00', '10:20:00', '221 Wallace');
+INSERT INTO Sections VALUES ('14042', 'A01', 'PHYS1050', 'Winter2015', 178, 'MWF', '13:30:00', '14:20:00', '205 Armes');
 
--- Chemistry Sections:
-INSERT INTO Sections VALUES ('14006', 'a01', 'CHEM4630', 'Winter2015', 60, 'tr', '11:30:00', '12:45:00', '315 Machray Hall');
+-- ChemisTRy Sections:
+INSERT INTO Sections VALUES ('14006', 'A01', 'CHEM4630', 'Winter2015', 60, 'TR', '11:30:00', '12:45:00', '315 Machray Hall');
 
-INSERT INTO Sections VALUES ('14007', 'a01', 'CHEM4590', 'Winter2015', 20, 'mwf', '11:30:00', '12:20:00', '115 Armes');
+INSERT INTO Sections VALUES ('14007', 'A01', 'CHEM4590', 'Winter2015', 20, 'MWF', '11:30:00', '12:20:00', '115 Armes');
 
-INSERT INTO Sections VALUES ('14008', 'a01', 'CHEM4550', 'Fall2014', 25, 'tr', '08:30:00', '09:45:00', '537 Parker');
+INSERT INTO Sections VALUES ('14008', 'A01', 'CHEM4550', 'Fall2014', 25, 'TR', '8:30:00', '9:45:00', '537 Parker');
 
-INSERT INTO Sections VALUES ('14009', 'a01', 'CHEM4600', 'Fall2014', 18, 'w', '02:30:00', '05:15:00', '539 Parker');
+INSERT INTO Sections VALUES ('14009', 'A01', 'CHEM4600', 'Fall2014', 18, 'W', '14:30:00', '17:15:00', '539 Parker');
 
-INSERT INTO Sections VALUES ('14010', 'a01', 'CHEM3590', 'Winter2015', 32, 'mwf', '10:30:00', '11:20:00', '218 Wallace');
+INSERT INTO Sections VALUES ('14010', 'A01', 'CHEM3590', 'Winter2015', 32, 'MWF', '10:30:00', '11:20:00', '218 Wallace');
 
-INSERT INTO Sections VALUES ('14011', 'a01', 'CHEM3400', 'Winter2015', 25, 'tr', '10:00:00', '11:15:00', '537 Parker');
-INSERT INTO Sections VALUES ('14012', 'a01', 'CHEM3400', 'Fall2014', 25, 'tr', '10:00:00', '11:15:00', '539 Parker');
+INSERT INTO Sections VALUES ('14011', 'A01', 'CHEM3400', 'Winter2015', 25, 'TR', '10:00:00', '11:15:00', '537 Parker');
+INSERT INTO Sections VALUES ('14012', 'A01', 'CHEM3400', 'Fall2014', 25, 'TR', '10:00:00', '11:15:00', '539 Parker');
 
-INSERT INTO Sections VALUES ('14013', 'a01', 'CHEM2370', 'Winter2015', 162, 'tr', '11:30:00', '12:45:00', '343 Drake');
+INSERT INTO Sections VALUES ('14013', 'A01', 'CHEM2370', 'Winter2015', 162, 'TR', '11:30:00', '12:45:00', '343 Drake');
 
-INSERT INTO Sections VALUES ('14014', 'a01', 'CHEM2470', 'Winter2015', 115, 'mwf', '11:30:00', '12:20:00', '215 Buller');
-INSERT INTO Sections VALUES ('14015', 'a01', 'CHEM2470', 'Fall2014', 118, 'tr', '10:00:00', '11:15:00', '224 Education');
+INSERT INTO Sections VALUES ('14014', 'A01', 'CHEM2470', 'Winter2015', 115, 'MWF', '11:30:00', '12:20:00', '215 Buller');
+INSERT INTO Sections VALUES ('14015', 'A01', 'CHEM2470', 'Fall2014', 118, 'TR', '10:00:00', '11:15:00', '224 Education');
 
-INSERT INTO Sections VALUES ('14016', 'a01', 'CHEM2400', 'Winter2015', 115, 'mwf', '12:30:00', '13:20:00', '207 Buller');
-INSERT INTO Sections VALUES ('14017', 'a01', 'CHEM2400', 'Fall2014', 120, 'mwf', '11:30:00', '12:20:00', '215 Buller');
+INSERT INTO Sections VALUES ('14016', 'A01', 'CHEM2400', 'Winter2015', 115, 'MWF', '12:30:00', '13:20:00', '207 Buller');
+INSERT INTO Sections VALUES ('14017', 'A01', 'CHEM2400', 'Fall2014', 120, 'MWF', '11:30:00', '12:20:00', '215 Buller');
 
-INSERT INTO Sections VALUES ('14018', 'a01', 'CHEM2360', 'Fall2014', 160, 'tr', '08:30:00', '09:45:00', '208 Armes');
+INSERT INTO Sections VALUES ('14018', 'A01', 'CHEM2360', 'Fall2014', 160, 'TR', '8:30:00', '9:45:00', '208 Armes');
 
-INSERT INTO Sections VALUES ('14019', 'a01', 'CHEM2210', 'Fall2014', 287, 'mwf', '11:30:00', '12:20:00', '200 Fletcher Argue');
+INSERT INTO Sections VALUES ('14019', 'A01', 'CHEM2210', 'Fall2014', 287, 'MWF', '11:30:00', '12:20:00', '200 Fletcher Argue');
 
-INSERT INTO Sections VALUES ('14020', 'a01', 'CHEM1310', 'Fall2014', 220, 'mwf', '10:30:00', '11:20:00', '200 Armes');
-INSERT INTO Sections VALUES ('14021', 'a01', 'CHEM1310', 'Winter2015', 160, 'tr', '08:30:00', '09:45:00', '200 Armes');
-INSERT INTO Sections VALUES ('14022', 'a02', 'CHEM1310', 'Winter2015', 202, 'tr', '13:00:00', '14:15:00', '203 Armes');
+INSERT INTO Sections VALUES ('14020', 'A01', 'CHEM1310', 'Fall2014', 220, 'MWF', '10:30:00', '11:20:00', '200 Armes');
+INSERT INTO Sections VALUES ('14021', 'A01', 'CHEM1310', 'Winter2015', 160, 'TR', '8:30:00', '9:45:00', '200 Armes');
+INSERT INTO Sections VALUES ('14022', 'A02', 'CHEM1310', 'Winter2015', 202, 'TR', '13:00:00', '14:15:00', '203 Armes');
 
-INSERT INTO Sections VALUES ('14023', 'a01', 'CHEM1300', 'Fall2014', 202, 'tr', '13:00:00', '14:15:00', '204 Armes');
-INSERT INTO Sections VALUES ('14024', 'a02', 'CHEM1300', 'Fall2014', 263, 'mwf', '12:30:00', '13:20:00', '290 Education');
-INSERT INTO Sections VALUES ('14025', 'a03', 'CHEM1300', 'Fall2014', 202, 'tr', '14:30:00', '15:45:00', '204 Armes');
+INSERT INTO Sections VALUES ('14023', 'A01', 'CHEM1300', 'Fall2014', 202, 'TR', '13:00:00', '14:15:00', '204 Armes');
+INSERT INTO Sections VALUES ('14024', 'A02', 'CHEM1300', 'Fall2014', 263, 'MWF', '12:30:00', '13:20:00', '290 Education');
+INSERT INTO Sections VALUES ('14025', 'A03', 'CHEM1300', 'Fall2014', 202, 'TR', '14:30:00', '15:45:00', '204 Armes');
 -- ******** END OF INSERT TO Sections ********
 
 -- Insert completed and enrolled courses for Students
