@@ -171,11 +171,7 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CourseCell *cell = (CourseCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [tableData objectAtIndex:indexPath.row];
-    }
-    
+    cell = [tableData objectAtIndex:indexPath.row];
     return cell;
 }
 
