@@ -19,5 +19,7 @@
 @property (strong, nonatomic) NSDictionary *passedJsondata;
 - (IBAction)clickedLogout:(id)sender;
 - (IBAction)clickedMyCourses:(id)sender;
+- (IBAction)clickedRegisterCourses:(id)sender;
+
 
 @end

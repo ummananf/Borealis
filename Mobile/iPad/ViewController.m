@@ -11,6 +11,8 @@
 
 #import "MyInfoViewController.h"
 
+#import "UserInfo.h"
+
 
 
 @interface ViewController ()
@@ -104,6 +106,9 @@ NSDictionary *user;
                 NSString *username = [key objectAtIndex:0];
                 NSLog(@"username: %@", username);
                 */
+                
+                UserInfo *userInfo = [UserInfo getInstance];
+                [userInfo parseDictionary:jsonData];
                 
             }
         }

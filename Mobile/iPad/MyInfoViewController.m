@@ -10,6 +10,8 @@
 
 #import "ViewController.h"
 
+#import "UserInfo.h"
+
 @interface MyInfoViewController ()
 
 @end
@@ -29,7 +31,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    /*
     NSArray *key = [self.passedJsondata valueForKey:@"username"];
     NSString *username = [key objectAtIndex:0];
     self.username.text = username;
@@ -54,6 +56,18 @@
     key = [self.passedJsondata valueForKey:@"userID"];
     NSString *ID = [key objectAtIndex:0];
     self.ID.text = [NSString stringWithFormat:@"%@", ID];
+     */
+    
+    UserInfo *user = [UserInfo getInstance];
+    
+    self.welcome.text = [NSString stringWithFormat:@"Welcome back %@!", user.firstName];
+    
+    self.username.text = user.username;
+    self.fullName.text = [NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName];
+    self.degree.text = user.degree;
+    self.email.text = user.email;
+    self.ID.text = user.ID;
+    
      
 }
 
@@ -70,4 +84,9 @@
 - (IBAction)clickedMyCourses:(id)sender {
     [self performSegueWithIdentifier:@"myCourses" sender:self];
 }
+
+- (IBAction)clickedRegisterCourses:(id)sender {
+    [self performSegueWithIdentifier:@"registerCourses" sender:self];
+}
+
 @end

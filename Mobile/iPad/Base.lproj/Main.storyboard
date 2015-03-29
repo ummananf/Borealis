@@ -24,8 +24,8 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ONE-wT-0EJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="8zQ-K9-TRq"/>
+                        <viewControllerLayoutGuide type="top" id="vbW-nI-eNZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="BNr-CI-VHd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -138,8 +138,8 @@
             <objects>
                 <viewController id="yIF-UL-gPO" customClass="MyInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5nR-2b-zjI"/>
-                        <viewControllerLayoutGuide type="bottom" id="96L-p2-fJV"/>
+                        <viewControllerLayoutGuide type="top" id="cw7-aM-N3G"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ku4-rg-iWo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QRb-Nq-4dT">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -414,6 +414,18 @@
                                     <segue destination="eBI-w9-mOu" kind="modal" identifier="myCourses" modalTransitionStyle="crossDissolve" id="fr6-eo-jJe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49V-IU-i4g">
+                                <rect key="frame" x="29" y="207" width="150" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Register Courses">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedRegisterCourses:" destination="yIF-UL-gPO" eventType="touchUpInside" id="OwA-pi-ySn"/>
+                                    <segue destination="p5L-2W-a6V" kind="modal" identifier="registerCourses" id="42F-8T-toJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.26666668059999998" green="0.36862745879999997" blue="0.58823531870000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -438,8 +450,8 @@
             <objects>
                 <viewController id="eBI-w9-mOu" customClass="MyCoursesViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZQ8-OT-S7K"/>
-                        <viewControllerLayoutGuide type="bottom" id="wx7-sR-0r0"/>
+                        <viewControllerLayoutGuide type="top" id="NWT-hy-gCu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oah-Ay-HEi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XO6-NC-4t5">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -493,6 +505,61 @@
             </objects>
             <point key="canvasLocation" x="1868" y="-84"/>
         </scene>
+        <!--Register View Controller-->
+        <scene sceneID="A6d-Nl-8PA">
+            <objects>
+                <viewController id="p5L-2W-a6V" customClass="RegisterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7WK-GR-yYH"/>
+                        <viewControllerLayoutGuide type="bottom" id="CFQ-Ql-Fm5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VQP-Y3-FH2">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Term:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4P-w3-gw5">
+                                <rect key="frame" x="83" y="82" width="50" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nYd-m9-chj">
+                                <rect key="frame" x="141" y="87" width="175" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Fall 2014"/>
+                                    <segment title="Winter 2015"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changedSegment:" destination="p5L-2W-a6V" eventType="valueChanged" id="dpj-Vz-s2N"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clp-lE-34D">
+                                <rect key="frame" x="53" y="136" width="80" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ny7-sd-G0h">
+                                <rect key="frame" x="141" y="133" width="175" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B9h-fS-8Rs"/>
+                    <connections>
+                        <outlet property="termControl" destination="nYd-m9-chj" id="J2d-EN-KLI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uOc-rq-jBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1279" y="-1203"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1.jpg" width="800" height="521"/>
@@ -505,7 +572,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Tvg-gr-Kes"/>
         <segue reference="B6d-U5-Q08"/>
+        <segue reference="Tvg-gr-Kes"/>
     </inferredMetricsTieBreakers>
 </document>

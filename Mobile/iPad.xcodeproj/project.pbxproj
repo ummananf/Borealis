@@ -42,6 +42,8 @@
 		1ECFB3241AAD14BF006BB916 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1ECFB3221AAD14BF006BB916 /* 1.jpg */; };
 		1ECFB3251AAD14BF006BB916 /* new_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECFB3231AAD14BF006BB916 /* new_logo.png */; };
 		1EFE8E121AB652ED0016EFF2 /* TabBarControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE8E111AB652ED0016EFF2 /* TabBarControllerDelegate.m */; };
+		81097AB01AC85933005582B3 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 81097AAF1AC85933005582B3 /* UserInfo.m */; };
+		81097AB31AC866FE005582B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81097AB21AC866FE005582B3 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,10 @@
 		1ECFB3231AAD14BF006BB916 /* new_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_logo.png; sourceTree = "<group>"; };
 		1EFE8E101AB652ED0016EFF2 /* TabBarControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerDelegate.h; sourceTree = "<group>"; };
 		1EFE8E111AB652ED0016EFF2 /* TabBarControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarControllerDelegate.m; sourceTree = "<group>"; };
+		81097AAE1AC85933005582B3 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		81097AAF1AC85933005582B3 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		81097AB11AC866FE005582B3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		81097AB21AC866FE005582B3 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,10 @@
 				1E515D1F1AA7BCDB00184829 /* Supporting Files */,
 				1E44406E1AC79C5F004BD8FB /* MyCoursesViewController.h */,
 				1E44406F1AC79C5F004BD8FB /* MyCoursesViewController.m */,
+				81097AAE1AC85933005582B3 /* UserInfo.h */,
+				81097AAF1AC85933005582B3 /* UserInfo.m */,
+				81097AB11AC866FE005582B3 /* RegisterViewController.h */,
+				81097AB21AC866FE005582B3 /* RegisterViewController.m */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -366,6 +376,7 @@
 				1E6983971AC4581D00D9AD5B /* SBJsonStreamWriterAccumulator.m in Sources */,
 				1E6983931AC4581D00D9AD5B /* SBJsonStreamParserAccumulator.m in Sources */,
 				1E6983951AC4581D00D9AD5B /* SBJsonStreamParserState.m in Sources */,
+				81097AB01AC85933005582B3 /* UserInfo.m in Sources */,
 				1E4440701AC79C5F004BD8FB /* MyCoursesViewController.m in Sources */,
 				1E69839B1AC4581D00D9AD5B /* SBJsonWriter.m in Sources */,
 				1E515D291AA7BCDB00184829 /* AppDelegate.m in Sources */,
@@ -375,6 +386,7 @@
 				1E6983A11AC47E7F00D9AD5B /* MyInfoViewController.m in Sources */,
 				1E6983921AC4581D00D9AD5B /* SBJsonStreamParser.m in Sources */,
 				1E6983991AC4581D00D9AD5B /* SBJsonTokeniser.m in Sources */,
+				81097AB31AC866FE005582B3 /* RegisterViewController.m in Sources */,
 				1E6983901AC4581D00D9AD5B /* NSObject+SBJson.m in Sources */,
 				1E515D251AA7BCDB00184829 /* main.m in Sources */,
 				1E6983961AC4581D00D9AD5B /* SBJsonStreamWriter.m in Sources */,
