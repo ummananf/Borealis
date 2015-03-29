@@ -164,7 +164,7 @@ INSERT INTO Courses VALUES ('BIOL1030', 'Biology II - Biological Diversity, Func
 INSERT INTO Courses VALUES ('BIOL2300', 'Principles of Ecology', 3, 'Science', 'Biology', 'Principles of ecology at the individual, population, community and ecosystem levels.', FALSE);
 INSERT INTO Courses VALUES ('BIOL2500', 'Genetics I', 3, 'Science', 'Biology', 'Principles of heredity, gametogenesis and the cytological basis of inheritance in plants and animals.', FALSE);
 INSERT INTO Courses VALUES ('BIOL2210', 'The Chordates', 3, 'Science', 'Biology', 'A study of the original, evolutionary history and structure of the major groups of chordates.', FALSE);
-INSERT INTO Courses VALUES ('BIOL2240', 'Human Physiology I', 3, 'Science', 'Biology', 'The mechanisms of action of the body\'s nervous, endocrine, muscular and reproductive systems.', FALSE);
+INSERT INTO Courses VALUES ('BIOL2240', 'Human Physiology I', 3, 'Science', 'Biology', 'The mechanisms of action of the body nervous, endocrine, muscular and reproductive systems.', FALSE);
 INSERT INTO Courses VALUES ('BIOL3360', 'Animal Behaviour', 3, 'Science', 'Biology', 'An introduction to the study of animal behaviour including key concepts from the parent disciplines of ethology, comparastive psychology, behavioural ecology.', FALSE);
 INSERT INTO Courses VALUES ('BIOL3500', 'Genetics II', 3, 'Science', 'Biology', 'Deals with various aspects of linkage and crossing over, gene funciton, mutation and repair and the use of bacteria and viruses as genetic tools.', FALSE);
 INSERT INTO Courses VALUES ('BIOL4362', 'Behavioural Ecology and Cognitive Ethology', 3, 'Science', 'Biology', 'Examines questions relating to mating, parental behaviour, communication, social parasitism and animal intellect.', FALSE);
