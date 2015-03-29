@@ -562,7 +562,7 @@ INSERT INTO Sections VALUES ('14025', 'A03', 'CHEM1300', 'Fall2014', 202, 'TR', 
 
 -- Insert completed and enrolled courses for Students
 INSERT INTO Enrolled VALUES (7651245, '10000', 3.5);
-INSERT INTO Enrolled VALUES (7651245, '10012', NULL);
+INSERT INTO Enrolled VALUES (7651245, '10012', -1.0);
 
 INSERT INTO Enrolled VALUES (7651785, '10001', 2.0);
 INSERT INTO Enrolled VALUES (7651785, '10010', 2.5);
