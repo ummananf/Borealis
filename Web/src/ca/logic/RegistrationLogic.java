@@ -1,5 +1,6 @@
 package ca.logic;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 import ca.objects.Course;
@@ -9,9 +10,11 @@ import ca.objects.RegistrationResponse;
 import ca.objects.Section;
 import ca.objects.Student;
 import ca.objects.User;
+import ca.objects.Term;
 import ca.persistence.CourseModel;
 import ca.persistence.SectionModel;
 import ca.persistence.StudentModel;
+import ca.persistence.TermModel;
 import ca.persistence.UserModel;
 
 
@@ -57,20 +60,25 @@ public class RegistrationLogic
 		Course course = CourseModel.getCourseByID(sect.getCourseID());
 		
 		Student student = (Student)user;
-		String currTerm = sect.getTermStart();
-		ArrayList<Enrollment> currEnrollments = StudentModel.getEnrollmentsByTerm(userID, currTerm);
+		String sectTermID = sect.getTermStart();
+		Term currTerm = TermLogic.getTerm(new Date(System.currentTimeMillis()));
+		ArrayList<Enrollment> currEnrollments = StudentModel.getEnrollmentsByTerm(userID, sectTermID);
 		
 		if( !(user.getType().equals("student") ) )
 		{
 			resMsg = "Only students may register for courses.";
 		}
-		else if(StudentModel.getNumCreditHrsRegistered(userID, currTerm) + course.getCreditHrs() > student.getMaxCreditsPerTerm())
+		else if(StudentModel.getNumCreditHrsRegistered(userID, sectTermID) + course.getCreditHrs() > student.getMaxCreditsPerTerm())
 		{
 			resMsg = "Reached maximum credit hour limit of " + student.getMaxCreditsPerTerm() + " for this term.";
 		}
 		else if(!meetsPrereqs(userID, course.getCourseID()) )
 		{
 			resMsg = "Prerequisites not met for this course.";
+		}
+		else if(!sectTermID.equals(currTerm.getTermID()) )
+		{
+			resMsg = "Registration for this term is not active.";
 		}
 		else
 		{
@@ -89,7 +97,7 @@ public class RegistrationLogic
 				success = true;
 		}
 		
-		System.out.println("hours reg'd: " + StudentModel.getNumCreditHrsRegistered(userID, currTerm));
+		System.out.println("hours reg'd: " + StudentModel.getNumCreditHrsRegistered(userID, sectTermID));
 		System.out.println("course creds: " + course.getCreditHrs());
 		System.out.println("students max: " + student.getMaxCreditsPerTerm());
 		
