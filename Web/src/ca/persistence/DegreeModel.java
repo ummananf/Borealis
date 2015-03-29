@@ -55,17 +55,21 @@ public class DegreeModel
     
     private static Degree createDegree(String query)
     {
+        Degree degree = null;
         List <Map<String, Object>> resultList = DB.getData(query);
         Iterator <Map<String, Object>> iter = resultList.iterator();
         
         // we only need the first Degree - since query is searching for a Degree by primary key, it will only find one
-        Map <String, Object> row = iter.next();
+        if (iter.hasNext())
+        {
+            Map <String, Object> row = iter.next();
         
-        Degree degree = new Degree(
-            (String)row.get("degName"),
-            (String)row.get("degProgram"),
-            (String)row.get("degOption"),
-            (Integer)row.get("totalCreditHrs"));
+            degree = new Degree(
+                (String)row.get("degName"),
+                (String)row.get("degProgram"),
+                (String)row.get("degOption"),
+                (Integer)row.get("totalCreditHrs"));
+        }
         
         return degree;
     }
