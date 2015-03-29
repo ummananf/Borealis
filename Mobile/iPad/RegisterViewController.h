@@ -16,5 +16,6 @@
 
 - (IBAction)changedSegment:(id)sender;
 - (IBAction)categoryChangedSegment:(id)sender;
+- (IBAction)backClicked:(id)sender;
 
 @end

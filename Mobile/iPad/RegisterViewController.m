@@ -32,6 +32,8 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
 	// Do any additional setup after loading the view.
     
     tableData = [[NSMutableArray alloc] init];
+    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
     
     _courseTable.delegate = self;
     _courseTable.dataSource = self;
@@ -148,6 +150,10 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     [_courseTable reloadData];
     
+}
+
+- (IBAction)backClicked:(id)sender {
+    [self performSegueWithIdentifier:@"RegisterCorses_Home" sender:self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

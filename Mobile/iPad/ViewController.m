@@ -26,12 +26,15 @@ NSDictionary *user;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
 //This is the login code; currently not working properly
