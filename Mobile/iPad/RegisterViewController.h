@@ -10,6 +10,8 @@
 
 @interface RegisterViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *termControl;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *categoryControl;
 - (IBAction)changedSegment:(id)sender;
+- (IBAction)categoryChangedSegment:(id)sender;
 
 @end
