@@ -18,38 +18,11 @@ public class StudentModel
 {
 	public static ArrayList<Enrollment> getCompletedEnrollments(int studentID)
 	{
-		String query = "SELECT * FROM Sections S, Enrolled E" +
-					   " WHERE S.crn = E.crn AND E.userID = "+studentID +
+		String query = "SELECT * FROM Sections S, Enrolled E, Courses C" +
+					   " WHERE S.crn = E.crn AND S.cID = C.cID AND E.userID = "+studentID +
 					   " AND E.grade >= 0;";
 		
-		ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>();
-		List<Map<String, Object>> resultList = DB.getData(query);
-		Iterator<Map<String, Object>> iter = resultList.iterator();
-		
-		while(iter.hasNext()) 
-		{
-			Map<String, Object> row = iter.next();
-			
-			Section sect = new Section(
-					(String) row.get("crn"),
-					(String) row.get("sectID"), 
-					(String) row.get("cID"), 
-					(String) row.get("termStart"),
-					(Integer) row.get("maxSize"), 
-					(String) row.get("days"), 
-					(Time) row.get("startTime"),
-					(Time) row.get("endTime"), 
-					(String) row.get("location"), null);
-			
-			Enrollment enrol = new Enrollment(
-					(Integer) row.get("userID"),
-					(String) row.get("crn"),
-					(Float) row.get("grade"), sect);
-			
-			enrollments.add(enrol);
-		}
-
-		return enrollments;
+		return createDetailedEnrollments(query);
 	}
 	
 	
@@ -59,6 +32,36 @@ public class StudentModel
 					  +"WHERE E.crn = S.crn AND S.cID = C.cID "
 					  +"AND E.userID = "+studentID+" AND S.termStart = '"+currTerm+"';";
 		
+		return createDetailedEnrollments(query);
+	}
+	
+	// Returns total num of credit hrs student is registered for in term given
+	public static int getNumCreditHrsRegistered(int studentID, String term)
+	{
+		String query = "SELECT creditHrs FROM Courses C, Enrolled E, Sections S "
+					   +"WHERE E.crn = S.crn AND S.cID = C.cID "
+					   +"AND E.userID = "+studentID+" AND S.termStart = '"+term+"';";
+		
+		int count = 0;
+		
+		List<Map<String, Object>> resultList = DB.getData(query);
+		Iterator<Map<String, Object>> iter = resultList.iterator();
+		
+		while(iter.hasNext()) 
+		{
+			Map<String, Object> row = iter.next();
+			
+			count += (Integer) row.get("creditHrs");
+		}
+		
+		return count;
+	}
+	
+	
+	
+	// Creates list of enrollments with their section & course info from DB query
+	private static ArrayList<Enrollment> createDetailedEnrollments(String query)
+	{
 		ArrayList<Enrollment> enrollments = new ArrayList<Enrollment>();
 		List<Map<String, Object>> resultList = DB.getData(query);
 		Iterator<Map<String, Object>> iter = resultList.iterator();
@@ -96,28 +99,6 @@ public class StudentModel
 		}
 
 		return enrollments;
-	}
-	
-	// Returns total num of credit hrs student is registered for in term given
-	public static int getNumCreditHrsRegistered(int studentID, String term)
-	{
-		String query = "SELECT creditHrs FROM Courses C, Enrolled E, Sections S "
-					   +"WHERE E.crn = S.crn AND S.cID = C.cID "
-					   +"AND E.userID = "+studentID+" AND S.termStart = '"+term+"';";
-		
-		int count = 0;
-		
-		List<Map<String, Object>> resultList = DB.getData(query);
-		Iterator<Map<String, Object>> iter = resultList.iterator();
-		
-		while(iter.hasNext()) 
-		{
-			Map<String, Object> row = iter.next();
-			
-			count += (Integer) row.get("creditHrs");
-		}
-		
-		return count;
 	}
 
 }
