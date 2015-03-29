@@ -163,7 +163,7 @@ System.out.println(prepStatement.toString());
 	
 	public static boolean addNewEnrollment(String userID, String crn)
 	{
-		String query = "INSERT INTO Enrolled VALUES (" + userID + ",'" + crn + "', NULL);";
+		String query = "INSERT INTO Enrolled VALUES (" + userID + ",'" + crn + "', -1.0);";
 		boolean actionSuccessful = DB.execute(query);
 		
 		return actionSuccessful;

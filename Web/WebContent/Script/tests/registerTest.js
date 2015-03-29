@@ -28,7 +28,7 @@ describe("Course registering logic", function()
 			successCallback(jsonObj);
 		};
 		
-		onTermChange(event);
+		register.onTermChange(event);
 		
 		
 		expect($('#category option[value="Comp"]').text()).toEqual("Comp");

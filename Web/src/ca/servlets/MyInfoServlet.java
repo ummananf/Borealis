@@ -63,6 +63,10 @@ public class MyInfoServlet extends HttpServlet
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException 
 	{
+		String newName = req.getParameter("newName");
+		String newEmail = req.getParameter("newEmail");
 		
+		System.out.println(newName);
+		System.out.println(newEmail);
 	}
 }
