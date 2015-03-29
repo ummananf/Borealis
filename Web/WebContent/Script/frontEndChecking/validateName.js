@@ -2,7 +2,7 @@ function validateName(name)
 {
 	if(name=="")
 	{
-		return "Please Enter Your Name";
+		return "empty";
 	}
 	else if(!isNaN(name))
 	{
