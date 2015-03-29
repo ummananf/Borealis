@@ -14,7 +14,8 @@
 
 NSString *currentTerm = nil;
 NSString *currentCategory = nil;
-NSArray *tableData;
+NSMutableArray *tableData;
+static NSString *simpleTableIdentifier = @"SimpleTableItem";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +31,7 @@ NSArray *tableData;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    tableData = [[NSMutableArray alloc] init];
     
     _courseTable.delegate = self;
     _courseTable.dataSource = self;
@@ -128,41 +130,44 @@ NSArray *tableData;
     
     int index = 0;
     for (id key in jsonData) {
-        NSArray *courseArray = [jsonData objectForKey:key];
-        NSString *degree = [courseArray valueForKey:@"degName"];
         
-        NSLog(@"%@", degree);
+        CourseCell *cell = [[CourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell.courseId.text = [key valueForKey:@"cID"];
+        cell.crn.text = [key valueForKey:@"crn"];
+        cell.section.text = [key valueForKey:@"sectID"];
+        cell.capacity.text = [key valueForKey:@"capacity"];
+        cell.days.text = [key valueForKey:@"days"];
+        cell.startTime.text = [key valueForKey:@"startTime"];
+        cell.endTime.text = [key valueForKey:@"endTime"];
+        cell.location.text = [key valueForKey:@"location"];
         
-        [_categoryControl insertSegmentWithTitle:degree atIndex:index animated:NO];
-        
-        // sets the size for each segment, but must resize the width of the segment controller in the storyboard to be wider otherwise the added segments won't be clickable
-        [_categoryControl setWidth:160 forSegmentAtIndex:index];
+        [tableData addObject:cell];
         
         index++;
     }
     
-    UITableViewCell *cell = [UITableViewCell alloc];
-
-    tableData = [NSArray arrayWithObjects:cell, nil];
+    [_courseTable reloadData];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    if (tableData != nil) {
+        return [tableData count];
+    }
+    
+    return 0;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     CourseCell *cell = (CourseCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[CourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+  //      cell = [[CourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [tableData objectAtIndex:indexPath.row];
     }
     
-    cell.courseId.text = @"course id";
-    cell.crn.text = @"crn";
-    cell.capacity.text = @"capacity";
     return cell;
 }
 

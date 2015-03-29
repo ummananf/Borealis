@@ -41,8 +41,10 @@
         self.location = [[UILabel alloc] initWithFrame:CGRectMake(700, 10, 100, 30)];
         [self addSubview:self.location];
         self.registerButton = [[UIButton alloc] initWithFrame:CGRectMake(800, 10, 100, 30)];
+        [self.registerButton setTitle:@"Register" forState:0];
         [self addSubview:self.registerButton];
         self.dropButton = [[UIButton alloc] initWithFrame:CGRectMake(900, 10, 100, 30)];
+        [self.dropButton setTitle:@"Drop" forState:0];
         [self addSubview:self.dropButton];
     }
     return self;
