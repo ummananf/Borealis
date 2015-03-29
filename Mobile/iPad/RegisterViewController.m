@@ -8,11 +8,13 @@
 
 #import "RegisterViewController.h"
 #import "SBJson.h"
+#import "CourseCell.h"
 
 @implementation RegisterViewController
 
 NSString *currentTerm = nil;
 NSString *currentCategory = nil;
+NSArray *tableData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +29,10 @@ NSString *currentCategory = nil;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    
+    _courseTable.delegate = self;
+    _courseTable.dataSource = self;
     
     [_termControl setSelected:NO];
     
@@ -102,7 +108,6 @@ NSString *currentCategory = nil;
     currentCategory = [_categoryControl titleForSegmentAtIndex:_categoryControl.selectedSegmentIndex];
     NSString *post =[[NSString alloc] initWithFormat:@"termName=%@&categoryName=%@", currentTerm, currentCategory];
     NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/registerCourses"];
-    NSString *degree = [_categoryControl titleForSegmentAtIndex:_categoryControl.selectedSegmentIndex];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -115,6 +120,50 @@ NSString *currentCategory = nil;
     NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
     NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
     NSLog(@"requestRply: %@", requestReply);
+    
+    
+    SBJsonParser *jsonParser = [SBJsonParser new];
+    NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
+    
+    
+    int index = 0;
+    for (id key in jsonData) {
+        NSArray *courseArray = [jsonData objectForKey:key];
+        NSString *degree = [courseArray valueForKey:@"degName"];
+        
+        NSLog(@"%@", degree);
+        
+        [_categoryControl insertSegmentWithTitle:degree atIndex:index animated:NO];
+        
+        // sets the size for each segment, but must resize the width of the segment controller in the storyboard to be wider otherwise the added segments won't be clickable
+        [_categoryControl setWidth:160 forSegmentAtIndex:index];
+        
+        index++;
+    }
+    
+    UITableViewCell *cell = [UITableViewCell alloc];
+
+    tableData = [NSArray arrayWithObjects:cell, nil];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    
+    CourseCell *cell = (CourseCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[CourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.courseId.text = @"course id";
+    cell.crn.text = @"crn";
+    cell.capacity.text = @"capacity";
+    return cell;
 }
 
 @end

@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *termControl;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *categoryControl;
+@property (weak, nonatomic) IBOutlet UITableView *courseTable;
+
 - (IBAction)changedSegment:(id)sender;
 - (IBAction)categoryChangedSegment:(id)sender;
 

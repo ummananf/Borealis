@@ -541,7 +541,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="ny7-sd-G0h">
-                                <rect key="frame" x="141" y="133" width="400" height="29"/>
+                                <rect key="frame" x="141" y="133" width="578" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="First"/>
@@ -551,12 +551,18 @@
                                     <action selector="categoryChangedSegment:" destination="p5L-2W-a6V" eventType="valueChanged" id="RBf-vp-d7l"/>
                                 </connections>
                             </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wRH-Gn-n6d">
+                                <rect key="frame" x="20" y="180" width="728" height="762"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="B9h-fS-8Rs"/>
                     <connections>
                         <outlet property="categoryControl" destination="ny7-sd-G0h" id="dR6-Ha-Y7k"/>
+                        <outlet property="courseTable" destination="wRH-Gn-n6d" id="rPX-q1-URS"/>
                         <outlet property="termControl" destination="nYd-m9-chj" id="J2d-EN-KLI"/>
                     </connections>
                 </viewController>
