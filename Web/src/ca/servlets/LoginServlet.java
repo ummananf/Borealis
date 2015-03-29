@@ -1,6 +1,7 @@
 package ca.servlets;
 
 import java.io.*;
+import java.sql.Date;
 import java.util.ArrayList;
 
 import javax.servlet.*;
@@ -14,6 +15,7 @@ import com.google.gson.reflect.TypeToken;
 import ca.objects.*;
 import ca.session.SessionGlobals;
 import ca.logic.LoginLogic;
+import ca.logic.TermLogic;
 
 public class LoginServlet extends HttpServlet 
 {
@@ -52,7 +54,12 @@ public class LoginServlet extends HttpServlet
 			req.setAttribute("userInfo", userInfo);
 			res.setContentType("application/json");	
 			res.getWriter().print(userInfo);	
-			session.setAttribute("userInfo", userInfo);		
+			session.setAttribute("userInfo", userInfo);
+			
+			// Create current term JSON
+			Term currTerm = TermLogic.getTerm(new Date(System.currentTimeMillis())); //the current date
+			String currTermJSON = "{'termID':'" + currTerm.getTermID() +"'}";
+			session.setAttribute("currTerm", currTermJSON);
 			
 			/************END OF CREATING**************/
 			

@@ -46,7 +46,7 @@
 	
 	$(document).ready(function()
 	{
-		
+		displayTracker(degrees, coursesTaken);
 	});
 
 </script>

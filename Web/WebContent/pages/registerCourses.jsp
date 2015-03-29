@@ -8,6 +8,7 @@
 <title>Register Courses</title>
 <link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 <link href="Style/start.css" rel="stylesheet" type="text/css" />
+<link href="Style/buttonStyle.css" rel="stylesheet" type="text/css" />
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 
@@ -59,6 +60,15 @@
 			</table>
 		</div>
 	</div>
+	
+	
+	<script type="text/javascript">
+
+	var currTerm = ${currTerm};
+	var currEnrols; //used for showing currently registered courses when all sections are displayed first time
+	register.getCurrentEnrollments(currTerm.termID);
+
+	</script>
 
 	<jsp:include page="template/footer.jsp" />
 	</div>
