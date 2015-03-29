@@ -29,7 +29,8 @@ NSArray *tableData;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
     
     _courseTable.delegate = self;
     _courseTable.dataSource = self;
@@ -144,6 +145,10 @@ NSArray *tableData;
     UITableViewCell *cell = [UITableViewCell alloc];
 
     tableData = [NSArray arrayWithObjects:cell, nil];
+}
+
+- (IBAction)backClicked:(id)sender {
+    [self performSegueWithIdentifier:@"RegisterCorses_Home" sender:self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
