@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "SBJson.h"
 
-#import "TabBarControllerDelegate.h"
+#import "MyInfoViewController.h"
 
 
 
@@ -138,11 +138,21 @@ NSDictionary *user;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    /*
     if([segue.identifier isEqualToString:@"login_success"]){
         UITabBarController *controller = (UITabBarController *)segue.destinationViewController;
         TabBarControllerDelegate *delegate = (TabBarControllerDelegate *) controller.delegate;
         delegate.jsondata = user;
     }
+     */
+     if([segue.identifier isEqualToString:@"login_success"]){
+         MyInfoViewController *controller = [segue destinationViewController];
+         [controller setPassedJsondata:user];
+         
+         //NSLog(@"testInt: %@", controller.passedJsondata);
+     }
+    
+    
 }
 
 @end

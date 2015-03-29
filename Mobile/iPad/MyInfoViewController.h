@@ -10,5 +10,14 @@
 
 @interface MyInfoViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UILabel *fullName;
+@property (weak, nonatomic) IBOutlet UILabel *ID;
+@property (weak, nonatomic) IBOutlet UILabel *email;
+@property (weak, nonatomic) IBOutlet UILabel *degree;
+@property (weak, nonatomic) IBOutlet UILabel *welcome;
+
+@property (strong, nonatomic) NSDictionary *passedJsondata;
+- (IBAction)clickedLogout:(id)sender;
+- (IBAction)clickedMyCourses:(id)sender;
 
 @end

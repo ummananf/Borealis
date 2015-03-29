@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;word-break:break-all;word-wrap: break-word; font-family:"Microsoft Yahei", Verdana, Arial, Helvetica, sans-serif;}
+a{color:#185697;text-decoration:none;}
+a:hover {text-decoration:none;color:#f30;}
+Img{border:0;vertical-align:middle;}
+ul{list-style-type:none;}
+input, select{vertical-align:middle;}
+body{font-size:12px; line-height:22px;color:#333;}
+.page{width:980px; margin:0 auto; height:70px;position:relative; }
+.page5{width:980px; margin:0 auto; position:relative;}
+.header{height:133px; position:relative;width:930px; margin:0 auto; font-size:12px; line-height:22px; background:url(../Images/Student/kao_top.jpg) no-repeat 0 -20px;}
+.topindex{height:480px; position:relative; background:url(../Images/Student/index/bg.gif) no-repeat 30px 0;}
+.login{padding:20px;background:#fff; }.login td{padding:6px 3px;}
+.page2{width:1000px; margin:0 auto; font-size:12px; line-height:22px;color:#777;}
+.loginbox{width:327px; height:236px; position:absolute; right:60px; top:165px;border:1px #CACACA solid;}
+.loginbox2{width:500px; position:absolute; right:60px; top:100px; border:1px #CACACA solid;}
+
+
+#logo{position:absolute;left:0;top:12px;}
+#logo a{display:block;}
+.banner{background:#358edd url(../Images/Student/banner.jpg) repeat-x top;}
+.width{width:100%; margin:0 auto; position:relative; height:70px; }
+.header{background:url(../Images/Student/topbgright.jpg) no-repeat top right;}
+.onTop{ text-align:right; height:24px;color:#fff; padding:5px 4px 5px 0; letter-spacing:3px; font-size:11px;}
+.onTop a{color:#fff; margin-left:5px; text-decoration:underline;}
+.blog_nav{
+	overflow: hidden;
+	_zoom: 1;
+	height: 29px;
+	line-height: 29px;
+	font-size: 13px;
+	margin-top: 5px;
+	width: 800px;
+	position: absolute;
+	bottom: 3px;
+	left: 176px;
+}
+.blog_nav ul{padding-left:10px;}
+.blog_nav ul li{float:left; text-align:center;width:90px; letter-spacing:2px; margin-right:8px; background:url(../Images/Student/sns_top_nav_bg.png) repeat-x;border:1px #6fb0e9 solid; border-bottom:none;}
+.blog_nav ul li a{color:#fff;display:block;}
+.blog_nav ul li a:hover{background:url(../Images/Student/nav_hover.png) repeat-x; }
+.blog_nav .hover{ background:url(../Images/Student/nav_hover.png) repeat-x; width:90px;}
+
+.box{overflow:hidden; _zoom:1;}
+.mtop{margin-top:10px;}
+.leftbox{width:140px; float:left;}
+.rightbox{ margin-left:155px; min-height:500px; _height:500px;}
+.title1{background:url(../Images/Student/title1.jpg) no-repeat; height:30px; line-height:30px; font-size:14px; padding-left:15px; color:#fff;}
+.leftnav{background:url(../Images/Student/bgleftli.jpg) repeat-y; padding:10px 10px 5px;}
+.lefbot{background:url(../Images/Student/bgleftbot.jpg) no-repeat; overflow:hidden; height:8px;}
+.leftnav ul li{height:20px; padding:3px 0 6px;}
+.leftnav ul li a{color:#185697;}
+.leftnav .bor{border-bottom:1px #ddd dotted; margin-bottom:5px;}
+.leftnav .fir{float:right;}
+.leftnav .fir a{color:#999;}
+.red{color:red;}
+.leftnav .pleft{padding-left:22px;}
+.data{ width:665px; margin:20px auto 0;}
+.data th{background:#308DC9; font-size:18px; color:#fff; border-bottom:1px #E3E3E3 solid;border-right:1px #E3E3E3 solid; line-height:26px;} 
+.data td{border-bottom:1px #E3E3E3 solid;border-right:1px #E3E3E3 solid; height:45px; text-align:center;font-size:14px;}
+.datetop{background:url(../Images/Student/datetop.jpg) repeat-x; line-height:38px; height:38px;border:1px #E3E3E3 solid; text-align:center; font-size:18px; position:relative;}
+#left_arrow{position:absolute; left:20px; top:7px;}
+#right_arrow{position:absolute; right:20px; top:7px;}
+.data a{margin-top:0;}
+.reding{background:#f00; color:#fff;}
+.greening{background:#86EA4E; color:#fff;}
+.yellowing{background:#F4D400; color:#fff;}
+.datafoot{background:url(../Images/Student/bg_date.jpg) repeat-x; height:35px; padding:10px; margin-bottom:10px; color:#f40;}
+.data table{border-top:1px #E3E3E3 solid;border-left:1px #E3E3E3 solid;}
+.kc{ height:12px; line-height:12px; overflow:hidden; color:#fff}
+.myZone{color:#185697; font-size:12px; margin-bottom:10px; font-weight:100; border-bottom:1px #ddd dotted; line-height:30px;}
+.rightgg{float:right; width:182px;}
+.title2{background:url(../Images/Student/title2.jpg) no-repeat; line-height:27px; font-size:14px; color:#6BB044; padding-left:10px;}
+
+.wzx{width:16px; margin:0 auto; line-height:16px; padding-left:2px;}
+.wzx1{width:11px; margin:0 auto; line-height:12px;padding-left:2px; font-size:11px;}
+.tis{padding:5px;}
+
+
+.friends{padding:10px; color:#999;}
+.friends ul li{overflow:hidden; _zoom:1; border-bottom:1px #ddd solid; padding:10px;}
+.friends .photo{float:left; margin-right:10px;}
+.green{color:#093;}
+
+
+.hide{display:none;}
+.tableGrid1 th{text-align:center;}
+.tableGrid1 td{text-align:left;}
+
+
+.jhbox{overflow:hidden; _zoom:1; width:795px; padding:30px 23px 20px 5px; background:#f3fcff url(../images/Student/default/bg_jh.jpg) no-repeat top center; border:1px #4da3e0 solid;}
+.LeftBotton{background:url(../images/Student/default/h_pro_jt.jpg) no-repeat left center; float:left;  width:18px; height:88px; cursor:pointer; display:inline; margin:25px 20px 0 25px; }
+.RightBotton{background:url(../images/Student/default/h_pro_jt1.jpg) no-repeat right center; float:right; width:18px; height:88px; cursor:pointer; display:inline;  margin:25px 0 0 0px;}
+.Cont1{width:704px; height:150px; overflow:hidden; float:left; position:relative;}
+.dhbg{padding-top:20px; overflow:hidden; _zoom:1;}
+.dh1{background:url(../images/Student/default/b1.jpg) no-repeat; width:399px; height:214px; float:left;}
+.dh1:hover{background:url(../images/Student/default/b1_1.jpg) no-repeat;}
+.frame_2:hover{background:url(../images/Student/default/b2_1.jpg) no-repeat;}
+.dh3:hover{background:url(../images/Student/default/b3_1.jpg) no-repeat;}
+.dh4:hover{background:url(../images/Student/default/b4_1.jpg) no-repeat;}
+.dh2{background:url(../images/Student/default/b2.jpg) no-repeat; width:399px; height:214px; float:left;}
+.dh3{background:url(../images/Student/default/b3.jpg) no-repeat; width:399px; height:214px; float:left;}
+.dh4{background:url(../images/Student/default/b4.jpg) no-repeat; width:399px; height:214px; float:left;}
+.textInFrame{padding:60px 0 0 120px; line-height:24px;}
+.textInFrame p{background:url(../images/Student/default/ico1.jpg) no-repeat 0 10px; padding-left:10px;}
+.btright{text-align:right; border-top:1px #ddd dotted; padding:10px 10px 0 0; margin:10px 20px 0 0;}
+.securityDiv{background:url(../images/Student/default/bg_lc.jpg) repeat-x bottom; overflow:hidden; _zoom:1}
+.securityBanner{background:url(../images/Student/default/ico2.jpg) no-repeat 0 0; padding:2px 5px 6px 25px; font-size:16px; color:#077fcd; border-bottom:2px #459ee0 solid; display:block; float:left;}
+.trackTable{height:48px; background:url(../images/Student/default/lc.jpg) repeat-x bottom; margin:20px 0 0 0; padding-left:50px;}
+.timeCell{width:100px; height:48px; background:url(../images/Student/default/lc2.jpg) no-repeat center bottom; float:left; text-align:center;cursor:pointer;}
+.lctime2{width:100px; height:48px; background:url(../images/Student/default/lc1.jpg) no-repeat center bottom; float:left; text-align:center; color:#0066CC; font-weight:700; cursor:pointer;}

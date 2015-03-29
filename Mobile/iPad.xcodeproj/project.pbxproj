@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E4440701AC79C5F004BD8FB /* MyCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E44406F1AC79C5F004BD8FB /* MyCoursesViewController.m */; };
 		1E515D191AA7BCDB00184829 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E515D181AA7BCDB00184829 /* Foundation.framework */; };
 		1E515D1B1AA7BCDB00184829 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E515D1A1AA7BCDB00184829 /* CoreGraphics.framework */; };
 		1E515D1D1AA7BCDB00184829 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E515D1C1AA7BCDB00184829 /* UIKit.framework */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E44406E1AC79C5F004BD8FB /* MyCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCoursesViewController.h; sourceTree = "<group>"; };
+		1E44406F1AC79C5F004BD8FB /* MyCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoursesViewController.m; sourceTree = "<group>"; };
 		1E515D181AA7BCDB00184829 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1E515D1A1AA7BCDB00184829 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1E515D1C1AA7BCDB00184829 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,8 @@
 				1E515D2E1AA7BCDB00184829 /* ViewController.m */,
 				1E515D301AA7BCDB00184829 /* Images.xcassets */,
 				1E515D1F1AA7BCDB00184829 /* Supporting Files */,
+				1E44406E1AC79C5F004BD8FB /* MyCoursesViewController.h */,
+				1E44406F1AC79C5F004BD8FB /* MyCoursesViewController.m */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				1E6983971AC4581D00D9AD5B /* SBJsonStreamWriterAccumulator.m in Sources */,
 				1E6983931AC4581D00D9AD5B /* SBJsonStreamParserAccumulator.m in Sources */,
 				1E6983951AC4581D00D9AD5B /* SBJsonStreamParserState.m in Sources */,
+				1E4440701AC79C5F004BD8FB /* MyCoursesViewController.m in Sources */,
 				1E69839B1AC4581D00D9AD5B /* SBJsonWriter.m in Sources */,
 				1E515D291AA7BCDB00184829 /* AppDelegate.m in Sources */,
 				1E6983981AC4581D00D9AD5B /* SBJsonStreamWriterState.m in Sources */,
