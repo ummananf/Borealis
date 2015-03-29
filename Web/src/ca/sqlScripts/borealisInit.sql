@@ -172,55 +172,55 @@ INSERT INTO Courses VALUES ('BIOL4470', 'Sensory-Motor Physiology', 3, 'Science'
 INSERT INTO Courses VALUES ('BIOL4420', 'Marine Biodiversity', 3, 'Science', 'Biology', 'Examines key ecological principles governing the maintenance of marine biodiversity, particularly in northern ecosystems.', FALSE);
 
 -- Environmental Science Courses:
-INSERT INTO Courses VALUES ('ENVR 4110', 'Critical Thinking and the Environment', 3, '"Environment, Earth, and Resources"', 'Environment', '"Topical issues and responses regarding the environment including conservation, management and policy making."', FALSE);
-INSERT INTO Courses VALUES ('ENVR 3160', 'Environmental Responsibilities and the Law', 3, '"Environment, Earth, and Resources"', 'Environment', '"Environmental responsiblities and their legal framework in terms of policies, legislation, standards and guidelines."', FALSE);
-INSERT INTO Courses VALUES ('ENVR 2270', 'Environmental Problem Solving and Scientific Thinking', 3, '"Environment, Earth, and Resources"', 'Environment', 'A course to help students develop skeptical and scientific thinking around environmental issues and problems.', FALSE);
-INSERT INTO Courses VALUES ('ENVR 2000', 'Environmental Science 2 - Issues', 3, '"Environment, Earth, and Resources"', 'Environment', 'Briefly review the major features of structure and function of natural systems. Identify issues that underlie environmental degradation.', FALSE);
-INSERT INTO Courses VALUES ('ENVR 1000', 'Environmental Science 1 - Concepts', 3, '"Environment, Earth, and Resources"', 'Environment', '"Introduce students to the conceptual framework of the environment by examining its physical, biological and social components."', FALSE);
+INSERT INTO Courses VALUES ('ENVR4110', 'Critical Thinking and the Environment', 3, '"Environment, Earth, and Resources"', 'Environment', '"Topical issues and responses regarding the environment including conservation, management and policy making."', FALSE);
+INSERT INTO Courses VALUES ('ENVR3160', 'Environmental Responsibilities and the Law', 3, '"Environment, Earth, and Resources"', 'Environment', '"Environmental responsiblities and their legal framework in terms of policies, legislation, standards and guidelines."', FALSE);
+INSERT INTO Courses VALUES ('ENVR2270', 'Environmental Problem Solving and Scientific Thinking', 3, '"Environment, Earth, and Resources"', 'Environment', 'A course to help students develop skeptical and scientific thinking around environmental issues and problems.', FALSE);
+INSERT INTO Courses VALUES ('ENVR2000', 'Environmental Science 2 - Issues', 3, '"Environment, Earth, and Resources"', 'Environment', 'Briefly review the major features of structure and function of natural systems. Identify issues that underlie environmental degradation.', FALSE);
+INSERT INTO Courses VALUES ('ENVR1000', 'Environmental Science 1 - Concepts', 3, '"Environment, Earth, and Resources"', 'Environment', '"Introduce students to the conceptual framework of the environment by examining its physical, biological and social components."', FALSE);
 
 -- Math Courses:
-INSERT INTO Courses VALUES ('MATH 4250', 'Mathematical Logic', 6, 'Mathematics', 'Mathematics', 'The mathematical study of propositional and predicate logic; proof theory. Introduction to model theory.', TRUE);
-INSERT INTO Courses VALUES ('MATH 4430', 'Introduction to Elliptic Curves', 3, 'Mathematics', 'Mathematics', '"Homogeneous co-ordinates, non-singular cubic curves, cubic curves of finite fields."', FALSE);
-INSERT INTO Courses VALUES ('MATH 4810', 'Partial Differential Equations 2', 3, 'Mathematics', 'Mathematics', 'Partial differential equations and their classification. Special functions and generalized Eigen function expansions.', FALSE);
-INSERT INTO Courses VALUES ('MATH 3350', 'Advanced Algebra', 6, 'Mathematics', 'Mathematics', '"An introduction to abstract algebra with topics taken from among the theories of groups, rings, modules, fields and lattices."', TRUE);
-INSERT INTO Courses VALUES ('MATH 3810', 'Partial Differential Equations 1', 3, 'Mathematics', 'Mathematics', '"Fourier series and introductory Sturm-Liouville theory. Derivation of wave, diffusion and Laplace equations."', FALSE);
-INSERT INTO Courses VALUES ('MATH 2500', 'Introduction to Number Theory', 3, 'Mathematics', 'Mathematics', '"Divisibility, unique factorization, linear and quadratic congruences, Fermat\'s theorem."', FALSE);
-INSERT INTO Courses VALUES ('MATH 2352', 'Advanced Linear Algebra', 6, 'Mathematics', 'Mathematics', '"Vector spaces, linear transformations, inner product spaces, eigenvalues and eigenvectors, orthogonal and Hermitian matrices, and applications."', TRUE);
-INSERT INTO Courses VALUES ('MATH 2750', 'Intermediate Calculus', 6, 'Mathematics', 'Mathematics', '"Sequences, series and power series. Differentiation and integration of real-valued functions of several real variables."', FALSE);
-INSERT INTO Courses VALUES ('MATH 3800', 'Ordinary Differential Equations with Applications 2', 3, 'Mathematics', 'Mathematics', '"Laplace transforms, series solutions of ODEs, systems of linear Odes, applications, introduction to dynamical systems."', FALSE);
-INSERT INTO Courses VALUES ('MATH 2800', 'Ordinary Differential Equations with Applications 1', 3, 'Mathematics', 'Mathematics', 'An introduction to the theory of ordinary differential equations and practical techniques of solution.', FALSE);
-INSERT INTO Courses VALUES ('MATH 1300', 'Vector Geometry and Linear Algebra', 3, 'Mathematics', 'Mathematics', '"An introduction to vectora, matrices, systems of linear equations and three-dimensional geometry."', FALSE);
-INSERT INTO Courses VALUES ('MATH 1700', 'Calculus 2', 3, 'Mathematics', 'Mathematics', '"Theory and techniques of integration, curve sketching, volume, arc length, surface area and partial derivatives."', FALSE);
-INSERT INTO Courses VALUES ('MATH 1500', 'Introduction to Calculus', 3, 'Mathematics', 'Mathematics', '"Differentiation and integration of elementary functions, with applications to maxima and minima, rates of change, area and volume."', FALSE);
+INSERT INTO Courses VALUES ('MATH4250', 'Mathematical Logic', 6, 'Mathematics', 'Mathematics', 'The mathematical study of propositional and predicate logic; proof theory. Introduction to model theory.', TRUE);
+INSERT INTO Courses VALUES ('MATH4430', 'Introduction to Elliptic Curves', 3, 'Mathematics', 'Mathematics', '"Homogeneous co-ordinates, non-singular cubic curves, cubic curves of finite fields."', FALSE);
+INSERT INTO Courses VALUES ('MATH4810', 'Partial Differential Equations 2', 3, 'Mathematics', 'Mathematics', 'Partial differential equations and their classification. Special functions and generalized Eigen function expansions.', FALSE);
+INSERT INTO Courses VALUES ('MATH3350', 'Advanced Algebra', 6, 'Mathematics', 'Mathematics', '"An introduction to abstract algebra with topics taken from among the theories of groups, rings, modules, fields and lattices."', TRUE);
+INSERT INTO Courses VALUES ('MATH3810', 'Partial Differential Equations 1', 3, 'Mathematics', 'Mathematics', '"Fourier series and introductory Sturm-Liouville theory. Derivation of wave, diffusion and Laplace equations."', FALSE);
+INSERT INTO Courses VALUES ('MATH2500', 'Introduction to Number Theory', 3, 'Mathematics', 'Mathematics', '"Divisibility, unique factorization, linear and quadratic congruences, Fermat\'s theorem."', FALSE);
+INSERT INTO Courses VALUES ('MATH2352', 'Advanced Linear Algebra', 6, 'Mathematics', 'Mathematics', '"Vector spaces, linear transformations, inner product spaces, eigenvalues and eigenvectors, orthogonal and Hermitian matrices, and applications."', TRUE);
+INSERT INTO Courses VALUES ('MATH2750', 'Intermediate Calculus', 6, 'Mathematics', 'Mathematics', '"Sequences, series and power series. Differentiation and integration of real-valued functions of several real variables."', FALSE);
+INSERT INTO Courses VALUES ('MATH3800', 'Ordinary Differential Equations with Applications 2', 3, 'Mathematics', 'Mathematics', '"Laplace transforms, series solutions of ODEs, systems of linear Odes, applications, introduction to dynamical systems."', FALSE);
+INSERT INTO Courses VALUES ('MATH2800', 'Ordinary Differential Equations with Applications 1', 3, 'Mathematics', 'Mathematics', 'An introduction to the theory of ordinary differential equations and practical techniques of solution.', FALSE);
+INSERT INTO Courses VALUES ('MATH1300', 'Vector Geometry and Linear Algebra', 3, 'Mathematics', 'Mathematics', '"An introduction to vectora, matrices, systems of linear equations and three-dimensional geometry."', FALSE);
+INSERT INTO Courses VALUES ('MATH1700', 'Calculus 2', 3, 'Mathematics', 'Mathematics', '"Theory and techniques of integration, curve sketching, volume, arc length, surface area and partial derivatives."', FALSE);
+INSERT INTO Courses VALUES ('MATH1500', 'Introduction to Calculus', 3, 'Mathematics', 'Mathematics', '"Differentiation and integration of elementary functions, with applications to maxima and minima, rates of change, area and volume."', FALSE);
 
 -- Physics & Astronomy Courses:
-INSERT INTO Courses VALUES ('PHYS 4230', 'The Phenomenology of Galaxies', 3, 'Science', 'Physics and Astronomy', 'This course describes the phenomenology of galaxies as determined by recent observational data.', FALSE);
-INSERT INTO Courses VALUES ('PHYS 4300', 'General Relativity', 3, 'Science', 'Physics and Astronomy', 'n/a', FALSE);
-INSERT INTO Courses VALUES ('PHYS 4390', 'Quantum Physics 3', 3, 'Science', 'Physics and Astronomy', '"Hilbert space formalism, symmetry and conservation laws, angular momentum, stationary state peturbation theory, variational methods."', FALSE);
-INSERT INTO Courses VALUES ('PHYS 4510', 'Intro to Nuclear Physics', 3, 'Science', 'Physics and Astronomy', '"Nuclear properties, the nuclear two-body problem, the deuteron and nucleon-nucleon scaterring, nuclear models, nuclear disintigration."', FALSE);
-INSERT INTO Courses VALUES ('PHYS 3180', 'Stars', 3, 'Science', 'Physics and Astronomy', '"Application of physics to the structure of stars, their formation and evolution, theoretical models and observations."', FALSE);
-INSERT INTO Courses VALUES ('PHYS 3380', 'Quantum Physics 2', 3, 'Science', 'Physics and Astronomy', 'Focuses on solutions of the three-dimensional Schrodinger equation with special emphasis on one-electron atoms.', FALSE);
-INSERT INTO Courses VALUES ('PHYS 3670', 'Classical Thermodynamics', 3, 'Science', 'Physics and Astronomy', 'An introduction to the laws of classical equilibrium thermodynamics and their applications.', FALSE);
-INSERT INTO Courses VALUES ('PHYS 2490', 'Theoretical Physics 2', 3, 'Science', 'Physics and Astronomy', 'This course provides a continuation of the introduction to the mathematics required for both the Honours and Major programs in Physics and Astronomy.', FALSE);
-INSERT INTO Courses VALUES ('PHYS 2380', 'Quantum Physics 1', 3, 'Science', 'Physics and Astronomy', '"Introduces the basic principles of quantum theory including cavity radiation and Planck\'s postulate, wave-particle duality, the Bohr model, and the Schrodinger theory."', FALSE);
-INSERT INTO Courses VALUES ('PHYS 2390', 'Theoretical Physics 1', 3, 'Science', 'Physics and Astronomy', 'This course provides an introduction to the mathematics required for both the Honours and Major programs in Physics and Astronomy.', FALSE);
-INSERT INTO Courses VALUES ('PHYS 1070', 'Physics 2 - Waves and Modern Physics', 3, 'Science', 'Physics and Astronomy', '"Learn about the mysterious quantum world, the basis of the latest nanotechnology, where particles are waves and waves are particles."', FALSE);
-INSERT INTO Courses VALUES ('PHYS 1050', 'Physics 1 - Mechanics', 3, 'Science', 'Physics and Astronomy', 'The science of describing and explaining motion.', FALSE);
+INSERT INTO Courses VALUES ('PHYS4230', 'The Phenomenology of Galaxies', 3, 'Science', 'Physics and Astronomy', 'This course describes the phenomenology of galaxies as determined by recent observational data.', FALSE);
+INSERT INTO Courses VALUES ('PHYS4300', 'General Relativity', 3, 'Science', 'Physics and Astronomy', 'n/a', FALSE);
+INSERT INTO Courses VALUES ('PHYS4390', 'Quantum Physics 3', 3, 'Science', 'Physics and Astronomy', '"Hilbert space formalism, symmetry and conservation laws, angular momentum, stationary state peturbation theory, variational methods."', FALSE);
+INSERT INTO Courses VALUES ('PHYS4510', 'Intro to Nuclear Physics', 3, 'Science', 'Physics and Astronomy', '"Nuclear properties, the nuclear two-body problem, the deuteron and nucleon-nucleon scaterring, nuclear models, nuclear disintigration."', FALSE);
+INSERT INTO Courses VALUES ('PHYS3180', 'Stars', 3, 'Science', 'Physics and Astronomy', '"Application of physics to the structure of stars, their formation and evolution, theoretical models and observations."', FALSE);
+INSERT INTO Courses VALUES ('PHYS3380', 'Quantum Physics 2', 3, 'Science', 'Physics and Astronomy', 'Focuses on solutions of the three-dimensional Schrodinger equation with special emphasis on one-electron atoms.', FALSE);
+INSERT INTO Courses VALUES ('PHYS3670', 'Classical Thermodynamics', 3, 'Science', 'Physics and Astronomy', 'An introduction to the laws of classical equilibrium thermodynamics and their applications.', FALSE);
+INSERT INTO Courses VALUES ('PHYS2490', 'Theoretical Physics 2', 3, 'Science', 'Physics and Astronomy', 'This course provides a continuation of the introduction to the mathematics required for both the Honours and Major programs in Physics and Astronomy.', FALSE);
+INSERT INTO Courses VALUES ('PHYS2380', 'Quantum Physics 1', 3, 'Science', 'Physics and Astronomy', '"Introduces the basic principles of quantum theory including cavity radiation and Planck\'s postulate, wave-particle duality, the Bohr model, and the Schrodinger theory."', FALSE);
+INSERT INTO Courses VALUES ('PHYS2390', 'Theoretical Physics 1', 3, 'Science', 'Physics and Astronomy', 'This course provides an introduction to the mathematics required for both the Honours and Major programs in Physics and Astronomy.', FALSE);
+INSERT INTO Courses VALUES ('PHYS1070', 'Physics 2 - Waves and Modern Physics', 3, 'Science', 'Physics and Astronomy', '"Learn about the mysterious quantum world, the basis of the latest nanotechnology, where particles are waves and waves are particles."', FALSE);
+INSERT INTO Courses VALUES ('PHYS1050', 'Physics 1 - Mechanics', 3, 'Science', 'Physics and Astronomy', 'The science of describing and explaining motion.', FALSE);
 
 -- Chemistry Courses:
-INSERT INTO Courses VALUES ('CHEM 4630', 'Biochemistry of Proteins', 3, 'Science', 'Chemistry', '"The structure and function of proteins, their physical and chemical properties and methods for studying them."', FALSE);
-INSERT INTO Courses VALUES ('CHEM 4590', 'Bioanalytical Methods', 3, 'Science', 'Chemistry', 'This course introduces different methods used currently for the analysis of biological materials.', FALSE);
-INSERT INTO Courses VALUES ('CHEM 4550', 'Aquatic Chemistry', 3, 'Science', 'Chemistry', '"An examination of biogeochemical processes affecting the distribution, speciation and bioavailability of chemical substances in the aquatic environment."', FALSE);
-INSERT INTO Courses VALUES ('CHEM 4600', 'Advanced Chemical Techniques', 6, 'Science', 'Chemistry', '"A workshop course consisting of lectures, problem solving and advanced instrumental techniques."', TRUE);
-INSERT INTO Courses VALUES ('CHEM 3590', 'Instrumental Analysis', 3, 'Science', 'Chemistry', 'A course dealing with theory and use of standard instruments used for chemical and biochemical analyses.', FALSE);
-INSERT INTO Courses VALUES ('CHEM 3400', 'Inorganic Chemistry: Reactivity and Properties', 3, 'Science', 'Chemistry', '"Advanced chemistry of the elements with emphasis on chemical reactivity, electronic structure and physical properties of inorganic compounds"', FALSE);
-INSERT INTO Courses VALUES ('CHEM 2370', '"Biochemistry 2 - Catabolism, Synthesis and Information Pathways"', 3, 'Science', 'Chemistry', 'An introductory course dealing with the basic metabolic processes that occur in living cells.', FALSE);
-INSERT INTO Courses VALUES ('CHEM 2470', 'Introductory Analytical Chemistry', 3, 'Science', 'Chemistry', 'Equips the students with the theoretical principles on which analytical methods are based with the ability to plan and perform experimental work.', FALSE);
-INSERT INTO Courses VALUES ('CHEM 2400', 'Inorganic Chemistry: Structure and Applications', 3, 'Science', 'Chemistry', '"Overview of chemical bonding, structure and reactivity across the periodic table."', FALSE);
-INSERT INTO Courses VALUES ('CHEM 2360', 'Biochemistry 1 - Biomolecules and an Introduction to Metabolic Energy', 3, 'Science', 'Chemistry', 'An introductory course dealing with molecules encountered in biochemistry and the concept of metabolic energy as a product of catabolism.', FALSE);
-INSERT INTO Courses VALUES ('CHEM 2210', 'Introductory Organic Chemistry: Structure and Function', 3, 'Science', 'Chemistry', 'An introduction to the concepts of organic reactivity and bonding in organic molecules.', FALSE);
-INSERT INTO Courses VALUES ('CHEM 1310', 'Introduction to Physical Chemistry', 3, 'Science', 'Chemistry', '"Thermochemistry, chemical thermodynamics and chemical kinetics."', FALSE);
-INSERT INTO Courses VALUES ('CHEM 1300', 'Structure and Modelling in Chemistry', 3, 'Science', 'Chemistry', '"Atomic and molecular models and their applications to chemistry, including a discussion of solid, liquid and gaseous states."', FALSE);
+INSERT INTO Courses VALUES ('CHEM4630', 'Biochemistry of Proteins', 3, 'Science', 'Chemistry', '"The structure and function of proteins, their physical and chemical properties and methods for studying them."', FALSE);
+INSERT INTO Courses VALUES ('CHEM4590', 'Bioanalytical Methods', 3, 'Science', 'Chemistry', 'This course introduces different methods used currently for the analysis of biological materials.', FALSE);
+INSERT INTO Courses VALUES ('CHEM4550', 'Aquatic Chemistry', 3, 'Science', 'Chemistry', '"An examination of biogeochemical processes affecting the distribution, speciation and bioavailability of chemical substances in the aquatic environment."', FALSE);
+INSERT INTO Courses VALUES ('CHEM4600', 'Advanced Chemical Techniques', 6, 'Science', 'Chemistry', '"A workshop course consisting of lectures, problem solving and advanced instrumental techniques."', TRUE);
+INSERT INTO Courses VALUES ('CHEM3590', 'Instrumental Analysis', 3, 'Science', 'Chemistry', 'A course dealing with theory and use of standard instruments used for chemical and biochemical analyses.', FALSE);
+INSERT INTO Courses VALUES ('CHEM3400', 'Inorganic Chemistry: Reactivity and Properties', 3, 'Science', 'Chemistry', '"Advanced chemistry of the elements with emphasis on chemical reactivity, electronic structure and physical properties of inorganic compounds"', FALSE);
+INSERT INTO Courses VALUES ('CHEM2370', '"Biochemistry 2 - Catabolism, Synthesis and Information Pathways"', 3, 'Science', 'Chemistry', 'An introductory course dealing with the basic metabolic processes that occur in living cells.', FALSE);
+INSERT INTO Courses VALUES ('CHEM2470', 'Introductory Analytical Chemistry', 3, 'Science', 'Chemistry', 'Equips the students with the theoretical principles on which analytical methods are based with the ability to plan and perform experimental work.', FALSE);
+INSERT INTO Courses VALUES ('CHEM2400', 'Inorganic Chemistry: Structure and Applications', 3, 'Science', 'Chemistry', '"Overview of chemical bonding, structure and reactivity across the periodic table."', FALSE);
+INSERT INTO Courses VALUES ('CHEM2360', 'Biochemistry 1 - Biomolecules and an Introduction to Metabolic Energy', 3, 'Science', 'Chemistry', 'An introductory course dealing with molecules encountered in biochemistry and the concept of metabolic energy as a product of catabolism.', FALSE);
+INSERT INTO Courses VALUES ('CHEM2210', 'Introductory Organic Chemistry: Structure and Function', 3, 'Science', 'Chemistry', 'An introduction to the concepts of organic reactivity and bonding in organic molecules.', FALSE);
+INSERT INTO Courses VALUES ('CHEM1310', 'Introduction to Physical Chemistry', 3, 'Science', 'Chemistry', '"Thermochemistry, chemical thermodynamics and chemical kinetics."', FALSE);
+INSERT INTO Courses VALUES ('CHEM1300', 'Structure and Modelling in Chemistry', 3, 'Science', 'Chemistry', '"Atomic and molecular models and their applications to chemistry, including a discussion of solid, liquid and gaseous states."', FALSE);
 -- **********END OF INSERTING TO Courses Table*********************************************************************************************
 
 -- ******** INSERT TO Prerequisites ********
@@ -456,115 +456,115 @@ INSERT INTO Sections VALUES ('23107','A01', 'BIOL4362', 'Winter2015', 50, 'TR', 
 INSERT INTO Sections VALUES ('22503','A01', 'BIOL4470', 'Winter2015', 45, 'TR', '10:00:00', '11:15:00', 'E2-350 EITC');
 
 -- Environmental Science Sections:
-INSERT INTO Sections VALUES ('14000', 'a01', 'ENVR 4110', 'fall 2014', 35, 'mwf', '10:30:00', '11:20:00', '215 Wallace');
+INSERT INTO Sections VALUES ('14000', 'a01', 'ENVR4110', 'Fall2014', 35, 'mwf', '10:30:00', '11:20:00', '215 Wallace');
 
-INSERT INTO Sections VALUES ('14001', 'a01', 'ENVR 3160', 'winter 2015', 35, 'tr', '11:30:00', '12:45:00', '215 Wallace');
+INSERT INTO Sections VALUES ('14001', 'a01', 'ENVR3160', 'Winter2015', 35, 'tr', '11:30:00', '12:45:00', '215 Wallace');
 
-INSERT INTO Sections VALUES ('14002', 'a01', 'ENVR 2270', 'fall 2014', 45, 'tr', '14:30:00', '15:45:00', '218 Wallace');
+INSERT INTO Sections VALUES ('14002', 'a01', 'ENVR2270', 'Fall2014', 45, 'tr', '14:30:00', '15:45:00', '218 Wallace');
 
-INSERT INTO Sections VALUES ('14003', 'a01', 'ENVR 2000', 'winter 2015', 150, 'mwf', '12:30:00', '13:20:00', '221 Wallace');
+INSERT INTO Sections VALUES ('14003', 'a01', 'ENVR2000', 'Winter2015', 150, 'mwf', '12:30:00', '13:20:00', '221 Wallace');
 
-INSERT INTO Sections VALUES ('14004', 'a01', 'ENVR 1000', 'fall 2014', 150, 'mwf', '10:30:00', '11:20:00', '223 Wallace');
-INSERT INTO Sections VALUES ('14005', 'a02', 'ENVR 1000', 'fall 2014', 150, 'tr', '13:00:00', '14:15:00', '223 Wallace');
+INSERT INTO Sections VALUES ('14004', 'a01', 'ENVR1000', 'Fall2014', 150, 'mwf', '10:30:00', '11:20:00', '223 Wallace');
+INSERT INTO Sections VALUES ('14005', 'a02', 'ENVR1000', 'Fall2014', 150, 'tr', '13:00:00', '14:15:00', '223 Wallace');
 
 -- Math Sections:
-INSERT INTO Sections VALUES ('14043', 'a01', 'MATH 4250', 'fall 2014', 15, 'tr', '13:00:00', '14:15:00', '318 Machray Hall');
+INSERT INTO Sections VALUES ('14043', 'a01', 'MATH4250', 'Fall2014', 15, 'tr', '13:00:00', '14:15:00', '318 Machray Hall');
 
-INSERT INTO Sections VALUES ('14044', 'a01', 'MATH 4430', 'winter 2015', 25, 'tr', '13:00:00', '14:15:00', '124 Machray Hall');
+INSERT INTO Sections VALUES ('14044', 'a01', 'MATH4430', 'Winter2015', 25, 'tr', '13:00:00', '14:15:00', '124 Machray Hall');
 
-INSERT INTO Sections VALUES ('14045', 'a01', 'MATH 4810', 'fall 2014', 20, 'mwf', '14:30:00', '15:20:00', '316 Machray Hall');
+INSERT INTO Sections VALUES ('14045', 'a01', 'MATH4810', 'Fall2014', 20, 'mwf', '14:30:00', '15:20:00', '316 Machray Hall');
 
-INSERT INTO Sections VALUES ('14046', 'a01', 'MATH 3350', 'fall 2014', 14, 'mwf', '11:30:00', '12:20:00', '415 Machray Hall');
+INSERT INTO Sections VALUES ('14046', 'a01', 'MATH3350', 'Fall2014', 14, 'mwf', '11:30:00', '12:20:00', '415 Machray Hall');
 
-INSERT INTO Sections VALUES ('14047', 'a01', 'MATH 3810', 'winter 2015', 25, 'mwf', '09:30:00', '10:20:00', '415 Machray Hall');
+INSERT INTO Sections VALUES ('14047', 'a01', 'MATH3810', 'Winter2015', 25, 'mwf', '09:30:00', '10:20:00', '415 Machray Hall');
 
-INSERT INTO Sections VALUES ('14048', 'a01', 'MATH 3800', 'fall 2014', 25, 'tr', '14:30:00', '15:45:00', '124 Machray Hall');
-INSERT INTO Sections VALUES ('14049', 'a01', 'MATH 3800', 'winter 2015', 25, 'tr', '14:30:00', '15:45:00', '124 Machray Hall');
+INSERT INTO Sections VALUES ('14048', 'a01', 'MATH3800', 'Fall2014', 25, 'tr', '14:30:00', '15:45:00', '124 Machray Hall');
+INSERT INTO Sections VALUES ('14049', 'a01', 'MATH3800', 'Winter2015', 25, 'tr', '14:30:00', '15:45:00', '124 Machray Hall');
 
-INSERT INTO Sections VALUES ('14050', 'a01', 'MATH 2500', 'fall 2014', 70, 'mwf', '12:30:00', '13:20:00', '315 Buller');
-INSERT INTO Sections VALUES ('14051', 'a01', 'MATH 2500', 'winter 2015', 70, 'mwf', '11:30:00', '12:20:00', '315 Buller');
+INSERT INTO Sections VALUES ('14050', 'a01', 'MATH2500', 'Fall2014', 70, 'mwf', '12:30:00', '13:20:00', '315 Buller');
+INSERT INTO Sections VALUES ('14051', 'a01', 'MATH2500', 'Winter2015', 70, 'mwf', '11:30:00', '12:20:00', '315 Buller');
 
-INSERT INTO Sections VALUES ('14053', 'a01', 'MATH 2352', 'fall 2014', 30, 'tr', '08:30:00', '09:45:00', '316 Machray Hall');
-INSERT INTO Sections VALUES ('14054', 'a02', 'MATH 2352', 'fall 2014', 30, 'mwf', '10:30:00', '11:20:00', '316 Machray Hall');
+INSERT INTO Sections VALUES ('14053', 'a01', 'MATH2352', 'Fall2014', 30, 'tr', '08:30:00', '09:45:00', '316 Machray Hall');
+INSERT INTO Sections VALUES ('14054', 'a02', 'MATH2352', 'Fall2014', 30, 'mwf', '10:30:00', '11:20:00', '316 Machray Hall');
 
-INSERT INTO Sections VALUES ('14055', 'a01', 'MATH 2750', 'fall 2014', 25, 'mwf', '10:30:00', '11:20:00', '415 Machray Hall');
+INSERT INTO Sections VALUES ('14055', 'a01', 'MATH2750', 'Fall2014', 25, 'mwf', '10:30:00', '11:20:00', '415 Machray Hall');
 
-INSERT INTO Sections VALUES ('14056', 'a01', 'MATH 2800', 'winter 2015', 65, 'mwf', '12:30:00', '13:20:00', '218 Wallace');
+INSERT INTO Sections VALUES ('14056', 'a01', 'MATH2800', 'Winter2015', 65, 'mwf', '12:30:00', '13:20:00', '218 Wallace');
 
-INSERT INTO Sections VALUES ('14057', 'a01', 'MATH 1300', 'fall 2014', 140, 'mwf', '10:30:00', '11:20:00', '204 Armes');
-INSERT INTO Sections VALUES ('14058', 'a02', 'MATH 1300', 'fall 2014', 140, 'tr', '10:00:00', '11:15:00', '208 Armes');
-INSERT INTO Sections VALUES ('14059', 'a01', 'MATH 1300', 'winter 2015', 140, 'mwf', '13:30:00', '14:20:00', '204 Armes');
+INSERT INTO Sections VALUES ('14057', 'a01', 'MATH1300', 'Fall2014', 140, 'mwf', '10:30:00', '11:20:00', '204 Armes');
+INSERT INTO Sections VALUES ('14058', 'a02', 'MATH1300', 'Fall2014', 140, 'tr', '10:00:00', '11:15:00', '208 Armes');
+INSERT INTO Sections VALUES ('14059', 'a01', 'MATH1300', 'Winter2015', 140, 'mwf', '13:30:00', '14:20:00', '204 Armes');
 
-INSERT INTO Sections VALUES ('14060', 'a01', 'MATH 1700', 'winter 2015', 200, 'mwf', '09:30:00', '10:20:00', '231 Isbister');
-INSERT INTO Sections VALUES ('14061', 'a02', 'MATH 1700', 'winter 2015', 200, 'tr', '13:00:00', '14:15:00', '100 Fletcher Argue');
+INSERT INTO Sections VALUES ('14060', 'a01', 'MATH1700', 'Winter2015', 200, 'mwf', '09:30:00', '10:20:00', '231 Isbister');
+INSERT INTO Sections VALUES ('14061', 'a02', 'MATH1700', 'Winter2015', 200, 'tr', '13:00:00', '14:15:00', '100 Fletcher Argue');
 
-INSERT INTO Sections VALUES ('14062', 'a01', 'MATH 1500', 'fall 2014', 90, 'mwf', '10:30:00', '11:20:00', '118 St. John\'s');
-INSERT INTO Sections VALUES ('14063', 'a02', 'MATH 1500', 'fall 2014', 120, 'mwf', '09:30:00', '10:20:00', '201 Armes');
-INSERT INTO Sections VALUES ('14064', 'a01', 'MATH 1500', 'winter 2015', 140, 'tr', '08:30:00', '09:45:00', '208 Armes');
+INSERT INTO Sections VALUES ('14062', 'a01', 'MATH1500', 'Fall2014', 90, 'mwf', '10:30:00', '11:20:00', '118 St. John\'s');
+INSERT INTO Sections VALUES ('14063', 'a02', 'MATH1500', 'Fall2014', 120, 'mwf', '09:30:00', '10:20:00', '201 Armes');
+INSERT INTO Sections VALUES ('14064', 'a01', 'MATH1500', 'Winter2015', 140, 'tr', '08:30:00', '09:45:00', '208 Armes');
 
 -- Physics & Astronomy Sections:
-INSERT INTO Sections VALUES ('14026', 'a01', 'PHYS 4230', 'fall 2014', 8, 'mwf', '10:30:00', '11:20:00', '321 Allen');
+INSERT INTO Sections VALUES ('14026', 'a01', 'PHYS4230', 'Fall2014', 8, 'mwf', '10:30:00', '11:20:00', '321 Allen');
 
-INSERT INTO Sections VALUES ('14027', 'a01', 'PHYS 4300', 'winter 2015', 15, 'tr', '11:30:00', '12:45:00', '500 Machray Hall');
+INSERT INTO Sections VALUES ('14027', 'a01', 'PHYS4300', 'Winter2015', 15, 'tr', '11:30:00', '12:45:00', '500 Machray Hall');
 
-INSERT INTO Sections VALUES ('14028', 'a01', 'PHYS 4390', 'fall 2014', 16, 'mwf', '08:30:00', '09:20:00', '319 Allen');
+INSERT INTO Sections VALUES ('14028', 'a01', 'PHYS4390', 'Fall2014', 16, 'mwf', '08:30:00', '09:20:00', '319 Allen');
 
-INSERT INTO Sections VALUES ('14029', 'a01', 'PHYS 4510', 'winter 2015', 15, 'tr', '13:00:00', '14:15:00', '319 Allen');
+INSERT INTO Sections VALUES ('14029', 'a01', 'PHYS4510', 'Winter2015', 15, 'tr', '13:00:00', '14:15:00', '319 Allen');
 
-INSERT INTO Sections VALUES ('14030', 'a01', 'PHYS 3180', 'fall 2014', 38, 'tr', '11:30:00', '12:45:00', '330 Allen');
+INSERT INTO Sections VALUES ('14030', 'a01', 'PHYS3180', 'Fall2014', 38, 'tr', '11:30:00', '12:45:00', '330 Allen');
 
-INSERT INTO Sections VALUES ('14031', 'a01', 'PHYS 3380', 'winter 2015', 25, 'mwf', '08:30:00', '09:20:00', '330 Allen');
+INSERT INTO Sections VALUES ('14031', 'a01', 'PHYS3380', 'Winter2015', 25, 'mwf', '08:30:00', '09:20:00', '330 Allen');
 
-INSERT INTO Sections VALUES ('14032', 'a01', 'PHYS 3670', 'fall 2014', 25, 'mwf', '08:30:00', '09:20:00', '330 Allen');
+INSERT INTO Sections VALUES ('14032', 'a01', 'PHYS3670', 'Fall2014', 25, 'mwf', '08:30:00', '09:20:00', '330 Allen');
 
-INSERT INTO Sections VALUES ('14033', 'a01', 'PHYS 2490', 'winter 2015', 35, 'tr', '08:30:00', '09:45:00', '319 Allen');
+INSERT INTO Sections VALUES ('14033', 'a01', 'PHYS2490', 'Winter2015', 35, 'tr', '08:30:00', '09:45:00', '319 Allen');
 
-INSERT INTO Sections VALUES ('14034', 'a01', 'PHYS 2380', 'fall 2014', 35, 'mwf', '13:30:00', '14:20:00', '319 Allen');
-INSERT INTO Sections VALUES ('14035', 'a01', 'PHYS 2380', 'winter 2015', 35, 'mwf', '13:30:00', '14:20:00', '319 Allen');
+INSERT INTO Sections VALUES ('14034', 'a01', 'PHYS2380', 'Fall2014', 35, 'mwf', '13:30:00', '14:20:00', '319 Allen');
+INSERT INTO Sections VALUES ('14035', 'a01', 'PHYS2380', 'Winter2015', 35, 'mwf', '13:30:00', '14:20:00', '319 Allen');
 
-INSERT INTO Sections VALUES ('14036', 'a01', 'PHYS 2390', 'fall 2014', 40, 'tr', '08:30:00', '09:45:00', '301 Biological Sciences');
-INSERT INTO Sections VALUES ('14037', 'a02', 'PHYS 2390', 'fall 2014', 30, 'tr', '10:00:00', '11:15:00', '330 Allen');
+INSERT INTO Sections VALUES ('14036', 'a01', 'PHYS2390', 'Fall2014', 40, 'tr', '08:30:00', '09:45:00', '301 Biological Sciences');
+INSERT INTO Sections VALUES ('14037', 'a02', 'PHYS 2390', 'Fall2014', 30, 'tr', '10:00:00', '11:15:00', '330 Allen');
 
-INSERT INTO Sections VALUES ('14038', 'a01', 'PHYS 1070', 'winter 2015', 100, 'mwf', '09:30:00', '10:20:00', '306 Buller');
-INSERT INTO Sections VALUES ('14039', 'a02', 'PHYS 1070', 'winter 2015', 95, 'mwf', '13:30:00', '14:20:00', '306 Buller');
+INSERT INTO Sections VALUES ('14038', 'a01', 'PHYS1070', 'Winter2015', 100, 'mwf', '09:30:00', '10:20:00', '306 Buller');
+INSERT INTO Sections VALUES ('14039', 'a02', 'PHYS1070', 'Winter2015', 95, 'mwf', '13:30:00', '14:20:00', '306 Buller');
 
-INSERT INTO Sections VALUES ('14040', 'a01', 'PHYS 1050', 'fall 2014', 148, 'mwf', '09:30:00', '10:20:00', '100 St. Paul\'s');
-INSERT INTO Sections VALUES ('14041', 'a02', 'PHYS 1050', 'fall 2014', 139, 'mwf', '09:30:00', '10:20:00', '221 Wallace');
-INSERT INTO Sections VALUES ('14042', 'a01', 'PHYS 1050', 'winter 2015', 178, 'mwf', '13:30:00', '14:20:00', '205 Armes');
+INSERT INTO Sections VALUES ('14040', 'a01', 'PHYS1050', 'Fall2014', 148, 'mwf', '09:30:00', '10:20:00', '100 St. Paul\'s');
+INSERT INTO Sections VALUES ('14041', 'a02', 'PHYS1050', 'Fall2014', 139, 'mwf', '09:30:00', '10:20:00', '221 Wallace');
+INSERT INTO Sections VALUES ('14042', 'a01', 'PHYS1050', 'Winter2015', 178, 'mwf', '13:30:00', '14:20:00', '205 Armes');
 
 -- Chemistry Sections:
-INSERT INTO Sections VALUES ('14006', 'a01', 'CHEM 4630', 'winter 2015', 60, 'tr', '11:30:00', '12:45:00', '315 Machray Hall');
+INSERT INTO Sections VALUES ('14006', 'a01', 'CHEM4630', 'Winter2015', 60, 'tr', '11:30:00', '12:45:00', '315 Machray Hall');
 
-INSERT INTO Sections VALUES ('14007', 'a01', 'CHEM 4590', 'winter 2015', 20, 'mwf', '11:30:00', '12:20:00', '115 Armes');
+INSERT INTO Sections VALUES ('14007', 'a01', 'CHEM4590', 'Winter2015', 20, 'mwf', '11:30:00', '12:20:00', '115 Armes');
 
-INSERT INTO Sections VALUES ('14008', 'a01', 'CHEM 4550', 'fall 2014', 25, 'tr', '08:30:00', '09:45:00', '537 Parker');
+INSERT INTO Sections VALUES ('14008', 'a01', 'CHEM4550', 'Fall2014', 25, 'tr', '08:30:00', '09:45:00', '537 Parker');
 
-INSERT INTO Sections VALUES ('14009', 'a01', 'CHEM 4600', 'fall 2014', 18, 'w', '02:30:00', '05:15:00', '539 Parker');
+INSERT INTO Sections VALUES ('14009', 'a01', 'CHEM4600', 'Fall2014', 18, 'w', '02:30:00', '05:15:00', '539 Parker');
 
-INSERT INTO Sections VALUES ('14010', 'a01', 'CHEM 3590', 'winter 2015', 32, 'mwf', '10:30:00', '11:20:00', '218 Wallace');
+INSERT INTO Sections VALUES ('14010', 'a01', 'CHEM3590', 'Winter2015', 32, 'mwf', '10:30:00', '11:20:00', '218 Wallace');
 
-INSERT INTO Sections VALUES ('14011', 'a01', 'CHEM 3400', 'winter 2015', 25, 'tr', '10:00:00', '11:15:00', '537 Parker');
-INSERT INTO Sections VALUES ('14012', 'a01', 'CHEM 3400', 'fall 2014', 25, 'tr', '10:00:00', '11:15:00', '539 Parker');
+INSERT INTO Sections VALUES ('14011', 'a01', 'CHEM3400', 'Winter2015', 25, 'tr', '10:00:00', '11:15:00', '537 Parker');
+INSERT INTO Sections VALUES ('14012', 'a01', 'CHEM3400', 'Fall2014', 25, 'tr', '10:00:00', '11:15:00', '539 Parker');
 
-INSERT INTO Sections VALUES ('14013', 'a01', 'CHEM 2370', 'winter 2015', 162, 'tr', '11:30:00', '12:45:00', '343 Drake');
+INSERT INTO Sections VALUES ('14013', 'a01', 'CHEM2370', 'Winter2015', 162, 'tr', '11:30:00', '12:45:00', '343 Drake');
 
-INSERT INTO Sections VALUES ('14014', 'a01', 'CHEM 2470', 'winter 2015', 115, 'mwf', '11:30:00', '12:20:00', '215 Buller');
-INSERT INTO Sections VALUES ('14015', 'a01', 'CHEM 2470', 'fall 2014', 118, 'tr', '10:00:00', '11:15:00', '224 Education');
+INSERT INTO Sections VALUES ('14014', 'a01', 'CHEM2470', 'Winter2015', 115, 'mwf', '11:30:00', '12:20:00', '215 Buller');
+INSERT INTO Sections VALUES ('14015', 'a01', 'CHEM2470', 'Fall2014', 118, 'tr', '10:00:00', '11:15:00', '224 Education');
 
-INSERT INTO Sections VALUES ('14016', 'a01', 'CHEM 2400', 'winter 2015', 115, 'mwf', '12:30:00', '13:20:00', '207 Buller');
-INSERT INTO Sections VALUES ('14017', 'a01', 'CHEM 2400', 'fall 2014', 120, 'mwf', '11:30:00', '12:20:00', '215 Buller');
+INSERT INTO Sections VALUES ('14016', 'a01', 'CHEM2400', 'Winter2015', 115, 'mwf', '12:30:00', '13:20:00', '207 Buller');
+INSERT INTO Sections VALUES ('14017', 'a01', 'CHEM2400', 'Fall2014', 120, 'mwf', '11:30:00', '12:20:00', '215 Buller');
 
-INSERT INTO Sections VALUES ('14018', 'a01', 'CHEM 2360', 'fall 2014', 160, 'tr', '08:30:00', '09:45:00', '208 Armes');
+INSERT INTO Sections VALUES ('14018', 'a01', 'CHEM2360', 'Fall2014', 160, 'tr', '08:30:00', '09:45:00', '208 Armes');
 
-INSERT INTO Sections VALUES ('14019', 'a01', 'CHEM 2210', 'fall 2014', 287, 'mwf', '11:30:00', '12:20:00', '200 Fletcher Argue');
+INSERT INTO Sections VALUES ('14019', 'a01', 'CHEM2210', 'Fall2014', 287, 'mwf', '11:30:00', '12:20:00', '200 Fletcher Argue');
 
-INSERT INTO Sections VALUES ('14020', 'a01', 'CHEM 1310', 'fall 2014', 220, 'mwf', '10:30:00', '11:20:00', '200 Armes');
-INSERT INTO Sections VALUES ('14021', 'a01', 'CHEM 1310', 'winter 2015', 160, 'tr', '08:30:00', '09:45:00', '200 Armes');
-INSERT INTO Sections VALUES ('14022', 'a02', 'CHEM 1310', 'winter 2015', 202, 'tr', '13:00:00', '14:15:00', '203 Armes');
+INSERT INTO Sections VALUES ('14020', 'a01', 'CHEM1310', 'Fall2014', 220, 'mwf', '10:30:00', '11:20:00', '200 Armes');
+INSERT INTO Sections VALUES ('14021', 'a01', 'CHEM1310', 'Winter2015', 160, 'tr', '08:30:00', '09:45:00', '200 Armes');
+INSERT INTO Sections VALUES ('14022', 'a02', 'CHEM1310', 'Winter2015', 202, 'tr', '13:00:00', '14:15:00', '203 Armes');
 
-INSERT INTO Sections VALUES ('14023', 'a01', 'CHEM 1300', 'fall 2014', 202, 'tr', '13:00:00', '14:15:00', '204 Armes');
-INSERT INTO Sections VALUES ('14024', 'a02', 'CHEM 1300', 'fall 2014', 263, 'mwf', '12:30:00', '13:20:00', '290 Education');
-INSERT INTO Sections VALUES ('14025', 'a03', 'CHEM 1300', 'fall 2014', 202, 'tr', '14:30:00', '15:45:00', '204 Armes');
+INSERT INTO Sections VALUES ('14023', 'a01', 'CHEM1300', 'Fall2014', 202, 'tr', '13:00:00', '14:15:00', '204 Armes');
+INSERT INTO Sections VALUES ('14024', 'a02', 'CHEM1300', 'Fall2014', 263, 'mwf', '12:30:00', '13:20:00', '290 Education');
+INSERT INTO Sections VALUES ('14025', 'a03', 'CHEM1300', 'Fall2014', 202, 'tr', '14:30:00', '15:45:00', '204 Armes');
 -- ******** END OF INSERT TO Sections ********
 
 -- Insert completed and enrolled courses for Students
