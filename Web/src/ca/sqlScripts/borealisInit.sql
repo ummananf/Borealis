@@ -103,9 +103,9 @@ CREATE TABLE DegreeChoice
 );
 
 -- Create Users
-INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'John', 'Johnson','No Degree', 0, 'admin');
+INSERT INTO Users VALUES (1, 'admin1', 'password', 'admin1@school.ca', 'John', 'Johnson', NULL, 0, 'admin');
 INSERT INTO Users VALUES (7651245, 'bob', '4350', 'bob@school.ca', 'Bob', 'Carslon','B.Sc. Computer Science (Major)', 15, 'student');
-INSERT INTO Users VALUES (7651785, 'alice', '4350', 'alice@umanitoba.ca', 'Alice', 'Queen','B.Sc. Computer Science (Co-op)', 15, 'student');
+INSERT INTO Users VALUES (7651785, 'alice', '4350', 'alice@umanitoba.ca', 'Alice', 'Queen','B.Sc. Computer Science (Honours)' 15, 'student');
 INSERT INTO Users VALUES (6812459, 'frank', '4350', 'frank@umanitoba.ca', 'Frank', 'Frank','B.Sc. Computer Science (Honours)', 15, 'student');
 INSERT INTO Users VALUES (3, 'jason', '123456', 'jason@myumanitoba.ca','Jason', 'King', 'B.Sc. Astronomy (Major)', 15, 'student');
 INSERT INTO Users VALUES (4, 'francis','654321', 'frank@myumanitoba.ca','Francis','King','B.Sc. Chemistry (Major)', 15,'student');
@@ -113,7 +113,7 @@ INSERT INTO Users VALUES (5, 'kevin','123','Kevin@uwaterloo.ca','Kevin','Queen',
 INSERT INTO Users VALUES (6, 'emily', 'pass', 'emily@myumanitoba.ca','Emily', 'Smith', 'B.Sc. Environment (Co-op)', 15, 'student');
 INSERT INTO Users VALUES (7, 'andrea','123456789', 'andrea@myumanitoba.ca','Andrea','Stephenson','B.Sc. Physics (Honours)', 15,'student');
 INSERT INTO Users VALUES (8, 'craig', '987654321', 'craig@myumanitoba.ca','Craig', 'Stephenson', 'B.Sc. Mathematics (Major)', 15, 'student');
-INSERT INTO Users VALUES (9, 'thomas','0000', 'thomas@myumanitoba.ca','Thomas','Klassen','B.Sc. Physics (Major)', 15,'student');
+INSERT INTO Users VALUES (9, 'thomas','0000', 'thomas@myumanitoba.ca','Thomas','Klassen','B.Sc. Biology (Major)', 15,'student');
 
 -- ***************START TO INSERT TO Courses TABLE****************************************************************************************
 -- Computer Science Courses:
@@ -606,34 +606,34 @@ INSERT INTO Enrolled VALUES (9, '20245', -1.0);
 
 -- Insert Degrees
 INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
-INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Honours', 'B.Sc. Computer Science (Honours)', 120);
-INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Co-op', 'B.Sc. Computer Science (Co-op)', 120);
-INSERT INTO Degrees VALUES ('Fall2014', 'Environmental Science', 'Major', 'B.Sc. Environment (Major)', 90);
+-- INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Honours', 'B.Sc. Computer Science (Honours)', 120);
+-- INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Co-op', 'B.Sc. Computer Science (Co-op)', 120);
+-- INSERT INTO Degrees VALUES ('Fall2014', 'Environmental Science', 'Major', 'B.Sc. Environment (Major)', 90);
 INSERT INTO Degrees VALUES ('Fall2014', 'Environmental Science', 'Co-op', 'B.Sc. Environment (Co-op)', 90);
-INSERT INTO Degrees VALUES ('Fall2014', 'Biology', 'Major', 'B.Sc. Biology (Major)', 120);
+-- INSERT INTO Degrees VALUES ('Fall2014', 'Biology', 'Major', 'B.Sc. Biology (Major)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Biology', 'Honours', 'B.Sc. Biology (Honours)', 120);
-INSERT INTO Degrees VALUES ('Fall2014', 'Chemistry', 'Major', 'B.Sc. Chemistry (Major)', 120);
+-- INSERT INTO Degrees VALUES ('Fall2014', 'Chemistry', 'Major', 'B.Sc. Chemistry (Major)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Chemistry', 'Honours', 'B.Sc. Chemistry (Honours)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Mathematics', 'Major', 'B.Sc. Mathematics (Major)', 120);
-INSERT INTO Degrees VALUES ('Fall2014', 'Mathematics', 'Honours', 'B.Sc. Mathematics (Honours)', 120);
-INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Major', 'B.Sc. Physics (Major)', 120);
-INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Honours', 'B.Sc. Physics (Honours)', 120);
+-- INSERT INTO Degrees VALUES ('Fall2014', 'Mathematics', 'Honours', 'B.Sc. Mathematics (Honours)', 120);
+-- INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Major', 'B.Sc. Physics (Major)', 120);
+-- INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Honours', 'B.Sc. Physics (Honours)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Major', 'B.Sc. Astronomy (Major)', 120);
 
-INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
+-- INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Honours', 'B.Sc. Computer Science (Honours)', 120);
-INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Co-op', 'B.Sc. Computer Science (Co-op)', 120);
+-- INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Co-op', 'B.Sc. Computer Science (Co-op)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Environmental Science', 'Major', 'B.Sc. Environment (Major)', 90);
-INSERT INTO Degrees VALUES ('Winter2015', 'Environmental Science', 'Co-op', 'B.Sc. Environment (Co-op)', 90);
+-- INSERT INTO Degrees VALUES ('Winter2015', 'Environmental Science', 'Co-op', 'B.Sc. Environment (Co-op)', 90);
 INSERT INTO Degrees VALUES ('Winter2015', 'Biology', 'Major', 'B.Sc. Biology (Major)', 120);
-INSERT INTO Degrees VALUES ('Winter2015', 'Biology', 'Honours', 'B.Sc. Biology (Honours)', 120);
+-- INSERT INTO Degrees VALUES ('Winter2015', 'Biology', 'Honours', 'B.Sc. Biology (Honours)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Chemistry', 'Major', 'B.Sc. Chemistry (Major)', 120);
-INSERT INTO Degrees VALUES ('Winter2015', 'Chemistry', 'Honours', 'B.Sc. Chemistry (Honours)', 120);
-INSERT INTO Degrees VALUES ('Winter2015', 'Mathematics', 'Major', 'B.Sc. Mathematics (Major)', 120);
+-- INSERT INTO Degrees VALUES ('Winter2015', 'Chemistry', 'Honours', 'B.Sc. Chemistry (Honours)', 120);
+-- INSERT INTO Degrees VALUES ('Winter2015', 'Mathematics', 'Major', 'B.Sc. Mathematics (Major)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Mathematics', 'Honours', 'B.Sc. Mathematics (Honours)', 120);
-INSERT INTO Degrees VALUES ('Winter2015', 'Physics and Astronomy', 'Major', 'B.Sc. Physics (Major)', 120);
+-- INSERT INTO Degrees VALUES ('Winter2015', 'Physics and Astronomy', 'Major', 'B.Sc. Physics (Major)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Physics and Astronomy', 'Honours', 'B.Sc. Physics (Honours)', 120);
-INSERT INTO Degrees VALUES ('Winter2015', 'Physics and Astronomy', 'Major', 'B.Sc. Astronomy (Major)', 120);
+-- INSERT INTO Degrees VALUES ('Winter2015', 'Physics and Astronomy', 'Major', 'B.Sc. Astronomy (Major)', 120);
 
 -- Insert required courses into degrees.
 INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Major)', 'COMP1010');
