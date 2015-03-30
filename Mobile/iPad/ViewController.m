@@ -53,7 +53,7 @@ NSDictionary *user;
             NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/login"];
             
             NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-            NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+            NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
             
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
             [request setURL:url];
