@@ -26,9 +26,8 @@ NSDictionary *user;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-    
+    //NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+    //[[UIDevice currentDevice] setValue:value forKey:@"orientation"];
 }
 
 - (void)didReceiveMemoryWarning

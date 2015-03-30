@@ -26,13 +26,13 @@
     if (self) {
         self.courseId = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, 120, 30)];
         [self addSubview:self.courseId];
-        self.crn = [[UILabel alloc] initWithFrame:CGRectMake(120, 10, 60, 30)];
+        self.crn = [[UILabel alloc] initWithFrame:CGRectMake(120, 10, 80, 30)];
         [self addSubview:self.crn];
-        self.section = [[UILabel alloc] initWithFrame:CGRectMake(190, 10, 60, 30)];
+        self.section = [[UILabel alloc] initWithFrame:CGRectMake(200, 10, 60, 30)];
         [self addSubview:self.section];
-        self.capacity = [[UILabel alloc] initWithFrame:CGRectMake(260, 10, 80, 30)];
+        self.capacity = [[UILabel alloc] initWithFrame:CGRectMake(260, 10, 60, 30)];
         [self addSubview:self.capacity];
-        self.days = [[UILabel alloc] initWithFrame:CGRectMake(350, 10, 100, 30)];
+        self.days = [[UILabel alloc] initWithFrame:CGRectMake(320, 10, 100, 30)];
         [self addSubview:self.days];
         self.startTime = [[UILabel alloc] initWithFrame:CGRectMake(420, 10, 120, 30)];
         [self addSubview:self.startTime];

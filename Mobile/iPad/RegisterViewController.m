@@ -126,21 +126,9 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     SBJsonParser *jsonParser = [SBJsonParser new];
     NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
     
-    CourseCell *cell = [[CourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    cell.courseId.text = @"Course ID";
-    cell.crn.text = @"CRN";
-    cell.section.text = @"Section";
-    cell.capacity.text = @"Capacity";
-    cell.days.text = @"Days";
-    cell.startTime.text = @"Start Time";
-    cell.endTime.text = @"End Time";
-    cell.location.text = @"Location";
-    [cell.registerButton setBackgroundColor:[UIColor whiteColor]];
-    [cell.dropButton setBackgroundColor:[UIColor whiteColor]];
-    [tableData addObject:cell];
-
     for (id key in jsonData) {
-        cell = [[CourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        
+        CourseCell *cell = [[CourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
         cell.courseId.text = [key valueForKey:@"cID"];
         cell.crn.text = [key valueForKey:@"crn"];
         cell.section.text = [key valueForKey:@"sectID"];
