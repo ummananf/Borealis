@@ -29,27 +29,22 @@
     <div>
     <select id="termSelect">
     	<option value="noterm">Select Term:</option>
-    	<option value="fall2014">Fall 2014</option>
-    	<option value="winter2015">Winter 2015</option>
+    	<option value="Fall2014">Fall 2014</option>
+    	<option value="Winter2015">Winter 2015</option>
     </select>
     </div>
     <div class="workingSpace" id="gradeTable">
     </div>
     
     <script>
-    // convention: courses taken over more than one term are
-    // reported in the final term (ie. the term grade is received in)
-    var coursesTaken = [
-        {"cID":"COMP1010", "cName":"Introduction to Computer Science", "grade":4.5, "crHrs":3, "term":"fall2014"},
-        {"cID":"COMP1020", "cName":"Introduction to Computer Science 2", "grade":4, "crHrs":3, "term":"fall2014"},
-        {"cID":"BIO1000", "cName":"Introduction to Biology", "grade":4.5, "crHrs":3, "term":"winter2015"},
-        {"cID":"COMP2160", "cName":"Programming Language Concepts", "grade":4, "crHrs":3, "term":"winter2015"},
-        {"cID":"ECON1010", "cName":"Introduction to Economics", "grade":3.5, "crHrs":6, "term":"winter2015"},
-    ];
     
     $('#termSelect').change(function()
     {
-    	populateCourseTable(coursesTaken);
+    	$.post("grade", {}, function(enrollsCompleted) {
+    		populateCourseTable(enrollsCompleted);
+    	});
+    	
+    	
     });
     
     $(document).ready(function()
