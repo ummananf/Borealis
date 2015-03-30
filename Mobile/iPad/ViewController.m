@@ -53,7 +53,7 @@ NSDictionary *user;
             NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/login"];
             
             NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-            NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+            NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
             
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
             [request setURL:url];
@@ -76,40 +76,6 @@ NSDictionary *user;
                 NSLog(@"jsonData: %@",jsonData);
                 user = jsonData;
                 
-                /*
-                NSArray *key = [jsonData valueForKey:@"degName"];
-                NSString *degree = [key objectAtIndex:0];
-                NSLog(@"degName: %@", degree);
-                
-                key = [jsonData valueForKey:@"email"];
-                NSString *email = [key objectAtIndex:0];
-                NSLog(@"email: %@", email);
-                
-                key = [jsonData valueForKey:@"firstName"];
-                NSString *firstName = [key objectAtIndex:0];
-                NSLog(@"firstName: %@", firstName);
-                
-                key = [jsonData valueForKey:@"lastName"];
-                NSString *lastName = [key objectAtIndex:0];
-                NSLog(@"lastName: %@", lastName);
-                
-                key = [jsonData valueForKey:@"password"];
-                NSString *password = [key objectAtIndex:0];
-                NSLog(@"password: %@", password);
-                
-                key = [jsonData valueForKey:@"type"];
-                NSString *type = [key objectAtIndex:0];
-                NSLog(@"type: %@", type);
-                
-                key = [jsonData valueForKey:@"userID"];
-                NSString *userID = [key objectAtIndex:0];
-                NSLog(@"userID: %@", userID);
-                
-                key = [jsonData valueForKey:@"username"];
-                NSString *username = [key objectAtIndex:0];
-                NSLog(@"username: %@", username);
-                */
-                
                 UserInfo *userInfo = [UserInfo getInstance];
                 [userInfo parseDictionary:jsonData];
                 
@@ -125,6 +91,7 @@ NSDictionary *user;
     }
     else {
         [self alertStatus:@"Sign in Failed." :@"incorrrect username or password!" :0];
+        
     }
 }
 
@@ -143,24 +110,6 @@ NSDictionary *user;
     [textField resignFirstResponder];
     [self loginClicked:nil];
     return YES;
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    /*
-    if([segue.identifier isEqualToString:@"login_success"]){
-        UITabBarController *controller = (UITabBarController *)segue.destinationViewController;
-        TabBarControllerDelegate *delegate = (TabBarControllerDelegate *) controller.delegate;
-        delegate.jsondata = user;
-    }
-     */
-     if([segue.identifier isEqualToString:@"login_success"]){
-         MyInfoViewController *controller = [segue destinationViewController];
-         [controller setPassedJsondata:user];
-         
-         //NSLog(@"testInt: %@", controller.passedJsondata);
-     }
-    
-    
 }
 
 @end

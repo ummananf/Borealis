@@ -26,6 +26,7 @@
 		1E5B930D1AB359E500D2FC09 /* Home@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E5B930A1AB359E500D2FC09 /* Home@1x.png */; };
 		1E5B930E1AB359E500D2FC09 /* Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E5B930B1AB359E500D2FC09 /* Home@2x.png */; };
 		1E5B930F1AB359E500D2FC09 /* Home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E5B930C1AB359E500D2FC09 /* Home@3x.png */; };
+		1E63136B1AC8C6BE00B5509C /* MyCoursesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E63136A1AC8C6BE00B5509C /* MyCoursesCell.m */; };
 		1E6983901AC4581D00D9AD5B /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6983781AC4581D00D9AD5B /* NSObject+SBJson.m */; };
 		1E6983911AC4581D00D9AD5B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E69837B1AC4581D00D9AD5B /* SBJsonParser.m */; };
 		1E6983921AC4581D00D9AD5B /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E69837D1AC4581D00D9AD5B /* SBJsonStreamParser.m */; };
@@ -81,6 +82,8 @@
 		1E5B930A1AB359E500D2FC09 /* Home@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home@1x.png"; sourceTree = "<group>"; };
 		1E5B930B1AB359E500D2FC09 /* Home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home@2x.png"; sourceTree = "<group>"; };
 		1E5B930C1AB359E500D2FC09 /* Home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home@3x.png"; sourceTree = "<group>"; };
+		1E6313691AC8C6BE00B5509C /* MyCoursesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCoursesCell.h; sourceTree = "<group>"; };
+		1E63136A1AC8C6BE00B5509C /* MyCoursesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoursesCell.m; sourceTree = "<group>"; };
 		1E6983771AC4581D00D9AD5B /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		1E6983781AC4581D00D9AD5B /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		1E6983791AC4581D00D9AD5B /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				81097AB21AC866FE005582B3 /* RegisterViewController.m */,
 				81097AB41AC8A1BF005582B3 /* CourseCell.h */,
 				81097AB51AC8A1BF005582B3 /* CourseCell.m */,
+				1E6313691AC8C6BE00B5509C /* MyCoursesCell.h */,
+				1E63136A1AC8C6BE00B5509C /* MyCoursesCell.m */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 			files = (
 				1EFE8E121AB652ED0016EFF2 /* TabBarControllerDelegate.m in Sources */,
 				1E515D2F1AA7BCDB00184829 /* ViewController.m in Sources */,
+				1E63136B1AC8C6BE00B5509C /* MyCoursesCell.m in Sources */,
 				1E6983971AC4581D00D9AD5B /* SBJsonStreamWriterAccumulator.m in Sources */,
 				1E6983931AC4581D00D9AD5B /* SBJsonStreamParserAccumulator.m in Sources */,
 				1E6983951AC4581D00D9AD5B /* SBJsonStreamParserState.m in Sources */,

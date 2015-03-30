@@ -61,7 +61,7 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/registerCourses"];
     NSString *post =[[NSString alloc] initWithFormat:@"termName=%@", currentTerm];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:url];
     [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
@@ -112,7 +112,7 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     NSString *post =[[NSString alloc] initWithFormat:@"termName=%@&categoryName=%@", currentTerm, currentCategory];
     NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/registerCourses"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:url];
     [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
@@ -126,8 +126,6 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     SBJsonParser *jsonParser = [SBJsonParser new];
     NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
     
-    
-    int index = 0;
     for (id key in jsonData) {
         
         CourseCell *cell = [[CourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
@@ -145,8 +143,7 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
         [cell.dropButton addTarget:self action:@selector(dropClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         [tableData addObject:cell];
-        
-        index++;
+
     }
     
     [_courseTable reloadData];
@@ -157,7 +154,7 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     NSString *post =[[NSString alloc] initWithFormat:@"action=register&crn=%@", [NSString stringWithFormat:@"%d", sender.tag]];
     NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/register"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:url];
     [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
@@ -187,7 +184,7 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     NSString *post =[[NSString alloc] initWithFormat:@"action=drop&crn=%@", [NSString stringWithFormat:@"%d", sender.tag]];
     NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/register"];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:url];
     [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
