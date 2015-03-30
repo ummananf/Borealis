@@ -8,16 +8,8 @@
 
 #import "ViewController.h"
 #import "SBJson.h"
-
 #import "MyInfoViewController.h"
-
 #import "UserInfo.h"
-
-
-
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
 NSDictionary *user;

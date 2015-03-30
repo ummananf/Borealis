@@ -9,6 +9,7 @@
 #import "RegisterViewController.h"
 #import "SBJson.h"
 #import "CourseCell.h"
+#import "HTTP.h"
 
 @implementation RegisterViewController
 
@@ -58,28 +59,8 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
         currentTerm = @"winter2015";
     }
     
-    NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/registerCourses"];
     NSString *post =[[NSString alloc] initWithFormat:@"termName=%@", currentTerm];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:url];
-    [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setHTTPBody:postData];
-    
-    NSHTTPURLResponse *requestResponse;
-    NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
-    
-    NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
-    NSLog(@"requestRply: %@", requestReply);
-    
-    
-    // parse the response
-    
-    SBJsonParser *jsonParser = [SBJsonParser new];
-    NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
+    NSDictionary *jsonData = [HTTP post:@"registerCourses" :post];
     
     // remove default segments in the category segment controler
     [_categoryControl removeAllSegments];
@@ -110,21 +91,7 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     currentCategory = [_categoryControl titleForSegmentAtIndex:_categoryControl.selectedSegmentIndex];
     NSString *post =[[NSString alloc] initWithFormat:@"termName=%@&categoryName=%@", currentTerm, currentCategory];
-    NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/registerCourses"];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:url];
-    [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setHTTPBody:postData];
-    NSHTTPURLResponse *requestResponse;
-    NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
-    NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
-    
-    SBJsonParser *jsonParser = [SBJsonParser new];
-    NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
+    NSDictionary *jsonData = [HTTP post:@"registerCourses" :post];
     
     for (id key in jsonData) {
         
@@ -151,22 +118,10 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
 }
 
 - (IBAction)registerClicked:(UIButton*)sender {
-    NSString *post =[[NSString alloc] initWithFormat:@"action=register&crn=%@", [NSString stringWithFormat:@"%d", sender.tag]];
-    NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/register"];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:url];
-    [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setHTTPBody:postData];
-    NSHTTPURLResponse *requestResponse;
-    NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
-    NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
     
-    SBJsonParser *jsonParser = [SBJsonParser new];
-    NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
+    NSString *post =[[NSString alloc] initWithFormat:@"action=register&crn=%@", [NSString stringWithFormat:@"%d", sender.tag]];
+    NSDictionary *jsonData = [HTTP post:@"register" :post];
+    
     NSString *msg = [jsonData valueForKey:@"msg"];
     NSString *success = [jsonData valueForKey:@"success"];
     int status = success.intValue;
@@ -178,25 +133,10 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     }
 }
 
-
-
 - (IBAction)dropClicked:(UIButton*)sender {
     NSString *post =[[NSString alloc] initWithFormat:@"action=drop&crn=%@", [NSString stringWithFormat:@"%d", sender.tag]];
-    NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/register"];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:url];
-    [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setHTTPBody:postData];
-    NSHTTPURLResponse *requestResponse;
-    NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
-    NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
+    NSDictionary *jsonData = [HTTP post:@"register" :post];
     
-    SBJsonParser *jsonParser = [SBJsonParser new];
-    NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
     NSString *msg = [jsonData valueForKey:@"msg"];
     NSString *success = [jsonData valueForKey:@"success"];
     int status = success.intValue;

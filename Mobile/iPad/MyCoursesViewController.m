@@ -9,6 +9,7 @@
 #import "MyCoursesViewController.h"
 #import "SBJson.h"
 #import "MyCoursesCell.h"
+#import "HTTP.h"
 
 @implementation MyCoursesViewController
 
@@ -37,23 +38,8 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     [tableData removeAllObjects];
     
     NSString *post =[[NSString alloc] initWithFormat:@""];
-    NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/classInfo"];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:url];
-    [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setHTTPBody:postData];
-    NSHTTPURLResponse *requestResponse;
-    NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
-    NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
-    NSLog(@"requestRply: %@", requestReply);
+    NSDictionary *jsonData = [HTTP post:@"classInfo" :post];
     
-    
-    SBJsonParser *jsonParser = [SBJsonParser new];
-    NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
     MyCoursesCell *cell = [[MyCoursesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     cell.courseId.text = @"Course ID";
     cell.section.text = @"Section";
@@ -87,21 +73,8 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
 }
 - (IBAction)dropClicked:(UIButton*)sender {
     NSString *post =[[NSString alloc] initWithFormat:@"action=drop&crn=%@", [NSString stringWithFormat:@"%d", sender.tag]];
-    NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/register"];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:url];
-    [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setHTTPBody:postData];
-    NSHTTPURLResponse *requestResponse;
-    NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
-    NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
+    NSDictionary *jsonData = [HTTP post:@"register" :post];
     
-    SBJsonParser *jsonParser = [SBJsonParser new];
-    NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
     NSString *msg = [jsonData valueForKey:@"msg"];
     NSString *success = [jsonData valueForKey:@"success"];
     int status = success.intValue;
@@ -116,7 +89,7 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     // search for the cell of the course we are dropping and remove it from the list, then refresh the list
     MyCoursesCell *cell;
-    for (id i in tableData) {
+    for (id i in [tableData copy]) {
         cell = (MyCoursesCell *) i;
         if (cell.dropButton.tag == sender.tag) {
             [tableData removeObject:i];

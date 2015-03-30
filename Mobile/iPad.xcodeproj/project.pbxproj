@@ -46,6 +46,7 @@
 		81097AB01AC85933005582B3 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 81097AAF1AC85933005582B3 /* UserInfo.m */; };
 		81097AB31AC866FE005582B3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81097AB21AC866FE005582B3 /* RegisterViewController.m */; };
 		81097AB61AC8A1BF005582B3 /* CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81097AB51AC8A1BF005582B3 /* CourseCell.m */; };
+		81BC97E11AC9873200822F59 /* HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BC97E01AC9873200822F59 /* HTTP.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,8 @@
 		81097AB21AC866FE005582B3 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		81097AB41AC8A1BF005582B3 /* CourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCell.h; sourceTree = "<group>"; };
 		81097AB51AC8A1BF005582B3 /* CourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCell.m; sourceTree = "<group>"; };
+		81BC97DF1AC9873200822F59 /* HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP.h; sourceTree = "<group>"; };
+		81BC97E01AC9873200822F59 /* HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTP.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,8 @@
 				81097AB51AC8A1BF005582B3 /* CourseCell.m */,
 				1E6313691AC8C6BE00B5509C /* MyCoursesCell.h */,
 				1E63136A1AC8C6BE00B5509C /* MyCoursesCell.m */,
+				81BC97DF1AC9873200822F59 /* HTTP.h */,
+				81BC97E01AC9873200822F59 /* HTTP.m */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 				1E69839A1AC4581D00D9AD5B /* SBJsonUTF8Stream.m in Sources */,
 				1E6983A11AC47E7F00D9AD5B /* MyInfoViewController.m in Sources */,
 				1E6983921AC4581D00D9AD5B /* SBJsonStreamParser.m in Sources */,
+				81BC97E11AC9873200822F59 /* HTTP.m in Sources */,
 				1E6983991AC4581D00D9AD5B /* SBJsonTokeniser.m in Sources */,
 				81097AB31AC866FE005582B3 /* RegisterViewController.m in Sources */,
 				1E6983901AC4581D00D9AD5B /* NSObject+SBJson.m in Sources */,

@@ -13,9 +13,7 @@
 @implementation TabBarControllerDelegate
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *) viewController{
-    
-    //NSLog(@"testInt: %@", jsondata);
-        
+
     if (tabBarController.selectedIndex == 0) {
         NSLog(@"HOME");
     } else if ([viewController.title isEqual: @"MyInfo"]){
@@ -23,10 +21,5 @@
     }
     
 }
-/*
-- (void) setTestInt: (NSDictionary *) value {
-    jsondata = value;
-}
-*/
 
 @end
