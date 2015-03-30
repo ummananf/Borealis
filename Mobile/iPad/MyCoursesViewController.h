@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyCoursesViewController : UIViewController
+@interface MyCoursesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *MyCourses;
 - (IBAction)clickedBack:(id)sender;
 
 @end

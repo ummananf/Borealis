@@ -132,8 +132,6 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     SBJsonParser *jsonParser = [SBJsonParser new];
     NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
     
-    
-    int index = 0;
     for (id key in jsonData) {
         
         CourseCell *cell = [[CourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
@@ -147,8 +145,7 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
         cell.location.text = [key valueForKey:@"location"];
         
         [tableData addObject:cell];
-        
-        index++;
+
     }
     
     [_courseTable reloadData];
