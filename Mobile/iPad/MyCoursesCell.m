@@ -27,9 +27,9 @@
     if (self) {
         self.courseId = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, 120, 30)];
         [self addSubview:self.courseId];
-        self.crn = [[UILabel alloc] initWithFrame:CGRectMake(120, 10, 80, 30)];
+        self.crn = [[UILabel alloc] initWithFrame:CGRectMake(120, 10, 60, 30)];
         [self addSubview:self.crn];
-        self.section = [[UILabel alloc] initWithFrame:CGRectMake(200, 10, 60, 30)];
+        self.section = [[UILabel alloc] initWithFrame:CGRectMake(190, 10, 60, 30)];
         [self addSubview:self.section];
         self.days = [[UILabel alloc] initWithFrame:CGRectMake(320, 10, 100, 30)];
         [self addSubview:self.days];
@@ -39,9 +39,11 @@
         [self addSubview:self.endTime];
         self.location = [[UILabel alloc] initWithFrame:CGRectMake(680, 10, 100, 30)];
         [self addSubview:self.location];
-        self.dropButton = [[UIButton alloc] initWithFrame:CGRectMake(900, 10, 100, 30)];
+        self.dropButton = [[UIButton alloc] initWithFrame:CGRectMake(800, 10, 100, 30)];
         [self.dropButton setTitle:@"Drop" forState:0];
+        [self.dropButton setBackgroundColor:[UIColor redColor]];
         [self addSubview:self.dropButton];
+        
     }
     return self;
 }

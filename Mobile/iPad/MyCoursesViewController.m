@@ -54,18 +54,29 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     SBJsonParser *jsonParser = [SBJsonParser new];
     NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
+    MyCoursesCell *cell = [[MyCoursesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    cell.courseId.text = @"Course ID";
+    cell.crn.text = @"CRN";
+    cell.section.text = @"Section";
+    cell.days.text = @"Days";
+    cell.startTime.text = @"Start Time";
+    cell.endTime.text = @"End Time";
+    cell.location.text = @"Location";
+    [cell.dropButton setBackgroundColor:[UIColor whiteColor]];
+    [tableData addObject:cell];
     
     for (id key in jsonData) {
-        MyCoursesCell *cell = [[MyCoursesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-        cell.courseId.text = [key valueForKey:@"cID"];
+        cell = [[MyCoursesCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell.courseId.text = [[key objectForKey:@"section"] valueForKey:@"cID"];
+        //NSLog(@"%@", [key valueForKey:@"cID"]);
         cell.crn.text = [key valueForKey:@"crn"];
-        cell.section.text = [key valueForKey:@"sectID"];
-        cell.creditHR.text = [NSString stringWithFormat:@"%@",[[key objectForKey:@"course"] valueForKey:@"creditHrs"]];
+        cell.section.text = [[key objectForKey:@"section"] valueForKey:@"sectID"];
+        cell.creditHR.text = [NSString stringWithFormat:@"%@",[[[key objectForKey:@"section"] objectForKey:@"course"] valueForKey:@"creditHrs"]];
         cell.courseName.text = [[key objectForKey:@"course"] valueForKey:@"courseName"];
-        cell.days.text = [key valueForKey:@"days"];
-        cell.startTime.text = [key valueForKey:@"startTime"];
-        cell.endTime.text = [key valueForKey:@"endTime"];
-        cell.location.text = [key valueForKey:@"location"];
+        cell.days.text = [[key objectForKey:@"section"] valueForKey:@"days"];
+        cell.startTime.text = [[key objectForKey:@"section"] valueForKey:@"startTime"];
+        cell.endTime.text = [[key objectForKey:@"section"] valueForKey:@"endTime"];
+        cell.location.text = [[key objectForKey:@"section"]valueForKey:@"location"];
         [cell.dropButton setTag:cell.crn.text.intValue];
         [cell.dropButton addTarget:self action:@selector(dropClicked:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -73,6 +84,49 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     }
     
     [_MyCourses reloadData];
+}
+
+- (IBAction)dropClicked:(UIButton*)sender {
+    NSString *post =[[NSString alloc] initWithFormat:@"action=drop&crn=%@", [NSString stringWithFormat:@"%d", sender.tag]];
+    NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/register"];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:postData];
+    NSHTTPURLResponse *requestResponse;
+    NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
+    NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
+    
+    SBJsonParser *jsonParser = [SBJsonParser new];
+    NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
+    NSString *msg = [jsonData valueForKey:@"msg"];
+    NSString *success = [jsonData valueForKey:@"success"];
+    int status = success.intValue;
+    
+    NSLog(@"drop: %d", status);
+    
+    if (status == 0) {
+        [self alertStatus:[NSString stringWithFormat:@"%@", msg] :@"Error!" :0];
+    } else {
+        [self alertStatus:[NSString stringWithFormat:@"crn: %d", sender.tag]: @"Successfully dropped!" :0];
+    }
+    
+    [self viewDidLoad];
+}
+
+- (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:msg
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+    alertView.tag = tag;
+    [alertView show];
 }
 
 - (void)didReceiveMemoryWarning
