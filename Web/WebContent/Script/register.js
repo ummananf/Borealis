@@ -48,6 +48,9 @@ var register = {
 						$("#drop_" + value.crn).show(100);
 						$("#register_" + value.crn).text('Registered!');
 						$("#register_" + value.crn).prop('disabled', true);
+						
+						// Get updated current enrollments from server
+						register.getCurrentEnrollments(value.termStart);
 					}
 					else {
 						alert("Registration to " + value.cID + " failed.\n\n"+regResponse.msg);
@@ -73,6 +76,9 @@ var register = {
 					$("#drop_" + value.crn).hide(100);
 					$("#register_" + value.crn).text('Register');
 					$("#register_" + value.crn).prop('disabled', false);
+					
+					// Get updated current enrollments from server
+					register.getCurrentEnrollments(value.termStart);
 				});
 				
 				post.fail(function(jqXHR, textStatus, errorThrown) {
