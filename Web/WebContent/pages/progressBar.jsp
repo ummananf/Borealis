@@ -1,3 +1,4 @@
+<%@ page session="true" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -32,21 +33,15 @@
 <div class="progress" id="degreeProgress"></div>
 
 <script>
-
-	var degrees = [
-	    {"degName":"B. Sc. Computer Science (Major)", "crHrs":120}
-	];
-	var coursesTaken = [
-	    {"cID":"COMP1010", "cName":"Introduction to Computer Science", "grade":4.5, "crHrs":3},
-	    {"cID":"COMP1020", "cName":"Introduction to Computer Science 2", "grade":4, "crHrs":3},
-	    {"cID":"BIO1000", "cName":"Introduction to Biology", "grade":4.5, "crHrs":3},
-	    {"cID":"COMP2160", "cName":"Programming Language Concepts", "grade":4, "crHrs":3},
-	    {"cID":"ECON1010", "cName":"Introduction to Economics", "grade":3.5, "crHrs":6},
-	];
 	
+	var degrees = ${degreeInfo};
+	
+	var coursesTaken = ${completedEnrollments};
+	
+	var degCourses = ${degreeCourses};
 	$(document).ready(function()
 	{
-		displayTracker(degrees, coursesTaken);
+		displayTracker(degrees, coursesTaken, degCourses);
 	});
 
 </script>
