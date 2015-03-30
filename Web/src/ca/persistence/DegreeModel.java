@@ -35,7 +35,7 @@ public class DegreeModel
             Map <String, Object> row = iter.next();
             boolean isFullYr = false;
             
-            if ((String)row.get("isFullYr") == "TRUE")
+            if (((String)row.get("isFullYr")) == "TRUE")
                 isFullYr = true;
             
             Course course = new Course(
