@@ -16,9 +16,12 @@ import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
 import ca.objects.Course;
+import ca.objects.Degree;
+import ca.objects.Enrollment;
 import ca.objects.Student;
 import ca.objects.User;
 import ca.persistence.DegreeModel;
+import ca.persistence.StudentModel;
 import ca.session.SessionGlobals;
 
 
@@ -40,24 +43,58 @@ public class ProgressBarServlet extends HttpServlet
 		
 		// get the current user model from session
 		Student student = (Student)session.getAttribute(SessionGlobals.CURRENT_SESSION_USER);
+		int userID = student.getUserID();
+		
 		String degreeName = student.getDegName();
+		
+	/***************************************************************************/	
 		
 		ArrayList<Course> degreeCourses = DegreeModel.getDegreeCourses(degreeName);
 		
-		/*Gson gsonStudent = new Gson();
+		Gson gsonDegreeCourses = new Gson();
 		
-		JsonElement element = gsonStudent.toJsonTree(degreeCourses, new TypeToken<ArrayList<Course>>() {}.getType());
+		JsonElement element = gsonDegreeCourses.toJsonTree(degreeCourses, new TypeToken<ArrayList<Course>>() {}.getType());
 		
 		JsonArray degreeCoursesArray = element.getAsJsonArray();
 		
-
+	/******************************************************************************/
+		
+		ArrayList<Degree> degreeInfos = new ArrayList<Degree>();
+		
+		degreeInfos.add(DegreeModel.getDegreeInfo(degreeName));
+		
+		Gson gsonDegree = new Gson();
+		
+		JsonElement degreeElement = gsonDegree.toJsonTree(degreeInfos, new TypeToken<ArrayList<Degree>>() {}.getType());
+		
+		JsonArray degreeArray = degreeElement.getAsJsonArray();
+		
+   /*******************************************************************************/
+		
+		ArrayList<Enrollment> completedEnrollments = StudentModel.getCompletedEnrollments(userID);
+		
+		Gson gsonCompletedEnrollment = new Gson();
+		
+		JsonElement completedEnrollmentsElement = gsonCompletedEnrollment.toJsonTree(completedEnrollments, new TypeToken<ArrayList<Degree>>() {}.getType());
+		
+		
+		JsonArray completedEnrollmentArray = completedEnrollmentsElement.getAsJsonArray();
+		
+		
+		
+		
+		
+		
 		res.setContentType("application/json");
+		res.getWriter().print(degreeArray);
 		res.getWriter().print(degreeCoursesArray);
+		res.getWriter().print(completedEnrollmentArray);
 		
-		session.setAttribute("degreeCourses", degreeCoursesArray);*/
+		session.setAttribute("degreeCourses", degreeCoursesArray);
+		session.setAttribute("degreeInfo", degreeArray);
+		session.setAttribute("completedEnrollments", completedEnrollmentArray);
 		
-		
-		//view.forward(req, res);
+		view.forward(req, res);
 	}
 
 
