@@ -40,10 +40,12 @@
         [self addSubview:self.endTime];
         self.location = [[UILabel alloc] initWithFrame:CGRectMake(680, 10, 100, 30)];
         [self addSubview:self.location];
-        self.registerButton = [[UIButton alloc] initWithFrame:CGRectMake(800, 10, 100, 30)];
+        self.registerButton = [[UIButton alloc] initWithFrame:CGRectMake(800, 10, 90, 30)];
+        [self.registerButton setBackgroundColor:[UIColor blueColor]];
         [self.registerButton setTitle:@"Register" forState:0];
         [self addSubview:self.registerButton];
-        self.dropButton = [[UIButton alloc] initWithFrame:CGRectMake(900, 10, 100, 30)];
+        self.dropButton = [[UIButton alloc] initWithFrame:CGRectMake(900, 10, 90, 30)];
+        [self.dropButton setBackgroundColor:[UIColor redColor]];
         [self.dropButton setTitle:@"Drop" forState:0];
         [self addSubview:self.dropButton];
     }

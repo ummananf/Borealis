@@ -100,10 +100,6 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
         index++;
     }
     
-    // fits all segments, but when selected, they contract
-//    [_categoryControl sizeToFit];
-    
-    
     [_categoryControl setHidden:NO];
 
 }
@@ -126,8 +122,6 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     NSHTTPURLResponse *requestResponse;
     NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
     NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
-    NSLog(@"requestRply: %@", requestReply);
-    
     
     SBJsonParser *jsonParser = [SBJsonParser new];
     NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
@@ -145,6 +139,10 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
         cell.startTime.text = [key valueForKey:@"startTime"];
         cell.endTime.text = [key valueForKey:@"endTime"];
         cell.location.text = [key valueForKey:@"location"];
+        [cell.registerButton setTag:cell.crn.text.intValue];
+        [cell.registerButton addTarget:self action:@selector(registerClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.dropButton setTag:cell.crn.text.intValue];
+        [cell.dropButton addTarget:self action:@selector(dropClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         [tableData addObject:cell];
         
@@ -153,6 +151,66 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     [_courseTable reloadData];
     
+}
+
+- (IBAction)registerClicked:(UIButton*)sender {
+    NSString *post =[[NSString alloc] initWithFormat:@"action=register&crn=%@", [NSString stringWithFormat:@"%d", sender.tag]];
+    NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/register"];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:postData];
+    NSHTTPURLResponse *requestResponse;
+    NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
+    NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
+    
+    SBJsonParser *jsonParser = [SBJsonParser new];
+    NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
+    NSString *msg = [jsonData valueForKey:@"msg"];
+    NSString *success = [jsonData valueForKey:@"success"];
+    int status = success.intValue;
+    
+    if (status == 0) {
+        [self alertStatus:[NSString stringWithFormat:@"%@", msg] :@"Error!" :0];
+    } else {
+        [self alertStatus:[NSString stringWithFormat:@"crn: %d", sender.tag]: @"Successfully registered!" :0];
+    }
+}
+
+
+
+- (IBAction)dropClicked:(UIButton*)sender {
+    NSString *post =[[NSString alloc] initWithFormat:@"action=drop&crn=%@", [NSString stringWithFormat:@"%d", sender.tag]];
+    NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/register"];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:postData];
+    NSHTTPURLResponse *requestResponse;
+    NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
+    NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
+    
+    SBJsonParser *jsonParser = [SBJsonParser new];
+    NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
+    NSString *msg = [jsonData valueForKey:@"msg"];
+    NSString *success = [jsonData valueForKey:@"success"];
+    int status = success.intValue;
+    
+    NSLog(@"drop: %d", status);
+    
+    if (status == 0) {
+        [self alertStatus:[NSString stringWithFormat:@"%@", msg] :@"Error!" :0];
+    } else {
+        [self alertStatus:[NSString stringWithFormat:@"crn: %d", sender.tag]: @"Successfully dropped!" :0];
+    }
 }
 
 - (IBAction)backClicked:(id)sender {
@@ -173,6 +231,17 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     CourseCell *cell = (CourseCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     cell = [tableData objectAtIndex:indexPath.row];
     return cell;
+}
+
+- (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:msg
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+    alertView.tag = tag;
+    [alertView show];
 }
 
 @end
