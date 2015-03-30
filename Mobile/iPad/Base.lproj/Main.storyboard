@@ -520,7 +520,6 @@
         <!--Register View Controller-->
         <scene sceneID="A6d-Nl-8PA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uOc-rq-jBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="p5L-2W-a6V" customClass="RegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7WK-GR-yYH"/>
@@ -610,6 +609,7 @@
                         <outlet property="termControl" destination="nYd-m9-chj" id="J2d-EN-KLI"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uOc-rq-jBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="864" y="-1208"/>
         </scene>

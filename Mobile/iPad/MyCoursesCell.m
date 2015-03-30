@@ -25,21 +25,25 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.courseId = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, 120, 30)];
-        [self addSubview:self.courseId];
-        self.crn = [[UILabel alloc] initWithFrame:CGRectMake(120, 10, 60, 30)];
+        self.crn = [[UILabel alloc] initWithFrame:CGRectMake(-120, 10, 60, 30)];
         [self addSubview:self.crn];
-        self.section = [[UILabel alloc] initWithFrame:CGRectMake(190, 10, 60, 30)];
+        self.courseId = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, 90, 30)];
+        [self addSubview:self.courseId];
+        self.section = [[UILabel alloc] initWithFrame:CGRectMake(100, 10, 60, 30)];
         [self addSubview:self.section];
-        self.days = [[UILabel alloc] initWithFrame:CGRectMake(320, 10, 100, 30)];
+        self.courseName = [[UILabel alloc] initWithFrame:CGRectMake(165, 10, 265, 30)];
+        [self addSubview:self.courseName];
+        self.creditHR = [[UILabel alloc] initWithFrame:CGRectMake(430, 10, 60, 30)];
+        [self addSubview:self.creditHR];
+        self.days = [[UILabel alloc] initWithFrame:CGRectMake(490, 10, 60, 30)];
         [self addSubview:self.days];
-        self.startTime = [[UILabel alloc] initWithFrame:CGRectMake(420, 10, 120, 30)];
+        self.startTime = [[UILabel alloc] initWithFrame:CGRectMake(555, 10, 120, 30)];
         [self addSubview:self.startTime];
-        self.endTime = [[UILabel alloc] initWithFrame:CGRectMake(540, 10, 120, 30)];
+        self.endTime = [[UILabel alloc] initWithFrame:CGRectMake(680, 10, 120, 30)];
         [self addSubview:self.endTime];
-        self.location = [[UILabel alloc] initWithFrame:CGRectMake(680, 10, 100, 30)];
+        self.location = [[UILabel alloc] initWithFrame:CGRectMake(810, 10, 80, 30)];
         [self addSubview:self.location];
-        self.dropButton = [[UIButton alloc] initWithFrame:CGRectMake(800, 10, 100, 30)];
+        self.dropButton = [[UIButton alloc] initWithFrame:CGRectMake(900, 10, 100, 30)];
         [self.dropButton setTitle:@"Drop" forState:0];
         [self.dropButton setBackgroundColor:[UIColor redColor]];
         [self addSubview:self.dropButton];
