@@ -55,12 +55,7 @@
         </div>
         <div class="dh4">
             <div class="topLeftFrame">
-                <p>
-                    You should pay $<span class="blue">7800.00</span> paid $<span class="green">3700.00</span></p>
-                    <p>
-                    owned $ <span class="red">4100.00</span></p>
-                <p>
-                    You have <span class="red">3</span> financial rewards to be checkout</p>
+
                 </div>
             </div>
         </div>
