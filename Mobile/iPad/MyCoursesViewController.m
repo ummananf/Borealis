@@ -113,6 +113,17 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
     } else {
         [self alertStatus:[NSString stringWithFormat:@"crn: %d", sender.tag]: @"Successfully dropped!" :0];
     }
+    
+    // search for the cell of the course we are dropping and remove it from the list, then refresh the list
+    MyCoursesCell *cell;
+    for (id i in tableData) {
+        cell = (MyCoursesCell *) i;
+        if (cell.dropButton.tag == sender.tag) {
+            [tableData removeObject:i];
+        }
+    }
+    
+    [_MyCourses reloadData];
 }
 - (void)didReceiveMemoryWarning
 {
