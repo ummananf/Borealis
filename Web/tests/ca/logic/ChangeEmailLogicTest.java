@@ -56,6 +56,7 @@ public class ChangeEmailLogicTest
 		
 		assertTrue(UserModel.updateUserEmail(7651245, "newEmail@school.ca")); //bobs ID
 		assertFalse(UserModel.updateUserEmail(-1, "invalidID@school.ca")); //unregistered ID
+		assertTrue(UserModel.updateUserEmail(7651245, "bob@school.ca")); //revert bob
 		
 	}
 	
@@ -63,6 +64,7 @@ public class ChangeEmailLogicTest
 		
 		assertTrue(EmailValidator.validate("test@school.ca")); //valid Email
 		assertTrue(UserModel.updateUserEmail(7651245, "test@school.ca")); //bobs ID
+		assertTrue(UserModel.updateUserEmail(7651245, "bob@school.ca")); //revert bob
 		
 	}
 	

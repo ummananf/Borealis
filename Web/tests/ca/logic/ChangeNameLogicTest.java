@@ -56,6 +56,7 @@ public class ChangeNameLogicTest
 		
 		assertTrue(UserModel.updateUserName(7651245, "bobby")); //bobs ID
 		assertFalse(UserModel.updateUserName(-1, "bobbyWrongs")); //unregistered ID
+		assertTrue(UserModel.updateUserName(7651245, "bob")); //revert to bob
 		
 	}
 	
@@ -63,6 +64,7 @@ public class ChangeNameLogicTest
 		
 		assertTrue(UsernameValidator.validate("bobname")); //valid Email
 		assertTrue(UserModel.updateUserName(7651245, "bobname")); //bobs ID
+		assertTrue(UserModel.updateUserName(7651245, "bob")); //revert to bob
 		
 	}
 	

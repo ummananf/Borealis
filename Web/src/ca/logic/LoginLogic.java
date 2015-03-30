@@ -21,9 +21,11 @@ public class LoginLogic
 	 {
 		User validUser = null;
 		User tempUser = UserModel.getUserData(username);
+		
 
 		if (tempUser != null)
 		{
+		
 			if (tempUser.getPassword().equals(password))
 				validUser = tempUser;
 		}
