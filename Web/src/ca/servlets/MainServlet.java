@@ -39,7 +39,6 @@ public class MainServlet extends HttpServlet
 			int userID = student.getUserID();
 			
 			// The following attributes are the information we need to render the main page
-			
 			JsonObject obj = new JsonObject();
 			
 			
@@ -55,9 +54,6 @@ public class MainServlet extends HttpServlet
 			obj.addProperty("gpa", gpa);
 			obj.addProperty("numCompleted", numCompleted);
 			obj.addProperty("numTotalEnrolled",numTotalEnrolled);
-			
-			
-			/*obj.addProperty("numCoursesRegistered", numCoursesRegistered);*/
 			
 			session.setAttribute("otherInfo", obj);
 			res.setContentType("application/json");

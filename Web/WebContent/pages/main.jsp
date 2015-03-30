@@ -76,7 +76,6 @@
 	    		otherInfo.numCompleted;
 	    	document.getElementById("numTotalEnrolled").innerHTML = 
 	    		otherInfo.numTotalEnrolled;
-	    		
       </script> 
 </body>
 </html>
