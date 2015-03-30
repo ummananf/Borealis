@@ -11,5 +11,6 @@
 @interface HTTP : NSObject
 
 + (NSDictionary*) post: (NSString*) endpoint : (NSString*) params;
++ (int) postAndGetStatusCode: (NSString*) endpoint : (NSString*) params;
 
 @end

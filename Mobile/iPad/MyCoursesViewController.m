@@ -73,16 +73,10 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
 }
 - (IBAction)dropClicked:(UIButton*)sender {
     NSString *post =[[NSString alloc] initWithFormat:@"action=drop&crn=%@", [NSString stringWithFormat:@"%d", sender.tag]];
-    NSDictionary *jsonData = [HTTP post:@"register" :post];
+    int status = [HTTP postAndGetStatusCode:@"register" :post];
     
-    NSString *msg = [jsonData valueForKey:@"msg"];
-    NSString *success = [jsonData valueForKey:@"success"];
-    int status = success.intValue;
-    
-    NSLog(@"drop: %d", status);
-    
-    if (status == 0) {
-        [self alertStatus:[NSString stringWithFormat:@"%@", msg] :@"Error!" :0];
+    if (status != 200) {
+        [self alertStatus:@"An error occured when trying to drop a course." :@"Error!" :0];
     } else {
         [self alertStatus:[NSString stringWithFormat:@"crn: %d", sender.tag]: @"Successfully dropped!" :0];
     }

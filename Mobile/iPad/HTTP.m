@@ -34,4 +34,22 @@ NSString *siteURL = @"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/";
     return jsonData;
 }
 
++ (int) postAndGetStatusCode: (NSString*) endpoint : (NSString*) params {
+    NSString *fullURL = [NSString stringWithFormat:@"%@%@", siteURL, endpoint];
+    NSURL *url=[NSURL URLWithString:fullURL];
+    NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:url];
+    [request setValue:@"YES" forHTTPHeaderField:@"IOS"];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:postData];
+    NSHTTPURLResponse *requestResponse;
+    NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
+    NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
+    
+    return [requestResponse statusCode];
+}
+
 @end
