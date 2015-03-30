@@ -6,8 +6,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 <title>material download</title><link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 <link href="Style/start.css" rel="stylesheet" type="text/css" />
-<script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
- <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 </head>
 <body>
 

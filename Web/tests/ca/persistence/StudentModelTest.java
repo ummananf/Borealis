@@ -2,50 +2,75 @@ package ca.persistence;
 
 import static org.junit.Assert.*;
 
-import java.sql.Date;
 import java.util.ArrayList;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import ca.objects.Enrollment;
+import ca.objects.Section;
 
-public class StudentModelTest {
+public class StudentModelTest 
+{
 	
 	String queryInsertStudent;
 	String queryDeleteStudent;
 	String queryInsertEnrollment;
 	String queryDeleteEnrollment;
 
+	@BeforeClass
+	public static void setupBeforeClass() throws Exception
+	{
+		System.out.println("-------------------------------");
+		System.out.println("Running change email logic tests");
+	}
+	
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception
+	{
+		System.out.println("Finished running email password logic tests");
+		System.out.println("--------------------------------");
+	}
+	
 	@Before
-	public void setUp() throws Exception {
-		
-		queryInsertStudent = "INSERT INTO Users VALUES (99, 'somestudent', 'p', 'qwe@qwe.qwe', 'john', 'johnson', 'student');";
+	public void setUp() throws Exception 
+	{	
+		queryInsertStudent = "INSERT INTO Users VALUES (99, 'somestudent', 'p', 'qwe@qwe.qwe', 'john', 'johnson','computer science', 15, 'student');";
 		queryDeleteStudent = "DELETE FROM Users WHERE userID=99;";
 		
-		queryInsertEnrollment = "INSERT INTO Enrolled VALUES (99, 'A01', 'COMP1010', '2014-09-01', 3.5);";
+		queryInsertEnrollment = "INSERT INTO Enrolled VALUES (99, '10000', 3.5);";
 		queryDeleteEnrollment = "DELETE FROM Enrolled WHERE userID=99;";
 		
-		DB.execute(queryDeleteStudent);
-		DB.execute(queryDeleteEnrollment);
 		
 		DB.execute(queryInsertStudent);
 		DB.execute(queryInsertEnrollment);
 	}
-
-	@Test
-	public final void testGetCompletedCourses() {
-		ArrayList<Enrollment> enrollment = StudentModel.getCompletedCourses(99);
-		assertTrue(enrollment.size() == 1);
-		Enrollment en = new Enrollment(99, "A01", "COMP1010", Date.valueOf("2014-09-01"), 3.5f);
-		//assertTrue(enrollment.get(0).equals(en));
+	@After
+	public void tearDown() throws Exception 
+	{
+		DB.execute(queryDeleteEnrollment);
+		DB.execute(queryDeleteStudent);
+		
 	}
 	
-	@After
-	public void tearDown() throws Exception {
-		DB.execute(queryDeleteStudent);
-		DB.execute(queryDeleteEnrollment);
+	@Test
+	public final void testGetCompletedCourses() 
+	{
+		ArrayList<Enrollment> enrols = StudentModel.getCompletedEnrollments(99);
+		assertTrue(enrols.size() == 1);
+		assertTrue(enrols.get(0).getSection() != null);
 	}
+	@Test
+	public void testEnrollmentCID()
+	{
+		ArrayList<Enrollment> enrols = StudentModel.getCompletedEnrollments(99);
+		assertTrue(enrols.size() == 1);
+		assertTrue(enrols.get(0).getSection().getCourseID().equals("COMP1010"));
+	}
+	
+	
 
 }

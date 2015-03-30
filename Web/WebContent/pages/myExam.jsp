@@ -5,8 +5,7 @@
 		<title>my exam</title>
 		<link href="Style/StudentStyle.css" rel="stylesheet" type="text/css" />
 		<link href="Style/start.css" rel="stylesheet" type="text/css" />
-	    <script src="Script/jBox/jquery-1.4.2.min.js" type="text/javascript"></script>
-	    <script src="Script/jBox/jquery.jBox-2.3.min.js" type="text/javascript"></script>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 	</head>
 	<body>
 	<jsp:include page="template/header_nav.jsp" />
@@ -154,7 +153,7 @@
     </div>
     <div class="tis red" style="color: #333; margin-bottom: 20px;">
         <p>
-            <strong>Policy：</strong>
+            <strong>Policy</strong>
         </p>
         <p>
           Students must remain available until all examination and test obligations have been fulfilled   

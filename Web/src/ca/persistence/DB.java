@@ -19,21 +19,25 @@ import org.apache.ibatis.jdbc.ScriptRunner;
 // uses a ResultSetConverter from an external lib to convert a ResultSet to a ResultSet array.
 
 
-public class DB {
+public class DB 
+{
 
 	// / Initialize structure and items of database if not already done so. This
 	// should only be done the first time
 	// / running on a new system, can comment the call to this method after done
 	// so.
-	public static void init() {
+	public static void init() 
+	{
 		Connection connection = ConnectionManager.getConnection();
 
-		if (connection != null) {
+		if (connection != null) 
+		{
 			// Execute sql script to initialze DB
 			ScriptRunner runner = new ScriptRunner(connection);
 			InputStreamReader reader = null;
 
-			try {
+			try 
+			{
 				reader = new InputStreamReader(
 						DB.class.getResourceAsStream("../sqlScripts/borealisInit.sql"));
 
@@ -41,9 +45,13 @@ public class DB {
 
 				reader.close();
 
-			} catch (Exception e) {
+			} 
+			catch (Exception e) 
+			{
 				e.printStackTrace();
-			} finally {
+			} 
+			finally 
+			{
 				System.out.println("Closing the connection.");
 				if (connection != null)
 					ConnectionManager.closeConnection(connection);
@@ -52,41 +60,54 @@ public class DB {
 	}
 
 	// execute regular queries: create, insert, etc.
-	public static boolean execute(String query) {
-
+	public static boolean execute(String query) 
+	{
 		boolean success = false;
 		Statement statement = null;
+		int rowsUpdated = 0;
 
 		Connection connection = ConnectionManager.getConnection();
 
-		try {
+		try 
+		{
 			statement = connection.createStatement();
-			success = statement.execute(query);
+			rowsUpdated = statement.executeUpdate(query);
 			statement.close();
 			ConnectionManager.closeConnection(connection);
-		} catch (SQLException e) {
+		} 
+		catch (SQLException e) 
+		{
 			System.out.println("DB ERROR!!! execute");
 			System.out.println("SQLException: " + e.getMessage());
 			System.out.println("SQLState: " + e.getSQLState());
 			System.out.println("VendorError: " + e.getErrorCode());
 		}
 
+		if (rowsUpdated > 0) 
+		{
+			success = true;
+		}
+		
 		return success;
 	}
 
 	// execute queries that should return a result (select).
-	public static ResultSet executeQuery(String query) {
+	public static ResultSet executeQuery(String query)
+	{
 		Statement statement = null;
 		ResultSet resultSet = null;
 		Connection connection = ConnectionManager.getConnection();
 
-		try {
+		try 
+		{
 			statement = connection.createStatement();
 			
 			resultSet = statement.executeQuery(query);
 			statement.close();
 			ConnectionManager.closeConnection(connection);
-		} catch (SQLException e) {
+		} 
+		catch (SQLException e) 
+		{
 			System.out.println("DB ERROR!!! executeQuery");
 			System.out.println("SQLException: " + e.getMessage());
 			System.out.println("SQLState: " + e.getSQLState());
@@ -96,37 +117,40 @@ public class DB {
 		return resultSet;
 	}
 
-	public static List<Map<String, Object>> getData(String query) {
-		// TODO Auto-generated method stub
+	public static List<Map<String, Object>> getData(String query) 
+	{
 		List<Map<String, Object>> resultList = new ArrayList<Map<String, Object>>();
 		Map<String, Object> row = null;
 		
  		ResultSet data = null; 
 		Connection connection = ConnectionManager.getConnection();
 		
-		try {
+		try 
+		{
 			Statement statement = connection.createStatement();
 			data = statement.executeQuery(query);
 			
 			ResultSetMetaData metaData = data.getMetaData();
 			Integer col = metaData.getColumnCount();
 			
-			while (data.next()){
+			while (data.next())
+			{
 				row = new HashMap<String, Object>();
-				for (int i = 1; i <= col; i++) {
+				for (int i = 1; i <= col; i++) 
+				{
 					row.put(metaData.getColumnName(i), data.getObject(i));
 				}
 				resultList.add(row);
 			}
 
 			statement.close();
-		} catch (SQLException e) {
+		} catch (SQLException e) 
+		{
 			System.out.println("error reading user data from DB");
 			e.printStackTrace();
 		}
 		
 		ConnectionManager.closeConnection(connection);
-		
 		return resultList;
 	}
 

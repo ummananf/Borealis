@@ -1,19 +1,14 @@
 package ca.servlets;
 
-//Import required java libraries
 import java.io.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-//Extend HttpServlet class
-@SuppressWarnings("serial")
-public class BooksServlet extends HttpServlet {
-
-
-	/**
-	 * doGet is logic that should be done before the page is rendered
-	 */
+public class BooksServlet extends HttpServlet 
+{
+	private static final long serialVersionUID = 1L;
+	
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		
@@ -23,14 +18,9 @@ public class BooksServlet extends HttpServlet {
 		view.forward(req, res);
 
 	}
-
-	/**
-	 * doPost is logic that should be done after a button is clicked
-	 */
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		
-		//manipulate data on submit here
-
+			throws ServletException, IOException 
+	{
+	
 	}
 }

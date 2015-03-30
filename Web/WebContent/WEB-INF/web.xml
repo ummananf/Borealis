@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>Borealis-Web</display-name>
-  <!-- **** Welcome List **** -->
   <welcome-file-list>
     <welcome-file>init</welcome-file>
   </welcome-file-list>
-  
-	<!-- **** Servlet Files **** -->
+  <filter>
+    <filter-name>SessionFilter</filter-name>
+    <filter-class>ca.filters.SessionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SessionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>RegisterDropCourseServlet</servlet-name>
+    <servlet-class>ca.servlets.RegisterDropCourseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterDropCourseServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>InitServlet</servlet-name>
     <servlet-class>ca.servlets.DBInitServlet</servlet-class>
@@ -14,6 +27,16 @@
   <servlet-mapping>
     <servlet-name>InitServlet</servlet-name>
     <url-pattern>/init</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CourseSelectionServlet</display-name>
+    <servlet-name>CourseSelectionServlet</servlet-name>
+    <servlet-class>ca.servlets.CourseSelectionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CourseSelectionServlet</servlet-name>
+    <url-pattern>/CourseSelectionServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
@@ -46,7 +69,7 @@
   <servlet-mapping>
     <servlet-name>InvalidLoginServlet</servlet-name>
     <url-pattern>/invalidLogin</url-pattern>
-  </servlet-mapping> 
+  </servlet-mapping>
   <servlet>
     <servlet-name>AnnouncementsServlet</servlet-name>
     <servlet-class>ca.servlets.AnnouncementsServlet</servlet-class>
@@ -54,7 +77,7 @@
   <servlet-mapping>
     <servlet-name>AnnouncementsServlet</servlet-name>
     <url-pattern>/announcements</url-pattern>
-  </servlet-mapping> 
+  </servlet-mapping>
   <servlet>
     <servlet-name>AppealsServlet</servlet-name>
     <servlet-class>ca.servlets.AppealsServlet</servlet-class>
@@ -62,7 +85,7 @@
   <servlet-mapping>
     <servlet-name>AppealsServlet</servlet-name>
     <url-pattern>/appeals</url-pattern>
-  </servlet-mapping>  
+  </servlet-mapping>
   <servlet>
     <servlet-name>ChangePasswordServlet</servlet-name>
     <servlet-class>ca.servlets.ChangePasswordServlet</servlet-class>
@@ -151,8 +174,6 @@
     <servlet-name>ProgressBarServlet</servlet-name>
     <url-pattern>/progressBar</url-pattern>
   </servlet-mapping>
-  
-  <!-- **** JSP files **** -->
   <servlet>
     <servlet-name>BooksJSP</servlet-name>
     <jsp-file>/pages/books.jsp</jsp-file>
@@ -200,7 +221,7 @@
   <servlet-mapping>
     <servlet-name>InvalidLoginJSP</servlet-name>
     <url-pattern>/invalidLogin.jsp</url-pattern>
-  </servlet-mapping>     
+  </servlet-mapping>
   <servlet>
     <servlet-name>AuthRequiredJSP</servlet-name>
     <jsp-file>/pages/authRequired.jsp</jsp-file>
@@ -208,7 +229,7 @@
   <servlet-mapping>
     <servlet-name>AuthRequiredJSP</servlet-name>
     <url-pattern>/authRequired.jsp</url-pattern>
-  </servlet-mapping>      
+  </servlet-mapping>
   <servlet>
     <servlet-name>ProgressBarJSP</servlet-name>
     <jsp-file>/pages/progressBar.jsp</jsp-file>
@@ -216,7 +237,7 @@
   <servlet-mapping>
     <servlet-name>ProgressBarJSP</servlet-name>
     <url-pattern>/progressBar.jsp</url-pattern>
-  </servlet-mapping>    
+  </servlet-mapping>
   <servlet>
     <servlet-name>AnnouncementsJSP</servlet-name>
     <jsp-file>/pages/announcements.jsp</jsp-file>
@@ -304,5 +325,15 @@
   <servlet-mapping>
     <servlet-name>TuitionJSP</servlet-name>
     <url-pattern>/tuition.jsp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>ca.servlets.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/LogoutServlet</url-pattern>
   </servlet-mapping>
 </web-app>

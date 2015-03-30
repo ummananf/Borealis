@@ -5,10 +5,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import ca.objects.Course;
 import ca.objects.Prereq;
 
-public class CourseModel {
-
+public class CourseModel 
+{
 	// Gets list of prereqs for given courseID
 	public static ArrayList<Prereq> getPrereqs(String courseID)
 	{
@@ -18,7 +19,8 @@ public class CourseModel {
 		List<Map<String, Object>> resultList = DB.getData(query);
 		Iterator<Map<String, Object>> iter = resultList.iterator();
 		
-		while(iter.hasNext()) {
+		while(iter.hasNext()) 
+		{
 			Map<String, Object> row = iter.next();
 			
 			Prereq prereq = new Prereq((String) row.get("cID"), 
@@ -28,5 +30,41 @@ public class CourseModel {
 		}
 
 		return prereqs;
+	}
+	
+	public static ArrayList<Course> getCoursesByDepartment(String department) {
+		
+		String query = "SELECT * FROM Courses WHERE department = '" + department + "';";
+		return createCoursesFromQuery(query);
+	}
+	
+	public static Course getCourseByID(String cID) {
+		
+		String query = "SELECT * FROM Courses WHERE cID = '" + cID + "';";
+		return createCoursesFromQuery(query).get(0);
+	}
+	
+	
+	public static ArrayList<Course> createCoursesFromQuery(String query) {
+		
+		ArrayList<Course> courses = new ArrayList<Course>();
+		List<Map<String, Object>> resultList = DB.getData(query);
+		Iterator<Map<String, Object>> iter = resultList.iterator();
+		
+		while(iter.hasNext()) 
+		{
+			Map<String, Object> row = iter.next();
+			
+			Course course = new Course((String) row.get("cID"), 
+									   (String) row.get("cName"),
+									   (String) row.get("faculty"),
+									   (String) row.get("department"),
+									   (String) row.get("description"),
+									   (Integer) row.get("creditHrs"),
+									   (Boolean) row.get("isFullYr") );
+			courses.add(course);
+		}
+		
+		return courses;
 	}
 }

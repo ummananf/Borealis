@@ -1,79 +1,139 @@
 package ca.objects;
 
-public class Section extends Course
-{
-	private String sectID, startTime, endTime, location;
-	private int maxSize;
-	private float tuition;
-	private boolean[] daysOffered;
+import java.sql.Time;
+import java.util.ArrayList;
 
-	// probably want to be able to create a Section without all of these variables though
-	public Section(String cID, String name, String fac, String dept, String desc,
-		int crHrs, String sID, String sTime, String eTime, String loc, int maxSize,
-		float tuition, boolean[] days)
+public class Section
+{
+	private String crn, sectID, cID, days, location, termStart;
+	private int maxSize;
+	private Time startTime, endTime;
+	
+	private ArrayList<Enrollment> enrollments;
+	private Course course; //the course this section belongs to
+	
+	public Section(String crn, String sectID, String cID, String termStart, int maxSize,
+			String days, Time startTime, Time endTime, String location, Course course) 
 	{
-		super(cID, name, fac, dept, desc, crHrs, false);
-		sectID = sID;
-		startTime = sTime;
-		endTime = eTime;
-		location = loc;
+		this.crn = crn;
+		this.sectID = sectID;
+		this.cID = cID;
+		this.termStart = termStart;
 		this.maxSize = maxSize;
-		this.tuition = tuition;
-		daysOffered = days;
+		this.days = days;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.location = location;
 		
+		enrollments = new ArrayList<Enrollment>();
+		this.course = course;
+	}
+	
+	
+	public void addEnrollment(Enrollment enroll)
+	{
+		enrollments.add(enroll);
+	}
+	
+	public ArrayList<Enrollment> getEnrollments()
+	{
+		return enrollments;
+	}
+	
+	public Course getCourse()
+	{
+		return course;
 	}
 
-	public String getID()
+	public String getCrn()
+	{
+		return crn;
+	}
+
+	
+	public String getSectID() 
 	{
 		return sectID;
 	}
 
-	public String getCourse()
+	public void setSectID(String sectID) 
 	{
-		return super.getID();
+		this.sectID = sectID;
 	}
 
-	public String toString()
+	public String getCourseID() 
 	{
-		String result = "";
-
-		result += super.toString();
-		result += "Section " + sectID + "\n";
-		result += startTime + " - " + endTime + " on " + getDaysStr() + "\n";
-		result += "Location: " + location + "\n";
-
-		return result;
+		return cID;
 	}
 
-	private String getDaysStr()
+	public void setCourseID(String cID) 
 	{
-		String result = "";
-		final String[] DAYS = {"Mon", "Tues", "Wed", "Thur", "Fri", "Sat", "Sun"};
-
-		for (int i = 0; i < 7; i++)
-		{
-			if (daysOffered[i] == true)
-				result += DAYS[i] + ",";
-		}
-
-		// get rid of the comma at the end
-		result = result.substring(0, result.length() - 1);
-		return result;
+		this.cID = cID;
 	}
 
-	// TODO - write method to call something in the model to insert this Section record into the DB
-	public boolean dbInsert()
+	public String getDays() 
 	{
-		boolean success = false;
-
-		return success;
+		return days;
 	}
 
-	// TODO - write method to call something in the model to update this Section record in the DB
-	public boolean dbUpdate()
+	public void setDays(String days) 
 	{
-		boolean success = false;
-
-		return success;
+		this.days = days;
 	}
+
+	public String getLocation() 
+	{
+		return location;
+	}
+
+	public void setLocation(String location) 
+	{
+		this.location = location;
+	}
+
+	public String getTermStart() 
+	{
+		return termStart;
+	}
+
+	public void setTermStart(String termStart) 
+	{
+		this.termStart = termStart;
+	}
+
+	public int getMaxSize() 
+	{
+		return maxSize;
+	}
+
+	public void setMaxSize(int maxSize) 
+	{
+		this.maxSize = maxSize;
+	}
+
+	public Time getStartTime() 
+	{
+		return startTime;
+	}
+
+	public void setStartTime(Time startTime) 
+	{
+		this.startTime = startTime;
+	}
+
+	public Time getEndTime() 
+	{
+		return endTime;
+	}
+
+	public void setEndTime(Time endTime) 
+	{
+		this.endTime = endTime;
+	}
+
+	public String getID() 
+	{
+		return sectID;
+	}
+
 }

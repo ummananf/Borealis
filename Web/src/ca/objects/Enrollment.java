@@ -1,28 +1,36 @@
 package ca.objects;
 
-import java.sql.Date;
 
 
-public class Enrollment {
-
-	private int userID;
-	private String sectID, courseID;
-	private Date termStart; 
+public class Enrollment 
+{
+	private int stuID;
+	private String crn;
 	private float grade;
 	
-	public Enrollment(int studentID, String sectID, String courseID, Date startDate, float grade) {
-		userID = studentID;
-		this.sectID = sectID;
-		this.courseID = courseID;
-		termStart = startDate;
+	private Section section; //section this enrollment belongs to
+	
+	public Enrollment(int studentID, String crn, float grade, Section section) 
+	{
+		stuID = studentID;
+		this.crn = crn;
 		this.grade = grade;
+		
+		this.section = section;
 	}
 	
-	// TODO: write more getters
-	public String getCourseID() {
-		return courseID;
+	public Section getSection()
+	{
+		return section;
 	}
-	public float getGrade() {
+	
+	public String getCRN() 
+	{
+		return crn;
+	}
+	
+	public float getGrade() 
+	{
 		return grade;
 	}
 
