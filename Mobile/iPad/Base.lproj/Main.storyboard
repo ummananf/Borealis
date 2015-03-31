@@ -546,7 +546,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="ny7-sd-G0h">
-                                <rect key="frame" x="139" y="154" width="578" height="29"/>
+                                <rect key="frame" x="139" y="154" width="609" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="First"/>
@@ -618,7 +618,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="B6d-U5-Q08"/>
+        <segue reference="Hc2-l0-22U"/>
         <segue reference="Tvg-gr-Kes"/>
     </inferredMetricsTieBreakers>
 </document>

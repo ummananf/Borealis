@@ -76,7 +76,8 @@ static NSString *simpleTableIdentifier = @"SimpleTableItem";
         [_categoryControl insertSegmentWithTitle:degree atIndex:index animated:NO];
         
         // sets the size for each segment, but must resize the width of the segment controller in the storyboard to be wider otherwise the added segments won't be clickable
-       [_categoryControl setWidth:160 forSegmentAtIndex:index];
+       //[_categoryControl setWidth:160 forSegmentAtIndex:index];
+    //    [_categoryControl sizeToFit];
         
         index++;
     }
