@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import ca.objects.Enrollment;
-import ca.objects.Section;
 
 public class StudentModelTest 
 {

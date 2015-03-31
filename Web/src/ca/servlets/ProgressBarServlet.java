@@ -19,7 +19,6 @@ import ca.objects.Course;
 import ca.objects.Degree;
 import ca.objects.Enrollment;
 import ca.objects.Student;
-import ca.objects.User;
 import ca.persistence.DegreeModel;
 import ca.persistence.StudentModel;
 import ca.session.SessionGlobals;

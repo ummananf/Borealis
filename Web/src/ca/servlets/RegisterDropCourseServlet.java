@@ -1,9 +1,7 @@
 package ca.servlets;
 
 import java.io.IOException;
-import java.sql.Date;
 
-import javax.servlet.Registration;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

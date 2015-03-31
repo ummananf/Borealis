@@ -1,8 +1,6 @@
 package ca.servlets;
 
 import java.io.IOException;
-import java.sql.Date;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,9 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.google.gson.JsonObject;
 
-import ca.objects.Enrollment;
 import ca.objects.User;
-import ca.persistence.EnrollmentModel;
 import ca.persistence.StudentModel;
 import ca.session.SessionGlobals;
 

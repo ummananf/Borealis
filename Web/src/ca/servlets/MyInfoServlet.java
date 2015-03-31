@@ -2,7 +2,6 @@ package ca.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -19,9 +18,7 @@ import com.google.gson.reflect.TypeToken;
 
 import ca.logic.ChangeEmailLogic;
 import ca.logic.ChangeNameLogic;
-import ca.logic.TermLogic;
 import ca.objects.Student;
-import ca.objects.Term;
 import ca.objects.User;
 import ca.persistence.UserModel;
 import ca.session.SessionGlobals;

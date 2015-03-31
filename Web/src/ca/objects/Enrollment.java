@@ -4,7 +4,6 @@ package ca.objects;
 
 public class Enrollment 
 {
-	private int stuID;
 	private String crn;
 	private float grade;
 	
@@ -12,7 +11,6 @@ public class Enrollment
 	
 	public Enrollment(int studentID, String crn, float grade, Section section) 
 	{
-		stuID = studentID;
 		this.crn = crn;
 		this.grade = grade;
 		

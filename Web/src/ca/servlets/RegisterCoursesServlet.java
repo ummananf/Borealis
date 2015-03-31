@@ -2,9 +2,7 @@ package ca.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,9 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ca.logic.CourseSelectionLogic;
-import ca.objects.Enrollment;
 import ca.objects.Section;
-import ca.objects.User;
 import ca.persistence.SectionModel;
 
 import com.google.gson.Gson;

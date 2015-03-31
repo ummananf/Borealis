@@ -14,7 +14,6 @@ import ca.objects.Term;
 import ca.persistence.CourseModel;
 import ca.persistence.SectionModel;
 import ca.persistence.StudentModel;
-import ca.persistence.TermModel;
 import ca.persistence.UserModel;
 
 

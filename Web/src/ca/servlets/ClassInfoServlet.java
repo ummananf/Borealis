@@ -20,9 +20,7 @@ import ca.logic.TermLogic;
 import ca.objects.Enrollment;
 import ca.objects.Term;
 import ca.objects.User;
-import ca.persistence.EnrollmentModel;
 import ca.persistence.StudentModel;
-import ca.persistence.TermModel;
 
 
 public class ClassInfoServlet extends HttpServlet 
