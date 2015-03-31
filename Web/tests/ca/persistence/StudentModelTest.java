@@ -5,10 +5,13 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import ca.objects.Enrollment;
+import ca.objects.Section;
 
 public class StudentModelTest 
 {
@@ -18,6 +21,20 @@ public class StudentModelTest
 	String queryInsertEnrollment;
 	String queryDeleteEnrollment;
 
+	@BeforeClass
+	public static void setupBeforeClass() throws Exception
+	{
+		System.out.println("-------------------------------");
+		System.out.println("Running change email logic tests");
+	}
+	
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception
+	{
+		System.out.println("Finished running email password logic tests");
+		System.out.println("--------------------------------");
+	}
+	
 	@Before
 	public void setUp() throws Exception 
 	{	

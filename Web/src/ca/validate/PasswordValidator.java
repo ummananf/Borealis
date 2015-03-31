@@ -4,16 +4,13 @@ public class PasswordValidator
 {
 	public static boolean validate(String newPassword, String oldPassword)
 	{
-		boolean isValid = true;
+		boolean isValid = false;
 		
-		if(!newPassword.equals(oldPassword))
+		if(!newPassword.equals(oldPassword) && (newPassword.length() <= 16 && newPassword.length() >= 4))
 		{
-			isValid = false;
+			isValid = true;
 		}
-		else if (newPassword.length() > 16 || newPassword.length()<4)
-		{
-			isValid = false;
-		}
+
 		return isValid;
 	}
 }

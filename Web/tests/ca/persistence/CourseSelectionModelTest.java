@@ -9,9 +9,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import ca.objects.Degree;
 import ca.objects.Prereq;
 
-public class CourseModelTest 
+public class CourseSelectionModelTest 
 {
 	
 	@BeforeClass
@@ -34,11 +35,12 @@ public class CourseModelTest
 	}
 
 	@Test
-	public final void testGetPrereqs() 
+	public final void testIntegrationDegrees() 
 	{
-		ArrayList<Prereq> prereqs = CourseModel.getPrereqs("COMP1020");
-		assertEquals(1, prereqs.size());
-		assertEquals("COMP1010", prereqs.get(0).getRequiredCourseID());
+		ArrayList<Degree> testDegrees = CourseSelectionModel.getDegrees( "Winter2015" );
+		assertNotNull(testDegrees);
+		assertNotEquals("", testDegrees.get(0));
+		
 	}
 
 }

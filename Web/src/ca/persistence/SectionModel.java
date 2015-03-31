@@ -21,7 +21,11 @@ public class SectionModel
 	public static Section getSectionByCRN(String crn) 
 	{
 		String query = "SELECT * FROM Sections WHERE crn = '" + crn + "';";
-		return createSections(query).get(0);
+		ArrayList<Section> sec = createSections(query);
+		if( !sec.isEmpty() )
+			return sec.get(0);
+		else
+			return null;
 	}
 	
 	public static ArrayList<Section> getSectionsByDeptAndTerm(String dept, String term)

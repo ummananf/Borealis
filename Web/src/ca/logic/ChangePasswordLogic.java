@@ -23,13 +23,13 @@ public class ChangePasswordLogic
 		
 		this.oldPasswordInDB = UserModel.getUserPasswordByID(userID);
 		
-		if(!PasswordValidator.validate(oldPasswordByUser, oldPasswordInDB))
+		if(PasswordValidator.validate(newPasswordByUser, oldPasswordInDB))
 		{
-			System.out.println("db password error");
+			indicator = UserModel.updatePasswordByID(userID, newPasswordByUser);
 		}
 		else
 		{
-			indicator = UserModel.updatePasswordByID(userID, newPasswordByUser);
+			System.out.println("db password error");
 		}
 		return indicator;
 	}
