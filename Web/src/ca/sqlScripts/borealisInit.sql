@@ -31,6 +31,7 @@ CREATE TABLE Terms
 	termID varchar(20) PRIMARY KEY,
 	startDate date NOT NULL
 );
+
 CREATE TABLE Courses
 (
 	cID varchar(10) PRIMARY KEY, 
@@ -41,6 +42,7 @@ CREATE TABLE Courses
 	description varchar(200),
 	isFullYr boolean
 );
+
 CREATE TABLE Prereqs
 (
 	prereqCID varchar(10) NOT NULL,
@@ -50,6 +52,7 @@ CREATE TABLE Prereqs
 	FOREIGN KEY(cID) REFERENCES Courses(cID),
 	FOREIGN KEY(prereqCID) REFERENCES Courses(cID)
 );
+
 CREATE TABLE Sections
 (
 	crn varchar(6) PRIMARY KEY NOT NULL,
@@ -63,6 +66,7 @@ CREATE TABLE Sections
 	location varchar(30), 
 	FOREIGN KEY(cID) REFERENCES Courses(cID) ON DELETE CASCADE
 );
+
 CREATE TABLE Enrolled
 (
 	userID int NOT NULL,
@@ -72,6 +76,7 @@ CREATE TABLE Enrolled
 	FOREIGN KEY(userID) REFERENCES Users(userID),
 	FOREIGN KEY(crn) REFERENCES Sections(crn)
 );
+
 CREATE TABLE Teaches
 (
 	userID int NOT NULL,
@@ -83,6 +88,7 @@ CREATE TABLE Teaches
 	FOREIGN KEY(userID) REFERENCES Users(userID), 
 	FOREIGN KEY(crn) REFERENCES Sections(crn)
 );
+
 CREATE TABLE Degrees
 (
 	term varchar(50) NOT NULL,
@@ -91,6 +97,7 @@ CREATE TABLE Degrees
 	degName varchar(60) PRIMARY KEY,
 	totalCreditHrs int
 );
+
 CREATE TABLE DegreeCourses
 (
 	degName varchar(60) NOT NULL,
@@ -99,6 +106,7 @@ CREATE TABLE DegreeCourses
 	FOREIGN KEY(degName) REFERENCES Degrees(degName) ON DELETE CASCADE,
 	FOREIGN KEY(cID) REFERENCES Courses(cID)
 );
+
 CREATE TABLE DegreeChoice
 (
 	userID int NOT NULL,
@@ -120,7 +128,6 @@ INSERT INTO Users VALUES (6, 'emily', 'pass', 'emily@myumanitoba.ca','Emily', 'S
 INSERT INTO Users VALUES (7, 'andrea','123456789', 'andrea@myumanitoba.ca','Andrea','Stephenson','B.Sc. Physics (Honours)', 15,'student');
 INSERT INTO Users VALUES (8, 'craig', '987654321', 'craig@myumanitoba.ca','Craig', 'Stephenson', 'B.Sc. Mathematics (Major)', 15, 'student');
 INSERT INTO Users VALUES (9, 'thomas','0000', 'thomas@myumanitoba.ca','Thomas','Klassen','B.Sc. Biology (Major)', 15,'student');
-
 
 -- Must do this before sections and enrolled
 INSERT INTO Terms VALUES ('Fall2014', '2014-09-01');
@@ -610,34 +617,18 @@ INSERT INTO Enrolled VALUES (9, '20245', -1.0);
 
 -- Insert Degrees
 INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
--- INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Honours', 'B.Sc. Computer Science (Honours)', 120);
-INSERT INTO Degrees VALUES ('Fall2014', 'Computer Science', 'Co-op', 'B.Sc. Computer Science (Co-op)', 120);
--- INSERT INTO Degrees VALUES ('Fall2014', 'Environmental Science', 'Major', 'B.Sc. Environment (Major)', 90);
 INSERT INTO Degrees VALUES ('Fall2014', 'Environmental Science', 'Co-op', 'B.Sc. Environment (Co-op)', 90);
--- INSERT INTO Degrees VALUES ('Fall2014', 'Biology', 'Major', 'B.Sc. Biology (Major)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Biology', 'Honours', 'B.Sc. Biology (Honours)', 120);
--- INSERT INTO Degrees VALUES ('Fall2014', 'Chemistry', 'Major', 'B.Sc. Chemistry (Major)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Chemistry', 'Honours', 'B.Sc. Chemistry (Honours)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Mathematics', 'Major', 'B.Sc. Mathematics (Major)', 120);
--- INSERT INTO Degrees VALUES ('Fall2014', 'Mathematics', 'Honours', 'B.Sc. Mathematics (Honours)', 120);
-INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Major', 'B.Sc. Physics (Major)', 120);
--- INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Honours', 'B.Sc. Physics (Honours)', 120);
 INSERT INTO Degrees VALUES ('Fall2014', 'Physics and Astronomy', 'Major', 'B.Sc. Astronomy (Major)', 120);
 
--- INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Major', 'B.Sc. Computer Science (Major)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Honours', 'B.Sc. Computer Science (Honours)', 120);
--- INSERT INTO Degrees VALUES ('Winter2015', 'Computer Science', 'Co-op', 'B.Sc. Computer Science (Co-op)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Environmental Science', 'Major', 'B.Sc. Environment (Major)', 90);
--- INSERT INTO Degrees VALUES ('Winter2015', 'Environmental Science', 'Co-op', 'B.Sc. Environment (Co-op)', 90);
 INSERT INTO Degrees VALUES ('Winter2015', 'Biology', 'Major', 'B.Sc. Biology (Major)', 120);
--- INSERT INTO Degrees VALUES ('Winter2015', 'Biology', 'Honours', 'B.Sc. Biology (Honours)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Chemistry', 'Major', 'B.Sc. Chemistry (Major)', 120);
--- INSERT INTO Degrees VALUES ('Winter2015', 'Chemistry', 'Honours', 'B.Sc. Chemistry (Honours)', 120);
--- INSERT INTO Degrees VALUES ('Winter2015', 'Mathematics', 'Major', 'B.Sc. Mathematics (Major)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Mathematics', 'Honours', 'B.Sc. Mathematics (Honours)', 120);
--- INSERT INTO Degrees VALUES ('Winter2015', 'Physics and Astronomy', 'Major', 'B.Sc. Physics (Major)', 120);
 INSERT INTO Degrees VALUES ('Winter2015', 'Physics and Astronomy', 'Honours', 'B.Sc. Physics (Honours)', 120);
--- INSERT INTO Degrees VALUES ('Winter2015', 'Physics and Astronomy', 'Major', 'B.Sc. Astronomy (Major)', 120);
 
 -- Insert required courses into degrees.
 INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Major)', 'COMP1010');
@@ -678,27 +669,6 @@ INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Honours)', 'COMP4380')
 INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Honours)', 'COMP4510');
 INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Honours)', 'MATH1300');
 INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Honours)', 'MATH1500');
-
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP1010');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP1020');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP2140');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP2150');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP2160');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP2280');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP2080');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP3010');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP3040');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP3170');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP3350');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP3430');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP3190');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP3380');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP4020');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP4350');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP4380');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'COMP4510');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'MATH1300');
-INSERT INTO DegreeCourses VALUES('B.Sc. Computer Science (Co-op)', 'MATH1500');
 
 INSERT INTO DegreeCourses VALUES('B.Sc. Environment (Major)', 'ENVR1000');
 INSERT INTO DegreeCourses VALUES('B.Sc. Environment (Major)', 'ENVR2000');
@@ -799,15 +769,6 @@ INSERT INTO DegreeCourses VALUES('B.Sc. Mathematics (Honours)', 'MATH3810');
 INSERT INTO DegreeCourses VALUES('B.Sc. Mathematics (Honours)', 'MATH4250');
 INSERT INTO DegreeCourses VALUES('B.Sc. Mathematics (Honours)', 'MATH4430');
 INSERT INTO DegreeCourses VALUES('B.Sc. Mathematics (Honours)', 'MATH4810');
-
-INSERT INTO DegreeCourses VALUES('B.Sc. Physics (Major)', 'PHYS1050');
-INSERT INTO DegreeCourses VALUES('B.Sc. Physics (Major)', 'PHYS1070');
-INSERT INTO DegreeCourses VALUES('B.Sc. Physics (Major)', 'PHYS2380');
-INSERT INTO DegreeCourses VALUES('B.Sc. Physics (Major)', 'PHYS2390');
-INSERT INTO DegreeCourses VALUES('B.Sc. Physics (Major)', 'PHYS2490');
-INSERT INTO DegreeCourses VALUES('B.Sc. Physics (Major)', 'PHYS3380');
-INSERT INTO DegreeCourses VALUES('B.Sc. Physics (Major)', 'PHYS3670');
-INSERT INTO DegreeCourses VALUES('B.Sc. Physics (Major)', 'PHYS4300');
 
 INSERT INTO DegreeCourses VALUES('B.Sc. Physics (Honours)', 'PHYS1050');
 INSERT INTO DegreeCourses VALUES('B.Sc. Physics (Honours)', 'PHYS1070');

@@ -31,17 +31,17 @@ function displayTracker(degrees, coursesTaken, degCourses)
 			{
 				var intGrade = takenCourse.grade;
 					
-				if (takenCourse.courseID == course.courseID)
+				if (takenCourse.section.cID == course.courseID)
 				{
 					// mark courseID as -1 if we are counting the course. This will permanently
 					// alter the JSON string so if you need the original JSON object being used for
 					// courseTaken, take courseTaken as a copy of the original
 					courseGrade = getLetterGrade(intGrade);
-					takenCourse.courseID = "-1";
+					takenCourse.section.cID = "-1";
 						
 					// VWs, Fs do not count as credit hours towards your degree
 					if (intGrade > 0)
-						creditHrsComplete += takenCourse.creditHrs;
+						creditHrsComplete += takenCourse.section.course.creditHrs;
 				}
 			});
 			
