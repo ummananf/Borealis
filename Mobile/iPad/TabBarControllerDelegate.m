@@ -8,12 +8,13 @@
 
 #import "TabBarControllerDelegate.h"
 
+#import "MyInfoViewController.h"
+
 @implementation TabBarControllerDelegate
 
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    NSLog(@"TabBarControllerDelegate");
-    
-    if ([viewController.title  isEqual: @"Home"]) {
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *) viewController{
+
+    if (tabBarController.selectedIndex == 0) {
         NSLog(@"HOME");
     } else if ([viewController.title isEqual: @"MyInfo"]){
         NSLog(@"MYINFO");

@@ -8,24 +8,25 @@
 
 #import "ViewController.h"
 #import "SBJson.h"
-
-
-@interface ViewController ()
-
-@end
+#import "MyInfoViewController.h"
+#import "UserInfo.h"
 
 @implementation ViewController
+NSDictionary *user;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    //NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+    //[[UIDevice currentDevice] setValue:value forKey:@"orientation"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
 //This is the login code; currently not working properly
@@ -44,7 +45,7 @@
             NSURL *url=[NSURL URLWithString:@"http://awstest-fa5gzzwmbd.elasticbeanstalk.com/login"];
             
             NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-            NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+            NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
             
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
             [request setURL:url];
@@ -52,13 +53,24 @@
             [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
             [request setHTTPBody:postData];
 
-            NSURLResponse *requestResponse;
+            NSHTTPURLResponse *requestResponse;
             NSData *requestHandler = [NSURLConnection sendSynchronousRequest:request returningResponse:&requestResponse error:nil];
             
             NSString *requestReply = [[NSString alloc] initWithBytes:[requestHandler bytes] length:[requestHandler length] encoding:NSASCIIStringEncoding];
             NSLog(@"requestRply: %@", requestReply);
-            if ([requestReply isEqualToString:@""]) {
+
+            // check status code of resonse. if 200 (OK response) -> success, otherwise failure.
+            if ([requestResponse statusCode] == 200) {
                 success = 1;
+                
+                SBJsonParser *jsonParser = [SBJsonParser new];
+                NSDictionary *jsonData = (NSDictionary *) [jsonParser objectWithString:requestReply error:nil];
+                NSLog(@"jsonData: %@",jsonData);
+                user = jsonData;
+                
+                UserInfo *userInfo = [UserInfo getInstance];
+                [userInfo parseDictionary:jsonData];
+                
             }
         }
     }
@@ -71,6 +83,7 @@
     }
     else {
         [self alertStatus:@"Sign in Failed." :@"incorrrect username or password!" :0];
+        
     }
 }
 
@@ -90,4 +103,5 @@
     [self loginClicked:nil];
     return YES;
 }
+
 @end
