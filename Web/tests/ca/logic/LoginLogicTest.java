@@ -72,8 +72,8 @@ public class LoginLogicTest
 		int id = 7651245;
 		int wrongID = 777777;
 		System.out.println(this.testUser.getUserID());
-		//assertEquals(id,this.testUser.getUserID());
-		//assertNotEquals(wrongID,this.testUser.getUserID());
+		assertEquals(id,this.testUser.getUserID());
+		assertNotEquals(wrongID,this.testUser.getUserID());
 	}
 	
 	@Test
