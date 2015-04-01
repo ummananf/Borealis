@@ -9,9 +9,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import ca.objects.Degree;
-import ca.objects.Enrollment;
-import ca.objects.Prereq;
 import ca.objects.Section;
 
 public class SectionModelTest 

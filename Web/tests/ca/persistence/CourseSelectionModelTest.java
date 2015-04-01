@@ -10,7 +10,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import ca.objects.Degree;
-import ca.objects.Prereq;
 
 public class CourseSelectionModelTest 
 {

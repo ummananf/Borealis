@@ -6,14 +6,12 @@ import ca.validate.PasswordValidator;
 public class ChangePasswordLogic
 {
 	private String newPasswordByUser;
-	private String oldPasswordByUser;
 	private int userID;
 	private String oldPasswordInDB;
 	
 	public ChangePasswordLogic(String newPassword, String oldPassword, int userID)
 	{		
 		this.newPasswordByUser = newPassword;
-		this.oldPasswordByUser = oldPassword;
 		this.userID = userID;
 	}
 	

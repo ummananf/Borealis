@@ -4,17 +4,11 @@ import static org.junit.Assert.*;
 
 import java.sql.Connection;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Set;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import com.google.gson.Gson;
 
 import ca.logic.CourseSelectionLogic;
 import ca.objects.Course;
